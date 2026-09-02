@@ -19,6 +19,8 @@ families, and a Korean confirm UI and README. Lisa's PPT keeps all of that,
 rebrands it to the Ted & Lisa experience, and adds English and Traditional
 Chinese beside the Korean.
 
+**A hard fork.** The engine is imported once from PPT Master v6.1.0, slide-master's refinements are ported on top, and from then on the repository is independent: nothing is pulled from either source again, and any later backport is a deliberate hand-made change recorded in `NOTICE`.
+
 **Status: the plan is here; the import is not yet.** [`PLAN.md`](PLAN.md) is
 the brief the build follows — which tree the engine sits on, licence and
 attribution, what has to go before publishing, the rebrand, the intake

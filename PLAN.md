@@ -17,27 +17,24 @@ localization to undo. Keep its capabilities, rebrand it as **Lisa's PPT**,
 rebuild its intake UI to the Ted & Lisa brand experience without losing a
 feature, and ship it MIT.
 
-## The one decision to confirm before starting
+## The decision: Path A, as a hard fork
 
-slide-master is a single squashed commit (`166472b`, 2026-08-04) with no
-upstream remote and no merge base, on a late-July, v6.0-era upstream. Upstream
-(`hugohe3/ppt-master`, v6.1.0, 2026-08-31) has since added the OMML/LaTeX
-formula subsystem (8 modules), hyperlink preservation, `canvas_contract.py`,
-the `svg_quality/` package refactor (slide-master still runs a 188 KB
-single-file checker), `skia-pathops` merge-shapes, `uharfbuzz` shaping,
-`templates/styles/`, and a restructured SKILL.md. The two trees are diverging
-structurally.
+Decided by Daren, 2026-09-03. slide-master is a single squashed commit
+(`166472b`, 2026-08-04) with no upstream remote and no merge base, on a
+late-July, v6.0-era upstream. Upstream (`hugohe3/ppt-master`, v6.1.0,
+2026-08-31) has since added the OMML/LaTeX formula subsystem (8 modules),
+hyperlink preservation, `canvas_contract.py`, the `svg_quality/` package
+refactor (slide-master still runs a 188 KB single-file checker),
+`skia-pathops` merge-shapes, `uharfbuzz` shaping, `templates/styles/`, and a
+restructured `SKILL.md`.
 
-- **Path A — fork the work, not the snapshot (recommended).** Base the engine
-  on a fresh clone of upstream v6.1.0 with `upstream` as a remote, and port
-  every slide-master contribution (the list below) as its own commit. Future
-  upstream fixes are a `git merge`.
-- **Path B — fork the snapshot.** Import slide-master as-is and hand-port
-  upstream's v6.1 modules into it. Faster to start; a manual-merge tax that
-  grows.
-
-The plan below is written for A; every step also works under B with W1
-adjusted. **Daren confirms A or B; nothing else waits on it.**
+So the engine is imported **once** from upstream v6.1.0, slide-master's
+contributions (the table below) are ported on top as their own commits, and
+then the repository is **independent**: no remote but `origin`, no upstream
+tracking, no self-update script, nothing ever pulled from either source
+again. A future fix from upstream is a deliberate, hand-made backport from a
+fresh clone, decided case by case and recorded in NOTICE — never a merge.
+Both import points are recorded in NOTICE so the provenance stays auditable.
 
 ## What Lisa's PPT keeps from slide-master (verified from source)
 
@@ -68,20 +65,21 @@ is the study kept in the Lisa workspace (`slide-master-study-2026-09-03.md`).
 5. Add `Copyright (c) 2026 MonoMind AI Lab` to LICENSE for the new work; keep Hugo He's line; credit slide-master by name, URL and imported commit (it asserts no line of its own).
 6. ~15 upstream-pointing URLs in `docs/` and two scripts (`scripts/image_sources/provider_common.py:44` user agent, `scripts/update_repo.py:54` clone URL) — repoint or remove.
 7. "On this machine" wording in `references/strategist.md` and `CLAUDE.md` — a single-user assumption; nothing installs the bundled fonts for a fresh cloner, and the prompt claims nine weights where six are bundled. Reword to policy; add a font-install step; bundle exactly the weights the prompts may name.
-8. `formula_policy` in the confirm-UI catalog while the formula modules are absent (moot under Path A): runtime check.
+8. `formula_policy` in the confirm-UI catalog: the formula modules arrive with v6.1.0, so keep the option and add a runtime check that it is honoured.
 9. Fallback stack `Pretendard, "Malgun Gothic", sans-serif` is Windows-Korean; give every language a cross-platform stack.
 10. `.gitattributes` and `.gitignore` reference the author's local tooling; tidy.
 
 ## Workstreams (one branch each, one subagent each)
 
 ### W1 · Import, licence, attribution
-1. Add remotes: `upstream` (hugohe3/ppt-master) and `slidemaster`
-   (byungjunjang/slide-master); fetch both. **Path A:** bring in upstream
-   `main` at v6.1.0 as the base branch, then port each contribution in the
-   table above as one commit, named for what it ports and citing the
-   slide-master file it came from. **Path B:** import slide-master's tree, then
-   port the missing upstream modules named above. Either way, record both
-   imported commits in NOTICE.
+1. **Import once, then sever.** Clone `hugohe3/ppt-master` at the v6.1.0
+   tag (record the commit hash) and bring its tree in as one commit,
+   "Import PPT Master v6.1.0 (<hash>)". Clone `byungjunjang/slide-master`
+   (`166472b`) beside it and port each contribution in the table above as one
+   commit, named for what it ports and citing the slide-master file it came
+   from. Delete both clones; leave no remote but `origin`; remove upstream's
+   `scripts/update_repo.py` (it fingerprints and re-clones from hugohe3).
+   Record both import commits in NOTICE.
 2. LICENSE and NOTICE as in the bootstrap, filled in; the vendored skills keep
    their own licence files; font licences beside the font files.
 3. Apply "What must change" items 1–10; grep for `jangpm`, `packy`,
@@ -163,11 +161,12 @@ One appended gallery card — "Lisa's PPT · PPTX · install-only" — linking
 here; one line in `site/llms.txt`. Append, never insert (D-035); no second
 paid surface (D-025).
 
-### W6 · Staying in step
-Two upstreams. Under Path A, `git merge upstream/main` on a schedule and a
-NOTICE ledger of what was ported from slide-master; under Path B, a ledger of
-upstream modules ported by hand. Either way, a monthly check that both
-upstreams' HEADs are recorded.
+### W6 · Independence
+No upstream tracking, by decision. `NOTICE` carries the ledger: the two import
+points, every slide-master file ported, and any later backport with the
+upstream commit it came from. A backport is a deliberate, hand-made change
+from a fresh clone, reviewed like any other PR — never a merge, never a
+scheduled sync. The plugin version is this repository's own.
 
 ## Acceptance
 - End-to-end run on this machine from a one-paragraph brief to an opened
@@ -180,3 +179,5 @@ upstreams' HEADs are recorded.
   checker on a fixture, run the stub-sync check.
 - Report which `skill` name and install command Lane B in `hi-ted-meet-lisa`
   should reference.
+- No remote but `origin`; `scripts/update_repo.py` gone; NOTICE names both
+  import commits and the ported files.
