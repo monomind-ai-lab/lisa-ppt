@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Secrets and per-machine config
+.env
+# Pipeline output (projects are the user's; never commit them)
+projects/
+exports/
