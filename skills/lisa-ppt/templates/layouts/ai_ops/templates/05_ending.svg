@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="ai_ops_master" data-pptx-master-name="AI Ops"
+  data-pptx-layout="ending" data-pptx-layout-name="Closing">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="ending-top-strip" x="0" y="0" width="1280" height="8" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-left-block-upper" x="0" y="0" width="60" height="360" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-left-block-lower" x="0" y="360" width="60" height="360" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-panel" x="280" y="200" width="720" height="320" fill="#FDF3EB"
+    stroke="#F8CBAD" stroke-width="2" data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-divider" x1="480" y1="400" x2="800" y2="400" stroke="#E7E6E6" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-bottom-accent" x="0" y="680" width="1280" height="10" fill="#FDF3EB"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-bottom-band" x="0" y="690" width="1280" height="30" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-badge-one" x="300" y="580" width="30" height="30" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-badge-two" x="500" y="580" width="30" height="30" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-badge-three" x="700" y="580" width="30" height="30" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-badge-four" x="900" y="580" width="30" height="30" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-tag-one" x="340" y="580" width="100" height="30" fill="#5B9BD5"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-tag-two" x="540" y="580" width="100" height="30" fill="#5B9BD5"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-tag-three" x="740" y="580" width="100" height="30" fill="#5B9BD5"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-tag-four" x="940" y="580" width="100" height="30" fill="#5B9BD5"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-index-one" x="315" y="602" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">1</text>
+  <text id="ending-index-two" x="515" y="602" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">2</text>
+  <text id="ending-index-three" x="715" y="602" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">3</text>
+  <text id="ending-index-four" x="915" y="602" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">4</text>
+  <g id="ending-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="300 250 680 90">
+    <text id="ending-title-carrier" data-pptx-carrier="true"
+      x="640" y="310" text-anchor="middle" fill="#C00000"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="64" font-weight="700">{{THANK_YOU}}</text>
+  </g>
+  <g id="ending-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="300 344 680 40">
+    <text id="ending-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="370" text-anchor="middle" fill="#2E75B6" letter-spacing="6"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{ENDING_SUBTITLE}}</text>
+  </g>
+  <g id="ending-contact-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="300 424 680 40">
+    <text id="ending-contact-carrier" data-pptx-carrier="true"
+      x="640" y="450" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{CONTACT_INFO}}</text>
+  </g>
+  <g id="ending-copyright-slot" data-pptx-placeholder="footer" data-pptx-idx="3"
+    data-pptx-bounds="300 470 680 32">
+    <text id="ending-copyright-carrier" data-pptx-carrier="true"
+      x="640" y="490" text-anchor="middle" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{COPYRIGHT}}</text>
+  </g>
+  <g id="ending-tag-one-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="340 580 100 30">
+    <text id="ending-tag-one-carrier" data-pptx-carrier="true"
+      x="390" y="601" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{TAG_1}}</text>
+  </g>
+  <g id="ending-tag-two-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="540 580 100 30">
+    <text id="ending-tag-two-carrier" data-pptx-carrier="true"
+      x="590" y="601" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{TAG_2}}</text>
+  </g>
+  <g id="ending-tag-three-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="740 580 100 30">
+    <text id="ending-tag-three-carrier" data-pptx-carrier="true"
+      x="790" y="601" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{TAG_3}}</text>
+  </g>
+  <g id="ending-tag-four-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="940 580 100 30">
+    <text id="ending-tag-four-carrier" data-pptx-carrier="true"
+      x="990" y="601" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{TAG_4}}</text>
+  </g>
+</svg>

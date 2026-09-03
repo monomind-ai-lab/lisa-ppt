@@ -1,69 +1,110 @@
-<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" data-pptx-master="ai_ops-master" data-pptx-master-name="AI Ops" data-pptx-layout="01_cover" data-pptx-layout-name="Cover">
-  <!-- Background -->
-  <rect id="master-bg" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false"/>
-
-  <!-- Top Red Banner -->
-  <rect x="0" y="0" width="1280" height="8" fill="#C00000" />
-
-  <!-- Left Decorative Red Block -->
-  <rect x="0" y="0" width="60" height="360" fill="#C00000" />
-  <rect x="0" y="360" width="60" height="360" fill="#2E75B6" />
-
-  <!-- Warm Gray Subtitle Band -->
-  <rect x="60" y="280" width="1220" height="60" fill="#F2F2F2" />
-
-  <!-- Title Group -->
-  <g id="title-slot" data-pptx-placeholder="title" data-pptx-placeholder-bounds="140 172 1000 64">
-    <text x="640" y="220" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="56" font-weight="bold" fill="#C00000" text-anchor="middle" id="slot-01_cover-title-1" data-pptx-placeholder-carrier="true">{{TITLE}}</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="ai_ops_master" data-pptx-master-name="AI Ops"
+  data-pptx-layout="cover" data-pptx-layout-name="Cover">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="cover-top-strip" x="0" y="0" width="1280" height="8" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-left-block-upper" x="0" y="0" width="60" height="360" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-left-block-lower" x="0" y="360" width="60" height="360" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-subtitle-band" x="60" y="280" width="1220" height="60" fill="#F2F2F2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-badge-one" x="200" y="400" width="40" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-badge-two" x="400" y="400" width="40" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-badge-three" x="600" y="400" width="40" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-badge-four" x="800" y="400" width="40" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-badge-five" x="1000" y="400" width="40" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-tag-one" x="250" y="400" width="120" height="40" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-tag-two" x="450" y="400" width="120" height="40" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-tag-three" x="650" y="400" width="120" height="40" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-tag-four" x="850" y="400" width="120" height="40" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-tag-five" x="1050" y="400" width="120" height="40" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="cover-index-one" x="220" y="428" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">1</text>
+  <text id="cover-index-two" x="420" y="428" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">2</text>
+  <text id="cover-index-three" x="620" y="428" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">3</text>
+  <text id="cover-index-four" x="820" y="428" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">4</text>
+  <text id="cover-index-five" x="1020" y="428" text-anchor="middle" fill="#FFFFFF"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">5</text>
+  <line id="cover-divider" x1="120" y1="480" x2="1160" y2="480" stroke="#E7E6E6" stroke-width="1"
+    stroke-dasharray="5 5" data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-bottom-accent" x="0" y="680" width="1280" height="10" fill="#FDF3EB"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-bottom-band" x="0" y="690" width="1280" height="30" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="cover-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 168 1000 76">
+    <text id="cover-title-carrier" data-pptx-carrier="true"
+      x="640" y="220" text-anchor="middle" fill="#C00000"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700">{{TITLE}}</text>
   </g>
-
-  <!-- Subtitle -->
-  <g id="subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-placeholder-idx="2" data-pptx-placeholder-bounds="140 296 1000 34">
-    <text x="640" y="320" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="22" fill="#666666" text-anchor="middle" id="slot-01_cover-subtitle-2" data-pptx-placeholder-carrier="true">{{SUBTITLE}}</text>
+  <g id="cover-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="140 280 1000 60">
+    <text id="cover-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="320" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{SUBTITLE}}</text>
   </g>
-
-  <!-- Decorative Numbered Badges (referencing architecture style) -->
-  <rect x="200" y="400" width="40" height="40" fill="#C00000" />
-  <text x="220" y="428" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
-
-  <rect x="400" y="400" width="40" height="40" fill="#C00000" />
-  <text x="420" y="428" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">2</text>
-
-  <rect x="600" y="400" width="40" height="40" fill="#C00000" />
-  <text x="620" y="428" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
-
-  <rect x="800" y="400" width="40" height="40" fill="#C00000" />
-  <text x="820" y="428" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">4</text>
-
-  <rect x="1000" y="400" width="40" height="40" fill="#C00000" />
-  <text x="1020" y="428" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
-
-  <!-- Blue Scenario Tags -->
-  <rect x="250" y="400" width="120" height="40" fill="#2E75B6" />
-  <text x="310" y="427" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">智能运维</text>
-
-  <rect x="450" y="400" width="120" height="40" fill="#2E75B6" />
-  <text x="510" y="427" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">数字员工</text>
-
-  <rect x="650" y="400" width="120" height="40" fill="#2E75B6" />
-  <text x="710" y="427" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">自动化测试</text>
-
-  <rect x="850" y="400" width="120" height="40" fill="#2E75B6" />
-  <text x="910" y="427" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">故障诊断</text>
-
-  <rect x="1050" y="400" width="120" height="40" fill="#2E75B6" />
-  <text x="1110" y="427" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">开放共享</text>
-
-  <!-- Dashed Separator -->
-  <line x1="120" y1="480" x2="1160" y2="480" stroke="#E7E6E6" stroke-width="1" stroke-dasharray="5 5" />
-
-  <!-- Author & Date -->
-  <text x="640" y="560" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="20" fill="#333333" text-anchor="middle">{{AUTHOR}}</text>
-  <text x="640" y="600" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="18" fill="#999999" text-anchor="middle">{{DATE}}</text>
-
-  <!-- Bottom Blue Band -->
-  <rect x="0" y="690" width="1280" height="30" fill="#2E75B6" />
-
-  <!-- Bottom Warm Accent -->
-  <rect x="0" y="680" width="1280" height="10" fill="#FDF3EB" />
+  <g id="cover-tag-one-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="250 400 120 40">
+    <text id="cover-tag-one-carrier" data-pptx-carrier="true"
+      x="310" y="427" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_1}}</text>
+  </g>
+  <g id="cover-tag-two-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="450 400 120 40">
+    <text id="cover-tag-two-carrier" data-pptx-carrier="true"
+      x="510" y="427" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_2}}</text>
+  </g>
+  <g id="cover-tag-three-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="650 400 120 40">
+    <text id="cover-tag-three-carrier" data-pptx-carrier="true"
+      x="710" y="427" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_3}}</text>
+  </g>
+  <g id="cover-tag-four-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="850 400 120 40">
+    <text id="cover-tag-four-carrier" data-pptx-carrier="true"
+      x="910" y="427" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_4}}</text>
+  </g>
+  <g id="cover-tag-five-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="1050 400 120 40">
+    <text id="cover-tag-five-carrier" data-pptx-carrier="true"
+      x="1110" y="427" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_5}}</text>
+  </g>
+  <g id="cover-author-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="240 536 800 36">
+    <text id="cover-author-carrier" data-pptx-carrier="true"
+      x="640" y="560" text-anchor="middle" fill="#333333"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{AUTHOR}}</text>
+  </g>
+  <g id="cover-date-slot" data-pptx-placeholder="date" data-pptx-idx="8"
+    data-pptx-bounds="240 580 800 30">
+    <text id="cover-date-carrier" data-pptx-carrier="true"
+      x="640" y="600" text-anchor="middle" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{DATE}}</text>
+  </g>
 </svg>
