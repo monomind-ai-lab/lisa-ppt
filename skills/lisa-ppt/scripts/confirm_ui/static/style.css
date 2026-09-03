@@ -26,10 +26,10 @@
     --warn: #d9a441;
     --success: #9bb08a;
 
-    /* Type. Latin is Plus Jakarta Sans when the network gave it to us and
-       Pretendard (the skill's own bundled house font, see @font-face) when
-       it did not; the CJK companion is chosen per html[lang] below. Ids,
-       hex values, paths and counts are mono. */
+    /* Type. Lisa's faces, all bundled with the skill and served by
+       server.py (see @font-face below): Plus Jakarta Sans for Latin,
+       JetBrains Mono for ids, hex values, paths and counts, and a CJK
+       companion chosen per html[lang]. */
     --font-latin: "Plus Jakarta Sans", Pretendard, Inter, system-ui, sans-serif;
     --font-cjk: "Apple SD Gothic Neo", "PingFang TC", "Hiragino Sans", sans-serif;
     --font-display: var(--font-latin), var(--font-cjk);
@@ -71,22 +71,31 @@
     --shell-w: 960px;
 }
 
-/* The CJK companion follows the UI language. Korean is Pretendard first —
-   the skill bundles it and serves it below, so Korean reads the same with
-   or without a network. Traditional Chinese takes Noto Sans TC when the
-   Google Fonts link resolved and PingFang / JhengHei otherwise. */
+/* The CJK companion follows the UI language: Pretendard for Korean and
+   Noto Sans TC for Traditional Chinese, both bundled; Simplified Chinese
+   and Japanese take the platform's own faces. */
 html[lang="ko"] { --font-cjk: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
 html[lang="zh-TW"] { --font-cjk: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif; }
 html[lang="zh-CN"] { --font-cjk: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif; }
 html[lang="ja"] { --font-cjk: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; }
 
-/* The bundled house font, served by server.py from the skill's own
-   assets/fonts/Pretendard (OFL, licence beside the files). local() first,
-   so a machine that ran install_fonts.py never fetches. */
-@font-face { font-family: Pretendard; font-weight: 400; font-display: swap; src: local("Pretendard"), local("Pretendard-Regular"), url(/fonts/Pretendard-Regular.otf) format("opentype"); }
-@font-face { font-family: Pretendard; font-weight: 500; font-display: swap; src: local("Pretendard Medium"), local("Pretendard-Medium"), url(/fonts/Pretendard-Medium.otf) format("opentype"); }
-@font-face { font-family: Pretendard; font-weight: 600; font-display: swap; src: local("Pretendard SemiBold"), local("Pretendard-SemiBold"), url(/fonts/Pretendard-SemiBold.otf) format("opentype"); }
-@font-face { font-family: Pretendard; font-weight: 700; font-display: swap; src: local("Pretendard Bold"), local("Pretendard-Bold"), url(/fonts/Pretendard-Bold.otf) format("opentype"); }
+/* The faces are the skill's own bundled fonts — assets/fonts, each beside
+   its OFL text, exactly the families Lisa's intake panel uses — served by
+   server.py at /fonts/. local() first, so a machine that ran
+   install_fonts.py never fetches; nothing loads from the network. */
+@font-face { font-family: "Plus Jakarta Sans"; font-weight: 400; font-display: swap; src: local("Plus Jakarta Sans"), local("PlusJakartaSans-Regular"), url(/fonts/PlusJakartaSans/PlusJakartaSans-Regular.ttf) format("truetype"); }
+@font-face { font-family: "Plus Jakarta Sans"; font-weight: 500; font-display: swap; src: local("Plus Jakarta Sans Medium"), local("PlusJakartaSans-Medium"), url(/fonts/PlusJakartaSans/PlusJakartaSans-Medium.ttf) format("truetype"); }
+@font-face { font-family: "Plus Jakarta Sans"; font-weight: 600; font-display: swap; src: local("Plus Jakarta Sans SemiBold"), local("PlusJakartaSans-SemiBold"), url(/fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.ttf) format("truetype"); }
+@font-face { font-family: "Plus Jakarta Sans"; font-weight: 700; font-display: swap; src: local("Plus Jakarta Sans Bold"), local("PlusJakartaSans-Bold"), url(/fonts/PlusJakartaSans/PlusJakartaSans-Bold.ttf) format("truetype"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; font-display: swap; src: local("JetBrains Mono"), local("JetBrainsMono-Regular"), url(/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf) format("truetype"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: local("JetBrains Mono Medium"), local("JetBrainsMono-Medium"), url(/fonts/JetBrainsMono/JetBrainsMono-Medium.ttf) format("truetype"); }
+@font-face { font-family: "Noto Sans TC"; font-weight: 400; font-display: swap; src: local("Noto Sans TC"), local("NotoSansTC-Regular"), url(/fonts/NotoSansTC/NotoSansTC-Regular.otf) format("opentype"); }
+@font-face { font-family: "Noto Sans TC"; font-weight: 500; font-display: swap; src: local("Noto Sans TC Medium"), local("NotoSansTC-Medium"), url(/fonts/NotoSansTC/NotoSansTC-Medium.otf) format("opentype"); }
+@font-face { font-family: "Noto Sans TC"; font-weight: 700; font-display: swap; src: local("Noto Sans TC Bold"), local("NotoSansTC-Bold"), url(/fonts/NotoSansTC/NotoSansTC-Bold.otf) format("opentype"); }
+@font-face { font-family: Pretendard; font-weight: 400; font-display: swap; src: local("Pretendard"), local("Pretendard-Regular"), url(/fonts/Pretendard/Pretendard-Regular.otf) format("opentype"); }
+@font-face { font-family: Pretendard; font-weight: 500; font-display: swap; src: local("Pretendard Medium"), local("Pretendard-Medium"), url(/fonts/Pretendard/Pretendard-Medium.otf) format("opentype"); }
+@font-face { font-family: Pretendard; font-weight: 600; font-display: swap; src: local("Pretendard SemiBold"), local("Pretendard-SemiBold"), url(/fonts/Pretendard/Pretendard-SemiBold.otf) format("opentype"); }
+@font-face { font-family: Pretendard; font-weight: 700; font-display: swap; src: local("Pretendard Bold"), local("Pretendard-Bold"), url(/fonts/Pretendard/Pretendard-Bold.otf) format("opentype"); }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; }

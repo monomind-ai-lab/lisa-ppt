@@ -114,10 +114,16 @@ _TEMPLATES_DIR = _SKILL_DIR / 'templates'
 _CATALOGS_PATH = Path(__file__).resolve().parent / 'static' / 'catalogs.json'
 _ICON_LIBRARY_DIR = _TEMPLATES_DIR / 'icons'
 _AI_IMAGE_COMPARISON_DIR = _SKILL_DIR / 'references' / 'ai-image-comparison'
-# The skill's bundled house font, served to the page as its offline Latin/KO
-# face (see static/style.css). Exactly the cuts the stylesheet declares.
-_FONT_DIR = _SKILL_DIR / 'assets' / 'fonts' / 'Pretendard'
-_FONT_FILE_RE = re.compile(r'Pretendard-(?:Regular|Medium|SemiBold|Bold)\.otf\Z')
+# The skill's bundled fonts (assets/fonts, OFL texts beside them), served to
+# the page so it renders in Lisa's faces with no network at all. Exactly the
+# cuts static/style.css declares; anything else is a 404.
+_FONT_DIR = _SKILL_DIR / 'assets' / 'fonts'
+_FONT_FILE_RE = re.compile(
+    r'(?:PlusJakartaSans/PlusJakartaSans-(?:Regular|Medium|SemiBold|Bold)\.ttf'
+    r'|JetBrainsMono/JetBrainsMono-(?:Regular|Medium)\.ttf'
+    r'|NotoSansTC/NotoSansTC-(?:Regular|Medium|Bold)\.otf'
+    r'|Pretendard/Pretendard-(?:Regular|Medium|SemiBold|Bold)\.otf)\Z'
+)
 _TEMPLATE_LIBRARY_CONFIG = {
     'brand': ('brands', 'brands_index.json'),
     'style': ('styles', 'styles_index.json'),
@@ -2637,12 +2643,14 @@ def create_app(
             return jsonify({'error': 'invalid comparison filename'}), 404
         return send_from_directory(_AI_IMAGE_COMPARISON_DIR / kind, filename)
 
-    @app.route('/fonts/<filename>')
-    def get_font(filename: str):
-        """Serve the bundled Pretendard cuts the page's offline font stack names."""
-        if not _FONT_FILE_RE.fullmatch(filename or ''):
+    @app.route('/fonts/<family>/<filename>')
+    def get_font(family: str, filename: str):
+        """Serve the bundled font cuts the page's stylesheet declares."""
+        relative = f'{family}/{filename}'
+        if not _FONT_FILE_RE.fullmatch(relative):
             return jsonify({'error': 'unknown font'}), 404
-        resp = send_from_directory(_FONT_DIR, filename, mimetype='font/otf')
+        mimetype = 'font/ttf' if filename.endswith('.ttf') else 'font/otf'
+        resp = send_from_directory(_FONT_DIR / family, filename, mimetype=mimetype)
         resp.headers['Cache-Control'] = 'public, max-age=86400'
         return resp
 

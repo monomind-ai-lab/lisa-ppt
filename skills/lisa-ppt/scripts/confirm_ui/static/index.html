@@ -4,16 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="page_title">Lisa's PPT — Confirm the deck</title>
-    <!-- The web faces Lisa's intake panel uses, fetched only when a network
-         is there. The link is non-blocking on purpose: this page runs on a
-         local machine that may be offline, and a blocking stylesheet fetch
-         would hold first paint hostage to a DNS lookup. Offline, the stack in
-         style.css falls back to the skill's bundled Pretendard (Latin + KO,
-         served at /fonts/) and to the platform's own CJK and mono faces. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" media="print" onload="this.media='all'"
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;600;700&display=swap">
+    <!-- No network: the faces are the skill's own bundled fonts, served at
+         /fonts/ and declared in style.css. -->
     <link rel="icon" href="/static/brand/monomind-mark-white.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/static/style.css">
 </head>
