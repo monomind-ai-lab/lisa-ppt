@@ -7,7 +7,8 @@ description: >
   Use when the user asks to create, generate, reconstruct, regenerate, beautify,
   redesign, template, fill, or enhance a presentation, PPT, PPTX, slide deck, or
   courseware — including adding narration or animation to one — requests a
-  presentation-authored narrated/self-running video, or mentions ppt-master.
+  presentation-authored narrated/self-running video, or mentions ppt-master —
+  in Korean too ("PPT 만들어줘", "이 템플릿에 내용 채워줘").
 metadata:
   version: "6.1.0"
   copyright: "Copyright (c) 2025-2026 Hugo He"
