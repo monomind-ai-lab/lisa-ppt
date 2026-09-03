@@ -237,6 +237,14 @@ class DesignSpecTokenTests(unittest.TestCase):
         self.assertEqual(spec.count("- **Audience move**: [fill]"), 2)
         self.assertIn("(from the deck's decision box)", spec)
         self.assertIn("Bar chart (語系 A = 6 人", spec)
+        # Every "[fill" is a placeholder the Strategist resolves; the prose
+        # bullet never carries the literal, or validate would flag a
+        # completed spec forever.
+        source_line = next(line for line in spec.splitlines() if line.startswith("- **Source deck"))
+        self.assertNotIn("[fill", source_line)
+        for line in spec.splitlines():
+            if "[fill" in line:
+                self.assertTrue(line.startswith(("| ", "- **", "### Part")), line)
 
     def test_spec_uses_registered_canvas_when_known(self) -> None:
         deck = intake.read_deck(EVIDENCE)

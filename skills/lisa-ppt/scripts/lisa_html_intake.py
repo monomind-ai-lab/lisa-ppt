@@ -1559,7 +1559,8 @@ def render_design_spec(deck: Deck, project_name: str, canvas: Optional[dict[str,
         f"- **Source deck (fact)**: `{deck.source.name}`, template family `{deck.family}`, "
         f"{len(deck.slides)} slides, languages {', '.join(deck.languages)}"
         + (f"; the `{non_primary[0]}` text is in `sources/{deck.source.stem}.{non_primary[0]}.md`" if non_primary else "")
-        + ". Pre-filled by `lisa_html_intake.py`; every `[fill]` is a Stage-1/Stage-2 decision the markup does not carry.",
+        + ". Pre-filled by `lisa_html_intake.py`; every remaining placeholder is a Stage-1/Stage-2 "
+        "decision the markup does not carry.",
         "",
         "## II. Canvas Specification",
         "",
