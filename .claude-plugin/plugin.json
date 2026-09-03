@@ -1,6 +1,6 @@
 {
   "name": "lisa-ppt",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Turns a document or a brief into a natively editable PowerPoint deck. Every shape, text box and chart is a PowerPoint object; one .pptx, no web mode.",
   "author": {
     "name": "MonoMind AI Lab",

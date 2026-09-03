@@ -418,10 +418,18 @@ select:disabled { opacity: 0.5; cursor: not-allowed; }
 /* ── the overall impression strip ───────────────────────────── */
 /* Sticky at the top of the Style chapter, so it stays on screen while the
    color, icon and type cards below it scroll. It repaints the ground so
-   its slice lines up with the body's, like Lisa's bars. */
+   its slice lines up with the body's, like Lisa's bars.
+   The negative `top` pulls the strip up by the body's own top padding, so it
+   pins flush under the topbar. A sticky box is confined to
+   its containing block, so .style-preview-host — which app.js fills with the
+   strip, the generated-image block and the color/icon/type group — is what
+   decides how far the strip travels. It must wrap all of them. */
 .style-preview { position: sticky; top: calc(-1 * var(--space-6)); z-index: 4;
     padding: var(--space-2) 0 var(--space-3); margin: 0;
     background: var(--ground); background-attachment: fixed; }
+/* The gap the chapter used to put between the preview and the cards, now
+   that both live inside the one sticky host. */
+.style-group { margin-top: var(--space-4); }
 .style-preview-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); margin-bottom: var(--space-2); }
 .spl-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-inv); }
 .spl-note { font-size: var(--text-xs); color: var(--muted-inv); }
@@ -615,4 +623,13 @@ button.ghost:focus-visible { outline: none; box-shadow: var(--focus-ring); }
     .kbd, .colophon { display: none; }
     button.primary { padding: var(--space-3) var(--space-4); font-size: var(--text-sm); }
     button.ghost { padding: var(--space-3) var(--space-3); }
+}
+/* A short window cannot afford the pinned impression strip. The body gets
+   the window height less the topbar (156px) and the footer (78px), and the
+   strip is about 217px of that: at 760px there are still ~309px of controls
+   left under it, below that the strip starts crowding out the very pickers
+   it is there to explain. So it stops pinning and simply scrolls with the
+   chapter, as it did before it was sticky at all. */
+@media (max-height: 760px) {
+    .style-preview { position: static; }
 }
