@@ -1,8 +1,25 @@
 Lisa's PPT
 Copyright (c) 2026 MonoMind AI Lab. MIT licensed — see LICENSE.
 
-This repository is the home of a derivative of PPT Master by Hugo He
-(https://github.com/hugohe3/ppt-master, MIT). When the fork lands here, the
-upstream copyright line joins LICENSE, the forked commit is recorded in this
-file together with a statement of changes, and the upstream's sponsor
-material is not carried. Until then this repository holds only the plan.
+This repository is a hard fork: a derivative of two MIT projects, one built on
+the other, plus two vendored skills, imported once and then developed
+independently — nothing is pulled from either source again. When the import
+lands here, LICENSE keeps the upstream copyright line, this file records both
+import commits, every file ported from slide-master, any later hand-made
+backport with the commit it came from, and a statement of changes; nothing
+carries sponsor or affiliate material.
+
+  Base pipeline:  PPT Master — https://github.com/hugohe3/ppt-master
+                  Copyright (c) 2025-2026 Hugo He, MIT
+  Refinements:    slide-master — https://github.com/byungjunjang/slide-master
+                  byungjunjang, MIT (the repository asserts no copyright line
+                  of its own; credited by name, URL and imported commit)
+  Vendored skill: codex-image — https://github.com/wjb127/codex-image
+                  Copyright (c) 2026 wjb127, MIT (licence shipped in the skill)
+  Vendored skill: diagram-design — https://github.com/cathrynlavery/diagram-design
+                  Copyright (c) 2025 Cathryn Lavery, MIT (licence shipped in the skill)
+  Fonts:          Pretendard (SIL OFL 1.1), Noto Sans TC (SIL OFL 1.1),
+                  Plus Jakarta Sans (SIL OFL 1.1) — licence texts beside the files
+
+Lisa's PPT carries no runtime attribution guard. Attribution is this file and
+LICENSE, kept with the code.
