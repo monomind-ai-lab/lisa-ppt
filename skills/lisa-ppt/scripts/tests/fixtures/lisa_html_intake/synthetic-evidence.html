@@ -1,0 +1,135 @@
+<!doctype html>
+<!-- LISA:CONTENT-MAP
+     Editable regions, fenced by LISA:CONTENT-START/END comments:
+       slides — slides 01–05 (all placeholder content, incl. data-label-en/ko on each <section>)
+     Named edit points outside the fences:
+       <title> in <head>
+       body data-title-en / data-title-ko
+     Synthetic fixture for lisa_html_intake tests: one of every data component,
+     one element the importer must not recognise, one string written in one
+     language only. Not a real deck. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Synthetic evidence deck</title>
+<style>
+:root{
+  --bg:#141414;
+  --panel:#1c1c1c;
+  --panel-2:#232323;
+  --fg:#f5f3f0;
+  --fg-soft:#9a958e;
+  --fg-faint:#615d58;
+  --rule:#2e2e2e;
+  --sig:#FF5722;
+  --sig-dim:rgba(255,87,34,.13);
+  --on-sig:#141414;
+  --cyan:#22D3EE;
+  --warn:#FFC400;
+  --font-display:'Archivo Black',sans-serif;
+  --font-body:'Space Grotesk',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+body[data-lang="ko"]{
+  --font-display:'Archivo Black','Noto Sans KR',sans-serif;
+  --font-body:'Space Grotesk','Noto Sans KR',sans-serif;
+}
+</style>
+</head>
+<body data-lang="en" data-title-en="Synthetic evidence deck" data-title-ko="합성 근거 덱">
+<!-- LISA:CONTENT-START slides -->
+<section class="slide" data-label-en="Title" data-label-ko="표지">
+  <div class="slide-content">
+    <p class="eyebrow reveal"><span class="en">Fixture &middot; 2026</span><span class="ko">픽스처 &middot; 2026</span></p>
+    <h1 class="reveal"><span class="en">Every component.<br>One file.</span><span class="ko">모든 컴포넌트.<br>파일 하나.</span></h1>
+    <p class="lead reveal"><span class="en">A synthetic deck that exercises the importer.</span><span class="ko">임포터를 시험하는 합성 덱입니다.</span></p>
+    <div class="verdict reveal"><span class="en">Nothing here is invented by the importer.</span><span class="ko">여기 있는 것 중 임포터가 지어낸 것은 없습니다.</span></div>
+  </div>
+  <span class="pagenum">01 / 05</span>
+</section>
+<section class="slide" data-label-en="Section" data-label-ko="섹션">
+  <div class="slide-content" style="align-items:flex-start">
+    <div class="section-card reveal">
+      <p class="sfor"><span class="en">Feeds: the parser</span><span class="ko">쓰임: 파서</span></p>
+      <div class="sn">01</div>
+      <h2><span class="en">Tables and<br>numbers</span><span class="ko">표와<br>숫자</span></h2>
+      <p><span class="en">The part that argues from data.</span><span class="ko">데이터로 주장하는 부분.</span></p>
+    </div>
+  </div>
+  <span class="pagenum">02 / 05</span>
+</section>
+<section class="slide" data-label-en="Table" data-label-ko="표">
+  <div class="slide-content">
+    <p class="eyebrow reveal"><span class="en">Evidence</span><span class="ko">근거</span></p>
+    <h2 class="reveal"><span class="en">Three rows, one flagged</span><span class="ko">세 줄, 하나는 플래그</span></h2>
+    <table class="data reveal">
+      <thead><tr>
+        <th><span class="en">Item</span><span class="ko">항목</span></th>
+        <th><span class="en">Reading</span><span class="ko">읽기</span></th>
+        <th style="text-align:right"><span class="en">Count</span><span class="ko">개수</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="k"><span class="en">Alpha</span><span class="ko">알파</span></td><td class="m">/etc/alpha</td><td class="num">42</td></tr>
+        <tr class="flag"><td class="k"><span class="en">Beta</span><span class="ko">베타</span></td><td><span class="sig"><span class="en">the problem</span><span class="ko">문제</span></span></td><td class="num">7</td></tr>
+        <tr class="good"><td class="k"><span class="en">Gamma</span><span class="ko">감마</span></td><td><span class="en">works</span><span class="ko">작동함</span></td><td class="num">1,000</td></tr>
+      </tbody>
+    </table>
+    <p class="body reveal"><span class="en">The <span class="hl">load-bearing</span> phrase, <span class="sig">the alarming part</span>, and a <code>path/to/thing</code>.</span><span class="ko"><span class="hl">핵심</span> 구절, <span class="sig">경고 부분</span>, 그리고 <code>path/to/thing</code>.</span></p>
+    <p class="body reveal"><span class="en">This sentence was written in English only.</span></p>
+  </div>
+  <span class="pagenum">03 / 05</span>
+</section>
+<section class="slide" data-label-en="Numbers" data-label-ko="숫자">
+  <div class="slide-content">
+    <p class="eyebrow reveal"><span class="en">Counted</span><span class="ko">세어 봄</span></p>
+    <h2 class="reveal"><span class="en">Cards, a mega number, a stat row</span><span class="ko">카드, 큰 숫자, 통계 행</span></h2>
+    <div class="split reveal">
+      <div class="card"><div class="ct"><span class="en">Claimed</span><span class="ko">주장</span></div><div class="cn">120</div><div class="cd"><span class="en">From the brochure.</span><span class="ko">브로슈어에서.</span></div></div>
+      <div class="card bad"><div class="ct"><span class="en">Measured</span><span class="ko">측정</span></div><div class="cn">1,204</div><div class="cd"><span class="en">From the logs.</span><span class="ko">로그에서.</span></div></div>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:.45rem">
+      <div class="mega">3.4&times;</div>
+      <p class="mega-note"><span class="en">Per release, over one year, from the tracker.</span><span class="ko">릴리스당, 1년간, 트래커 기준.</span></p>
+    </div>
+    <div class="statrow reveal">
+      <div class="stat accent"><div class="n">9</div><div class="l"><span class="en">entries</span><span class="ko">항목</span></div></div>
+      <div class="stat warn"><div class="n">22 KB</div><div class="l"><span class="en">smallest</span><span class="ko">가장 작은</span></div></div>
+      <div class="stat cyan"><div class="n">31%</div><div class="l"><span class="en">in step</span><span class="ko">동기화됨</span></div></div>
+      <div class="stat"><div class="n">0</div><div class="l"><span class="en">installs</span><span class="ko">설치</span></div></div>
+    </div>
+    <div class="verdict cyan-v reveal"><span class="en">Already settled.</span><span class="ko">이미 정리됨.</span></div>
+  </div>
+  <span class="pagenum">04 / 05</span>
+</section>
+<section class="slide" data-label-en="Lists" data-label-ko="목록">
+  <div class="slide-content">
+    <p class="eyebrow reveal"><span class="en">Requirements and questions</span><span class="ko">요구사항과 질문</span></p>
+    <h2 class="reveal"><span class="en">Specs, points, a decision, bars</span><span class="ko">스펙, 포인트, 결정, 막대</span></h2>
+    <div class="specs">
+      <div class="spec reveal"><span class="si">01</span><span class="st"><span class="en">Publish the sync rate<em>The two differ by 47 points</em></span><span class="ko">동기화율을 공개하라<em>두 수치는 47포인트 차이가 난다</em></span></span></div>
+      <div class="spec reveal"><span class="si">02</span><span class="st"><span class="en">Two reviewers per locale<em>Three locales have one</em></span><span class="ko">언어당 검토자 두 명<em>세 언어는 한 명뿐이다</em></span></span></div>
+    </div>
+    <ul class="pts">
+      <li data-n="Q1" class="reveal"><span class="en"><span class="hl">Which shape?</span> Asked first.</span><span class="ko"><span class="hl">어떤 형태인가?</span> 가장 먼저 묻는다.</span></li>
+      <li data-n="Q2" class="reveal"><span class="en"><span class="hl">Which menu?</span> Asked last.</span><span class="ko"><span class="hl">어떤 메뉴인가?</span> 마지막에 묻는다.</span></li>
+    </ul>
+    <div class="decision reveal">
+      <div class="dq"><span class="en">Recommendation</span><span class="ko">권고</span></div>
+      <div class="da"><span class="en">Ship the marker before the next release.</span><span class="ko">다음 릴리스 전에 표시기를 출시하라.</span></div>
+    </div>
+    <div class="bars reveal">
+      <div class="bar accent"><div class="lab"><span class="en">Locale A</span><span class="ko">언어 A</span></div><div class="track"><div class="fill" style="--w:88%"></div></div><div class="val">6</div></div>
+      <div class="bar"><div class="lab"><span class="en">Locale B</span><span class="ko">언어 B</span></div><div class="track"><div class="fill" style="--w:41%"></div></div><div class="val">3</div></div>
+    </div>
+    <div class="mystery reveal"><span class="en">A component the importer has never seen.</span><span class="ko">임포터가 본 적 없는 컴포넌트.</span></div>
+    <div class="verdict dark reveal"><span class="en">A quieter closing note.</span><span class="ko">조용한 마무리.</span></div>
+    <p class="colophon reveal">
+      <a href="https://monomind.one/?ref=deck-mark">monomind ai lab</a>
+      <a href="https://html.monomind.one/?ref=file"><span class="en">Made with <span class="notranslate" translate="no">Hi Ted, Meet Lisa</span></span><span class="ko"><span class="notranslate" translate="no">Hi Ted, Meet Lisa</span>로 제작</span></a>
+    </p>
+  </div>
+  <span class="pagenum">05 / 05</span>
+</section>
+<!-- LISA:CONTENT-END slides -->
+</body>
+</html>

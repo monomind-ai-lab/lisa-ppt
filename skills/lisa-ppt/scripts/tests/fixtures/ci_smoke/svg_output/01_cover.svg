@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" data-pptx-page-role="cover">
+  <rect id="page-background" x="0" y="0" width="1280" height="720" fill="#102033" data-pptx-role="background"/>
+  <rect id="accent-rule" x="96" y="120" width="72" height="6" fill="#4F8CFF" data-pptx-role="decoration"/>
+  <g id="cover-title" data-pptx-bounds="96 160 1088 280">
+    <text x="96" y="230" font-family="Pretendard" font-size="26" font-weight="700" fill="#4F8CFF">CI smoke fixture</text>
+    <text x="96" y="310" font-family="Pretendard" font-size="56" font-weight="700" fill="#FFFFFF">One page, checked and exported</text>
+    <text x="96" y="380" font-family="Pretendard" font-size="26" fill="#FFFFFF" fill-opacity="0.72">The quality checker passes this page and the converter</text>
+    <text x="96" y="416" font-family="Pretendard" font-size="26" fill="#FFFFFF" fill-opacity="0.72">turns it into a PPTX on every pull request.</text>
+  </g>
+  <g id="cover-footer" data-pptx-bounds="96 620 1088 40">
+    <text x="96" y="650" font-family="Pretendard" font-size="18" fill="#FFFFFF" fill-opacity="0.72">Lisa's PPT · checks.yml</text>
+  </g>
+</svg>
