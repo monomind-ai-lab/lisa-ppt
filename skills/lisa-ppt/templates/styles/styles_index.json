@@ -29,6 +29,16 @@
       "concept"
     ]
   },
+  "evidence-deck": {
+    "summary": "Argue-from-numbers method for a case someone will push back on — tables that flag their own rows, stat rows, one number at display size, and a verdict bar that says what to do about it.",
+    "keywords": [
+      "evidence",
+      "numbers",
+      "verdict",
+      "audit",
+      "data-tables"
+    ]
+  },
   "incident-postmortem": {
     "summary": "Blameless incident review method that reconstructs a timeline, separates contributing factors from blame, and commits to verifiable actions.",
     "keywords": [
@@ -67,6 +77,16 @@
       "variance",
       "operations",
       "accountability"
+    ]
+  },
+  "paper-brief": {
+    "summary": "Chaptered briefing method for a document read at desk distance and forwarded — inverted chapter pages as seams, one conclusion per page, bar charts and decision boxes that say what was decided and why.",
+    "keywords": [
+      "briefing",
+      "chapters",
+      "decision",
+      "read-first",
+      "paper"
     ]
   },
   "product-launch": {
