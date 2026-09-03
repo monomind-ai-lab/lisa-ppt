@@ -1,6 +1,6 @@
 {
   "academic_defense": {
-    "summary": "Thesis defense, academic presentations, research progress reports, grant applications.",
+    "summary": "Thesis defense, academic presentations, research progress reports, grant applications — a 16:9 header-band system with a key-message strip, a two-column card agenda, and a full-bleed chapter divider.",
     "canvas_format": "ppt169",
     "page_count": 5,
     "page_types": [
@@ -12,7 +12,7 @@
     ]
   },
   "ai_ops": {
-    "summary": "Telecom AI operations architecture, IT system overviews, digital transformation proposals, smart infrastructure reports.",
+    "summary": "AI operations architecture reviews, IT system overviews, digital transformation proposals, smart infrastructure reports — a 16:9 red/blue block system with a split left block on cover and closing, warm-gray summary bands, square numbered badges indexing tag chips, dashed module panels, and a dense one-page architecture overview.",
     "canvas_format": "ppt169",
     "page_count": 6,
     "page_types": [
@@ -21,7 +21,7 @@
       "chapter",
       "content",
       "ending",
-      "reference_style"
+      "architecture_overview"
     ]
   },
   "editorial_bleed": {
@@ -42,7 +42,7 @@
     ]
   },
   "government_blue": {
-    "summary": "Key project briefings, Five-Year Plan presentations, work summaries, investment promotion, policy interpretation.",
+    "summary": "Public-sector briefings, plan presentations, work summaries, investment promotion, policy explanation — a 16:9 gradient-plane system with a top strip and left side bar, a numbered-badge agenda, a badge-and-title header over an open content field, and full-bleed dark chapter and closing pages.",
     "canvas_format": "ppt169",
     "page_count": 5,
     "page_types": [
@@ -54,7 +54,7 @@
     ]
   },
   "government_red": {
-    "summary": "Government briefings, policy interpretation, work summaries, project introductions, investment promotion.",
+    "summary": "Government and public-sector briefings, policy explanations, work reports, project introductions, investment promotion — a 16:9 two-tone system with a top gradient bar, a badge header, a side-bar agenda beside a statistics panel, and full-bleed dark cover, chapter, and closing planes.",
     "canvas_format": "ppt169",
     "page_count": 5,
     "page_types": [
@@ -66,7 +66,7 @@
     ]
   },
   "medical_university": {
-    "summary": "Medical academic reports, case discussions, research presentations, hospital work reports, medical education and training.",
+    "summary": "Medical academic reports, case discussions, research presentations, hospital work reports, medical education and training — a 16:9 header-band system with a key-message strip, a two-column card agenda, cross and pulse-trace accents, and a full-bleed chapter divider.",
     "canvas_format": "ppt169",
     "page_count": 5,
     "page_types": [
@@ -93,7 +93,7 @@
     ]
   },
   "pixel_retro": {
-    "summary": "Tech talks, programming tutorials, game introductions, geek-style showcases.",
+    "summary": "Tech talks, programming tutorials, game introductions, geek-style showcases — a 16:9 dark-plane system with neon dual rules and pixel-block corners, a framed chapter number, a tagged card agenda beside a stat panel, an open content field, and a three-card closing summary.",
     "canvas_format": "ppt169",
     "page_count": 5,
     "page_types": [
@@ -155,7 +155,7 @@
     ]
   },
   "psychology_attachment": {
-    "summary": "Psychotherapy training, academic lectures, counseling case analysis, professional sharing.",
+    "summary": "Psychotherapy training, counseling case analysis, academic lectures, professional sharing — a 16:9 system pairing full-bleed soft-gradient planes (cover, chapter, closing) with a left-rail light plane (agenda, content), a quote block and tag-chip row on the cover and chapter pages, and a dual-column agenda with a learning-goals panel.",
     "canvas_format": "ppt169",
     "page_count": 5,
     "page_types": [
