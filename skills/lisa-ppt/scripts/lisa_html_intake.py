@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Lisa HTML Deck Intake
+Lisa's PPT - Lisa HTML Deck Intake
 
 Read a finished Hi Ted, Meet Lisa slide deck — an HTML file made from the
 `monomind-deck`, `evidence-deck`, or `paper-brief` template — into a PPT
@@ -1920,7 +1920,7 @@ def resolve_project(project_arg: str, canvas_format: Optional[str]) -> tuple[Pat
         markers = ("svg_output", "sources", "README.md", "validation")
         if not any((path / marker).exists() for marker in markers):
             raise IntakeError(
-                f"{path} exists but is not a PPT Master project (no svg_output/, sources/, or README.md); "
+                f"{path} exists but is not a Lisa's PPT project (no svg_output/, sources/, or README.md); "
                 "pass a new path to create one"
             )
         return path.resolve(), False
@@ -2041,7 +2041,7 @@ def write_outputs(deck: Deck, project_path: Path, *, force: bool, archive: bool)
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Import a Hi Ted, Meet Lisa HTML slide deck into a PPT Master project.",
+        description="Import a Hi Ted, Meet Lisa HTML slide deck into a Lisa's PPT project.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
   python3 scripts/lisa_html_intake.py deck.html --project projects/deck
