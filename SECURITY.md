@@ -31,7 +31,7 @@ We will acknowledge your report within **72 hours** and aim to provide a resolut
 
 This policy covers the PPT Master source code in this repository, including:
 
-- Python scripts in `skills/ppt-master/scripts/`
+- Python scripts in `skills/lisa-ppt/scripts/`
 - Post-processing pipeline (`total_md_split.py`, `finalize_svg.py`, `svg_to_pptx.py`)
 - Project management utilities
 

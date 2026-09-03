@@ -93,13 +93,13 @@ If you're unsure, open an issue to ask — that's always welcome.
 
 If your contribution involves SVG files, follow the canonical authoring and
 PPTX-compatibility contract in
-[`shared-standards.md`](./skills/ppt-master/references/shared-standards.md).
+[`shared-standards.md`](./skills/lisa-ppt/references/shared-standards.md).
 This guide does not duplicate its required, forbidden, or conditional entries.
 
 Validate the affected SVG file or directory before submitting:
 
 ```bash
-python3 skills/ppt-master/scripts/svg_quality_checker.py <file_or_directory>
+python3 skills/lisa-ppt/scripts/svg_quality_checker.py <file_or_directory>
 ```
 
 ## Reporting Bugs

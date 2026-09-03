@@ -13,7 +13,7 @@ The authoritative skill lives in this repository at `skills/codex-image/` — a 
 source of truth shared by Claude Code and Codex. Do not hand-edit this stub;
 edit the canonical tree, then re-run:
 
-    python3 skills/ppt-master/scripts/sync_codex_stubs.py
+    python3 skills/lisa-ppt/scripts/sync_codex_stubs.py
 
 On invocation:
 

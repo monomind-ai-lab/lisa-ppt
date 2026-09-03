@@ -7,7 +7,7 @@
 PPT Master 会把**页间转场**和可选的**元素对象动画**写成真正的 PowerPoint
 OOXML，而不是嵌入视频。对象动画包括进入、强调、动作路径和退出。本文只说明
 用户需要做的选择和常用命令；精确效果映射、完整 sidecar schema、锚点规则与
-封包校验统一由[动画执行规范](../../skills/ppt-master/references/animations.md)维护。
+封包校验统一由[动画执行规范](../../skills/lisa-ppt/references/animations.md)维护。
 
 ## 默认行为
 
@@ -24,15 +24,15 @@ OOXML，而不是嵌入视频。对象动画包括进入、强调、动作路径
 
 | 目标 | 命令 |
 |---|---|
-| 保持默认设置 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project>` |
-| 更换页间转场 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -t push` |
-| 关闭视觉转场 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -t none` |
-| 每 5 秒自动翻页 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --auto-advance 5` |
-| 开启自动元素入场 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto` |
-| 全部使用同一种入场效果 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --animation entrance_fade` |
-| 单击逐个揭示元素 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-trigger on-click` |
-| 所有元素同时入场 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-trigger with-previous` |
-| 放慢逐步揭示节奏 | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-duration 0.5 --animation-stagger 0.8` |
+| 保持默认设置 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project>` |
+| 更换页间转场 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -t push` |
+| 关闭视觉转场 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -t none` |
+| 每 5 秒自动翻页 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> --auto-advance 5` |
+| 开启自动元素入场 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto` |
+| 全部使用同一种入场效果 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> --animation entrance_fade` |
+| 单击逐个揭示元素 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto --animation-trigger on-click` |
+| 所有元素同时入场 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto --animation-trigger with-previous` |
+| 放慢逐步揭示节奏 | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto --animation-duration 0.5 --animation-stagger 0.8` |
 
 ## 选择页间切换
 
@@ -76,7 +76,7 @@ OOXML，而不是嵌入视频。对象动画包括进入、强调、动作路径
 
 原生 PowerPoint 效果选项写在 `transition.effect_options` 中。方向、形状、
 图案、Morph 范围、黑场、卷页数量和弹跳等参数都会按所选效果严格校验。运行
-`python3 skills/ppt-master/scripts/pptx_animations.py --describe-transition <effect>`
+`python3 skills/lisa-ppt/scripts/pptx_animations.py --describe-transition <effect>`
 可查看精确取值。`-t none` 只关闭视觉效果，不会移除显式设置的自动翻页计时。
 
 ## 选择 Start 模式
@@ -110,7 +110,7 @@ OOXML，而不是嵌入视频。对象动画包括进入、强调、动作路径
 归一化，不再维护第二套动画行为。旧 Fly 方向名统一映射到 `entrance_fly`，旧
 Wipe 方向名统一映射到 `entrance_wipe`；方向会保留为参数，而不会形成新的规范
 预设。旧 `wheel` 保留四辐语义。运行
-`python3 skills/ppt-master/scripts/pptx_animations.py --list` 可查看完整分类清单。
+`python3 skills/lisa-ppt/scripts/pptx_animations.py --list` 可查看完整分类清单。
 4 个媒体播放命令需要媒体或书签目标，仍由音视频工作流负责。
 
 ## 在确定动效后添加声音
@@ -118,11 +118,11 @@ Wipe 方向名统一映射到 `entrance_wipe`；方向会保留为参数，而�
 音效默认关闭。PPT Master 内置了全局 CC0 音效库，但不会在策略阶段或普通
 项目初始化时把它复制进项目。先完成 SVG 页面并确定视觉转场 / 对象动画；只有
 其中一个已确定的节拍确实需要听觉提示时，才完整读取客观的
-[声音词汇表](../../skills/ppt-master/templates/sounds/sound-vocabulary.md)，选定一个
+[声音词汇表](../../skills/lisa-ppt/templates/sounds/sound-vocabulary.md)，选定一个
 准确 id 并同步声音：
 
 ```bash
-python3 skills/ppt-master/scripts/sound_sync.py \
+python3 skills/lisa-ppt/scripts/sound_sync.py \
   <project> bigsoundbank/1797 kenney-interface/click_001
 ```
 
@@ -131,7 +131,7 @@ PPT Master 不创建项目 `sounds/` 目录，也不复制任何文件。完整�
 用 CLI 缩小已经考虑过的名称、标签或语境范围，但它不负责判断适配性：
 
 ```bash
-python3 skills/ppt-master/scripts/sound_sync.py list --query whoosh
+python3 skills/lisa-ppt/scripts/sound_sync.py list --query whoosh
 ```
 
 配置始终引用复制后的项目相对路径，不直接引用全局 `templates/sounds/` 路径，
@@ -176,9 +176,9 @@ python3 skills/ppt-master/scripts/sound_sync.py list --query whoosh
 未修改的 `{}` 分组条目不会开启动画。
 
 ```bash
-python3 skills/ppt-master/scripts/animation_config.py list-groups <project>
-python3 skills/ppt-master/scripts/animation_config.py validate <project>
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project>
+python3 skills/lisa-ppt/scripts/animation_config.py list-groups <project>
+python3 skills/lisa-ppt/scripts/animation_config.py validate <project>
+python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project>
 ```
 
 sidecar 以稳定的顶层 `<g id="...">` 内容组为目标。group ID 是 PowerPoint
@@ -228,7 +228,7 @@ shape target 锚点，不等同于 Animation Pane 中的一行。兼容的单效
 页面级动画 trigger 只负责提供继承值。`trigger_shape` 隐含 `on-click`；若同一行
 也显式写了 `trigger`，其值必须是 `on-click`。
 
-运行 `python3 skills/ppt-master/scripts/pptx_animations.py --describe
+运行 `python3 skills/lisa-ppt/scripts/pptx_animations.py --describe
 <canonical_effect>` 可查看该效果实际接受的完整参数。速度由 `duration` 控制，
 平滑开始/结束由 `accelerate`/`decelerate` 控制。Change Font 的 `font_name`
 必须是目标环境已安装的一个具体 PowerPoint 字体名，不能写 CSS 字体列表。
@@ -236,7 +236,7 @@ shape target 锚点，不等同于 Animation Pane 中的一行。兼容的单效
 `trigger_shape` 指向同一页另一个分组 id，并且只影响所在动画行。录制旁白不接受
 任何最终解析为 `on-click` 的动画行，其中包括 `trigger_shape` 行。
 
-当用户要求 AI 调整具体对象时，使用 [`customize-animations`](../../skills/ppt-master/workflows/stages/customize-animations.md) 阶段。完整 sidecar schema 与目标校验规则仍由[动画执行规范](../../skills/ppt-master/references/animations.md)维护。
+当用户要求 AI 调整具体对象时，使用 [`customize-animations`](../../skills/lisa-ppt/workflows/stages/customize-animations.md) 阶段。完整 sidecar schema 与目标校验规则仍由[动画执行规范](../../skills/lisa-ppt/references/animations.md)维护。
 
 ## 校验与兼容性
 
@@ -252,4 +252,4 @@ PPT Master 会严格校验动画设置：未知效果或 Start 模式、非法�
 | PPTX-to-SVG 回导 | 只重建当前注册表内具有精确原生时长且可唯一映射到顶层 group 的记录；高级/build/media timing 保留诊断 |
 | 播放兼容性 | Microsoft PowerPoint 桌面版是主要验证目标；Keynote、WPS、LibreOffice 与较旧 Office 可能重新映射或忽略个别效果 |
 
-完整 CLI 说明见 [`svg-pipeline.md`](../../skills/ppt-master/scripts/docs/svg-pipeline.md)。精确效果定义、sidecar 要求、锚点回退逻辑与 OOXML 回读规则见[动画执行规范](../../skills/ppt-master/references/animations.md)。
+完整 CLI 说明见 [`svg-pipeline.md`](../../skills/lisa-ppt/scripts/docs/svg-pipeline.md)。精确效果定义、sidecar 要求、锚点回退逻辑与 OOXML 回读规则见[动画执行规范](../../skills/lisa-ppt/references/animations.md)。

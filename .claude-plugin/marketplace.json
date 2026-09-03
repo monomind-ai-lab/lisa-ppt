@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "ppt-master",
+  "name": "monomind-ppt",
   "owner": {
     "name": "MonoMind AI Lab",
     "url": "https://github.com/monomind-ai-lab"
@@ -11,7 +11,7 @@
   },
   "plugins": [
     {
-      "name": "ppt-master",
+      "name": "lisa-ppt",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/monomind-ai-lab/lisa-ppt.git",

@@ -6,4 +6,4 @@ content itself lives only under `skills/`.
 
 Do not hand-edit files under `.codex/skills`. Edit `skills/`, then run:
 
-    python3 skills/ppt-master/scripts/sync_codex_stubs.py
+    python3 skills/lisa-ppt/scripts/sync_codex_stubs.py

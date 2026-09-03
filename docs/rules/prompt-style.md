@@ -1,6 +1,6 @@
 # Reference Document Style Guide
 
-> Style rules for files under `skills/ppt-master/references/`. Follow these when writing or reviewing role definitions and shared specs.
+> Style rules for files under `skills/lisa-ppt/references/`. Follow these when writing or reviewing role definitions and shared specs.
 
 The reference layer drives runtime LLM behavior. Style consistency across these files matters as much as correctness — divergent voice / structure forces the model to re-interpret each file from scratch and bloats the loaded context.
 
@@ -186,7 +186,7 @@ not permit Executor to acquire visual resources.
 
 **Hard rule — default pipeline**: downstream freedom exists in every dimension the plan leaves open, and every Reference is open by definition. A named binding outcome retains identity; a broad semantic request or expression recommendation permits in-class choice. Once the plan resolves a plan-only choice or a `(binding)` Reference, execution cannot reopen or substitute it. For icons, library/stroke and the prepared-project boundary bind, while per-page choice within the prepared pool is realization. Executor never searches, generates, downloads, syncs, invents, or replaces a resource; missing material returns to Strategist-owned preparation or upstream repair.
 
-**Explicit Quick Generate exception**: [`quick-generate`](../../skills/ppt-master/workflows/profiles/quick-generate.md) removes the separate Strategist/confirmation handoff. The current main agent therefore owns both its active-context decisions and the preparation of project-local sources, images, icons, and provenance before it begins SVG realization; native formulas are authored directly from exact mathematical content rather than acquired as resources. This exception does not move acquisition into a default-pipeline Executor and does not permit resource reselection while a page is being realized. Explicit user facts, choices, exclusions, and permissions remain upstream authority; unspecified routine choices are resolved automatically without a confirmation stop.
+**Explicit Quick Generate exception**: [`quick-generate`](../../skills/lisa-ppt/workflows/profiles/quick-generate.md) removes the separate Strategist/confirmation handoff. The current main agent therefore owns both its active-context decisions and the preparation of project-local sources, images, icons, and provenance before it begins SVG realization; native formulas are authored directly from exact mathematical content rather than acquired as resources. This exception does not move acquisition into a default-pipeline Executor and does not permit resource reselection while a page is being realized. Explicit user facts, choices, exclusions, and permissions remain upstream authority; unspecified routine choices are resolved automatically without a confirmation stop.
 
 > Mnemonic — restaurant contract: the customer supplies initial ingredients and the desired dish; Strategist plans the dish and prepares the complete mise en place; Executor cooks from that prepared inventory. “Mapo tofu” cannot become tomato-and-eggs or tofu soup, while “a tofu dish” leaves deliberate in-class freedom. Equally: the plan is the general contractor — materials, structure, and a first blueprint; Executor is the crew that builds the finished work on that structure, adapting to the site.
 
@@ -319,10 +319,10 @@ The canonical exemplars to model new files after:
 
 | If you're writing... | Model after |
 |---|---|
-| A role reference (Image_X / Strategist-style) | [`image-searcher.md`](../../skills/ppt-master/references/image-searcher.md), [`strategist.md`](../../skills/ppt-master/references/strategist.md) |
-| A shared spec across roles | [`image-base.md`](../../skills/ppt-master/references/image-base.md), [`shared-standards-core.md`](../../skills/ppt-master/references/shared-standards-core.md) |
-| A technical / format spec | [`canvas-formats.md`](../../skills/ppt-master/references/canvas-formats.md), [`svg-image-embedding.md`](../../skills/ppt-master/references/svg-image-embedding.md), [`image-layout-spec.md`](../../skills/ppt-master/references/image-layout-spec.md) |
-| Stage runbook | [`workflows/stages/verify-charts.md`](../../skills/ppt-master/workflows/stages/verify-charts.md) |
+| A role reference (Image_X / Strategist-style) | [`image-searcher.md`](../../skills/lisa-ppt/references/image-searcher.md), [`strategist.md`](../../skills/lisa-ppt/references/strategist.md) |
+| A shared spec across roles | [`image-base.md`](../../skills/lisa-ppt/references/image-base.md), [`shared-standards-core.md`](../../skills/lisa-ppt/references/shared-standards-core.md) |
+| A technical / format spec | [`canvas-formats.md`](../../skills/lisa-ppt/references/canvas-formats.md), [`svg-image-embedding.md`](../../skills/lisa-ppt/references/svg-image-embedding.md), [`image-layout-spec.md`](../../skills/lisa-ppt/references/image-layout-spec.md) |
+| Stage runbook | [`workflows/stages/verify-charts.md`](../../skills/lisa-ppt/workflows/stages/verify-charts.md) |
 
 ---
 
