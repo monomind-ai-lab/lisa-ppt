@@ -39,6 +39,14 @@ PPT Master turns source material into natively editable DrawingML PPTX. Generate
 - Canvas choices live in [`skills/ppt-master/references/canvas-formats.md`](skills/ppt-master/references/canvas-formats.md).
 - Icon library details live in [`skills/ppt-master/templates/icons/README.md`](skills/ppt-master/templates/icons/README.md).
 
+## Font Policy (house family)
+
+- **Bundled family: Pretendard** (SIL OFL 1.1) at [`skills/ppt-master/assets/fonts/Pretendard/`](skills/ppt-master/assets/fonts/Pretendard/) beside its licence — exactly six weights: Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700, ExtraBold 800. Prompts, specs and locks may name only these; no other cut of the family exists in this repository.
+- **Author it as** `Pretendard` with `font-weight` 400 / 700, and the intermediate cuts as their own family names at normal weight — `"Pretendard Light"`, `"Pretendard Medium"`, `"Pretendard SemiBold"`, `"Pretendard ExtraBold"`. The converter writes Pretendard into both the Latin and East-Asian typeface slots (`DUAL_SCRIPT_FONTS` in [`scripts/svg_to_pptx/drawingml/utils.py`](skills/ppt-master/scripts/svg_to_pptx/drawingml/utils.py)), so mixed Korean/Latin runs stay in one family.
+- **Hierarchy through weight, size, tracking and colour, never by switching families.** Every SVG-authored deck uses the house family as its fixed stack unless the user names another face in the current conversation or a selected template declares its own; Strategist presents one weight-role plan and size ramp, not alternative families ([`strategist.md` §g](skills/ppt-master/references/strategist.md)). Direct-PPTX routes preserve source fonts.
+- **Install it wherever decks are authored or opened**: `python3 skills/ppt-master/scripts/install_fonts.py` (user-level on macOS, Windows and Linux; `--dry-run` shows the plan, `--check` reports). PPTX does not embed fonts; a deck shared to a machine without Pretendard falls back to a system face — record "requires Pretendard" in the Design Spec when a deck will travel.
+- Any CSS tail after `Pretendard` in a `font-family` stack is a browser-preview aid only. The cross-platform per-language tail, and one house family per language (Pretendard for Korean, Noto Sans TC for Traditional Chinese, a Latin face for English), are decided in the rebrand — see [`PLAN.md`](PLAN.md).
+
 ## Required Conventions
 
 - **Repo-wide style rules** — when editing prompt files under [`skills/ppt-master/references/`](skills/ppt-master/references/), Python under [`skills/ppt-master/scripts/`](skills/ppt-master/scripts/), or any other code/prose in the repo, follow the matching style rule in [`docs/rules/`](docs/rules/).

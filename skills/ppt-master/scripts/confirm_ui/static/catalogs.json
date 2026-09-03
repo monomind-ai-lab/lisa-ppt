@@ -132,6 +132,27 @@
   ],
   "fonts": [
     {
+      "id": "Pretendard",
+      "label": "Pretendard",
+      "label_zh": "Pretendard",
+      "label_zh_tw": "Pretendard",
+      "label_en": "Pretendard",
+      "label_ja": "Pretendard",
+      "label_ko": "Pretendard",
+      "locales": [
+        "ko-KR",
+        "ko",
+        "en"
+      ],
+      "scripts": [
+        "Kore",
+        "Latn"
+      ],
+      "category": "sans-serif",
+      "css": "sans-serif",
+      "availability": "bundled"
+    },
+    {
       "id": "Microsoft YaHei",
       "label": "Microsoft YaHei",
       "label_zh": "微软雅黑",

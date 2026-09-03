@@ -91,6 +91,16 @@ EA_FONTS = {
 }
 SYSTEM_FONTS = {'system-ui', '-apple-system', 'BlinkMacSystemFont'}
 
+# Fonts that cover BOTH Latin and East Asian scripts natively — fill both the
+# latin and ea typeface slots so mixed-script runs stay in one family.
+# Pretendard: Korean + Latin, bundled at assets/fonts/Pretendard/ (SIL OFL) in
+# exactly these six weights; the family names are the ones the installer
+# registers (Regular/Bold fold into `Pretendard`, the rest are own families).
+DUAL_SCRIPT_FONTS = {
+    'Pretendard', 'Pretendard Light', 'Pretendard Medium',
+    'Pretendard SemiBold', 'Pretendard ExtraBold',
+}
+
 # macOS/Linux-only fonts -> Windows equivalents
 FONT_FALLBACK_WIN = {
     'PingFang SC': 'Microsoft YaHei',
@@ -173,6 +183,9 @@ PPT_SAFE_FONTS = frozenset({
     'meiryo', 'meiryo ui',
     'ms gothic', 'ms mincho', 'ms pgothic', 'ms pmincho', 'ms ui gothic',
     'malgun gothic', 'gulim', 'dotum', 'batang',
+    # House family bundled at assets/fonts/Pretendard/ (see DUAL_SCRIPT_FONTS).
+    'pretendard', 'pretendard light', 'pretendard medium',
+    'pretendard semibold', 'pretendard extrabold',
     'arial', 'arial black', 'calibri', 'segoe ui', 'verdana',
     'helvetica', 'helvetica neue', 'tahoma', 'trebuchet ms',
     'times new roman', 'times', 'georgia', 'cambria', 'palatino',
@@ -3186,7 +3199,10 @@ def parse_font_family(font_family_str: str) -> dict[str, str]:
             continue
 
         win_font = FONT_FALLBACK_WIN.get(font, font)
-        if font in EA_FONTS:
+        if font in DUAL_SCRIPT_FONTS:
+            latin_font = latin_font or win_font
+            ea_font = ea_font or win_font
+        elif font in EA_FONTS:
             ea_font = ea_font or win_font
         else:
             latin_font = latin_font or win_font
