@@ -66,12 +66,12 @@ For long-term use, Git clone is recommended. ZIP is fine for a quick trial, but 
 
 If the folder has no `.git` directory it is a ZIP install: migrate it as the table says.
 
-## Q: The repo is over 1 GB and my skills tool fails to download it — can I get just the skill?
+## Q: How big is the repository, and can I get just the skill?
 
-Yes. The full repository is large (Git history plus bundled example decks and their assets), and that size is baked into the history — it can't be trimmed without breaking the many existing forks. If you only want the skill and not the full repo, use a lightweight path instead:
+A clone is about 90 MB of Git history and checks out to about 70 MB, of which `skills/lisa-ppt/templates/icons/` (11,801 SVGs) is 48 MB and the bundled fonts are 33 MB. The plugin path installs this repository as the plugin root (`.claude-plugin/marketplace.json` points its one plugin at `./`), so `/plugin install lisa-ppt@monomind-ppt` and `codex plugin marketplace add monomind-ai-lab/lisa-ppt` fetch the whole tree; `requirements.txt`, `projects/` and the `.codex/skills/` stubs sit at that root. If you only want the skill directories:
 
-- **Marketplace CLI**: `npx skills add monomind-ai-lab/lisa-ppt` or Claude Code's `/plugin install` fetch the skill files only (see the Set Up section of the README).
-- **Manual download**: GitHub → **Code** → **Download ZIP** of the repository; the skill is the `skills/` directory inside it.
+- **Agent Skills CLI**: `npx skills add monomind-ai-lab/lisa-ppt` fetches the `skills/` tree.
+- **Manual download**: GitHub → **Code** → **Download ZIP** of the repository; the skills are the `skills/` directory inside it.
 
 For either skill-only path, locate the installed skill directory that contains `SKILL.md` and `requirements.txt`, then run `python3 -m pip install -r "<installed-skill-dir>/requirements.txt"` so the post-processing scripts work.
 

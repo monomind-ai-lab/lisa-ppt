@@ -65,11 +65,11 @@ Lisa's PPT 可以在任何能读取文件和执行命令、支持 Agent 的 AI �
 
 目录里没有 `.git` 就是 ZIP 安装：按表格里的 ZIP 方式迁移。
 
-## Q: 仓库超过 1 GB，skills 工具下载直接失败——能只拿 skill 吗？
+## Q: 仓库有多大？能只拿 skill 吗？
 
-可以。完整仓库确实很大（Git 历史，加上内置的示例 deck 及其素材），而且这个体积是写进历史里的——在不破坏已有大量 fork 的前提下没法瘦身。如果你只想要 skill、不需要完整仓库，用下面的轻量方式：
+clone 下来约 90 MB 的 Git 历史，检出后约 70 MB，其中 `skills/lisa-ppt/templates/icons/`（11,801 个 SVG）占 48 MB，内置字体占 33 MB。插件路径把这个仓库整体作为插件根目录安装（`.claude-plugin/marketplace.json` 里唯一的插件指向 `./`），所以 `/plugin install lisa-ppt@monomind-ppt` 和 `codex plugin marketplace add monomind-ai-lab/lisa-ppt` 拉取的是完整目录树；`requirements.txt`、`projects/` 和 `.codex/skills/` 的 stub 都在这个根目录下。如果只想要 skill 目录：
 
-- **Marketplace CLI**：`npx skills add monomind-ai-lab/lisa-ppt`，或 Claude Code 里的 `/plugin install`，都只拉取 skill 文件（见 README 的「开始设置」一节）。
+- **Agent Skills CLI**：`npx skills add monomind-ai-lab/lisa-ppt` 只拉取 `skills/` 目录树。
 - **手动下载**：在 GitHub 上 **Code** → **Download ZIP** 下载仓库；skill 就是其中的 `skills/` 目录。
 
 两种 skill-only 方式装好后，找到同时包含 `SKILL.md` 与 `requirements.txt` 的 skill 安装目录，再运行 `python3 -m pip install -r "<installed-skill-dir>/requirements.txt"`，后处理脚本才能工作。
