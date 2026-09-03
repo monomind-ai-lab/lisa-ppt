@@ -8,7 +8,7 @@ description: Optional quality-gate stage for per-page rubric-based visual review
 
 ## When to Run
 
-Only when the user explicitly requests visual review — never auto-invoked from model capability or deck size — after Executor has finished all pages and `svg_quality_checker.py` has passed, before `finalize_svg.py` / `svg_to_pptx.py`. Run [`verify-charts`](./verify-charts.md) first for decks with data charts; this stage covers rhythm, collision, and alignment, not coordinate math. Do not run when `svg_output/` is incomplete, the static checker has not passed, or the user is already in a `live-preview` annotation loop.
+Only when the user explicitly requests visual review — never auto-invoked from model capability or deck size — after Executor has finished all pages and `svg_quality_checker.py` has passed, before `finalize_svg.py` / `svg_to_pptx.py`. Run [`verify-charts`](./verify-charts.md) first for decks with data charts; this stage covers rhythm, collision, and alignment, not coordinate math. Do not run when `svg_output/` is incomplete or the static checker has not passed.
 
 **Token cost**: each batch subagent re-reads the rubric + `design_spec.md` + `spec_lock.md` (+ Style Review Focus) and processes K SVG+PNG pairs — on the order of 100–150K additional input tokens for a 20-page deck at K=5.
 
@@ -18,10 +18,9 @@ Only when the user explicitly requests visual review — never auto-invoked from
 
 ```bash
 pip install playwright && python3 -m playwright install chromium          # PNG renderer
-python3 skills/lisa-ppt/scripts/svg_editor/server.py <project_path> --no-browser   # live-preview server (skip if already running)
 ```
 
-The renderer does not auto-start the server; it discovers the port from `live_preview/lock.json` (or an explicit `--server-url`) and validates `/api/health` against the target project. Playwright, not cairosvg, because cairo has no font-fallback chain and renders CJK as tofu; chromium output matches the live-preview browser.
+That is the whole prerequisite. The renderer is standalone: it reads `svg_output/` off disk, inlines `<use data-icon>` from the project's `icons/`, and resolves each relative `<image href>` against the project — there is no server to start and no port to discover. Playwright, not cairosvg, because cairo's text API has no font-fallback chain and renders CJK as tofu; chromium applies the same font fallback a browser would.
 
 ---
 

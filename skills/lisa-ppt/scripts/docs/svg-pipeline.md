@@ -978,13 +978,14 @@ Behind [`native-formula.md`](../../references/native-formula.md) §3. The compil
 Pure render-and-validate tool for the [`visual-review`](../../workflows/stages/visual-review.md) stage; it never edits SVGs and reads no rubric rule.
 
 ```bash
-python3 scripts/visual_review.py <project_path> [--pages <token> ...] [--server-url http://127.0.0.1:<P>]
+python3 scripts/visual_review.py <project_path> [--pages <token> ...]
 ```
 
-- Requires `playwright` plus chromium and a running live-preview server for the same project; without `--server-url` it discovers the port from `<project>/live_preview/lock.json`, and in either case validates `/api/health` against the target project and rejects a server for another project.
-- Output PNG matches the live-preview browser (inlined `<use data-icon>`, resolved `<image href>`); the root SVG `viewBox` is the canvas source of truth, and each successful page record carries `view_box`, `width` / `height`, and raster `png_width` / `png_height`; output dimensions equal that record's raster size. A record with `"all_background": true` rendered to a blank surface.
+- Requires `playwright` plus chromium. Nothing else: the tool is standalone, reading `<project>/svg_output/` straight off disk with no server, port, or lock file of its own to discover.
+- Each page is loaded from disk, its `<use data-icon>` references inlined from `<project>/icons/`, and its relative `<image href>` resolved against the project — the render is anchored inside `svg_output/` so `../images/...` reaches the same file the exporter embeds. Unresolvable icons are reported per page under `icon_warnings` rather than silently dropped.
+- The root SVG `viewBox` is the canvas source of truth; each successful page record carries `view_box`, `width` / `height`, and raster `png_width` / `png_height`, and output dimensions equal that record's raster size. A record with `"all_background": true` rendered to a blank surface.
 - Renders are serialized by `<project>/.preview/.render.lock`, so concurrent invocation is safe.
-- Exit codes: `0` all requested pages rendered; `2` live-preview server unreachable or serving a different project; `3` playwright/chromium missing or unable to launch; `4` page-level render failure (details on stderr, partial output on disk).
+- Exit codes: `0` all requested pages rendered; `2` project path or `svg_output/` unusable; `3` playwright/chromium missing or unable to launch; `4` page-level render failure (details on stderr, partial output on disk).
 
 ## `total_md_split.py`
 
