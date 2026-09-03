@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="academic_defense_master" data-pptx-master-name="Academic Defense"
+  data-pptx-layout="chapter" data-pptx-layout-name="Chapter">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="chapter-background" x="0" y="0" width="1280" height="720" fill="#003366"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <path id="chapter-geometry-wedge" d="M800 0 L1280 0 L1280 720 L600 720 Z" fill="#004080" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-geometry-edge" x="1200" y="0" width="80" height="720" fill="#002244" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-accent-bar" x="0" y="240" width="12" height="240" fill="#CC0000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-title-rule" x1="380" y1="265" x2="500" y2="265" stroke="#CC0000" stroke-width="6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="chapter-number-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="100 220 600 330">
+    <text id="chapter-number-carrier" data-pptx-carrier="true"
+      x="120" y="480" fill="#FFFFFF" fill-opacity="0.08"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="280" font-weight="700">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="chapter-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="380 280 844 90">
+    <text id="chapter-title-carrier" data-pptx-carrier="true"
+      x="380" y="340" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="chapter-desc-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="380 384 844 52">
+    <text id="chapter-desc-carrier" data-pptx-carrier="true"
+      x="380" y="410" fill="#E8F4FC"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="24">{{CHAPTER_DESC}}</text>
+  </g>
+  <g id="chapter-footer-slot" data-pptx-placeholder="footer" data-pptx-idx="3"
+    data-pptx-bounds="640 656 600 40">
+    <text id="chapter-footer-carrier" data-pptx-carrier="true"
+      x="1240" y="680" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{FOOTER_NOTE}}</text>
+  </g>
+</svg>
