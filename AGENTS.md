@@ -74,7 +74,6 @@ python3 skills/lisa-ppt/scripts/icon_sync.py <project_path> <lib/name> [...]    
 python3 skills/lisa-ppt/scripts/confirm_ui/server.py <project_path> --daemon        # then --wait-only --wait-stage stage1
 python3 skills/lisa-ppt/scripts/analyze_images.py <project_path>/images
 python3 skills/lisa-ppt/scripts/image_gen.py --manifest <project_path>/images/image_prompts.json   # in-pipeline AI images, even for 1
-python3 skills/lisa-ppt/scripts/svg_editor/server.py <project_path> --live --daemon
 python3 skills/lisa-ppt/scripts/svg_quality_checker.py <project_path> --canonical-authoring
 python3 skills/lisa-ppt/scripts/pptx_to_svg.py <source.pptx> -o projects/<slug>_<YYYYMMDD> --inheritance-mode both --roundtrip   # Edit Native PPTX
 python3 skills/lisa-ppt/scripts/svg_to_pptx.py projects/<slug>_<YYYYMMDD> --roundtrip

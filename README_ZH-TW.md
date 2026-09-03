@@ -66,7 +66,7 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 /lisa-ppt projects/q3/sources/report.pdf，給董事會看，10 頁左右，語氣收斂
 ```
 
-讀取來源、在瀏覽器開啟引導介面、每頁寫一張 SVG 並即時預覽、檢查幾何，然後匯出 `projects/q3/exports/<標題>_ver1.pptx`。
+讀取來源、在瀏覽器開啟引導介面、每頁寫一張 SVG、檢查幾何，然後匯出 `projects/q3/exports/<標題>_ver1.pptx`。
 
 ```text
 /lisa-ppt 一份向非工程師解釋 RAG 的簡報；資料你自己查
@@ -108,7 +108,7 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 1. **你交出來源。** 一份 PDF、一份 DOCX、Markdown、一個網址、一張試算表，或一段文字。代理程式建立 `projects/<名稱>/` 並讀取它。
 2. **引導介面在你的瀏覽器裡開啟**，英文、韓文或繁體中文（上游的簡體中文與日文也保留）。兩個階段：先是溝通契約，然後是最終方案與製作。畫布、頁數、版型或品牌、字型、圖片政策；每個問題都有預設值。每個選項都是型錄裡的 id，所以你讀題目用的語言不會滲進簡報。
 3. **圖片**，如果你要的話，透過 Codex 的 `image_gen`。
-4. **每頁一張 SVG**，依確認過的設計系統寫成，附即時預覽。在預覽裡點一個位置加上註記，代理程式就修那一頁。
+4. **每頁一張 SVG**，依確認過的設計系統寫成。在聊天裡說你要改哪裡，代理程式就修那一頁。
 5. **幾何關卡。** 重疊的文字、跑出畫布的圖形、彆扭的斷行，由字寬計算找出並修正；被標記的頁面會再渲染成像素看一次。開口要求，就逐頁做視覺檢查。
 6. **匯出。** 轉換器把每張 SVG 變成 DrawingML，寫出 `projects/<名稱>/exports/<標題>_ver<N>.pptx`。交付檢查會把檔案讀回來，確認封裝完整與可攜性。
 
@@ -173,7 +173,7 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 - **`lisa-ppt`**：主流程。引導、SVG 頁面、品質關卡、匯出，以及 Edit Native PPTX 路線——填入範本，或替做好的檔案加上備忘稿、旁白與轉場。
 - **`codex-image`**：透過 Codex CLI 產生圖片，內含透明背景的因應做法。基於 wjb127/codex-image。
 - **`diagram-design`**：圖解構圖規則，vendor 自 cathrynlavery/diagram-design。它的獨立流程已關閉，被停用的原文逐字保留作為紀錄。
-- **確認介面**、附即時預覽的 SVG 編輯器、DrawingML 轉換器、品質檢查器，以及 `.codex/skills` 的 stub 同步。
+- **確認介面**、DrawingML 轉換器、品質檢查器，以及 `.codex/skills` 的 stub 同步。
 - **範本**：十四套版型、`monomind` 品牌、與上游十二套並列的 `evidence-deck` 與 `paper-brief` 風格、圖表與表格範本，以及圖示庫。
 
 ---

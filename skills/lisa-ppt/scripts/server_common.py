@@ -3,10 +3,10 @@
 Lisa's PPT - Local Preview Server Helpers
 
 Shared per-project mutual-exclusion (lock) and liveness helpers for the local
-Flask preview servers (`svg_editor/server.py`, `confirm_ui/server.py`). Each
-server keeps its own lock filename and Flask app; this module owns only the
-cross-platform process-liveness check and the claim/read/release lock logic so
-the two servers cannot drift apart.
+Flask UI servers — currently `confirm_ui/server.py`. A server keeps its own
+lock filename and Flask app; this module owns only the cross-platform
+process-liveness check and the claim/read/release lock logic, so any further
+local server starts from the same behavior instead of reimplementing it.
 
 Usage:
     from server_common import find_free_port, validate_port

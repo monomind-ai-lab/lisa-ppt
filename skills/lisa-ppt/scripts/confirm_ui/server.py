@@ -141,9 +141,8 @@ _ICON_PREVIEW_SAMPLES = {
     'phosphor-duotone': ('house', 'chart-line', 'users', 'target'),
 }
 
-# Keep the long-standing Confirm UI entry port. Live preview uses a separate
-# base range so stale preview tabs cannot address a later Confirm UI process.
-# Concurrent Confirm UI sessions advance while explicit ``--port`` remains exact.
+# Keep the long-standing Confirm UI entry port. Concurrent Confirm UI
+# sessions advance from it while an explicit ``--port`` remains exact.
 DEFAULT_PORT = 5050
 PUBLIC_HOST = '127.0.0.1'
 STARTUP_TIMEOUT = 10
@@ -3042,7 +3041,7 @@ def build_parser() -> argparse.ArgumentParser:
         '--shutdown', action='store_true',
         help='Stop a confirm server left running for this project, then exit '
              '(idempotent). Run at the end of Step 4 so the page never lingers '
-             'on its selected port before live preview starts.',
+             'on its selected port once the confirmation is done.',
     )
     parser.add_argument(
         '--complete-template-selection', action='store_true',

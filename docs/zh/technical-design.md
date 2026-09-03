@@ -65,7 +65,6 @@ Lisa's PPT 不以“任意 SVG 都能转成 PPTX”为目标。`svg_output/` 使
 [Image Acquisition] 图片获取（当资源列表中有需要 AI 生成、网络搜索或切片的图片时）
     ↓
 [Executor] 执行师
-    ├── 生成开始前启动 live preview，并在生成期间保持可用
     ├── 先生成 P01 → svg_quality_checker.py --stage first-page --json
     ├── 把 P01 作为方法样本分类完整 issue set；消除全部 blocking error，并处理选定的 advisory warning
     ├── P02 至末页连续生成项目规范化 SVG 页面 → svg_output/（中途不再运行 checker）
@@ -167,7 +166,6 @@ narration 标记。
 | 用户想从一个或多个 PPTX/SVG、图片/PDF、文档/网站、品牌资产、直接文字或混合参考材料包构建可复用模板工作区 | Create Template（`create-template`） | 固定入口读取每个适用证据通道，只分派一个 Create Brand、Create Style、Create Layout 或 Create Deck 子工作流，再返回作为 Generate Stage 1 候选的工作区根目录；结构型子工作流可导出审阅 PPTX |
 | Default Generate 进入规划；本次运行可能已带精确工作区 root 或 Create Template handoff | Generate PPTX Stage 1 | Step 3 只准备候选；Stage 1 同时确认沟通与自由设计/模板使用；普通请求默认自由设计，明确模板意图或任意 root 默认模板模式，且只有单 root 会预选；随后才安装供 Stage 2 读取 |
 | 用户要求调整对象级动画顺序 / 效果 / 计时 | Generate PPTX + `customize-animations` 阶段 | 通过 `animations.json` 控制可选导出策略 |
-| 用户要求预览、选择、注解或重导出浏览器编辑 | Generate PPTX + `live-preview` 阶段 | 注解只在规定交接点应用 |
 
 “优化这份 PPT”这类含糊请求先归约为一个判定点：通过 Generate 重做可见页面，还是通过 Edit Native PPTX 保留并编辑原生 deck。进入 Generate 后，保留页数、页序和逐页措辞时选择 `beautify-pptx` profile，重建故事时使用普通 profile；只有明确要求快速时才选择 Quick，否则使用 Default。
 
@@ -316,7 +314,6 @@ profile 省略规划产物与 `svg_final/`，但项目中仍可按需存在已�
 | `templates/` | 复制进项目的模板 spec / SVG reference / 非图片模板资产 |
 | `svg_output/` | 唯一手写 SVG 源目录 |
 | `svg_final/` | 强制派生的视觉预览 SVG；尝试内联受支持位图 / SVG，保留 EMF/WMF 外链例外；服务 IDE / 浏览器，也可手动作为 SVG 图片插入 PowerPoint |
-| `live_preview/` | 预览服务状态、直接编辑历史和注解日志 |
 | `notes/` | `total.md` 与拆分后的逐页讲稿 |
 | `validation/` | 冷流程审计日志、SVG 质量报告与 PPTX postflight 审计报告 |
 | `exports/` | 带时间戳的 native PPTX 交付物 |
@@ -472,7 +469,7 @@ Generate 路由会在加载流程前选定一份运行时权威：[`workflows/ge
 
 全路由通用的停止 / 继续规则以 [`failure-recovery.md`](../../skills/lisa-ppt/workflows/governance/failure-recovery.md) 为准；其中具体故障矩阵与续跑入口目前覆盖 Generate PPTX。本节不复制这些规则。
 
-其中三条边界尤其关键。第一，页面 SVG 必须由当前主代理逐页手写；禁止写 Python / Node / shell 生成器批量吐 SVG，因为这种输出会丢失跨页判断和视觉连续性。第二，默认流程节奏是 `P01 → first-page gate → 不间断生成其余页面 → final gate`。P01 是方法样本：执行者先输出 `gate-signal`，再把已解决的方法规则带入后续页面；P02 到末页之间不分批，也不插入 checker。`quick-generate` 仍串行手写并以 P01 为视觉锚点，跳过首屏 gate，并在完整 roster 生成后运行一次无锁 final gate。第三，路由是确定性的：原生 PPTX 模板、beautify、Edit Native PPTX、自定义动画、live preview 等触发条件已经在仓库里定义清楚时，不再额外抛给用户一个开放式路线选择题。
+其中三条边界尤其关键。第一，页面 SVG 必须由当前主代理逐页手写；禁止写 Python / Node / shell 生成器批量吐 SVG，因为这种输出会丢失跨页判断和视觉连续性。第二，默认流程节奏是 `P01 → first-page gate → 不间断生成其余页面 → final gate`。P01 是方法样本：执行者先输出 `gate-signal`，再把已解决的方法规则带入后续页面；P02 到末页之间不分批，也不插入 checker。`quick-generate` 仍串行手写并以 P01 为视觉锚点，跳过首屏 gate，并在完整 roster 生成后运行一次无锁 final gate。第三，路由是确定性的：原生 PPTX 模板、beautify、Edit Native PPTX、自定义动画等触发条件已经在仓库里定义清楚时，不再额外抛给用户一个开放式路线选择题。
 
 默认流程的角色切换协议（切换模式前必须 `read_file references/<role>.md`）有两个互相支撑的作用：把新鲜的角色指令载入上下文，覆盖前一模式的漂移；对话 transcript 中的可见标记构成审计轨迹，让用户能看到 agent 何时切换了模式——回看一个具体决策为什么这样做时，这条线索很关键。
 
@@ -794,7 +791,7 @@ ChartEx 导入被有意限制为 7 个已验证数据模型：`treemap`、`sunbu
 | 生成 profile | `image-to-pptx`、`beautify-pptx`、`quick-generate` | 图片还原为 PPTX 当前要求 Codex、始终直接启用 Quick，规范化页面画面、原生还原普通文字，必要时在严格视觉锁下重建低清身份 / 装饰图形，但 chart / table / data graphic 只能使用可核对数值的原生对象、精确源资产或 `manual_required`，并把场景至少拆成干净背景层与人物 / 前景层；Beautify 保留逐字措辞 / 页数 / 页序并重做布局，只在明确快速时选择 Quick；Quick 负责直接 SVG→PPTX 生命周期 |
 | 模板子工作流 | `create-brand`、`create-style`、`create-layout`、`create-deck` | Create Template 在“仅身份 / 无 roster 的方向与方法 / 品牌中立且应用中立的结构 / 应用语境与身份结构一体化”中只分派一个 |
 | 模板输入阶段 | `apply-template-workspace` | Default Stage 1 确认至少一个工作区后、Stage 2 前运行；自由设计跳过安装，Quick 可直接提供精确 root |
-| 生成阶段 | `topic-research`、`resume-execute`、`refine-spec`、`verify-charts`、`visual-review`、`live-preview`、`customize-animations` | Generate PPTX 中各自定义的 intake、planning、editing、quality 或 post-processing 节点 |
+| 生成阶段 | `topic-research`、`resume-execute`、`refine-spec`、`verify-charts`、`visual-review`、`customize-animations` | Generate PPTX 中各自定义的 intake、planning、quality 或 post-processing 节点 |
 | 共享阶段 | `generate-audio` | Generate PPTX 后处理，或 Edit Native PPTX 的旁白集成 |
 | 治理文档 | `failure-recovery` | 三条顶层路线的全局停止 / 继续规则；Generate PPTX 的具体故障矩阵与续跑入口 |
 

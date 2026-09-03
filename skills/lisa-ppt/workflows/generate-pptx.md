@@ -8,7 +8,7 @@ description: Default Generate PPTX authority for source intake, planning, SVG au
 
 **Hard rule — runtime paths**: expand every linked or abbreviated package path from the entry-time `SKILL_DIR` anchor inside each tool call; never change CWD or inherit a prior shell working directory.
 
-**Default Core Pipeline**: `Initial Materials → [Fact Research] → Create Project → Template Candidate Preparation → Stage-1 Communication + Template Confirmation → [Template Installation] → Stage-2 Solution → [Image Acquisition] → Executor Live Preview → Quality Check → Post-processing → Export`
+**Default Core Pipeline**: `Initial Materials → [Fact Research] → Create Project → Template Candidate Preparation → Stage-1 Communication + Template Confirmation → [Template Installation] → Stage-2 Solution → [Image Acquisition] → Executor → Quality Check → Post-processing → Export`
 
 **Generate-specific execution discipline**:
 
@@ -231,15 +231,7 @@ Read the core as one batch with the exact detail files named by the retained `sp
 
 **Context validity**: reuse the retained Design Spec and lock for every page while the context is unchanged and uncompacted; do not reread or poll them. A fresh, resumed, restarted, compacted, or externally changed context rereads `design_spec.md`, then `spec_lock.md`, once, plus triggered references and the latest completed SVG when mid-deck ([`failure-recovery.md`](governance/failure-recovery.md)); on local uncertainty consult the retained lock, then only the owning Design Spec fragment — sources supply facts only, and the Design Spec wins a conflict. A bounded same-context repair that preserves roster/order/identity/communication needs only the affected fragment readback plus `project_manager.py validate`. **Five-page lock re-read**: after P05, P10, P15, … when another page follows, read `spec_lock.md` in full once before the next page — a pure re-anchor of palette, typography, icon style, and `page_rhythm` under long context, with no checker run, no output, no pause, and no repair loop; an external change found here follows the recovery branch. **Hard rule — exact page roster**: `design_spec.md §IX` is the ordered queue — one final slide per entry, same id and order; never add, drop, merge, split, or reorder while drawing. A continuous run may first repair the affected §IX blocks and `page_rhythm` rows and rerun `validate` while the count stays inside the Stage-1 confirmed range; leaving that range reconfirms Stage 1. §IX is preferred wording and semantic authority, adapted only under `executor-base.md` §2.1's content-vs-expression contract, with sources read only for verification. **Missing `spec_lock.md` or `design_spec.md`** → stop and report the missing gate artifact; recover through [`failure-recovery.md`](governance/failure-recovery.md) §3; a missing field in an existing lock → its §2. When §X records a literal script, read the frozen `notes/total.md` once before P01 and design each visible state around its segment. Trust the latest `analysis/image_analysis.csv` (rerun `analyze_images.py` if `images/` changed; an empty folder means no inventory). `page-context` is a diagnostic only ([`artifact-ownership.md`](../references/artifact-ownership.md) §1).
 
-**Design Parameter Confirmation (Mandatory)**: before the first SVG, output one confirmation listing the compact communication objective, canvas dimensions, body font size, color scheme (primary/secondary/accent HEX), font plan, the per-role calibration table from `python3 ${SKILL_DIR}/scripts/text_measure.py calibrate <project_path> --outline` (every lock role: family, size, CJK and Latin ≈ chars per 100 px, and the longest planned §IX line per role in px — the checker's own estimator with wrapping headroom, written to `validation/text_calibration.json`), and the live-preview URL from the launcher below. If the preview failed to launch, say so here rather than proceeding silently.
-
-**Live Preview Auto-Startup (Mandatory)**: before the first SVG, start the editor and keep it running through Step 7:
-
-```bash
-python3 ${SKILL_DIR}/scripts/svg_editor/server.py <project_path> --live --daemon
-```
-
-Default first free port from `6060` (`--port N` binds strictly); read the URL from output or `<project_path>/live_preview/lock.json` and report it — or the launch failure — before the first SVG. It is a side process: never wait for it or for user confirmation, and keep it running until the user clicks **Exit preview** or asks in chat. Do not read or apply submitted annotations during generation; that window opens after Step 7 ([`live-preview.md`](stages/live-preview.md), which also describes staged direct edits).
+**Design Parameter Confirmation (Mandatory)**: before the first SVG, output one confirmation listing the compact communication objective, canvas dimensions, body font size, color scheme (primary/secondary/accent HEX), font plan, the per-role calibration table from `python3 ${SKILL_DIR}/scripts/text_measure.py calibrate <project_path> --outline` (every lock role: family, size, CJK and Latin ≈ chars per 100 px, and the longest planned §IX line per role in px — the checker's own estimator with wrapping headroom, written to `validation/text_calibration.json`). Output it as one block, then start P01 — it is the stated record of the parameters every page is about to be drawn against, not a question to the user and not a pause.
 
 > ⚠️ **Main-agent only**: SVG generation stays in the current main agent — page design depends on full upstream context. Cadence: P01 → first-page gate → remaining pages → final gate, in one context, no batches or other mid-run checker calls; reload under Context validity above after context invalidation.
 
@@ -284,7 +276,7 @@ python3 ${SKILL_DIR}/scripts/svg_quality_checker.py <project_path> \
 
 **Logic Construction Phase (conditional)**: when the effective Speaker Notes outcome in §I is enabled, load [`executor-notes.md`](../references/executor-notes.md): validate a frozen `notes/total.md` against every information-bearing final SVG group (repair the page or the plan, never the script), or otherwise ground each page's narration in its final SVG and write `notes/total.md`. When disabled, load nothing and create no notes.
 
-**✅ Internal checkpoint** — preview launched in time, P01 method gate, uninterrupted remaining pages, consolidated repair, exact §IX coverage, one-frame prose, final checker 0 errors, `notes/total.md` only when enabled. Do not print. Then run the applicable conditional gates and proceed to Step 7.
+**✅ Internal checkpoint** — design parameters stated before P01, P01 method gate, uninterrupted remaining pages, consolidated repair, exact §IX coverage, one-frame prose, final checker 0 errors, `notes/total.md` only when enabled. Do not print. Then run the applicable conditional gates and proceed to Step 7.
 
 > **Chart pages?** Run [`verify-charts`](stages/verify-charts.md) before Step 7 to calibrate coordinates; skip without chart pages.
 >

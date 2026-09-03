@@ -347,9 +347,9 @@ def parse_use_element(use_match: str) -> dict[str, str | float]:
     if stroke_value is not None:
         attrs['stroke'] = stroke_value
 
-    # Live preview direct edits may write an absolute transform matrix back to
-    # the placeholder. Preserve it so the expanded icon matches the edited
-    # browser geometry instead of falling back to the original x/y placement.
+    # A placeholder may carry an absolute transform matrix instead of x/y.
+    # Preserve it so the expanded icon lands on that geometry rather than
+    # falling back to the original x/y placement.
     transform_value = _attr_value(use_match, 'transform')
     if transform_value is not None:
         attrs['transform'] = transform_value

@@ -60,6 +60,17 @@ left are in this repository.
 | `skills/lisa-ppt/references/ai-image-comparison/` (43 MB) | trimmed; pointer README; nothing reads it |
 | `skills/lisa-ppt/templates/sounds/{bigsoundbank,kenney-interface,kenney-ui}/` (12 MB) | trimmed; vocabulary, index and notices kept; README says where the files are |
 
+**Removed later, 2026-09-03 — the live preview / SVG editor surface.**
+`skills/lisa-ppt/scripts/svg_editor/`, `scripts/check_annotations.py`,
+`scripts/docs/svg_editor.md` and `workflows/stages/live-preview.md`, with the
+`live_preview/` project directory and the Step 6 auto-startup that drove them.
+The deliverable is a `.pptx` and PowerPoint already edits it, so a browser
+editor annotating intermediate SVGs was redundant work in the middle of the
+pipeline. This does not retract anything recorded above: the port rows,
+including the Korean `svg_editor` strings and the credit to upstream PR #85,
+stand as the record of what was imported. `scripts/visual_review.py` was made
+standalone and kept.
+
 Parked untouched under `docs/upstream/` as the record of what was imported:
 `README.ppt-master.md` and `README_CN.ppt-master.md` (sponsor sections
 stripped, noted at the top) and `README.slide-master.ko.md`. Their relative
