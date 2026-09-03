@@ -1,5 +1,5 @@
 {
-  "_comment": "Enumerable (finite) option universe for the confirm page. Served by Flask static at /static/catalogs.json; the front-end prefers /api/catalogs when the server provides it. These fields list fixed options and the AI marks one as recommended via the active recommendation stage's `recommend` object. Color, coordinated typography recommendations, and generated-image style remain generative. `fonts` supplies the manual typography dropdowns outside those recommendations; users may still enter another installed font. 'canvas' mirrors scripts/config.py CANVAS_FORMATS — keep in sync. User-facing catalog text supports label_zh/label_en/label_ja, desc_zh/desc_en/desc_ja, group_zh/group_en/group_ja; Traditional-Chinese variants use the _zh_tw suffix (label_zh_tw, desc_zh_tw, group_zh_tw, use_zh_tw).",
+  "_comment": "Enumerable (finite) option universe for the confirm page. Served by Flask static at /static/catalogs.json; the front-end prefers /api/catalogs when the server provides it. These fields list fixed options and the AI marks one as recommended via the active recommendation stage's `recommend` object. Color, coordinated typography recommendations, and generated-image style remain generative. `fonts` supplies the manual typography dropdowns outside those recommendations; users may still enter another installed font. 'canvas' mirrors scripts/config.py CANVAS_FORMATS — keep in sync. User-facing catalog text supports label_zh/label_en/label_ja, desc_zh/desc_en/desc_ja, group_zh/group_en/group_ja; Traditional-Chinese variants use the _zh_tw suffix (label_zh_tw, desc_zh_tw, group_zh_tw, use_zh_tw); Korean uses the _ko suffix (label_ko, desc_ko, group_ko, use_ko).",
   "canvas": [
     {
       "id": "ppt169",
@@ -8,12 +8,14 @@
       "label_zh_tw": "PPT 16:9",
       "label_en": "PPT 16:9",
       "label_ja": "PPT 16:9",
+      "label_ko": "PPT 16:9",
       "dim": "1280×720",
       "viewbox": "0 0 1280 720",
       "use_zh": "现代投影 / 在线演示",
       "use_zh_tw": "現代投影 / 線上簡報",
       "use_en": "Modern projectors / online",
-      "use_ja": "現代的なプロジェクター／オンライン発表"
+      "use_ja": "現代的なプロジェクター／オンライン発表",
+      "use_ko": "최신 프로젝터 / 온라인 발표"
     },
     {
       "id": "ppt43",
@@ -22,12 +24,14 @@
       "label_zh_tw": "PPT 4:3",
       "label_en": "PPT 4:3",
       "label_ja": "PPT 4:3",
+      "label_ko": "PPT 4:3",
       "dim": "1024×768",
       "viewbox": "0 0 1024 768",
       "use_zh": "传统投影",
       "use_zh_tw": "傳統投影",
       "use_en": "Traditional projectors",
-      "use_ja": "従来型プロジェクター"
+      "use_ja": "従来型プロジェクター",
+      "use_ko": "전통형 프로젝터"
     },
     {
       "id": "wechat",
@@ -36,12 +40,14 @@
       "label_zh_tw": "公眾號頭圖 2.35:1",
       "label_en": "WeChat Header 2.35:1",
       "label_ja": "WeChat ヘッダー 2.35:1",
+      "label_ko": "WeChat 헤더 2.35:1",
       "dim": "900×383",
       "viewbox": "0 0 900 383",
       "use_zh": "微信公众号文章封面",
       "use_zh_tw": "微信公眾號文章封面",
       "use_en": "WeChat article cover",
-      "use_ja": "WeChat記事のカバー画像"
+      "use_ja": "WeChat記事のカバー画像",
+      "use_ko": "위챗 공식계정 글 커버"
     },
     {
       "id": "xiaohongshu",
@@ -50,12 +56,14 @@
       "label_zh_tw": "小紅書 3:4",
       "label_en": "RED 3:4",
       "label_ja": "小紅書（RED）3:4",
+      "label_ko": "샤오홍슈 3:4",
       "dim": "1242×1660",
       "viewbox": "0 0 1242 1660",
       "use_zh": "知识分享 / 种草封面",
       "use_zh_tw": "知識分享 / 種草封面",
       "use_en": "Knowledge sharing",
-      "use_ja": "知識共有／おすすめ紹介カバー"
+      "use_ja": "知識共有／おすすめ紹介カバー",
+      "use_ko": "지식 공유 / 추천 커버"
     },
     {
       "id": "moments",
@@ -64,12 +72,14 @@
       "label_zh_tw": "社交方圖 1:1",
       "label_en": "Social Square 1:1",
       "label_ja": "SNS正方形 1:1",
+      "label_ko": "소셜 정사각 1:1",
       "dim": "1080×1080",
       "viewbox": "0 0 1080 1080",
       "use_zh": "社交媒体方图",
       "use_zh_tw": "社群媒體方圖",
       "use_en": "Social square",
-      "use_ja": "SNS用正方形画像"
+      "use_ja": "SNS用正方形画像",
+      "use_ko": "소셜 미디어 정사각 이미지"
     },
     {
       "id": "story",
@@ -78,12 +88,14 @@
       "label_zh_tw": "直式 9:16",
       "label_en": "Vertical 9:16",
       "label_ja": "縦型 9:16",
+      "label_ko": "세로형 9:16",
       "dim": "1080×1920",
       "viewbox": "0 0 1080 1920",
       "use_zh": "短视频 / 竖屏封面",
       "use_zh_tw": "短影片 / 直式封面",
       "use_en": "Short-video / story cover",
-      "use_ja": "ショート動画／ストーリーカバー"
+      "use_ja": "ショート動画／ストーリーカバー",
+      "use_ko": "숏폼 영상 / 스토리 커버"
     },
     {
       "id": "banner",
@@ -92,12 +104,14 @@
       "label_zh_tw": "橫幅 16:9",
       "label_en": "Banner 16:9",
       "label_ja": "バナー 16:9",
+      "label_ko": "배너 16:9",
       "dim": "1920×1080",
       "viewbox": "0 0 1920 1080",
       "use_zh": "网页横幅 / 大屏",
       "use_zh_tw": "網頁橫幅 / 大螢幕",
       "use_en": "Web banner / big screen",
-      "use_ja": "Webバナー／大画面"
+      "use_ja": "Webバナー／大画面",
+      "use_ko": "웹 배너 / 대형 스크린"
     },
     {
       "id": "a4",
@@ -106,12 +120,14 @@
       "label_zh_tw": "A4 1:1.41",
       "label_en": "A4 1:1.41",
       "label_ja": "A4 1:1.41",
+      "label_ko": "A4 1:1.41",
       "dim": "1240×1754",
       "viewbox": "0 0 1240 1754",
       "use_zh": "打印 / 文档导出",
       "use_zh_tw": "列印 / 文件匯出",
       "use_en": "Print / PDF export",
-      "use_ja": "印刷／PDF出力"
+      "use_ja": "印刷／PDF出力",
+      "use_ko": "인쇄 / PDF 내보내기"
     }
   ],
   "fonts": [
@@ -122,8 +138,14 @@
       "label_zh_tw": "微軟雅黑",
       "label_en": "Microsoft YaHei",
       "label_ja": "Microsoft YaHei",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -135,8 +157,14 @@
       "label_zh_tw": "等線",
       "label_en": "DengXian",
       "label_ja": "DengXian",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -148,8 +176,14 @@
       "label_zh_tw": "華文細黑",
       "label_en": "STXihei",
       "label_ja": "STXihei",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-cloud"
@@ -161,8 +195,14 @@
       "label_zh_tw": "黑體",
       "label_en": "SimHei",
       "label_ja": "SimHei",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -174,8 +214,14 @@
       "label_zh_tw": "宋體",
       "label_en": "SimSun",
       "label_ja": "SimSun",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -187,8 +233,14 @@
       "label_zh_tw": "新宋體",
       "label_en": "NSimSun",
       "label_ja": "NSimSun",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -200,8 +252,14 @@
       "label_zh_tw": "華文中宋",
       "label_en": "STZhongsong",
       "label_ja": "STZhongsong",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-cloud"
@@ -213,8 +271,14 @@
       "label_zh_tw": "仿宋",
       "label_en": "FangSong",
       "label_ja": "FangSong",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -226,8 +290,14 @@
       "label_zh_tw": "華文仿宋",
       "label_en": "STFangsong",
       "label_ja": "STFangsong",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-cloud"
@@ -239,8 +309,14 @@
       "label_zh_tw": "楷體",
       "label_en": "KaiTi",
       "label_ja": "KaiTi",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "office-safe"
@@ -252,8 +328,14 @@
       "label_zh_tw": "華文楷體",
       "label_en": "STKaiti",
       "label_ja": "STKaiti",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "office-cloud"
@@ -265,8 +347,14 @@
       "label_zh_tw": "華文行楷",
       "label_en": "STXingkai",
       "label_ja": "STXingkai",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "office-cloud"
@@ -278,8 +366,14 @@
       "label_zh_tw": "華文新魏",
       "label_en": "STXinwei",
       "label_ja": "STXinwei",
-      "locales": ["zh-CN", "zh-SG", "zh-Hans"],
-      "scripts": ["Hans"],
+      "locales": [
+        "zh-CN",
+        "zh-SG",
+        "zh-Hans"
+      ],
+      "scripts": [
+        "Hans"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "office-cloud"
@@ -291,8 +385,14 @@
       "label_zh_tw": "微軟正黑體",
       "label_en": "Microsoft JhengHei",
       "label_ja": "Microsoft JhengHei",
-      "locales": ["zh-TW", "zh-HK", "zh-Hant"],
-      "scripts": ["Hant"],
+      "locales": [
+        "zh-TW",
+        "zh-HK",
+        "zh-Hant"
+      ],
+      "scripts": [
+        "Hant"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -304,8 +404,14 @@
       "label_zh_tw": "新細明體",
       "label_en": "PMingLiU",
       "label_ja": "PMingLiU",
-      "locales": ["zh-TW", "zh-HK", "zh-Hant"],
-      "scripts": ["Hant"],
+      "locales": [
+        "zh-TW",
+        "zh-HK",
+        "zh-Hant"
+      ],
+      "scripts": [
+        "Hant"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -317,8 +423,15 @@
       "label_zh_tw": "細明體",
       "label_en": "MingLiU",
       "label_ja": "MingLiU",
-      "locales": ["zh-TW", "zh-HK", "zh-MO", "zh-Hant"],
-      "scripts": ["Hant"],
+      "locales": [
+        "zh-TW",
+        "zh-HK",
+        "zh-MO",
+        "zh-Hant"
+      ],
+      "scripts": [
+        "Hant"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -330,8 +443,13 @@
       "label_zh_tw": "細明體 HKSCS",
       "label_en": "MingLiU HKSCS",
       "label_ja": "MingLiU HKSCS",
-      "locales": ["zh-HK", "zh-Hant"],
-      "scripts": ["Hant"],
+      "locales": [
+        "zh-HK",
+        "zh-Hant"
+      ],
+      "scripts": [
+        "Hant"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-cloud"
@@ -343,8 +461,15 @@
       "label_zh_tw": "標楷體",
       "label_en": "DFKai-SB",
       "label_ja": "DFKai-SB",
-      "locales": ["zh-TW", "zh-HK", "zh-MO", "zh-Hant"],
-      "scripts": ["Hant"],
+      "locales": [
+        "zh-TW",
+        "zh-HK",
+        "zh-MO",
+        "zh-Hant"
+      ],
+      "scripts": [
+        "Hant"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -356,8 +481,12 @@
       "label_zh_tw": "游黑體",
       "label_en": "Yu Gothic",
       "label_ja": "游ゴシック",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -369,8 +498,12 @@
       "label_zh_tw": "Meiryo",
       "label_en": "Meiryo",
       "label_ja": "メイリオ",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -382,8 +515,12 @@
       "label_zh_tw": "BIZ UD黑體",
       "label_en": "BIZ UDGothic",
       "label_ja": "BIZ UDゴシック",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -395,8 +532,12 @@
       "label_zh_tw": "BIZ UDP黑體",
       "label_en": "BIZ UDPGothic",
       "label_ja": "BIZ UDPゴシック",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -408,8 +549,12 @@
       "label_zh_tw": "MS 黑體",
       "label_en": "MS Gothic",
       "label_ja": "ＭＳ ゴシック",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -421,8 +566,12 @@
       "label_zh_tw": "MS P黑體",
       "label_en": "MS PGothic",
       "label_ja": "ＭＳ Ｐゴシック",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -434,8 +583,12 @@
       "label_zh_tw": "游明體",
       "label_en": "Yu Mincho",
       "label_ja": "游明朝",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -447,8 +600,12 @@
       "label_zh_tw": "BIZ UD明體 Medium",
       "label_en": "BIZ UDMincho Medium",
       "label_ja": "BIZ UD明朝 Medium",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -460,8 +617,12 @@
       "label_zh_tw": "BIZ UDP明體 Medium",
       "label_en": "BIZ UDPMincho Medium",
       "label_ja": "BIZ UDP明朝 Medium",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -473,8 +634,12 @@
       "label_zh_tw": "MS 明體",
       "label_en": "MS Mincho",
       "label_ja": "ＭＳ 明朝",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -486,8 +651,12 @@
       "label_zh_tw": "MS P明體",
       "label_en": "MS PMincho",
       "label_ja": "ＭＳ Ｐ明朝",
-      "locales": ["ja-JP"],
-      "scripts": ["Jpan"],
+      "locales": [
+        "ja-JP"
+      ],
+      "scripts": [
+        "Jpan"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -499,8 +668,12 @@
       "label_zh_tw": "Malgun Gothic",
       "label_en": "Malgun Gothic",
       "label_ja": "Malgun Gothic",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -512,8 +685,12 @@
       "label_zh_tw": "Microsoft GothicNeo",
       "label_en": "Microsoft GothicNeo",
       "label_ja": "Microsoft GothicNeo",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-cloud"
@@ -525,8 +702,12 @@
       "label_zh_tw": "Dotum",
       "label_en": "Dotum",
       "label_ja": "Dotum",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -538,8 +719,12 @@
       "label_zh_tw": "Gulim",
       "label_en": "Gulim",
       "label_ja": "Gulim",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -551,8 +736,12 @@
       "label_zh_tw": "Batang",
       "label_en": "Batang",
       "label_ja": "Batang",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -564,8 +753,12 @@
       "label_zh_tw": "Gungsuh",
       "label_en": "Gungsuh",
       "label_ja": "Gungsuh",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -577,8 +770,12 @@
       "label_zh_tw": "BatangChe",
       "label_en": "BatangChe",
       "label_ja": "BatangChe",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -590,8 +787,12 @@
       "label_zh_tw": "DotumChe",
       "label_en": "DotumChe",
       "label_ja": "DotumChe",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "monospace",
       "css": "monospace",
       "availability": "windows-language-feature"
@@ -603,8 +804,12 @@
       "label_zh_tw": "GulimChe",
       "label_en": "GulimChe",
       "label_ja": "GulimChe",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "monospace",
       "css": "monospace",
       "availability": "windows-language-feature"
@@ -616,8 +821,12 @@
       "label_zh_tw": "GungsuhChe",
       "label_en": "GungsuhChe",
       "label_ja": "GungsuhChe",
-      "locales": ["ko-KR"],
-      "scripts": ["Kore"],
+      "locales": [
+        "ko-KR"
+      ],
+      "scripts": [
+        "Kore"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -629,8 +838,14 @@
       "label_zh_tw": "Arabic Typesetting",
       "label_en": "Arabic Typesetting",
       "label_ja": "Arabic Typesetting",
-      "locales": ["ar", "fa", "ur"],
-      "scripts": ["Arab"],
+      "locales": [
+        "ar",
+        "fa",
+        "ur"
+      ],
+      "scripts": [
+        "Arab"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -642,8 +857,14 @@
       "label_zh_tw": "Sakkal Majalla",
       "label_en": "Sakkal Majalla",
       "label_ja": "Sakkal Majalla",
-      "locales": ["ar", "fa", "ur"],
-      "scripts": ["Arab"],
+      "locales": [
+        "ar",
+        "fa",
+        "ur"
+      ],
+      "scripts": [
+        "Arab"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -655,8 +876,14 @@
       "label_zh_tw": "Urdu Typesetting",
       "label_en": "Urdu Typesetting",
       "label_ja": "Urdu Typesetting",
-      "locales": ["ur", "ar", "fa"],
-      "scripts": ["Arab"],
+      "locales": [
+        "ur",
+        "ar",
+        "fa"
+      ],
+      "scripts": [
+        "Arab"
+      ],
       "category": "calligraphic",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -668,8 +895,12 @@
       "label_zh_tw": "Gisha",
       "label_en": "Gisha",
       "label_ja": "Gisha",
-      "locales": ["he"],
-      "scripts": ["Hebr"],
+      "locales": [
+        "he"
+      ],
+      "scripts": [
+        "Hebr"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -681,8 +912,12 @@
       "label_zh_tw": "David",
       "label_en": "David",
       "label_ja": "David",
-      "locales": ["he"],
-      "scripts": ["Hebr"],
+      "locales": [
+        "he"
+      ],
+      "scripts": [
+        "Hebr"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -694,8 +929,12 @@
       "label_zh_tw": "FrankRuehl",
       "label_en": "FrankRuehl",
       "label_ja": "FrankRuehl",
-      "locales": ["he"],
-      "scripts": ["Hebr"],
+      "locales": [
+        "he"
+      ],
+      "scripts": [
+        "Hebr"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -707,8 +946,14 @@
       "label_zh_tw": "Nirmala UI",
       "label_en": "Nirmala UI",
       "label_ja": "Nirmala UI",
-      "locales": ["hi", "mr", "ne"],
-      "scripts": ["Deva"],
+      "locales": [
+        "hi",
+        "mr",
+        "ne"
+      ],
+      "scripts": [
+        "Deva"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -720,8 +965,14 @@
       "label_zh_tw": "Mangal",
       "label_en": "Mangal",
       "label_ja": "Mangal",
-      "locales": ["hi", "mr", "ne"],
-      "scripts": ["Deva"],
+      "locales": [
+        "hi",
+        "mr",
+        "ne"
+      ],
+      "scripts": [
+        "Deva"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -733,8 +984,14 @@
       "label_zh_tw": "Aparajita",
       "label_en": "Aparajita",
       "label_ja": "Aparajita",
-      "locales": ["hi", "mr", "ne"],
-      "scripts": ["Deva"],
+      "locales": [
+        "hi",
+        "mr",
+        "ne"
+      ],
+      "scripts": [
+        "Deva"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -746,8 +1003,14 @@
       "label_zh_tw": "Kokila",
       "label_en": "Kokila",
       "label_ja": "Kokila",
-      "locales": ["hi", "mr", "ne"],
-      "scripts": ["Deva"],
+      "locales": [
+        "hi",
+        "mr",
+        "ne"
+      ],
+      "scripts": [
+        "Deva"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -759,8 +1022,12 @@
       "label_zh_tw": "Leelawadee UI",
       "label_en": "Leelawadee UI",
       "label_ja": "Leelawadee UI",
-      "locales": ["th"],
-      "scripts": ["Thai"],
+      "locales": [
+        "th"
+      ],
+      "scripts": [
+        "Thai"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -772,8 +1039,12 @@
       "label_zh_tw": "Angsana New",
       "label_en": "Angsana New",
       "label_ja": "Angsana New",
-      "locales": ["th"],
-      "scripts": ["Thai"],
+      "locales": [
+        "th"
+      ],
+      "scripts": [
+        "Thai"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "windows-language-feature"
@@ -785,8 +1056,12 @@
       "label_zh_tw": "Cordia New",
       "label_en": "Cordia New",
       "label_ja": "Cordia New",
-      "locales": ["th"],
-      "scripts": ["Thai"],
+      "locales": [
+        "th"
+      ],
+      "scripts": [
+        "Thai"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows-language-feature"
@@ -798,8 +1073,15 @@
       "label_zh_tw": "Aptos",
       "label_en": "Aptos",
       "label_ja": "Aptos",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -811,8 +1093,17 @@
       "label_zh_tw": "Arial",
       "label_en": "Arial",
       "label_ja": "Arial",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek", "Arab", "Hebr"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek",
+        "Arab",
+        "Hebr"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -824,8 +1115,17 @@
       "label_zh_tw": "Calibri",
       "label_en": "Calibri",
       "label_ja": "Calibri",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek", "Arab", "Hebr"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek",
+        "Arab",
+        "Hebr"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -837,8 +1137,17 @@
       "label_zh_tw": "Segoe UI",
       "label_en": "Segoe UI",
       "label_ja": "Segoe UI",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek", "Arab", "Hebr"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek",
+        "Arab",
+        "Hebr"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -850,8 +1159,15 @@
       "label_zh_tw": "Verdana",
       "label_en": "Verdana",
       "label_ja": "Verdana",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -863,8 +1179,18 @@
       "label_zh_tw": "Tahoma",
       "label_en": "Tahoma",
       "label_ja": "Tahoma",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek", "Arab", "Hebr", "Thai"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek",
+        "Arab",
+        "Hebr",
+        "Thai"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -876,8 +1202,15 @@
       "label_zh_tw": "Trebuchet MS",
       "label_en": "Trebuchet MS",
       "label_ja": "Trebuchet MS",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -889,8 +1222,15 @@
       "label_zh_tw": "Candara",
       "label_en": "Candara",
       "label_ja": "Candara",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -902,8 +1242,15 @@
       "label_zh_tw": "Corbel",
       "label_en": "Corbel",
       "label_ja": "Corbel",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "office-safe"
@@ -915,8 +1262,15 @@
       "label_zh_tw": "Bahnschrift",
       "label_en": "Bahnschrift",
       "label_ja": "Bahnschrift",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "sans-serif",
       "css": "sans-serif",
       "availability": "windows"
@@ -928,8 +1282,15 @@
       "label_zh_tw": "Georgia",
       "label_en": "Georgia",
       "label_ja": "Georgia",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -941,8 +1302,17 @@
       "label_zh_tw": "Times New Roman",
       "label_en": "Times New Roman",
       "label_ja": "Times New Roman",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek", "Arab", "Hebr"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek",
+        "Arab",
+        "Hebr"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -954,8 +1324,15 @@
       "label_zh_tw": "Cambria",
       "label_en": "Cambria",
       "label_ja": "Cambria",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -967,8 +1344,15 @@
       "label_zh_tw": "Constantia",
       "label_en": "Constantia",
       "label_ja": "Constantia",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "serif",
       "css": "serif",
       "availability": "office-safe"
@@ -980,8 +1364,15 @@
       "label_zh_tw": "Consolas",
       "label_en": "Consolas",
       "label_ja": "Consolas",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek"
+      ],
       "category": "monospace",
       "css": "monospace",
       "availability": "office-safe"
@@ -993,8 +1384,17 @@
       "label_zh_tw": "Courier New",
       "label_en": "Courier New",
       "label_ja": "Courier New",
-      "locales": ["en", "und-Latn"],
-      "scripts": ["Latn", "Cyrl", "Grek", "Arab", "Hebr"],
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn",
+        "Cyrl",
+        "Grek",
+        "Arab",
+        "Hebr"
+      ],
       "category": "monospace",
       "css": "monospace",
       "availability": "office-safe"
@@ -1008,10 +1408,12 @@
       "label_zh_tw": "金字塔",
       "label_en": "pyramid",
       "label_ja": "ピラミッド",
+      "label_ko": "피라미드",
       "desc_zh": "结论先行、相互独立且完全穷尽的论证、每个数据都带比较。适合决策、分析、战略、汇报。",
       "desc_zh_tw": "結論先行、相互獨立且完全窮盡的論證、每個數據都帶比較。適合決策、分析、戰略、報告。",
       "desc_en": "Lead with the answer, use MECE reasoning, and compare every key data point. Best for decisions, analysis, strategy, and reporting.",
-      "desc_ja": "結論を先に示し、MECEな論理構成で、主要データは必ず比較を添える。意思決定・分析・戦略・報告に最適。"
+      "desc_ja": "結論を先に示し、MECEな論理構成で、主要データは必ず比較を添える。意思決定・分析・戦略・報告に最適。",
+      "desc_ko": "결론을 먼저 제시하고 MECE 논리로 전개하며 핵심 데이터마다 비교를 덧붙입니다. 의사결정·분석·전략·보고에 적합."
     },
     {
       "id": "narrative",
@@ -1020,10 +1422,12 @@
       "label_zh_tw": "敘事",
       "label_en": "narrative",
       "label_ja": "ナラティブ",
+      "label_ko": "내러티브",
       "desc_zh": "情境、张力、解决方案形成故事弧线，保留悬念与转折。适合路演、案例、品牌、融资。",
       "desc_zh_tw": "情境、張力、解決方案形成故事弧線，保留懸念與轉折。適合路演、案例、品牌、融資。",
       "desc_en": "Build a story arc from context to tension to resolution, with suspense and turns. Best for roadshows, cases, brand stories, and fundraising.",
-      "desc_ja": "状況設定から緊張、解決へとストーリーアークを描き、意外性や転換を残す。ロードショー・事例紹介・ブランドストーリー・資金調達向け。"
+      "desc_ja": "状況設定から緊張、解決へとストーリーアークを描き、意外性や転換を残す。ロードショー・事例紹介・ブランドストーリー・資金調達向け。",
+      "desc_ko": "상황–긴장–해결의 스토리 아크를 그리며 반전과 긴장감을 유지합니다. 로드쇼·사례·브랜드 스토리·투자 유치에 적합."
     },
     {
       "id": "instructional",
@@ -1032,10 +1436,12 @@
       "label_zh_tw": "教學",
       "label_en": "instructional",
       "label_ja": "教育・解説",
+      "label_ko": "교육형",
       "desc_zh": "概念拆解、分步推进、并列讲解。适合培训、教程、科普、知识分享。",
       "desc_zh_tw": "概念拆解、分步推進、並列講解。適合培訓、教程、科普、知識分享。",
       "desc_en": "Break concepts down, advance step by step, and explain parallel ideas clearly. Best for training, tutorials, popular science, and knowledge sharing.",
-      "desc_ja": "概念を分解し、段階的に進め、並列する要素を明確に説明する。研修・チュートリアル・科学解説・知識共有に最適。"
+      "desc_ja": "概念を分解し、段階的に進め、並列する要素を明確に説明する。研修・チュートリアル・科学解説・知識共有に最適。",
+      "desc_ko": "개념을 분해하고 단계별로 진행하며 병렬 개념을 명확히 설명합니다. 교육·튜토리얼·과학 해설·지식 공유에 적합."
     },
     {
       "id": "showcase",
@@ -1044,10 +1450,12 @@
       "label_zh_tw": "展演",
       "label_en": "showcase",
       "label_ja": "ショーケース",
+      "label_ko": "쇼케이스",
       "desc_zh": "视觉主导，大图、大数和情绪节奏优先。适合发布、品牌秀、活动。",
       "desc_zh_tw": "視覺主導，大圖、大數和情緒節奏優先。適合發表、品牌秀、活動。",
       "desc_en": "Use visual rhythm, large images, and strong numbers as the lead. Best for launches, brand showcases, and events.",
-      "desc_ja": "ビジュアル主導で、大きな画像・大きな数字・感情のリズムを優先する。発表会・ブランドショー・イベント向け。"
+      "desc_ja": "ビジュアル主導で、大きな画像・大きな数字・感情のリズムを優先する。発表会・ブランドショー・イベント向け。",
+      "desc_ko": "비주얼 중심으로 큰 이미지·큰 숫자·감정 리듬을 우선합니다. 발표회·브랜드 쇼·이벤트에 적합."
     },
     {
       "id": "briefing",
@@ -1056,10 +1464,12 @@
       "label_zh_tw": "簡報",
       "label_en": "briefing",
       "label_ja": "ブリーフィング",
+      "label_ko": "브리핑",
       "desc_zh": "中性完整、便于速览，采用主题式标题和均匀权重。适合周报、参考材料、常见问题、会议包。",
       "desc_zh_tw": "中性完整、便於速覽，採用主題式標題和均勻權重。適合週報、參考材料、常見問題、會議包。",
       "desc_en": "Stay neutral, complete, and scannable with topical headings and balanced weight. Best for weekly reports, reference packs, FAQs, and meeting decks.",
-      "desc_ja": "中立的かつ網羅的で一覧しやすく、トピック見出しと均等な重み付けを用いる。週次報告・参考資料・FAQ・会議資料に最適。"
+      "desc_ja": "中立的かつ網羅的で一覧しやすく、トピック見出しと均等な重み付けを用いる。週次報告・参考資料・FAQ・会議資料に最適。",
+      "desc_ko": "중립적이고 빠짐없이 훑어보기 좋게, 주제형 제목과 균등한 비중을 사용합니다. 주간 보고·참고 자료·FAQ·회의 자료에 적합."
     }
   ],
   "visual_styles": [
@@ -1069,6 +1479,7 @@
       "group_zh_tw": "企業 / 產品",
       "group_en": "Corporate / product",
       "group_ja": "企業／プロダクト",
+      "group_ko": "기업 / 프로덕트",
       "items": [
         {
           "id": "swiss-minimal",
@@ -1077,10 +1488,12 @@
           "label_zh_tw": "瑞士極簡",
           "label_en": "swiss-minimal",
           "label_ja": "スイス・ミニマル",
+          "label_ko": "스위스 미니멀",
           "desc_zh": "网格锁定、锐利层级、大留白、少装饰。",
           "desc_zh_tw": "網格鎖定、銳利層級、大留白、少裝飾。",
           "desc_en": "Grid-locked layout, sharp hierarchy, generous whitespace, and minimal decoration.",
-          "desc_ja": "グリッドに沿ったレイアウト、明快な階層、余白を活かした装飾の少ないデザイン。"
+          "desc_ja": "グリッドに沿ったレイアウト、明快な階層、余白を活かした装飾の少ないデザイン。",
+          "desc_ko": "그리드 고정 레이아웃, 뚜렷한 위계, 넉넉한 여백, 최소한의 장식."
         },
         {
           "id": "soft-rounded",
@@ -1089,10 +1502,12 @@
           "label_zh_tw": "柔和圓角",
           "label_en": "soft-rounded",
           "label_ja": "ソフト・ラウンド",
+          "label_ko": "소프트 라운드",
           "desc_zh": "圆角卡片、柔和投影、亲和现代。",
           "desc_zh_tw": "圓角卡片、柔和陰影、親和現代。",
           "desc_en": "Rounded cards, soft shadows, and a friendly modern tone.",
-          "desc_ja": "角丸のカード、柔らかい影、親しみやすいモダンな雰囲気。"
+          "desc_ja": "角丸のカード、柔らかい影、親しみやすいモダンな雰囲気。",
+          "desc_ko": "둥근 카드, 부드러운 그림자, 친근하고 모던한 톤."
         },
         {
           "id": "glassmorphism",
@@ -1101,10 +1516,12 @@
           "label_zh_tw": "玻璃擬態",
           "label_en": "glassmorphism",
           "label_ja": "グラスモーフィズム",
+          "label_ko": "글래스모피즘",
           "desc_zh": "半透明玻璃面板、渐变光感、漂浮层次。",
           "desc_zh_tw": "半透明玻璃面板、漸變光感、漂浮層次。",
           "desc_en": "Translucent glass panels, gradient light, and floating depth.",
-          "desc_ja": "半透明のガラスパネル、グラデーションの光、浮遊感のある奥行き。"
+          "desc_ja": "半透明のガラスパネル、グラデーションの光、浮遊感のある奥行き。",
+          "desc_ko": "반투명 유리 패널, 그라데이션 빛, 떠 있는 듯한 깊이감."
         },
         {
           "id": "dark-tech",
@@ -1113,10 +1530,12 @@
           "label_zh_tw": "深色科技",
           "label_en": "dark-tech",
           "label_ja": "ダークテック",
+          "label_ko": "다크 테크",
           "desc_zh": "深色画布、发光强调、几何精确。",
           "desc_zh_tw": "深色畫布、發光強調、幾何精確。",
           "desc_en": "Dark canvas, glowing accents, and precise geometry.",
-          "desc_ja": "ダークな背景、光るアクセント、精密な幾何学表現。"
+          "desc_ja": "ダークな背景、光るアクセント、精密な幾何学表現。",
+          "desc_ko": "어두운 캔버스, 빛나는 강조, 정밀한 기하학."
         },
         {
           "id": "blueprint",
@@ -1125,10 +1544,12 @@
           "label_zh_tw": "藍圖",
           "label_en": "blueprint",
           "label_ja": "ブループリント",
+          "label_ko": "블루프린트",
           "desc_zh": "深底蓝图线稿、等距结构、工程标注。",
           "desc_zh_tw": "深底藍圖線稿、等距結構、工程標註。",
           "desc_en": "Dark blueprint linework, isometric structure, and engineering annotations.",
-          "desc_ja": "濃紺の設計図風の線画、アイソメトリック構造、技術的な注記。"
+          "desc_ja": "濃紺の設計図風の線画、アイソメトリック構造、技術的な注記。",
+          "desc_ko": "짙은 바탕의 설계도 선화, 아이소메트릭 구조, 엔지니어링 주석."
         }
       ]
     },
@@ -1138,6 +1559,7 @@
       "group_zh_tw": "編輯 / 出版",
       "group_en": "Editorial / publication",
       "group_ja": "エディトリアル／出版",
+      "group_ko": "에디토리얼 / 출판",
       "items": [
         {
           "id": "editorial",
@@ -1146,10 +1568,12 @@
           "label_zh_tw": "編輯出版",
           "label_en": "editorial",
           "label_ja": "エディトリアル",
+          "label_ko": "에디토리얼",
           "desc_zh": "杂志式层级、栏线、衬线与无衬线交织。",
           "desc_zh_tw": "雜誌式層級、欄線、襯線與無襯線交織。",
           "desc_en": "Magazine hierarchy, column rules, and a serif/sans-serif mix.",
-          "desc_ja": "雑誌のような階層構造、段組み罫線、セリフ・サンセリフの混在。"
+          "desc_ja": "雑誌のような階層構造、段組み罫線、セリフ・サンセリフの混在。",
+          "desc_ko": "잡지식 위계, 컬럼 괘선, 세리프·산세리프 혼용."
         },
         {
           "id": "photo-editorial",
@@ -1158,10 +1582,12 @@
           "label_zh_tw": "攝影編輯",
           "label_en": "photo-editorial",
           "label_ja": "フォトエディトリアル",
+          "label_ko": "포토 에디토리얼",
           "desc_zh": "满版摄影主导，文字点缀与图注配合。",
           "desc_zh_tw": "滿版攝影主導，文字點綴與圖說配合。",
           "desc_en": "Full-bleed photography leads, supported by light text and captions.",
-          "desc_ja": "裁ち落とし写真を主役に、控えめなテキストとキャプションで補う。"
+          "desc_ja": "裁ち落とし写真を主役に、控えめなテキストとキャプションで補う。",
+          "desc_ko": "풀블리드 사진이 주도하고 절제된 텍스트와 캡션이 보조합니다."
         },
         {
           "id": "data-journalism",
@@ -1170,10 +1596,12 @@
           "label_zh_tw": "數據新聞",
           "label_en": "data-journalism",
           "label_ja": "データジャーナリズム",
+          "label_ko": "데이터 저널리즘",
           "desc_zh": "多栏微图表、侧栏、来源线、信息密度高。",
           "desc_zh_tw": "多欄微圖表、側欄、來源線、資訊密度高。",
           "desc_en": "Multi-column microcharts, sidebars, source lines, and dense information.",
-          "desc_ja": "多段組みの小型チャート、サイドバー、出典表記、高い情報密度。"
+          "desc_ja": "多段組みの小型チャート、サイドバー、出典表記、高い情報密度。",
+          "desc_ko": "다단 마이크로 차트, 사이드바, 출처 표기, 높은 정보 밀도."
         },
         {
           "id": "brutalist",
@@ -1182,10 +1610,12 @@
           "label_zh_tw": "粗野主義",
           "label_en": "brutalist",
           "label_ja": "ブルータリズム",
+          "label_ko": "브루탈리즘",
           "desc_zh": "报纸密度、粗线框、原始结构、扁平表达。",
           "desc_zh_tw": "報紙密度、粗線框、原始結構、扁平表達。",
           "desc_en": "Newspaper-like density, heavy rules, raw structure, and flat treatment.",
-          "desc_ja": "新聞のような情報密度、太い罫線、素朴な構造、フラットな表現。"
+          "desc_ja": "新聞のような情報密度、太い罫線、素朴な構造、フラットな表現。",
+          "desc_ko": "신문 같은 밀도, 굵은 괘선, 날것의 구조, 플랫한 표현."
         }
       ]
     },
@@ -1195,6 +1625,7 @@
       "group_zh_tw": "表現 / 印刷",
       "group_en": "Expressive / print",
       "group_ja": "表現的／印刷",
+      "group_ko": "표현적 / 인쇄",
       "items": [
         {
           "id": "memphis",
@@ -1203,10 +1634,12 @@
           "label_zh_tw": "孟菲斯",
           "label_en": "memphis",
           "label_ja": "メンフィス",
+          "label_ko": "멤피스",
           "desc_zh": "撞色块、几何碎片、粗描边。",
           "desc_zh_tw": "撞色塊、幾何碎片、粗描邊。",
           "desc_en": "Contrasting color blocks, geometric scraps, and heavy outlines.",
-          "desc_ja": "コントラストの強い色面、幾何学的な断片、太いアウトライン。"
+          "desc_ja": "コントラストの強い色面、幾何学的な断片、太いアウトライン。",
+          "desc_ko": "대비 강한 색면, 기하학 조각, 굵은 아웃라인."
         },
         {
           "id": "zine",
@@ -1215,10 +1648,12 @@
           "label_zh_tw": "小刊",
           "label_en": "zine",
           "label_ja": "ジン（自主制作誌）",
+          "label_ko": "진(zine)",
           "desc_zh": "孔版印刷错位、半调、有限色、印刷颗粒。",
           "desc_zh_tw": "孔版印刷錯位、半色調、有限色、印刷顆粒。",
           "desc_en": "Riso offsets, halftones, limited colors, and print grain.",
-          "desc_ja": "リソグラフのズレ、ハーフトーン、限られた色数、印刷の粒感。"
+          "desc_ja": "リソグラフのズレ、ハーフトーン、限られた色数、印刷の粒感。",
+          "desc_ko": "리소 인쇄의 어긋남, 하프톤, 제한된 색, 인쇄 질감."
         },
         {
           "id": "vintage-poster",
@@ -1227,10 +1662,12 @@
           "label_zh_tw": "復古海報",
           "label_en": "vintage-poster",
           "label_ja": "ヴィンテージポスター",
+          "label_ko": "빈티지 포스터",
           "desc_zh": "中世纪扁平色块、半调、复古几何暖意。",
           "desc_zh_tw": "二十世紀中期的扁平色塊、半色調與暖調復古幾何。",
           "desc_en": "Mid-century flat color blocks, halftones, and warm vintage geometry.",
-          "desc_ja": "ミッドセンチュリー調のフラットな色面、ハーフトーン、温かみのあるレトロな幾何学模様。"
+          "desc_ja": "ミッドセンチュリー調のフラットな色面、ハーフトーン、温かみのあるレトロな幾何学模様。",
+          "desc_ko": "미드센추리 플랫 색면, 하프톤, 따뜻한 레트로 기하학."
         },
         {
           "id": "paper-cut",
@@ -1239,10 +1676,12 @@
           "label_zh_tw": "剪紙",
           "label_en": "paper-cut",
           "label_ja": "切り絵",
+          "label_ko": "페이퍼 컷",
           "desc_zh": "层叠剪纸、层间柔影、手作质感。",
           "desc_zh_tw": "層疊剪紙、層間柔影、手作質感。",
           "desc_en": "Layered cut paper, soft inter-layer shadows, and a handmade feel.",
-          "desc_ja": "重なり合う切り紙、層間の柔らかな影、手作り感のある質感。"
+          "desc_ja": "重なり合う切り紙、層間の柔らかな影、手作り感のある質感。",
+          "desc_ko": "겹겹이 쌓인 종이, 층 사이 부드러운 그림자, 수공예 질감."
         }
       ]
     },
@@ -1252,6 +1691,7 @@
       "group_zh_tw": "手繪 / 筆觸",
       "group_en": "Hand-drawn / brush",
       "group_ja": "手描き／筆致",
+      "group_ko": "손그림 / 붓터치",
       "items": [
         {
           "id": "sketch-notes",
@@ -1260,10 +1700,12 @@
           "label_zh_tw": "手繪筆記",
           "label_en": "sketch-notes",
           "label_ja": "手描きノート",
+          "label_ko": "스케치 노트",
           "desc_zh": "暖纸底、涂鸦线条、柔和彩块。",
           "desc_zh_tw": "暖紙底、塗鴉線條、柔和彩塊。",
           "desc_en": "Warm paper, doodle lines, and soft color blocks.",
-          "desc_ja": "温かみのある紙の質感、落書き風の線、柔らかい色面。"
+          "desc_ja": "温かみのある紙の質感、落書き風の線、柔らかい色面。",
+          "desc_ko": "따뜻한 종이 바탕, 낙서풍 선, 부드러운 색면."
         },
         {
           "id": "ink-notes",
@@ -1272,10 +1714,12 @@
           "label_zh_tw": "墨跡筆記",
           "label_en": "ink-notes",
           "label_ja": "インクノート",
+          "label_ko": "잉크 노트",
           "desc_zh": "浅底、黑色手写墨迹、稀疏语义强调。",
           "desc_zh_tw": "淺底、黑色手寫墨跡、稀疏語義強調。",
           "desc_en": "Light background, black handwritten ink, and sparse semantic emphasis.",
-          "desc_ja": "明るい背景に黒の手書きインク、要所を絞った強調表現。"
+          "desc_ja": "明るい背景に黒の手書きインク、要所を絞った強調表現。",
+          "desc_ko": "밝은 바탕, 검정 손글씨 잉크, 절제된 의미 강조."
         },
         {
           "id": "chalkboard",
@@ -1284,10 +1728,12 @@
           "label_zh_tw": "黑板",
           "label_en": "chalkboard",
           "label_ja": "黒板",
+          "label_ko": "칠판",
           "desc_zh": "深板岩底、粉笔笔触、粉彩强调。",
           "desc_zh_tw": "深板岩底、粉筆筆觸、粉彩強調。",
           "desc_en": "Dark slate surface, chalk strokes, and pastel emphasis.",
-          "desc_ja": "濃いスレート調の背景に、チョークの筆致とパステルの強調色。"
+          "desc_ja": "濃いスレート調の背景に、チョークの筆致とパステルの強調色。",
+          "desc_ko": "짙은 슬레이트 바탕, 분필 터치, 파스텔 강조."
         },
         {
           "id": "ink-wash",
@@ -1296,10 +1742,12 @@
           "label_zh_tw": "水墨",
           "label_en": "ink-wash",
           "label_ja": "水墨画",
+          "label_ko": "수묵화",
           "desc_zh": "宣纸留白、笔触、印章、静气，新中式表达。",
           "desc_zh_tw": "宣紙留白、筆觸、印章、靜氣，新中式表達。",
           "desc_en": "Rice-paper whitespace, brushwork, seals, and a quiet contemporary Chinese tone.",
-          "desc_ja": "画仙紙の余白、筆致、落款印、静謐な現代中国風の表現。"
+          "desc_ja": "画仙紙の余白、筆致、落款印、静謐な現代中国風の表現。",
+          "desc_ko": "화선지 여백, 붓터치, 낙관, 고요한 현대 동양풍 표현."
         }
       ]
     },
@@ -1309,6 +1757,7 @@
       "group_zh_tw": "特殊風格",
       "group_en": "Specialty",
       "group_ja": "特殊スタイル",
+      "group_ko": "특수 스타일",
       "items": [
         {
           "id": "pixel-art",
@@ -1317,10 +1766,12 @@
           "label_zh_tw": "像素風",
           "label_en": "pixel-art",
           "label_ja": "ピクセルアート",
+          "label_ko": "픽셀 아트",
           "desc_zh": "严格像素网格、块状形体、有限色、扁平表达。",
           "desc_zh_tw": "嚴格像素網格、塊狀形體、有限色、扁平表達。",
           "desc_en": "Strict pixel grid, blocky shapes, limited colors, and flat treatment.",
-          "desc_ja": "厳密なピクセルグリッド、ブロック状の形状、限られた色数、フラットな表現。"
+          "desc_ja": "厳密なピクセルグリッド、ブロック状の形状、限られた色数、フラットな表現。",
+          "desc_ko": "엄격한 픽셀 그리드, 블록형 형태, 제한된 색, 플랫한 표현."
         }
       ]
     }
@@ -1333,10 +1784,12 @@
       "label_zh_tw": "幾何實心圖示",
       "label_en": "chunk-filled",
       "label_ja": "幾何学的塗りつぶしアイコン",
+      "label_ko": "기하학 채움 아이콘",
       "desc_zh": "实心、直线几何、锐利厚重，适合科技、工程、企业结构图。",
       "desc_zh_tw": "實心、直線幾何、銳利厚重，適合科技、工程、企業結構圖。",
       "desc_en": "Solid, straight, geometric, sharp, and heavy. Good for tech, engineering, and corporate structure diagrams.",
-      "desc_ja": "塗りつぶし・直線的な幾何形状で、鋭くしっかりした印象。テック、エンジニアリング、企業組織図に適する。"
+      "desc_ja": "塗りつぶし・直線的な幾何形状で、鋭くしっかりした印象。テック、エンジニアリング、企業組織図に適する。",
+      "desc_ko": "채움형·직선 기하·날카롭고 묵직한 인상. 테크, 엔지니어링, 기업 구조도에 적합."
     },
     {
       "id": "tabler-filled",
@@ -1345,10 +1798,12 @@
       "label_zh_tw": "圓潤實心圖示",
       "label_en": "tabler-filled",
       "label_ja": "丸みのある塗りつぶしアイコン",
+      "label_ko": "둥근 채움 아이콘",
       "desc_zh": "实心、圆润曲线、中等视觉重量，适合亲和现代风格。",
       "desc_zh_tw": "實心、圓潤曲線、中等視覺重量，適合親和現代風格。",
       "desc_en": "Solid, rounded, and medium-weight. Good for friendly modern styles.",
-      "desc_ja": "塗りつぶし・丸みのある曲線で、中程度の視覚的な重み。親しみやすいモダンなスタイルに適する。"
+      "desc_ja": "塗りつぶし・丸みのある曲線で、中程度の視覚的な重み。親しみやすいモダンなスタイルに適する。",
+      "desc_ko": "채움형·둥근 곡선·중간 시각 무게. 친근하고 모던한 스타일에 적합."
     },
     {
       "id": "tabler-outline",
@@ -1357,10 +1812,12 @@
       "label_zh_tw": "線性描邊圖示",
       "label_en": "tabler-outline",
       "label_ja": "線形アウトラインアイコン",
+      "label_ko": "라인 아이콘",
       "desc_zh": "线性描边，轻盈精致，适合屏幕阅读和编辑型图标。",
       "desc_zh_tw": "線性描邊，輕盈精緻，適合螢幕閱讀和編輯型圖示。",
       "desc_en": "Linear stroke, light and refined. Good for screen reading and editable icons.",
-      "desc_ja": "線形のストロークで、軽やかで洗練された印象。画面表示や編集用アイコンに適する。"
+      "desc_ja": "線形のストロークで、軽やかで洗練された印象。画面表示や編集用アイコンに適する。",
+      "desc_ko": "가늘고 정제된 라인 스트로크. 화면 가독성과 편집형 아이콘에 적합."
     },
     {
       "id": "phosphor-duotone",
@@ -1369,10 +1826,12 @@
       "label_zh_tw": "雙色層次圖示",
       "label_en": "phosphor-duotone",
       "label_ja": "デュオトーン階調アイコン",
+      "label_ko": "듀오톤 아이콘",
       "desc_zh": "双色层次、中等重量，适合现代产品和平台类表达。",
       "desc_zh_tw": "雙色層次、中等重量，適合現代產品和平台類表達。",
       "desc_en": "Two-tone layering with medium weight. Good for modern product and platform narratives.",
-      "desc_ja": "2色の階調表現で中程度の重み。モダンなプロダクトやプラットフォームの説明に適する。"
+      "desc_ja": "2色の階調表現で中程度の重み。モダンなプロダクトやプラットフォームの説明に適する。",
+      "desc_ko": "2색 레이어와 중간 무게. 모던한 프로덕트·플랫폼 서사에 적합."
     },
     {
       "id": "emoji",
@@ -1381,10 +1840,12 @@
       "label_zh_tw": "表情符號",
       "label_en": "Emoji",
       "label_ja": "絵文字",
+      "label_ko": "이모지",
       "desc_zh": "系统表情符号，适合轻量、社交、教学或快速识别场景；正式企业 / 咨询风谨慎使用。",
       "desc_zh_tw": "系統表情符號，適合輕量、社交、教學或快速識別場景；正式企業 / 諮詢風謹慎使用。",
       "desc_en": "System emoji for lightweight, social, instructional, or quick-recognition contexts; use carefully in formal corporate or consulting decks.",
-      "desc_ja": "システム絵文字。軽やかなSNS・教育・素早い視認が求められる場面向き。フォーマルな企業／コンサル資料では慎重に使用すること。"
+      "desc_ja": "システム絵文字。軽やかなSNS・教育・素早い視認が求められる場面向き。フォーマルな企業／コンサル資料では慎重に使用すること。",
+      "desc_ko": "시스템 이모지. 가벼운 소셜·교육·빠른 인지 상황에 적합. 격식 있는 기업/컨설팅 덱에서는 신중히 사용."
     },
     {
       "id": "none",
@@ -1392,7 +1853,8 @@
       "label_zh": "不用图标",
       "label_zh_tw": "不用圖示",
       "label_en": "No icons",
-      "label_ja": "アイコンなし"
+      "label_ja": "アイコンなし",
+      "label_ko": "아이콘 없음"
     }
   ],
   "image_usage": [
@@ -1402,7 +1864,8 @@
       "label_zh": "生成配图",
       "label_zh_tw": "生成配圖",
       "label_en": "AI-generated",
-      "label_ja": "AI生成"
+      "label_ja": "AI生成",
+      "label_ko": "AI 생성"
     },
     {
       "id": "web",
@@ -1410,7 +1873,8 @@
       "label_zh": "网络来源",
       "label_zh_tw": "網路來源",
       "label_en": "Web-sourced",
-      "label_ja": "Web由来"
+      "label_ja": "Web由来",
+      "label_ko": "웹 소싱"
     },
     {
       "id": "provided",
@@ -1418,7 +1882,8 @@
       "label_zh": "用户提供",
       "label_zh_tw": "使用者提供",
       "label_en": "User-provided",
-      "label_ja": "ユーザー提供"
+      "label_ja": "ユーザー提供",
+      "label_ko": "사용자 제공"
     },
     {
       "id": "placeholder",
@@ -1426,7 +1891,8 @@
       "label_zh": "占位符",
       "label_zh_tw": "佔位符",
       "label_en": "Placeholder",
-      "label_ja": "プレースホルダー"
+      "label_ja": "プレースホルダー",
+      "label_ko": "플레이스홀더"
     },
     {
       "id": "none",
@@ -1434,7 +1900,8 @@
       "label_zh": "不使用图片",
       "label_zh_tw": "不使用圖片",
       "label_en": "No images",
-      "label_ja": "画像なし"
+      "label_ja": "画像なし",
+      "label_ko": "이미지 없음"
     }
   ],
   "image_ai_path": [
@@ -1445,10 +1912,12 @@
       "label_zh_tw": "自動生成（API → 宿主工具）",
       "label_en": "Automatic Path A → Path B",
       "label_ja": "自動生成（Path A → Path B）",
+      "label_ko": "자동 선택 (codex → API → 웹 검색/사용자 업로드)",
       "desc_zh": "两条自动路径都不可用或失败时暂停，由你选择修复后重试、手动生成或取消受影响的 AI 图；不会自动转为手动。",
       "desc_zh_tw": "兩條自動路徑都不可用或失敗時暫停，由你選擇修復後重試、手動生成或取消受影響的 AI 圖；不會自動轉為手動。",
       "desc_en": "If both automated paths are unavailable or fail, pause for your choice: repair and retry, generate manually, or cancel the affected AI images. Manual is never assumed.",
-      "desc_ja": "両方の自動経路が利用不能または失敗した場合は停止し、修復後の再試行、手動生成、影響を受けたAI画像の取り消しから選択します。手動へ自動移行しません。"
+      "desc_ja": "両方の自動経路が利用不能または失敗した場合は停止し、修復後の再試行、手動生成、影響を受けたAI画像の取り消しから選択します。手動へ自動移行しません。",
+      "desc_ko": "codex 백엔드 우선(Codex CLI OAuth, API 키 불필요). 실패 시 설치/로그인 안내 후 재시도, 그래도 안 되면 구성된 API 백엔드(최하위), 이후 웹 검색 또는 사용자 업로드로 폴백."
     },
     {
       "id": "api",
@@ -1457,10 +1926,12 @@
       "label_zh_tw": "API 後端",
       "label_en": "Path A",
       "label_ja": "Path A",
+      "label_ko": "API 백엔드",
       "desc_zh": "强制走接口后端，第 5 步运行 image_gen.py（需已配置 IMAGE_BACKEND）。",
       "desc_zh_tw": "強制走 API 後端，第 5 步執行 image_gen.py（需已配置 IMAGE_BACKEND）。",
       "desc_en": "Force the API backend — image_gen.py runs in Step 5 (requires IMAGE_BACKEND).",
-      "desc_ja": "APIバックエンドを強制使用。ステップ5でimage_gen.pyを実行（IMAGE_BACKENDの設定が必要）。"
+      "desc_ja": "APIバックエンドを強制使用。ステップ5でimage_gen.pyを実行（IMAGE_BACKENDの設定が必要）。",
+      "desc_ko": "API 백엔드를 강제 사용 (IMAGE_BACKEND + 제공자 API 키 필요). 기본 사다리에서 우선순위가 가장 낮은 생성 엔진."
     },
     {
       "id": "host-native",
@@ -1494,7 +1965,8 @@
       "label_zh": "连续模式",
       "label_zh_tw": "連續模式",
       "label_en": "continuous",
-      "label_ja": "連続モード"
+      "label_ja": "連続モード",
+      "label_ko": "연속 모드"
     },
     {
       "id": "split",
@@ -1502,7 +1974,8 @@
       "label_zh": "分段模式",
       "label_zh_tw": "分段模式",
       "label_en": "split",
-      "label_ja": "分割モード"
+      "label_ja": "分割モード",
+      "label_ko": "분할 모드"
     }
   ],
   "design_spec_depth": [
@@ -1539,10 +2012,12 @@
       "label_zh_tw": "文字型 · 近讀",
       "label_en": "text / read-close",
       "label_ja": "文書型・近距離閲覧",
+      "label_ko": "문서형 · 근거리 읽기",
       "desc_zh": "页面脱离讲者也能独立读懂：使用完整句、短段落、图注、表格和必要细节；bullet 只用于真正并列的项目。",
       "desc_zh_tw": "頁面脫離講者也能獨立讀懂：使用完整句、短段落、圖說、表格和必要細節；bullet 只用於真正並列的項目。",
       "desc_en": "The page stands alone without a presenter: use complete sentences, short prose, captions, tables, and necessary detail; reserve bullets for genuinely parallel items.",
-      "desc_ja": "話者なしでもページ単体で理解できる構成。完全な文、短い段落、注釈、表、必要な細部を用い、箇条書きは本当に並列な項目だけに使う。"
+      "desc_ja": "話者なしでもページ単体で理解できる構成。完全な文、短い段落、注釈、表、必要な細部を用い、箇条書きは本当に並列な項目だけに使う。",
+      "desc_ko": "파일로 가까이서 읽는 용도 (보고서, 데이터 밀도 높은 브리프, 배포 자료). 본문 20px."
     },
     {
       "id": "balanced",
@@ -1551,10 +2026,12 @@
       "label_zh_tw": "均衡 · 商務",
       "label_en": "balanced / business",
       "label_ja": "バランス型・ビジネス",
+      "label_ko": "균형형 · 비즈니스",
       "desc_zh": "页面与讲者共同承担信息：一条主结论配合简短说明、结构化证据或必要列表，适合路演和业务评审。",
       "desc_zh_tw": "頁面與講者共同承擔資訊：一個主結論配合簡短說明、結構化證據或必要列表，適合路演和業務評審。",
       "desc_en": "The page and presenter share the load: pair one primary claim with concise explanation, structured evidence, or a necessary list. Best for roadshows and business reviews.",
-      "desc_ja": "ページと話者で情報を分担する構成。主張を一つ置き、短い説明、構造化した根拠、または必要なリストを組み合わせる。ロードショーや事業レビュー向け。"
+      "desc_ja": "ページと話者で情報を分担する構成。主張を一つ置き、短い説明、構造化した根拠、または必要なリストを組み合わせる。ロードショーや事業レビュー向け。",
+      "desc_ko": "투영과 읽기를 겸하는 용도 (로드쇼, 사업 리뷰). 기본 옵션, 본문 24px."
     },
     {
       "id": "presentation",
@@ -1563,10 +2040,12 @@
       "label_zh_tw": "展示型 · 演講",
       "label_en": "presentation / keynote",
       "label_ja": "プレゼン型・講演",
+      "label_ko": "발표형 · 프레젠테이션",
       "desc_zh": "讲者与视觉承担主要表达：一页一意，以简短主张、关键词、大图或大数字为主，解释进入讲述或备注，避免段落堆积。",
       "desc_zh_tw": "講者與視覺承擔主要表達：一頁一意，以簡短主張、關鍵字、大圖或大數字為主，解釋進入講述或備註，避免段落堆積。",
       "desc_en": "The presenter and visuals carry the explanation: use one idea per page, concise claims, keywords, large visuals, or hero numbers; move detail into speech or notes and avoid paragraph dumps.",
-      "desc_ja": "話者とビジュアルが主に説明を担う構成。1枚1メッセージで、短い主張、キーワード、大きな図や数値を中心にし、詳細は話者またはノートに置いて段落の詰め込みを避ける。"
+      "desc_ja": "話者とビジュアルが主に説明を担う構成。1枚1メッセージで、短い主張、キーワード、大きな図や数値を中心にし、詳細は話者またはノートに置いて段落の詰め込みを避ける。",
+      "desc_ko": "투영해서 뒤에서도 한눈에 읽히는 절제된 구성 (키노트, 발표회, 강의). 본문 32px."
     }
   ]
 }
