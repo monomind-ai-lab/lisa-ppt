@@ -4,7 +4,9 @@ Unified Image Generation Tool
 
 Dispatches to the appropriate backend based on explicit provider configuration.
 
-Backend selection (`IMAGE_BACKEND` in `.env` or the current process environment):
+Backend selection (`IMAGE_BACKEND` in `.env` or the current process environment;
+defaults to `codex` when unset — Codex CLI OAuth, no API key or .env needed):
+  IMAGE_BACKEND=codex       -> Codex CLI backend (codex exec + image_gen tool, ChatGPT OAuth)
   IMAGE_BACKEND=gemini      -> Gemini backend (google-genai SDK)
   IMAGE_BACKEND=openai      -> OpenAI-compatible backend (raw HTTP via requests)
   IMAGE_BACKEND=minimax     -> MiniMax image backend
@@ -29,7 +31,7 @@ Configuration source (process env wins, `.env` is the fallback layer):
      - `~/.ppt-master/.env` (user-level config)
 
 Supported keys:
-  IMAGE_BACKEND    (required) backend name
+  IMAGE_BACKEND    (optional) backend name; defaults to `codex` when unset
 
   Provider-specific keys are used for credentials and overrides, for example:
     GEMINI_API_KEY / GEMINI_MODEL / GEMINI_BASE_URL
@@ -100,6 +102,15 @@ ALL_ASPECT_RATIOS = [
 ALL_IMAGE_SIZES = ["512px", "1K", "2K", "4K"]
 
 BACKEND_REGISTRY = {
+    "codex": {
+        "module": "backend_codex",
+        "tier": "core",
+        "label": "Codex CLI (ChatGPT OAuth, built-in image_gen)",
+        "default_model": "gpt-image-2",
+        "default_image_size": "1K",
+        "key_hint": "codex login (no API key)",
+        "aliases": ["codex-image", "codex_image", "codex-cli"],
+    },
     "gemini": {
         "module": "backend_gemini",
         "tier": "core",
@@ -334,7 +345,7 @@ def _print_backend_resolution() -> None:
             source = f"none (checked {env_path})"
         else:
             source = "none (no .env found)"
-        print("Resolved backend: not configured (Path A unavailable)")
+        print("Resolved backend: codex (default — IMAGE_BACKEND unset; needs `codex login`)")
         print(f"Configuration source: {source}")
         return
 
@@ -387,26 +398,10 @@ def _resolve_backend() -> tuple[object, str]:
             sys.exit(1)
         return _load_backend(canonical)
 
-    supported = ", ".join(SUPPORTED_BACKENDS)
-    print(
-        "Error: No image backend configured for Path A (image_gen.py).\n"
-        "\n"
-        "If your host (Codex / Antigravity / Claude Code / etc.) has a native image\n"
-        "generation tool, do NOT run this script — switch to Path B: invoke the host's\n"
-        "image tool directly with the prompts from images/image_prompts.json and save\n"
-        "the outputs to images/<filename>. See references/image-generator.md §7 Path B.\n"
-        "\n"
-        "To use Path A instead, set IMAGE_BACKEND in one of these places:\n"
-        f"  1. Current process environment\n"
-        f"  2. {ENV_PATH}\n"
-        "\n"
-        f"Supported backends: {supported}\n"
-        "\n"
-        "Example:\n"
-        "  IMAGE_BACKEND=openai\n"
-        "  OPENAI_API_KEY=sk-xxx\n"
-    )
-    sys.exit(1)
+    # No IMAGE_BACKEND configured: default to the Codex CLI backend
+    # (ChatGPT OAuth via `codex login` — no API key or .env required).
+    print("IMAGE_BACKEND not set — defaulting to 'codex' (Codex CLI, ChatGPT OAuth).")
+    return _load_backend("codex")
 
 
 _AI_IMAGE_PATH_ROW_RE = re.compile(
