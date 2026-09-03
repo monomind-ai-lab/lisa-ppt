@@ -297,7 +297,7 @@ sources/회사표준템플릿.pptx 디자인 그대로 쓰고,
 - **자체 SVG → DrawingML 변환기** — 래스터화 없이 네이티브 PPTX 생성
 - **Pretendard · Noto Sans TC · Plus Jakarta Sans · JetBrains Mono** (SIL OFL) — 언어별 하우스 폰트, 저장소에 번들
 - **Playwright + Chromium** — 지오메트리 게이트의 선별 픽셀 확인·시각 검토용 페이지 렌더링 (선택 — 없으면 정적 검사만 동작)
-- **Tabler / Phosphor / Simple Icons** — 내장 아이콘 라이브러리 11,801개 (48 MB). 저장소는 받으면 약 90 MB, 풀면 약 70 MB입니다
+- **Tabler / Phosphor / Simple Icons** — 내장 아이콘 라이브러리 SVG 12,027개. 내용은 약 13 MB이지만 작은 파일이 많아 디스크에서는 약 48 MB입니다. 저장소 크기는 아래 [용량은 얼마나 되나요?](#용량은-얼마나-되나요)에 실측값이 있습니다
 
 ---
 

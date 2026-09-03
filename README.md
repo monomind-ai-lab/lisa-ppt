@@ -230,10 +230,13 @@ it when you move machines.
 - **Transparent images from gpt-image-2.** Asked for a transparent background,
   the model paints a checkerboard. The `codex-image` skill rewrites the prompt
   and says so; ask for a flat background when you can.
-- **Stay small.** A clone is about 90 MB of history and checks out to about
-  70 MB: `templates/icons/` alone is 11,801 SVGs, 48 MB, kept in the tree
-  rather than moved to a release download so a plugin install is complete; the
-  bundled fonts are 32 MB.
+- **Stay small — but know what "small" means here.** A full clone is 210 MB
+  and `--depth 1` is 131 MB; the measured breakdown is in
+  [How big it is](#how-big-it-is) below. `templates/icons/` alone is
+  12,027 SVGs — only about 13 MB of content, but ~48 MB once the filesystem
+  rounds 12,027 tiny files up to blocks — kept in the tree rather than moved
+  to a release download so a plugin install is complete; the bundled fonts are
+  32 MB.
 - **Run on every Python.** 3.10 is the floor and 3.14 is verified:
   `skia-pathops` and `uharfbuzz` ship abi3 wheels, and the pipeline is
   exercised on 3.11.

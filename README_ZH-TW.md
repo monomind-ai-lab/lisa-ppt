@@ -157,7 +157,7 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 - **SmartArt。** 刻意不做。
 - **接續快速模式。** 快速模式一次跑完，沒有確認階段，也沒有可接續的設計紀錄。
 - **gpt-image-2 的透明圖片。** 要求透明背景時，模型會畫出棋盤格。`codex-image` 技能會改寫提示詞並告訴你；能用單色背景就用單色背景。
-- **保持小巧。** clone 下來約 90 MB 的歷史，檢出後約 70 MB：光是 `templates/icons/` 就有 11,801 個 SVG，48 MB，留在樹裡而不是改成 release 下載，好讓外掛安裝一次到齊；隨附的字型佔 32 MB。
+- **保持小巧——但要知道這裡的「小」是什麼意思。** 完整 clone 是 210 MB，`--depth 1` 是 131 MB，實測明細見下方[它有多大](#它有多大)。光是 `templates/icons/` 就有 12,027 個 SVG——內容只約 13 MB，但 12,027 個小檔案在檔案系統上進位成區塊後約佔 48 MB——留在樹裡而不是改成 release 下載，好讓外掛安裝一次到齊；隨附的字型佔 32 MB。
 - **在每個 Python 上都能跑。** 3.10 是底線，3.14 已驗證：`skia-pathops` 與 `uharfbuzz` 提供 abi3 wheel，流程本身在 3.11 上跑。
 
 ---
