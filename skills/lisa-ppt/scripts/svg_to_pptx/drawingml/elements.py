@@ -3215,8 +3215,8 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
         )
     if translate_only and not ctx.use_transform_matrix:
         a, b, c, d, e, f = parse_transform_matrix(text_transform)
-        # A pure-translate transform on a text element (hand-authored, or written
-        # by a live-preview move) was otherwise ignored here, drifting the text.
+        # A pure-translate transform on a text element was otherwise ignored
+        # here, drifting the text.
         # Absorb the translation into the frame position.
         if (
             abs(a - 1.0) < 1e-9 and abs(b) < 1e-9

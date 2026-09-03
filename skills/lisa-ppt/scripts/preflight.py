@@ -44,7 +44,7 @@ CORE_MODULES = (
 )
 # (module, pip name, degraded surface when missing)
 OPTIONAL_MODULES = (
-    ("flask", "flask", "Confirm UI page + live preview fall back to chat-only"),
+    ("flask", "flask", "Confirm UI page falls back to chat-only"),
     ("numpy", "numpy", "image placeholder detection and watermark tooling degrade"),
     ("requests", "requests", "web image search / web_to_md unavailable"),
     ("playwright", "playwright", "visual-review rendering is skipped "

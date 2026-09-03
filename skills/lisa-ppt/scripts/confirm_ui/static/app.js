@@ -3878,8 +3878,8 @@
 
     // Combined color + typography + icon preview — not a separate confirmation, just a
     // live "overall impression" of the style choices made above. Kept
-    // deliberately abstract (a style chip, not a slide layout); page layout
-    // preview is the live-preview server's job (Step 6).
+    // deliberately abstract (a style chip, not a slide layout) — the deck
+    // itself is reviewed in PowerPoint after export.
     function renderStylePreview(host) {
         var wrap = el("div", "style-preview");
         var label = el("div", "style-preview-label");

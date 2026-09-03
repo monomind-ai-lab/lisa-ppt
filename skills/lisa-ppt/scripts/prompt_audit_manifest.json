@@ -58,7 +58,6 @@
     "skills/lisa-ppt/workflows/stages/verify-charts.md": 2500,
     "skills/lisa-ppt/workflows/stages/topic-research.md": 2000,
     "skills/lisa-ppt/workflows/lisa-deck.md": 2500,
-    "skills/lisa-ppt/workflows/stages/live-preview.md": 1000,
     "skills/lisa-ppt/workflows/stages/web-image-review.md": 750,
     "skills/lisa-ppt/references/visual-review.md": 3500,
     "skills/lisa-ppt/workflows/stages/visual-review.md": 1750,
@@ -958,14 +957,6 @@
         "skills/lisa-ppt/references/visual-review.md"
       ],
       "max_tokens": 7750
-    },
-    "stage.generate.live-preview": {
-      "description": "Live preview and annotation stage.",
-      "scope": "incremental",
-      "files": [
-        "skills/lisa-ppt/workflows/stages/live-preview.md"
-      ],
-      "max_tokens": 3000
     },
     "stage.generate.customize-animations": {
       "description": "Object-animation stage plus animation resolution rules. Ceiling raised after BUDGET_LOAD_SET reported 35742 tokens.",
@@ -2312,10 +2303,6 @@
       {
         "glob": "skills/lisa-ppt/scripts/docs/confirm_ui.md",
         "reason": "Confirm UI server/schema reference; the Strategist reads references/confirm-surface.md for the surface decision and authoring payloads."
-      },
-      {
-        "glob": "skills/lisa-ppt/scripts/docs/svg_editor.md",
-        "reason": "Browser editor behavior and lifecycle reference; the live-preview stage carries the launch and annotation procedure."
       },
       {
         "glob": "skills/lisa-ppt/scripts/docs/narration.md",

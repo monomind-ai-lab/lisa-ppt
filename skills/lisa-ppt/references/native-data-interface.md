@@ -58,7 +58,7 @@ The hash is a synchronization receipt, not proof of semantic equivalence; never 
       ]
     }
   </metadata>
-  <!-- Visible SVG fallback for live preview / non-native export goes here. -->
+  <!-- Visible SVG fallback for browser rendering / non-native export goes here. -->
 </g>
 ```
 

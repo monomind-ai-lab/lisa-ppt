@@ -121,7 +121,7 @@ the original `<use>` / `<symbol>` structure.
 
 | Concern | Required form |
 |---|---|
-| Reference syntax | SVG 2 form `href="#id"`. Legacy `xlink:href="#id"` remains read-compatible and Live Preview normalizes it to `href`; if both attributes exist, their values MUST match |
+| Reference syntax | SVG 2 form `href="#id"`. Legacy `xlink:href="#id"` remains read-compatible and is normalized to `href` when rendered; if both attributes exist, their values MUST match |
 | Referenced target | One of `<symbol>`, `<g>`, `<use>`, `<rect>`, `<circle>`, `<ellipse>`, `<line>`, `<path>`, `<polygon>`, `<polyline>`, `<text>`, or `<image>`. Nested local `<use>` is recursively expanded |
 | Instance position | Generated `<use x>` / `<use y>` use finite unitless values; an explicit `px` suffix is read-compatible. Omitted values default to `0` |
 | Symbol viewport | A referenced `<symbol>` MUST have a finite four-number `viewBox` with positive width/height. Its `<use>` MUST have positive finite unitless `width` and `height`; an explicit `px` suffix is read-compatible |
@@ -710,7 +710,7 @@ carrier's frame and attaches the preserved `txBody` payload.
 **Project text whitespace**: `xml:space` is valid only as an exact direct
 attribute on `<text>` or `<tspan>`, accepts only `default` and `preserve`,
 inherits through the text tree, and may be reset on a child `<tspan>`. The
-project maps it to the visible Chromium/SVG2 behavior used by Live Preview:
+project maps it to the visible Chromium/SVG2 behavior a browser applies:
 XML line endings and tabs become U+0020; in `default` mode contiguous spaces
 collapse across inline run boundaries and leading/trailing default-mode spaces
 in the resulting chunk are removed; in `preserve` mode every U+0020 remains
