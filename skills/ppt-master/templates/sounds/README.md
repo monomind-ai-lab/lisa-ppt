@@ -1,3 +1,5 @@
+> **Lisa's PPT: the audio files are not bundled.** The 186 WAV cues (12 MB) stay in the upstream repository at tag v6.1.0 — https://github.com/hugohe3/ppt-master/tree/v6.1.0/skills/ppt-master/templates/sounds. The vocabulary, index and licence notices below are kept so cues can still be planned; to materialise one, copy the three namespace directories (`bigsoundbank/`, `kenney-interface/`, `kenney-ui/`) from that tag into this directory, then run `sound_sync.py` as documented. Narration and export never need them.
+
 # Sound Effect Library
 
 This directory is PPT Master's global sound-effect library. It contains 186

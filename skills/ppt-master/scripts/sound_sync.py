@@ -154,7 +154,10 @@ def sync_sounds(
         source = global_dir / relative_path
         expected_sha256 = str(item["sha256"])
         if not source.is_file():
-            raise RuntimeError(f"library file not found for {sound_id}: {source}")
+            raise RuntimeError(
+                f"library file not found for {sound_id}: {source} — the audio "
+                "library is not bundled; see templates/sounds/README.md"
+            )
         actual_sha256 = _sha256(source)
         if actual_sha256 != expected_sha256:
             raise RuntimeError(

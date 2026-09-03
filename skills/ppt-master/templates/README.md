@@ -53,4 +53,4 @@ Page-local Shape-first catalog families, not kinds: Chart — value-driven geome
 
 ## Sound Library
 
-[`sounds/`](./sounds/) is a post-motion selection resource, not a template or Strategist resource: read its [cue vocabulary](./sounds/sound-vocabulary.md) only after a concrete auditory job exists and sync selected cues only ([usage](./sounds/README.md)).
+[`sounds/`](./sounds/) is a post-motion selection resource, not a template or Strategist resource: read its [cue vocabulary](./sounds/sound-vocabulary.md) only after a concrete auditory job exists and sync selected cues only ([usage](./sounds/README.md)); the audio files themselves are not bundled in Lisa's PPT — [`sounds/README.md`](./sounds/README.md) says where to fetch them.
