@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "ppt-master",
+  "description": "Generate natively editable PPTX from PDF / DOCX / URL / Markdown.",
+  "author": {
+    "name": "MonoMind AI Lab",
+    "url": "https://github.com/monomind-ai-lab"
+  },
+  "homepage": "https://github.com/monomind-ai-lab/lisa-ppt",
+  "repository": "https://github.com/monomind-ai-lab/lisa-ppt",
+  "license": "MIT",
+  "keywords": [
+    "pptx",
+    "presentation",
+    "powerpoint",
+    "svg",
+    "drawingml",
+    "ai",
+    "skill",
+    "office",
+    "document-conversion"
+  ],
+  "skills": "./"
+}
