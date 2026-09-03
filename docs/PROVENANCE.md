@@ -60,11 +60,14 @@ left are in this repository.
 | `skills/lisa-ppt/references/ai-image-comparison/` (43 MB) | trimmed; pointer README; nothing reads it |
 | `skills/lisa-ppt/templates/sounds/{bigsoundbank,kenney-interface,kenney-ui}/` (12 MB) | trimmed; vocabulary, index and notices kept; README says where the files are |
 
-Moved, untouched, under `docs/upstream/` for W2 to decide: `README.ppt-master.md`
-and `README_CN.ppt-master.md` (sponsor sections stripped, noted at the top),
-`why-ppt-master.md`, `project-positioning.md`, `what-is-ppt.md`, `roadmap.md`
-(+ `zh/`), `MAINTAINER_PLAYBOOK.ppt-master.md`. Their relative links may not
-resolve there.
+Parked untouched under `docs/upstream/` as the record of what was imported:
+`README.ppt-master.md` and `README_CN.ppt-master.md` (sponsor sections
+stripped, noted at the top) and `README.slide-master.ko.md`. Their relative
+links may not resolve there. Upstream's `why-ppt-master.md`,
+`project-positioning.md`, `what-is-ppt.md`, `roadmap.md` (+ `zh/`) and
+`MAINTAINER_PLAYBOOK.ppt-master.md` were parked by the import and deleted by
+the rebrand: they describe upstream's product direction and maintenance, not
+this repository's; the two READMEs and NOTICE carry the attribution.
 
 Repointed to `monomind-ai-lab/lisa-ppt` because the text is about this
 repository: the image-search user agent (`LisaPPT/1.0`), `marketplace.json`,

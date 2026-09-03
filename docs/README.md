@@ -32,14 +32,13 @@ User-facing documentation lives in this directory: English files are the canonic
 
 ## Project Direction
 
-Lisa's PPT's own direction is [`PLAN.md`](../PLAN.md). PPT Master's positioning documents are parked untouched under [`upstream/`](./upstream/) for reference (their relative links may not resolve there); W2 decides what to keep.
+Lisa's PPT's own direction is [`PLAN.md`](../PLAN.md); its provenance is [`PROVENANCE.md`](./PROVENANCE.md) and the root [`NOTICE`](../NOTICE). The two upstream READMEs and slide-master's Korean README are parked under [`upstream/`](./upstream/) as the record of what was imported (their relative links may not resolve there); upstream's positioning, roadmap and maintainer documents were not carried over.
 
 | Document | Description |
 |---|---|
-| [What Is a PPT?](./upstream/what-is-ppt.md) | The presentation medium, user jobs, delivery contexts, native object model, templates, and quality layers |
-| [Why PPT Master](./upstream/why-ppt-master.md) | Why choose it, and where it's not the right fit |
-| [Project Positioning](./upstream/project-positioning.md) | Long-term positioning, product promises, capability boundaries, and admission criteria |
-| [Roadmap](./upstream/roadmap.md) | Delivered capabilities, current priorities, and explicitly deferred directions |
+| [Provenance](./PROVENANCE.md) | Import points, every ported file, what was removed, the bundled fonts, and how a backport is recorded |
+| [PPT Master README](./upstream/README.ppt-master.md) | The upstream README at v6.1.0, parked for reference |
+| [slide-master README (Korean)](./upstream/README.slide-master.ko.md) | The slide-master README at the ported commit, parked for reference |
 
 ## Contributor Rules
 

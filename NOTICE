@@ -73,8 +73,9 @@ Removed from the imported tree (docs/PROVENANCE.md lists every path):
     中国电信, 中汽研
   - docs/assets/, references/ai-image-comparison/ and the sound audio files
     (pointer READMEs left in place)
-  - upstream's redirect index.html; upstream's positioning documents and
-    maintainer playbook are parked untouched under docs/upstream/
+  - upstream's redirect index.html, positioning documents, roadmap and
+    maintainer playbook (the two upstream READMEs and slide-master's Korean
+    README are parked untouched under docs/upstream/)
 
 Not taken from slide-master: the jangpm personal brand and deck; the apple,
 naver, naver_ir, mckinsey, google and anthropic presets; its affiliate link;

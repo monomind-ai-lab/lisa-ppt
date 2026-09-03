@@ -92,30 +92,43 @@ is the study kept in the Lisa workspace (`slide-master-study-2026-09-03.md`).
    here is 3.14 — check that `skia-pathops` and `uharfbuzz` have wheels; if
    not, document the supported range.
 
-### W2 · Rebrand
-- Names: "PPT Master" and "Slide Master" → **Lisa's PPT**; the skill
-  directory `ppt-master` → `lisa-ppt`; command `/lisa-ppt`; keep the other
-  four skill names. Add `.claude-plugin/plugin.json` and `marketplace.json`
-  mirroring `hi-ted-meet-lisa`'s, plus `.codex-plugin/`; keep the
-  `.codex/skills` stubs and the sync script.
-- README in three languages: **KO** from slide-master's README (its register
-  is the model — honest, concrete, no adjectives doing sales work), **EN**
-  written in Lisa's voice, **ZH-TW** translated from the EN. Same install
-  shapes as Lisa: plugin marketplace, `npx skills add`, clone.
-- Every prose reference to the old names in `workflows/`, `references/`,
-  `stages/`, `scripts/docs/` — grep and replace; keep the attribution lines.
-- House entries: `brands/monomind/templates/design_spec.md` (MonoMind
-  tokens: ink `#102033`, page `#eef6ff`, accent `#4f8cff`; every colour with a
-  `fact`/`approx` provenance mark) and `styles/` or `decks/` entries mirroring
-  Lisa's `evidence-deck` (argue from numbers) and `paper-brief` (chaptered
-  briefing). Register them with `register_template.py`.
-- Fonts: the lock becomes **one house family per language** — Pretendard
-  (KO), Noto Sans TC (ZH-TW), one Latin face for EN (Pretendard's Latin keeps
-  one family per deck; Plus Jakarta Sans matches Lisa) — bundled with their
-  OFL texts, weights named in the prompts exactly as bundled, converter
-  registered for both slots, an install step in the README, and the rule kept
-  verbatim: hierarchy through weight, size, tracking and colour, never by
-  switching families.
+### W2 · Rebrand — landed on `feat/rebrand` (2026-09-03)
+- Names: every "PPT Master" / "Slide Master" in prose, descriptions,
+  docstrings, user-facing messages and manifests is **Lisa's PPT** /
+  `lisa-ppt`; the skill directory is `skills/lisa-ppt`, the command
+  `/lisa-ppt`, the user-level config `~/.lisa-ppt/` (the old path is still
+  read), the recorder and video env vars `LISA_PPT_*` (old names honoured),
+  the HTTP user agent `LisaPPT/1.0`. Kept: attribution lines, PowerPoint's
+  "slide master" term, and the on-disk machine identifiers
+  (`ppt-master.*` schema ids, the `ppt-master-schema:` marker, the
+  `ppt-master://` schema `$id`) that layouts, scaffolds and fixtures carry.
+  `confirm_ui/`, `svg_editor/` and `templates/layouts/` strings are left to
+  W3 and W2b.
+- Manifests in Lisa's layout: root `.claude-plugin/plugin.json` (`lisa-ppt`
+  1.0.0, `skills: ./skills/`), `.claude-plugin/marketplace.json`
+  (`monomind-ppt`, one plugin sourced from `./`) and `.codex-plugin/plugin.json`;
+  the nested `skills/.claude-plugin/plugin.json` and upstream's `git-subdir`
+  source are gone. Install: `/plugin install lisa-ppt@monomind-ppt`.
+- README in three languages, each opening with the Ted & Lisa cover
+  (`assets/tedandlisa-cover.jpg`) and showing the Ted & Lisa figure below the
+  fold, describing the built product: **EN** in Lisa's voice, **KO** redone in
+  slide-master's register, **ZH-TW** from the EN. The two Lisa lanes (W4) and
+  the html.monomind.one card (W5) are written as in progress until they merge.
+- House entries: `templates/brands/monomind` (MonoMind tokens with
+  `fact`/`approx` provenance, the mark as logo) and the `evidence-deck` and
+  `paper-brief` styles in upstream's style format, registered; the confirm UI
+  lists all three.
+- Fonts: **one house family per language** — Pretendard (KO), Noto Sans TC
+  (ZH-TW), Plus Jakarta Sans (EN), plus JetBrains Mono for ids and code —
+  bundled with their OFL texts, weights named in the prompts exactly as
+  bundled, the CJK families registered for both converter slots, one
+  cross-platform fallback stack per language, `install_fonts.py` for all
+  four, `preflight.py` warning per missing family; the rule kept verbatim:
+  hierarchy through weight, size, tracking and colour, never by switching
+  families. The confirm UI's `fonts` catalog is W3's to align.
+- Docs: upstream's positioning, roadmap, what-is-ppt and maintainer playbook
+  deleted from `docs/upstream/` (the two READMEs and slide-master's Korean
+  README stay as provenance); `docs/README.md` indexes PROVENANCE instead.
 
 ### W3 · Intake UI rebuilt to the Ted & Lisa experience — nothing lost
 Keep, unchanged: the three-stage flow (direction → design system →
