@@ -45,7 +45,7 @@ native_structure_mode: structured
 ...
 ---
 
-# templates/decks/中国电信/templates/design_spec.md
+# templates/decks/<deck_id>/templates/design_spec.md
 ---
 kind: deck
 native_structure_mode: structured
@@ -322,7 +322,7 @@ Template Overview 写明可重复演示类型、目标受众与结果、交付/�
 ```json
 {
   "<deck_id>": {
-    "summary": "中国电信政企方案说明与下一步对齐汇报",
+    "summary": "<成品模板的应用场景与目标摘要>",
     "canvas_format": "ppt169",
     "page_count": 5,
     "primary_color": "#XXXXXX"
@@ -344,7 +344,7 @@ Step 3 确认已注册和/或指定工作区根目录后，会解析每个 root 
 并把每个选中的工作区安装为**各自独立**的一份项目内文件：
 
 ```
-<project>/templates/design_spec.brand.mckinsey.md
+<project>/templates/design_spec.brand.<brand_id>.md
 <project>/templates/design_spec.style.consulting-decision.md
 <project>/templates/design_spec.layout.presentation_core.md
 ```
@@ -352,7 +352,7 @@ Step 3 确认已注册和/或指定工作区根目录后，会解析每个 root 
 正文原样复制，只在 H1 下补一行来源标注：
 
 ```markdown
-> **Installed from**: `skills/ppt-master/templates/brands/mckinsey/` (library)
+> **Installed from**: `skills/ppt-master/templates/brands/<brand_id>/` (library)
 ```
 
 不存在合并后的项目 spec，也没有组合出来的能力标签。裸的

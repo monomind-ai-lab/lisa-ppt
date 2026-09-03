@@ -32,12 +32,14 @@
 
 ## 项目方向
 
+Lisa's PPT 自身的方向见 [`PLAN.md`](../../PLAN.md)。PPT Master 的定位文档原样存放在 [`upstream/zh/`](../upstream/zh/) 供参考（其中的相对链接可能失效），由 W2 决定取舍。
+
 | 文档 | 说明 |
 |---|---|
-| [什么是 PPT？](./what-is-ppt.md) | 演示媒介、用户任务、传递场景、原生对象模型、模板与质量层次 |
-| [为什么选 PPT Master](./why-ppt-master.md) | 为什么选它、以及它不适合的场景 |
-| [项目定位与能力边界](./project-positioning.md) | 长期定位、产品承诺、能力边界与准入判据 |
-| [路线图](./roadmap.md) | 已交付能力、当前优先级与明确推迟的方向 |
+| [什么是 PPT？](../upstream/zh/what-is-ppt.md) | 演示媒介、用户任务、传递场景、原生对象模型、模板与质量层次 |
+| [为什么选 PPT Master](../upstream/zh/why-ppt-master.md) | 为什么选它、以及它不适合的场景 |
+| [项目定位与能力边界](../upstream/zh/project-positioning.md) | 长期定位、产品承诺、能力边界与准入判据 |
+| [路线图](../upstream/zh/roadmap.md) | 已交付能力、当前优先级与明确推迟的方向 |
 
 ## 贡献者规则
 

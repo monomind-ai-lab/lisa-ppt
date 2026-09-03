@@ -13,9 +13,10 @@ We provide security updates for the latest version of PPT Master.
 
 **Please do not report security vulnerabilities through public GitHub Issues.**
 
-If you discover a security issue, please report it privately by emailing:
+If you discover a security issue, please report it privately through GitHub's
+vulnerability report form for this repository:
 
-**heyug3@gmail.com**
+**https://github.com/monomind-ai-lab/lisa-ppt/security/advisories/new**
 
 Include in your report:
 

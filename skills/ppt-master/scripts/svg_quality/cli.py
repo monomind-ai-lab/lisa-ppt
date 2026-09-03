@@ -16,7 +16,6 @@ Dependencies:
 import sys
 from pathlib import Path
 
-from attribution_guard import require_skill_integrity
 from slide_roster import discover_slide_svgs
 
 from .checker import SVGQualityChecker
@@ -111,7 +110,7 @@ def print_usage() -> None:
     print("  python3 scripts/svg_quality_checker.py projects/project/svg_output")
     print("  python3 scripts/svg_quality_checker.py projects/project")
     print("  python3 scripts/svg_quality_checker.py templates/layouts/presentation_core/templates --template-mode")
-    print("  python3 scripts/svg_quality_checker.py templates/decks/中国电信/templates --template-mode")
+    print("  python3 scripts/svg_quality_checker.py templates/decks/<deck_id>/templates --template-mode")
     print("\nOptions:")
     print("  --format <ppt169|ppt43|...>   Expected canvas format")
     print("  --stage <first-page|page|final>")
@@ -148,7 +147,6 @@ def print_usage() -> None:
 
 def main() -> None:
     """Run the CLI entry point."""
-    require_skill_integrity()
     if len(sys.argv) < 2:
         print_usage()
         sys.exit(0)

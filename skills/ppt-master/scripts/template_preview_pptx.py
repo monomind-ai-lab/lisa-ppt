@@ -27,7 +27,6 @@ from collections.abc import Iterator
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-from attribution_guard import require_skill_integrity
 from console_encoding import configure_utf8_stdio
 
 
@@ -329,7 +328,6 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    require_skill_integrity()
     parser = build_parser()
     args = parser.parse_args(argv)
 

@@ -32,20 +32,15 @@ Python is the only hard requirement.
 
 **Option A — Download ZIP** (easiest):
 
-1. Go to [github.com/hugohe3/ppt-master](https://github.com/hugohe3/ppt-master), or use the [AtomGit mirror](https://atomgit.com/hugohe3/ppt-master) in mainland China
+1. Go to [github.com/monomind-ai-lab/lisa-ppt](https://github.com/monomind-ai-lab/lisa-ppt)
 2. Click the green **Code** button → **Download ZIP**
-3. Unzip to `C:\Users\YourName\ppt-master`
+3. Unzip to `C:\Users\YourName\lisa-ppt`
 
-**Option B — Git Clone** (requires [Git](https://git-scm.com/downloads)). Run one of these clone commands:
+**Option B — Git Clone** (requires [Git](https://git-scm.com/downloads)). Run:
 
 ```powershell
 # GitHub
-git clone https://github.com/hugohe3/ppt-master.git
-```
-
-```powershell
-# AtomGit mirror
-git clone https://atomgit.com/hugohe3/ppt-master.git
+git clone https://github.com/monomind-ai-lab/lisa-ppt.git
 ```
 
 Then enter the cloned folder:
@@ -172,5 +167,5 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ## Still stuck?
 
 - 📖 [FAQ](./faq.md)
-- 🐛 [GitHub Issues](https://github.com/hugohe3/ppt-master/issues) — include your Python version, Windows version, and full error message
-- 💬 [GitHub Discussions](https://github.com/hugohe3/ppt-master/discussions)
+- 🐛 [GitHub Issues](https://github.com/monomind-ai-lab/lisa-ppt/issues) — include your Python version, Windows version, and full error message
+- 💬 [GitHub Discussions](https://github.com/monomind-ai-lab/lisa-ppt/discussions)

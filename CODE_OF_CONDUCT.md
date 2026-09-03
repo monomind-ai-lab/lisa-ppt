@@ -45,7 +45,7 @@ This Code of Conduct applies in all project spaces, including but not limited to
 
 If you experience or witness behavior that violates this Code of Conduct, please report it to:
 
-**heyug3@gmail.com**
+**the maintainers of https://github.com/monomind-ai-lab/lisa-ppt** (open an issue and ask for private follow-up)
 
 Please include, when possible:
 

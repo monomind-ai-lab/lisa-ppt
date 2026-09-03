@@ -58,36 +58,29 @@ It depends on how you installed PPT Master:
 
 | Install method | Update method |
 |---|---|
-| Git clone | Run `python3 skills/ppt-master/scripts/update_repo.py` inside the `ppt-master` folder |
+| Git clone | Run `git pull` inside the clone, then `pip install -r requirements.txt` when that file changed |
 | Download ZIP | Download the latest ZIP, unzip it into a new folder, copy your old `.env` and `projects/` folder into the new folder, then run `pip install -r requirements.txt` |
 | Skill marketplace | Reinstall or update through the matching marketplace / skills tool |
 
 For long-term use, Git clone is recommended. ZIP is fine for a quick trial, but it has no Git history and cannot run `git pull`.
 
-If you are not sure which install method you used, ask the AI to run this from the project folder:
-
-```bash
-python3 skills/ppt-master/scripts/update_repo.py
-```
-
-If the folder is not a Git clone, the script will tell you how to migrate a ZIP install.
+If the folder has no `.git` directory it is a ZIP install: migrate it as the table says.
 
 ## Q: The repo is over 1 GB and my skills tool fails to download it — can I get just the skill?
 
 Yes. The full repository is large (Git history plus bundled example decks and their assets), and that size is baked into the history — it can't be trimmed without breaking the many existing forks. If you only want the skill and not the full repo, use a lightweight path instead:
 
-- **Marketplace CLI**: `npx skills add hugohe3/ppt-master` or Claude Code's `/plugin install` fetch the skill files only (see the Set Up section of the README).
-- **Manual download**: grab `ppt-master-skill-*.zip` from the [Releases](https://github.com/hugohe3/ppt-master/releases) page — the skill files only (~56 MB), no full-repo clone.
+- **Marketplace CLI**: `npx skills add monomind-ai-lab/lisa-ppt` or Claude Code's `/plugin install` fetch the skill files only (see the Set Up section of the README).
+- **Manual download**: GitHub → **Code** → **Download ZIP** of the repository; the skill is the `skills/` directory inside it.
 
 For either skill-only path, locate the installed skill directory that contains `SKILL.md` and `requirements.txt`, then run `python3 -m pip install -r "<installed-skill-dir>/requirements.txt"` so the post-processing scripts work.
 
 Neither path carries a `.git` directory, so `git describe` cannot report the version. The installed release is recorded in the `metadata.version` field of the skill's own `SKILL.md` frontmatter.
 
-For users in mainland China who cannot reach GitHub reliably, the complete repository is also mirrored on [AtomGit](https://atomgit.com/hugohe3/ppt-master); clone it or download its ZIP there.
 
 ## Q: I installed from a skill marketplace. What prerequisites and working directory do I need?
 
-All installation paths require Python 3.10+ and an installed, authenticated agent host that can read and write files and run shell commands. The `npx skills add hugohe3/ppt-master` path additionally requires a working `npx` command, normally supplied with Node.js/npm; the repository does not declare a Node/npm minimum version. A host's own `/plugin install` command does not use that `npx` path.
+All installation paths require Python 3.10+ and an installed, authenticated agent host that can read and write files and run shell commands. The `npx skills add monomind-ai-lab/lisa-ppt` path additionally requires a working `npx` command, normally supplied with Node.js/npm; the repository does not declare a Node/npm minimum version. A host's own `/plugin install` command does not use that `npx` path.
 
 The installed skill directory and your working folder are different roles. Install Python dependencies from the directory that contains the installed skill's `SKILL.md` and `requirements.txt`, but start the agent in a separate persistent, writable working folder of your choice. The agent creates that folder's `projects/` directory as needed; you do not need to run it from the host-managed skill cache. See [Getting Started: Set up the installation and working folders](./getting-started.md#set-up-the-installation-and-working-folders) and the skill's [execution entry point](../skills/ppt-master/SKILL.md).
 
@@ -294,7 +287,6 @@ No. PPT Master is a presentation workflow, not a model or a complete agent. It s
 
 If the results you've seen look mediocre, check your setup before concluding anything about the tool: What model? What context size? Was image generation enabled? PPT Master + Claude Opus at 1M context + `gpt-image-2` images is a genuinely different experience from PPT Master + a small open-source model with no image API configured.
 
-> **No Claude access?** Project sponsor [PackyCode](https://www.packyapi.ai/register?aff=ppt-master) provides pay-as-you-go access to Claude and other models — no subscription, no overseas card required. Use promo code **`ppt-master`** for 10% off.
 
 One last thing: this is a free, solo-maintained open-source project. If it fits your needs, use it — I'm glad it helps; if it doesn't, pick another tool. Sincere feedback and suggestions are always welcome, because that's how the project gets a little better over time.
 

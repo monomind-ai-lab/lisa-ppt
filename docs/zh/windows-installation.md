@@ -32,20 +32,15 @@ Python 是唯一的硬性要求。
 
 **方式 A — 下载 ZIP**（最简单）：
 
-1. 打开 [GitHub](https://github.com/hugohe3/ppt-master)（中国大陆也可使用 [AtomGit 镜像](https://atomgit.com/hugohe3/ppt-master)）
+1. 打开 [GitHub](https://github.com/monomind-ai-lab/lisa-ppt)
 2. 点击绿色 **Code** 按钮 → **Download ZIP**
-3. 解压到 `C:\Users\你的用户名\ppt-master`
+3. 解压到 `C:\Users\你的用户名\lisa-ppt`
 
-**方式 B — Git Clone**（需要 [Git](https://git-scm.com/downloads)）。下面两条 clone 命令任选其一：
+**方式 B — Git Clone**（需要 [Git](https://git-scm.com/downloads)）。运行：
 
 ```powershell
 # GitHub
-git clone https://github.com/hugohe3/ppt-master.git
-```
-
-```powershell
-# AtomGit 镜像
-git clone https://atomgit.com/hugohe3/ppt-master.git
+git clone https://github.com/monomind-ai-lab/lisa-ppt.git
 ```
 
 然后进入克隆出的目录：
@@ -172,5 +167,5 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ## 还是搞不定？
 
 - 📖 [常见问题 (FAQ)](./faq.md)
-- 🐛 [GitHub Issues](https://github.com/hugohe3/ppt-master/issues) — 附上 Python 版本、Windows 版本和完整报错
-- 💬 [GitHub Discussions](https://github.com/hugohe3/ppt-master/discussions)
+- 🐛 [GitHub Issues](https://github.com/monomind-ai-lab/lisa-ppt/issues) — 附上 Python 版本、Windows 版本和完整报错
+- 💬 [GitHub Discussions](https://github.com/monomind-ai-lab/lisa-ppt/discussions)

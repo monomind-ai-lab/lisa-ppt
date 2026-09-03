@@ -39,7 +39,7 @@ Skill-only 安装应先找到同时包含 skill 的 `SKILL.md` 与 `requirements
 python3 -m pip install -r "<installed-skill-dir>/requirements.txt"
 ```
 
-使用 `npx skills add hugohe3/ppt-master` 还要求本机有可用的 `npx` 命令，通常由 Node.js/npm 提供；仓库没有规定 Node/npm 的最低版本。Host 自带的 `/plugin install` 不走这条 `npx` 路径。安装完成后，从**工作目录**启动 Agent，不要从 host 管理的 skill 缓存目录启动；执行入口会单独解析已安装 skill。安装方式见[快速开始](../../README_CN.md#快速开始)，运行规范见 [`SKILL.md`](../../skills/ppt-master/SKILL.md)。
+使用 `npx skills add monomind-ai-lab/lisa-ppt` 还要求本机有可用的 `npx` 命令，通常由 Node.js/npm 提供；仓库没有规定 Node/npm 的最低版本。Host 自带的 `/plugin install` 不走这条 `npx` 路径。安装完成后，从**工作目录**启动 Agent，不要从 host 管理的 skill 缓存目录启动；执行入口会单独解析已安装 skill。安装方式见[快速开始](../../README_CN.md#快速开始)，运行规范见 [`SKILL.md`](../../skills/ppt-master/SKILL.md)。
 
 ---
 

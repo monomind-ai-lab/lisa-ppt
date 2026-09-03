@@ -32,12 +32,14 @@ User-facing documentation lives in this directory: English files are the canonic
 
 ## Project Direction
 
+Lisa's PPT's own direction is [`PLAN.md`](../PLAN.md). PPT Master's positioning documents are parked untouched under [`upstream/`](./upstream/) for reference (their relative links may not resolve there); W2 decides what to keep.
+
 | Document | Description |
 |---|---|
-| [What Is a PPT?](./what-is-ppt.md) | The presentation medium, user jobs, delivery contexts, native object model, templates, and quality layers |
-| [Why PPT Master](./why-ppt-master.md) | Why choose it, and where it's not the right fit |
-| [Project Positioning](./project-positioning.md) | Long-term positioning, product promises, capability boundaries, and admission criteria |
-| [Roadmap](./roadmap.md) | Delivered capabilities, current priorities, and explicitly deferred directions |
+| [What Is a PPT?](./upstream/what-is-ppt.md) | The presentation medium, user jobs, delivery contexts, native object model, templates, and quality layers |
+| [Why PPT Master](./upstream/why-ppt-master.md) | Why choose it, and where it's not the right fit |
+| [Project Positioning](./upstream/project-positioning.md) | Long-term positioning, product promises, capability boundaries, and admission criteria |
+| [Roadmap](./upstream/roadmap.md) | Delivered capabilities, current priorities, and explicitly deferred directions |
 
 ## Contributor Rules
 

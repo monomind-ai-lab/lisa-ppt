@@ -22,7 +22,7 @@ Thank you for your interest in contributing! This guide will help you get starte
 ### Setup
 
 ```bash
-git clone https://github.com/hugohe3/ppt-master.git
+git clone https://github.com/monomind-ai-lab/lisa-ppt.git
 cd ppt-master
 pip install -r requirements.txt
 ```
@@ -104,7 +104,7 @@ python3 skills/ppt-master/scripts/svg_quality_checker.py <file_or_directory>
 
 ## Reporting Bugs
 
-Open an issue on [GitHub Issues](https://github.com/hugohe3/ppt-master/issues) and include:
+Open an issue on [GitHub Issues](https://github.com/monomind-ai-lab/lisa-ppt/issues) and include:
 
 - A clear description of the problem
 - Steps to reproduce

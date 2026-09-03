@@ -45,7 +45,7 @@ native_structure_mode: structured
 ...
 ---
 
-# templates/decks/中国电信/templates/design_spec.md
+# templates/decks/<deck_id>/templates/design_spec.md
 ---
 kind: deck
 native_structure_mode: structured
@@ -392,7 +392,7 @@ post-confirmation apply stage parses every root's real `kind` and installs each
 selected workspace as **its own** project-local file:
 
 ```
-<project>/templates/design_spec.brand.mckinsey.md
+<project>/templates/design_spec.brand.<brand_id>.md
 <project>/templates/design_spec.style.consulting-decision.md
 <project>/templates/design_spec.layout.presentation_core.md
 ```
@@ -401,7 +401,7 @@ The body of each file is copied unchanged; only one provenance line is
 prepended under its H1:
 
 ```markdown
-> **Installed from**: `skills/ppt-master/templates/brands/mckinsey/` (library)
+> **Installed from**: `skills/ppt-master/templates/brands/<brand_id>/` (library)
 ```
 
 There is no merged project spec and no combined capability label. A bare

@@ -10,13 +10,11 @@ description: >
   presentation-authored narrated/self-running video, or mentions ppt-master —
   in Korean too ("PPT 만들어줘", "이 템플릿에 내용 채워줘").
 metadata:
-  version: "6.1.0"
-  copyright: "Copyright (c) 2025-2026 Hugo He"
+  version: "1.0.0"
+  copyright: >-
+    Copyright (c) 2025-2026 Hugo He;
+    Copyright (c) 2026 MonoMind AI Lab
   license: "MIT"
-  official_repository: "https://github.com/hugohe3/ppt-master"
-  sponsors:
-    - "SPONSORS.md"
-    - "SPONSORS_CN.md"
 ---
 
 # PPT Master Skill
@@ -31,9 +29,9 @@ directory containing this file as `SKILL_DIR`. Per tool call, expand
 use CWD, or assume a repo checkout. If unavailable, ask; never search or guess.
 
 1. Read this file.
-2. Run `python3 "${SKILL_DIR}/scripts/attribution_guard.py"`. Any non-zero result
-   stops the Skill immediately; do not inspect, repair, or bypass the integrity
-   gate.
+2. Run `python3 "${SKILL_DIR}/scripts/preflight.py"` once per session. Fix a
+   `FAIL` (missing core dependency, stale Codex stubs) before continuing;
+   warnings only degrade optional surfaces.
 3. Read [`workflows/routing.md`](workflows/routing.md) through the concrete
    absolute path `${SKILL_DIR}/workflows/routing.md`.
 4. Select exactly one top-level route and its active profile from the routing
@@ -114,4 +112,3 @@ ends at export. Step numbers stay as written.
 - Keep required workflow, reference, script, and template documentation inside this Skill directory.
 - Repository-level documents may point into the package; package runtime files must not depend on repository-level instructions.
 - On Windows, if a documented `python3 ...` command is unavailable, rerun the same command with `python`.
-- Sponsor information is optional reference material. Read the matching [`SPONSORS.md`](SPONSORS.md) or [`SPONSORS_CN.md`](SPONSORS_CN.md) only when the user explicitly requests a model, AI image model, API/provider, or hosted-service recommendation. Never surface sponsor or model recommendations proactively during normal generation, troubleshooting, or quality review.

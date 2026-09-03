@@ -237,11 +237,11 @@ Use this for multi-project health checks before release or cleanup.
 
 ## `generate_examples_index.py`
 
-Rebuild the examples `README.md` index. The example projects live in the separate
-[ppt-master-examples](https://github.com/hugohe3/ppt-master-examples) repository.
+Rebuild the examples `README.md` index for a separate examples repository
+(Lisa's PPT publishes none yet).
 
 ```bash
-python3 scripts/generate_examples_index.py <path-to>/ppt-master-examples/examples
+python3 scripts/generate_examples_index.py <path-to-examples-repo>/examples
 ```
 
 ## `pptx_template_import.py`
