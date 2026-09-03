@@ -1,99 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-pptx-master="medical_university-master" data-pptx-master-name="Medical University" data-pptx-layout="02_toc" data-pptx-layout-name="Agenda">
-    <!-- 背景 -->
-    <rect id="master-bg" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false"/>
-
-    <!-- ==================== 页眉区域 ==================== -->
-    <rect x="0" y="0" width="1280" height="70" fill="#0066B3" />
-    <rect x="0" y="0" width="6" height="70" fill="#FF6B35" />
-
-    <!-- 页面标题 -->
-    <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28"
-        font-weight="bold">
-        目 录
-    </text>
-
-    <!-- 英文副标题 -->
-    <text x="130" y="46" fill="#FFFFFF" fill-opacity="0.7" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="16">
-        CONTENTS
-    </text>
-
-    <!-- 右上角 Logo -->
-    <text x="1200" y="46" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="16" font-weight="bold" id="semantic-02_toc-logo-1" data-pptx-role="logo">
-        {{LOGO}}
-    </text>
-
-    <!-- ==================== 目录内容区域 ==================== -->
-    <!-- 目录项容器 -->
-    <rect x="80" y="100" width="1120" height="520" fill="none" />
-
-    <!-- 目录项 01 -->
-    <rect x="80" y="115" width="540" height="95" fill="#E6F3FA" rx="8" />
-    <rect x="80" y="115" width="6" height="95" fill="#0066B3" rx="3" />
-    <text x="120" y="165" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
-        font-weight="bold">01</text>
-    <text x="190" y="158" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
-        font-weight="bold">{{TOC_ITEM_1_TITLE}}</text>
-    <text x="120" y="192" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="14">{{TOC_ITEM_1_DESC}}</text>
-
-    <!-- 目录项 02 -->
-    <rect x="660" y="115" width="540" height="95" fill="#E6F3FA" rx="8" />
-    <rect x="660" y="115" width="6" height="95" fill="#0066B3" rx="3" />
-    <text x="700" y="165" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
-        font-weight="bold">02</text>
-    <text x="770" y="158" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
-        font-weight="bold">{{TOC_ITEM_2_TITLE}}</text>
-    <text x="700" y="192" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="14">{{TOC_ITEM_2_DESC}}</text>
-
-    <!-- 目录项 03 -->
-    <rect x="80" y="235" width="540" height="95" fill="#E8F5EE" rx="8" />
-    <rect x="80" y="235" width="6" height="95" fill="#00A86B" rx="3" />
-    <text x="120" y="285" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
-        font-weight="bold">03</text>
-    <text x="190" y="278" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
-        font-weight="bold">{{TOC_ITEM_3_TITLE}}</text>
-    <text x="120" y="312" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="14">{{TOC_ITEM_3_DESC}}</text>
-
-    <!-- 目录项 04 -->
-    <rect x="660" y="235" width="540" height="95" fill="#E8F5EE" rx="8" />
-    <rect x="660" y="235" width="6" height="95" fill="#00A86B" rx="3" />
-    <text x="700" y="285" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
-        font-weight="bold">04</text>
-    <text x="770" y="278" fill="#004080" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
-        font-weight="bold">{{TOC_ITEM_4_TITLE}}</text>
-    <text x="700" y="312" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="14">{{TOC_ITEM_4_DESC}}</text>
-
-    <!-- 目录项 05（可选） -->
-    <rect x="80" y="355" width="540" height="95" fill="none" stroke="#D0D7E0" stroke-width="1" stroke-dasharray="4,4"
-        rx="8" />
-    <text x="350" y="410" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="16">{{TOC_ITEM_5_TITLE}}</text>
-
-    <!-- 目录项 06（可选） -->
-    <rect x="660" y="355" width="540" height="95" fill="none" stroke="#D0D7E0" stroke-width="1" stroke-dasharray="4,4"
-        rx="8" />
-    <text x="930" y="410" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif"
-        font-size="16">{{TOC_ITEM_6_TITLE}}</text>
-
-    <!-- ==================== 装饰元素 ==================== -->
-    <!-- 底部医疗图标装饰 -->
-    <!-- 十字符号 -->
-    <rect x="600" y="520" width="80" height="20" fill="#00A86B" fill-opacity="0.2" rx="3" />
-    <rect x="630" y="490" width="20" height="80" fill="#00A86B" fill-opacity="0.2" rx="3" />
-
-    <!-- ==================== 页脚区域 ==================== -->
-    <line x1="40" y1="665" x2="1240" y2="665" stroke="#E6F3FA" stroke-width="1" />
-    <text x="40" y="695" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">
-        {{INSTITUTION}}
-    </text>
-    <g id="page-number-slot" data-pptx-placeholder="slide-number" data-pptx-placeholder-idx="1" data-pptx-placeholder-bounds="1100 678 124 22">
-        <text x="1220" y="695" text-anchor="end" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif"
-            font-size="14" id="slot-02_toc-slide_number-1" data-pptx-placeholder-carrier="true">{{PAGE_NUM}}</text>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="medical_university_master" data-pptx-master-name="Medical University"
+  data-pptx-layout="toc" data-pptx-layout-name="Table of Contents">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="toc-header-band" x="0" y="0" width="1280" height="70" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-header-accent" x="0" y="0" width="6" height="70" fill="#FF6B35"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-one" x="80" y="115" width="540" height="95" rx="8" fill="#E6F3FA"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-one-bar" x="80" y="115" width="6" height="95" rx="3" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-two" x="660" y="115" width="540" height="95" rx="8" fill="#E6F3FA"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-two-bar" x="660" y="115" width="6" height="95" rx="3" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-three" x="80" y="235" width="540" height="95" rx="8" fill="#E8F5EE"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-three-bar" x="80" y="235" width="6" height="95" rx="3" fill="#00A86B"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-four" x="660" y="235" width="540" height="95" rx="8" fill="#E8F5EE"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-four-bar" x="660" y="235" width="6" height="95" rx="3" fill="#00A86B"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-five" x="80" y="355" width="540" height="95" rx="8" fill="none"
+    stroke="#D0D7E0" stroke-width="1" stroke-dasharray="4 4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-six" x="660" y="355" width="540" height="95" rx="8" fill="none"
+    stroke="#D0D7E0" stroke-width="1" stroke-dasharray="4 4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-cross-horizontal" x="600" y="520" width="80" height="20" rx="3" fill="#00A86B" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-cross-vertical" x="630" y="490" width="20" height="80" rx="3" fill="#00A86B" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="toc-footer-rule" x1="40" y1="665" x2="1240" y2="665" stroke="#E6F3FA" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="toc-index-one" x="120" y="165" fill="#004080"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">01</text>
+  <text id="toc-index-two" x="700" y="165" fill="#004080"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">02</text>
+  <text id="toc-index-three" x="120" y="285" fill="#004080"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">03</text>
+  <text id="toc-index-four" x="700" y="285" fill="#004080"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">04</text>
+  <text id="toc-index-five" x="120" y="405" fill="#999999"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">05</text>
+  <text id="toc-index-six" x="700" y="405" fill="#999999"
+    font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">06</text>
+  <g id="toc-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="40 16 300 42">
+    <text id="toc-title-carrier" data-pptx-carrier="true"
+      x="40" y="46" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="toc-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="360 16 680 42">
+    <text id="toc-subtitle-carrier" data-pptx-carrier="true"
+      x="360" y="46" fill="#FFFFFF" fill-opacity="0.7"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">{{PAGE_TITLE_EN}}</text>
+  </g>
+  <g id="toc-logo-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="1060 16 140 42">
+    <text id="toc-logo-carrier" data-pptx-carrier="true"
+      x="1200" y="46" text-anchor="end" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">{{BRAND_LOGO}}</text>
+  </g>
+  <g id="toc-item-one-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="190 128 415 76">
+    <text id="toc-item-one-carrier" data-pptx-carrier="true"
+      x="190" y="158" fill="#004080"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">{{TOC_ITEM_1_TITLE}}<tspan x="190" dy="34" fill="#666666" font-size="14" font-weight="400">{{TOC_ITEM_1_DESC}}</tspan></text>
+  </g>
+  <g id="toc-item-two-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="770 128 415 76">
+    <text id="toc-item-two-carrier" data-pptx-carrier="true"
+      x="770" y="158" fill="#004080"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">{{TOC_ITEM_2_TITLE}}<tspan x="770" dy="34" fill="#666666" font-size="14" font-weight="400">{{TOC_ITEM_2_DESC}}</tspan></text>
+  </g>
+  <g id="toc-item-three-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="190 248 415 76">
+    <text id="toc-item-three-carrier" data-pptx-carrier="true"
+      x="190" y="278" fill="#004080"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">{{TOC_ITEM_3_TITLE}}<tspan x="190" dy="34" fill="#666666" font-size="14" font-weight="400">{{TOC_ITEM_3_DESC}}</tspan></text>
+  </g>
+  <g id="toc-item-four-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="770 248 415 76">
+    <text id="toc-item-four-carrier" data-pptx-carrier="true"
+      x="770" y="278" fill="#004080"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">{{TOC_ITEM_4_TITLE}}<tspan x="770" dy="34" fill="#666666" font-size="14" font-weight="400">{{TOC_ITEM_4_DESC}}</tspan></text>
+  </g>
+  <g id="toc-item-five-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="190 368 415 76">
+    <text id="toc-item-five-carrier" data-pptx-carrier="true"
+      x="190" y="398" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">{{TOC_ITEM_5_TITLE}}<tspan x="190" dy="34" fill="#999999" font-size="14" font-weight="400">{{TOC_ITEM_5_DESC}}</tspan></text>
+  </g>
+  <g id="toc-item-six-slot" data-pptx-placeholder="object" data-pptx-idx="8"
+    data-pptx-bounds="770 368 415 76">
+    <text id="toc-item-six-carrier" data-pptx-carrier="true"
+      x="770" y="398" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">{{TOC_ITEM_6_TITLE}}<tspan x="770" dy="34" fill="#999999" font-size="14" font-weight="400">{{TOC_ITEM_6_DESC}}</tspan></text>
+  </g>
+  <g id="toc-institution-slot" data-pptx-placeholder="footer" data-pptx-idx="9"
+    data-pptx-bounds="40 676 480 32">
+    <text id="toc-institution-carrier" data-pptx-carrier="true"
+      x="40" y="695" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{INSTITUTION}}</text>
+  </g>
+  <g id="toc-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="10"
+    data-pptx-bounds="1100 676 124 32">
+    <text id="toc-pagenum-carrier" data-pptx-carrier="true"
+      x="1220" y="695" text-anchor="end" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{PAGE_NUM}}</text>
+  </g>
 </svg>

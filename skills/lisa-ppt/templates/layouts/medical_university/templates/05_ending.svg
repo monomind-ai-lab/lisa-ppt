@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="medical_university_master" data-pptx-master-name="Medical University"
+  data-pptx-layout="ending" data-pptx-layout-name="Closing">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="ending-header-band" x="0" y="0" width="1280" height="100" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-header-accent" x="0" y="0" width="6" height="100" fill="#FF6B35"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <path id="ending-header-pulse" d="M40 50 L100 50 L120 20 L140 80 L160 40 L180 60 L200 50 L280 50"
+    fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-divider" x1="460" y1="380" x2="820" y2="380" stroke="#0066B3" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-divider-dot" cx="640" cy="380" r="6" fill="#00A86B"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-divider-cap-left" cx="460" cy="380" r="4" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-divider-cap-right" cx="820" cy="380" r="4" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-contact-card" x="340" y="420" width="600" height="150" rx="8" fill="#F5F7FA"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-contact-card-bar" x="340" y="420" width="6" height="150" rx="3" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-cross-left-horizontal" x="120" y="380" width="60" height="15" rx="3" fill="#00A86B" fill-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-cross-left-vertical" x="142" y="358" width="15" height="60" rx="3" fill="#00A86B" fill-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-cross-right-horizontal" x="1100" y="380" width="60" height="15" rx="3" fill="#00A86B" fill-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-cross-right-vertical" x="1122" y="358" width="15" height="60" rx="3" fill="#00A86B" fill-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-footer-band" x="0" y="665" width="1280" height="55" fill="#F5F7FA"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-footer-rule" x="0" y="665" width="1280" height="3" fill="#0066B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="ending-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 228 1000 76">
+    <text id="ending-title-carrier" data-pptx-carrier="true"
+      x="640" y="280" text-anchor="middle" fill="#004080"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="52" font-weight="700">{{THANK_YOU}}</text>
+  </g>
+  <g id="ending-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="140 312 1000 44">
+    <text id="ending-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="340" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{ENDING_SUBTITLE}}</text>
+  </g>
+  <g id="ending-contact-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="360 440 560 116">
+    <text id="ending-contact-carrier" data-pptx-carrier="true"
+      x="640" y="470" text-anchor="middle" fill="#004080"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="700">{{INSTITUTION}}<tspan x="640" dy="40" fill="#333333" font-size="16" font-weight="400">{{DEPARTMENT}}</tspan><tspan x="640" dy="35" fill="#666666" font-size="14" font-weight="400">{{CONTACT_INFO}}</tspan></text>
+  </g>
+  <g id="ending-copyright-slot" data-pptx-placeholder="footer" data-pptx-idx="3"
+    data-pptx-bounds="340 676 600 32">
+    <text id="ending-copyright-carrier" data-pptx-carrier="true"
+      x="640" y="700" text-anchor="middle" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{COPYRIGHT}}</text>
+  </g>
+  <g id="ending-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="4"
+    data-pptx-bounds="1100 676 124 32">
+    <text id="ending-pagenum-carrier" data-pptx-carrier="true"
+      x="1220" y="700" text-anchor="end" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{PAGE_NUM}}</text>
+  </g>
+  <g id="ending-logo-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="1040 25 160 50">
+    <text id="ending-logo-carrier" data-pptx-carrier="true"
+      x="1200" y="58" text-anchor="end" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">{{BRAND_LOGO}}</text>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="medical_university_master" data-pptx-master-name="Medical University"
+  data-pptx-layout="chapter" data-pptx-layout-name="Chapter">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="chapter-background" x="0" y="0" width="1280" height="720" fill="#004080"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <path id="chapter-geometry-wedge" d="M850 0 L1280 0 L1280 720 L650 720 Z" fill="#0066B3" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-geometry-edge" x="1200" y="0" width="80" height="720" fill="#003366" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-cross-horizontal" x="1050" y="280" width="120" height="30" rx="4" fill="#FFFFFF" fill-opacity="0.08"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-cross-vertical" x="1095" y="235" width="30" height="120" rx="4" fill="#FFFFFF" fill-opacity="0.08"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-outer" cx="1180" cy="550" r="40" fill="none" stroke="#00A86B" stroke-width="2" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-inner" cx="1180" cy="550" r="25" fill="none" stroke="#00A86B" stroke-width="2" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-core" cx="1180" cy="550" r="10" fill="#00A86B" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-accent-bar" x="0" y="260" width="12" height="200" fill="#FF6B35"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-title-rule" x1="380" y1="275" x2="520" y2="275" stroke="#FF6B35" stroke-width="6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-title-dot" cx="530" cy="275" r="6" fill="#00A86B"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-footer-rule" x1="40" y1="665" x2="1240" y2="665" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="chapter-number-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="100 220 600 370">
+    <text id="chapter-number-carrier" data-pptx-carrier="true"
+      x="120" y="480" fill="#FFFFFF" fill-opacity="0.08"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="280" font-weight="700">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="chapter-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="380 300 844 84">
+    <text id="chapter-title-carrier" data-pptx-carrier="true"
+      x="380" y="360" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="52" font-weight="700">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="chapter-desc-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="380 390 844 44">
+    <text id="chapter-desc-carrier" data-pptx-carrier="true"
+      x="380" y="420" fill="#E6F3FA"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CHAPTER_DESC}}</text>
+  </g>
+  <g id="chapter-footer-slot" data-pptx-placeholder="footer" data-pptx-idx="3"
+    data-pptx-bounds="640 670 600 36">
+    <text id="chapter-footer-carrier" data-pptx-carrier="true"
+      x="1240" y="690" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">{{INSTITUTION}}</text>
+  </g>
+</svg>
