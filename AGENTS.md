@@ -65,6 +65,7 @@ PPT Master turns source material into natively editable DrawingML PPTX. Generate
 Convenience summary only — route selection starts in [`SKILL.md`](skills/ppt-master/SKILL.md). Image to PPTX always uses [`quick-generate.md`](skills/ppt-master/workflows/profiles/quick-generate.md); Beautify uses it only when Quick is explicit, otherwise [`generate-pptx.md`](skills/ppt-master/workflows/generate-pptx.md).
 
 ```bash
+python3 skills/ppt-master/scripts/preflight.py [--needs-images]                     # once per session: deps, house font, Codex stubs
 python3 skills/ppt-master/scripts/source_to_md.py <file_or_URL_or_dir> [...]          # source conversion
 python3 skills/ppt-master/scripts/project_manager.py init <project_name>              # --format only for an exact registered canvas
 python3 skills/ppt-master/scripts/project_manager.py import-sources <project_path> <sources...>
