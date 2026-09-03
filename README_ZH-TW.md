@@ -74,6 +74,12 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 
 沒有來源？代理程式先做研究，再跑同一條流程。
 
+```text
+/lisa-ppt deck.html
+```
+
+已經有一份做好的 Lisa 簡報？它的每一頁會成為專案的來源 Markdown，它自己的顏色 token 會成為預先填好的 `design_spec.md`，讓 `.pptx` 從這份簡報自己的樣子開始。
+
 其他的用白話說就好，路由器會挑路線：
 
 ```text

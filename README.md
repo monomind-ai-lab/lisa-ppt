@@ -97,6 +97,14 @@ with a live preview, checks the geometry, and exports
 
 No source? The agent researches first, then runs the same pipeline.
 
+```text
+/lisa-ppt deck.html
+```
+
+A finished Lisa deck? Its slides become the project's source Markdown and
+its own colour tokens a pre-filled `design_spec.md`, so the `.pptx` starts
+from the deck's own look.
+
 Say the rest in plain words; the router picks the route:
 
 ```text
