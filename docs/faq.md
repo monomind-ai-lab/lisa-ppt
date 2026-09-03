@@ -68,7 +68,7 @@ If the folder has no `.git` directory it is a ZIP install: migrate it as the tab
 
 ## Q: How big is the repository, and can I get just the skill?
 
-A clone is about 90 MB of Git history and checks out to about 70 MB, of which `skills/lisa-ppt/templates/icons/` (11,801 SVGs) is 48 MB and the bundled fonts are 33 MB. The plugin path installs this repository as the plugin root (`.claude-plugin/marketplace.json` points its one plugin at `./`), so `/plugin install lisa-ppt@monomind-ppt` and `codex plugin marketplace add monomind-ai-lab/lisa-ppt` fetch the whole tree; `requirements.txt`, `projects/` and the `.codex/skills/` stubs sit at that root. If you only want the skill directories:
+A clone is about 90 MB of Git history and checks out to about 70 MB, of which `skills/lisa-ppt/templates/icons/` (11,801 SVGs) is 48 MB and the bundled fonts are 32 MB. The plugin path installs this repository as the plugin root (`.claude-plugin/marketplace.json` points its one plugin at `./`), so `/plugin install lisa-ppt@monomind-ppt` and `codex plugin marketplace add monomind-ai-lab/lisa-ppt` fetch the whole tree; `requirements.txt`, `projects/` and the `.codex/skills/` stubs sit at that root. If you only want the skill directories:
 
 - **Agent Skills CLI**: `npx skills add monomind-ai-lab/lisa-ppt` fetches the `skills/` tree.
 - **Manual download**: GitHub → **Code** → **Download ZIP** of the repository; the skills are the `skills/` directory inside it.

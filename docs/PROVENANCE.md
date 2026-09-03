@@ -84,6 +84,18 @@ v6.1.0's Edit Native PPTX route covers both); the
 `Pretendard, "Malgun Gothic", sans-serif` fallback stack as-is (Windows-Korean;
 the per-language cross-platform tail is the rebrand's).
 
+## Bundled fonts
+
+Fetched once from the upstream repositories at the commits below; the OFL
+text beside each family is the upstream licence file verbatim.
+
+| Here | Source | Files |
+|---|---|---|
+| `skills/lisa-ppt/assets/fonts/Pretendard/` | slide-master `166472bd` (see above), originally [orioncactus/pretendard](https://github.com/orioncactus/pretendard) v1.3.9 | 6 OTF + `LICENSE.txt` |
+| `skills/lisa-ppt/assets/fonts/NotoSansTC/` | [notofonts/noto-cjk](https://github.com/notofonts/noto-cjk) tag `Sans2.004` (`523d033d`), `Sans/SubsetOTF/TC/` | `NotoSansTC-{Light,Regular,Medium,Bold}.otf` + `LICENSE.txt` (repository `LICENSE`) |
+| `skills/lisa-ppt/assets/fonts/PlusJakartaSans/` | [tokotype/PlusJakartaSans](https://github.com/tokotype/PlusJakartaSans) `18d1cd2f` (master, 2024-01-18), `fonts/ttf/` | `PlusJakartaSans-{Light,Regular,Medium,SemiBold,Bold,ExtraBold}.ttf` + `LICENSE.txt` (`OFL.txt`) |
+| `skills/lisa-ppt/assets/fonts/JetBrainsMono/` | [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) tag `v2.304` (`cd5227bd`), `fonts/ttf/` | `JetBrainsMono-{Regular,Medium,SemiBold}.ttf` + `LICENSE.txt` (`OFL.txt`) |
+
 ## Backports
 
 None yet. A backport is a deliberate, hand-made change from a fresh clone of

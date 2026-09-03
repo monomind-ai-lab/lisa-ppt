@@ -67,7 +67,7 @@ Lisa's PPT 可以在任何能读取文件和执行命令、支持 Agent 的 AI �
 
 ## Q: 仓库有多大？能只拿 skill 吗？
 
-clone 下来约 90 MB 的 Git 历史，检出后约 70 MB，其中 `skills/lisa-ppt/templates/icons/`（11,801 个 SVG）占 48 MB，内置字体占 33 MB。插件路径把这个仓库整体作为插件根目录安装（`.claude-plugin/marketplace.json` 里唯一的插件指向 `./`），所以 `/plugin install lisa-ppt@monomind-ppt` 和 `codex plugin marketplace add monomind-ai-lab/lisa-ppt` 拉取的是完整目录树；`requirements.txt`、`projects/` 和 `.codex/skills/` 的 stub 都在这个根目录下。如果只想要 skill 目录：
+clone 下来约 90 MB 的 Git 历史，检出后约 70 MB，其中 `skills/lisa-ppt/templates/icons/`（11,801 个 SVG）占 48 MB，内置字体占 32 MB。插件路径把这个仓库整体作为插件根目录安装（`.claude-plugin/marketplace.json` 里唯一的插件指向 `./`），所以 `/plugin install lisa-ppt@monomind-ppt` 和 `codex plugin marketplace add monomind-ai-lab/lisa-ppt` 拉取的是完整目录树；`requirements.txt`、`projects/` 和 `.codex/skills/` 的 stub 都在这个根目录下。如果只想要 skill 目录：
 
 - **Agent Skills CLI**：`npx skills add monomind-ai-lab/lisa-ppt` 只拉取 `skills/` 目录树。
 - **手动下载**：在 GitHub 上 **Code** → **Download ZIP** 下载仓库；skill 就是其中的 `skills/` 目录。

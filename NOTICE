@@ -24,13 +24,21 @@ a scheduled sync.
   Vendored skill: diagram-design — https://github.com/cathrynlavery/diagram-design
                   Copyright (c) 2025 Cathryn Lavery, MIT —
                   skills/diagram-design/LICENSE
-  Fonts:          Pretendard v1.3.9 — Copyright (c) 2021 Kil Hyung-jin,
-                  SIL Open Font License 1.1 —
-                  skills/lisa-ppt/assets/fonts/Pretendard/LICENSE.txt
-                  (six weights bundled: Light, Regular, Medium, SemiBold,
-                  Bold, ExtraBold). Noto Sans TC and Plus Jakarta Sans (both
-                  SIL OFL 1.1) arrive with the rebrand, licence texts beside
-                  the files.
+  Fonts:          one house family per language, each SIL Open Font License
+                  1.1 with the licence text beside the files under
+                  skills/lisa-ppt/assets/fonts/:
+                  Pretendard v1.3.9 — Copyright (c) 2021 Kil Hyung-jin —
+                  Pretendard/LICENSE.txt (Light, Regular, Medium, SemiBold,
+                  Bold, ExtraBold);
+                  Noto Sans TC (Noto Sans CJK 2.004, TC subset) — Copyright
+                  (c) 2014-2021 Adobe — NotoSansTC/LICENSE.txt (Light,
+                  Regular, Medium, Bold);
+                  Plus Jakarta Sans — Copyright 2020 The Plus Jakarta Sans
+                  Project Authors — PlusJakartaSans/LICENSE.txt (Light,
+                  Regular, Medium, SemiBold, Bold, ExtraBold);
+                  JetBrains Mono v2.304 — Copyright 2020 The JetBrains Mono
+                  Project Authors — JetBrainsMono/LICENSE.txt (Regular,
+                  Medium, SemiBold).
   Icons:          skills/lisa-ppt/templates/icons/ — 47 MB, 11,801 SVGs —
                   kept as imported; licences in its THIRD_PARTY_NOTICES.md.
   Sounds:         the cue vocabulary, index and CC0-1.0 notices are kept; the

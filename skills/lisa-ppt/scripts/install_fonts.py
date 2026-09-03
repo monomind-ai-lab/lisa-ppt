@@ -7,6 +7,12 @@ macOS, Windows and Linux, so a deck authored here and a deck opened here both
 render with the family the prompts name. PPTX does not embed fonts: run this
 on every machine that authors or opens the decks.
 
+One house family per language, plus the mono face, each beside its OFL text:
+    Pretendard          Korean            Light, Regular, Medium, SemiBold, Bold, ExtraBold
+    NotoSansTC          Traditional Chinese  Light, Regular, Medium, Bold
+    PlusJakartaSans     English           Light, Regular, Medium, SemiBold, Bold, ExtraBold
+    JetBrainsMono       ids and code      Regular, Medium, SemiBold
+
 Usage:
     python3 scripts/install_fonts.py [--dry-run] [--check] [--family NAME] [--force]
 
@@ -14,6 +20,7 @@ Examples:
     python3 scripts/install_fonts.py --dry-run      # show what would be copied where
     python3 scripts/install_fonts.py                # install every bundled family user-level
     python3 scripts/install_fonts.py --check        # report which bundled files are installed
+    python3 scripts/install_fonts.py --family NotoSansTC --dry-run
     python3 scripts/install_fonts.py --family Pretendard --force
 
 Dependencies:
@@ -154,7 +161,8 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     rows = plan(families)
-    print(f"[install_fonts] {len(rows)} file(s) in {len(families)} family(ies): {', '.join(families)}")
+    summary = ", ".join(f"{name} ({len(files)})" for name, files in families.items())
+    print(f"[install_fonts] {len(rows)} file(s) in {len(families)} family(ies): {summary}")
     if args.check:
         missing = 0
         for src, dest, state in rows:
