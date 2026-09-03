@@ -57,6 +57,7 @@
     "skills/lisa-ppt/workflows/stages/refine-spec.md": 1000,
     "skills/lisa-ppt/workflows/stages/verify-charts.md": 2500,
     "skills/lisa-ppt/workflows/stages/topic-research.md": 2000,
+    "skills/lisa-ppt/workflows/lisa-deck.md": 2500,
     "skills/lisa-ppt/workflows/stages/live-preview.md": 1000,
     "skills/lisa-ppt/workflows/stages/web-image-review.md": 750,
     "skills/lisa-ppt/references/visual-review.md": 3500,
@@ -890,6 +891,14 @@
         "skills/lisa-ppt/workflows/stages/topic-research.md"
       ],
       "max_tokens": 2750
+    },
+    "stage.generate.lisa-deck": {
+      "description": "Hi Ted, Meet Lisa HTML deck intake stage replacing Generate Steps 1-2.",
+      "scope": "incremental",
+      "files": [
+        "skills/lisa-ppt/workflows/lisa-deck.md"
+      ],
+      "max_tokens": 3000
     },
     "profile.generate.beautify-pptx": {
       "description": "Strict 1:1 wording, order, and page-count profile with Default and explicit Quick branches.",

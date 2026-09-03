@@ -3,10 +3,12 @@ name: lisa-ppt
 description: >
   AI-driven presentation workflow for generating editable PPTX decks and slides,
   reconstructing page visuals, creating reusable Brand/Style/Layout/Deck
-  workspaces, filling native PPTX templates, and enhancing finished PPTX files.
+  workspaces, filling native PPTX templates, importing a finished Hi Ted, Meet
+  Lisa HTML deck, and enhancing finished PPTX files.
   Use when the user asks to create, generate, reconstruct, regenerate, beautify,
   redesign, template, fill, or enhance a presentation, PPT, PPTX, slide deck, or
-  courseware — including adding narration or animation to one — requests a
+  courseware — including adding narration or animation to one — hands over a
+  Hi Ted, Meet Lisa `.html` deck (`/lisa-ppt deck.html`), requests a
   presentation-authored narrated/self-running video, or mentions Lisa's PPT —
   in Korean too ("PPT 만들어줘", "이 템플릿에 내용 채워줘").
 metadata:
@@ -45,6 +47,7 @@ use CWD, or assume a repo checkout. If unavailable, ask; never search or guess.
 | Generate PPTX — Beautify | [`workflows/profiles/beautify-pptx.md`](workflows/profiles/beautify-pptx.md); explicit Quick intent selects Quick, otherwise Default |
 | Generate PPTX — ordinary Default | [`workflows/generate-pptx.md`](workflows/generate-pptx.md) |
 | Generate PPTX — ordinary explicit Quick | [`workflows/profiles/quick-generate.md`](workflows/profiles/quick-generate.md) |
+| Generate PPTX — Hi Ted, Meet Lisa HTML deck (`/lisa-ppt <deck>.html`) | [`workflows/lisa-deck.md`](workflows/lisa-deck.md); its intake replaces Steps 1–2, then the selected Generate authority continues at Step 3 |
 | Create Template | [`workflows/create-template.md`](workflows/create-template.md) |
 | Edit Native PPTX | [`workflows/edit-native-pptx.md`](workflows/edit-native-pptx.md) |
 

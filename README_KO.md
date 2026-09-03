@@ -145,6 +145,7 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 은 계�
 |---|---|---|
 | 자료로 새 덱 만들기 | `/lisa-ppt projects/q3/sources/실적보고.pdf로 임원 보고 10장, 절제된 톤으로` | 메인 파이프라인 |
 | 주제만 있고 자료가 없음 | `/lisa-ppt RAG를 비개발자에게 설명하는 덱. 자료는 네가 찾아서` | 웹 리서치 후 메인 파이프라인 |
+| 완성된 Lisa 덱(`.html`)을 PPT로 | `/lisa-ppt 덱.html` | [`lisa-deck`](skills/lisa-ppt/workflows/lisa-deck.md) — 덱의 슬라이드가 원본 Markdown이 되고, 덱의 토큰이 미리 채워진 `design_spec.md`가 된 뒤 메인 파이프라인 |
 | 갖고 있는 PPTX 템플릿에 내용 채우기 | "sources/회사템플릿.pptx 디자인 그대로, sources/기획안.md 내용으로 채워줘" | [`edit-native-pptx`](skills/lisa-ppt/workflows/edit-native-pptx.md) — 원본 디자인 그대로, 안 바뀐 페이지는 바이트 단위로 보존 |
 | 기존 PPT를 페이지 그대로 예쁘게 | "이 PPT 문구/순서 유지하고 레이아웃만 개선해줘" | [`beautify-pptx`](skills/lisa-ppt/workflows/profiles/beautify-pptx.md) — 1:1 유지 |
 | 완성 덱에 노트·나레이션·전환 추가 | "exports/덱_ver2.pptx에 발표자 노트랑 음성 나레이션 넣어줘" | [`edit-native-pptx`](skills/lisa-ppt/workflows/edit-native-pptx.md) — `_narrated` 판으로 내보냄 |
