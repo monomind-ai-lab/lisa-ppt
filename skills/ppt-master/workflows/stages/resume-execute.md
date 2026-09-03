@@ -52,4 +52,4 @@ A newer explicit instruction after final Stage 2 updates only its effective outc
 
 ## Step 3: Hand-back
 
-When Step 7 produces `exports/<project_name>_<timestamp>.pptx`, the stage ends; report the export path. [`verify-charts`](verify-charts.md) runs between Steps 6 and 7 exactly as in continuous mode.
+When Step 7 produces `exports/<project_name>_ver<N>.pptx`, the stage ends; report the export path. [`verify-charts`](verify-charts.md) runs between Steps 6 and 7 exactly as in continuous mode.

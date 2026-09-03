@@ -135,6 +135,25 @@ from ..animation_config import (
     validate_animation_config_errors,
     validate_transition_config,
 )
+def _next_export_version(exports_dir: Path, title: str) -> int:
+    """Next `_verN` number for this title's exports (suffix variants included).
+
+    Scans `<title>_ver<N>.pptx` plus tagged variants such as
+    `<title>_ver<N>_native_charts_tables.pptx`; returns max(N) + 1, starting at 1.
+    """
+    pattern = re.compile(
+        rf"^{re.escape(title)}_ver(\d+)(?:_[a-z_]+)?\.pptx$",
+        re.IGNORECASE,
+    )
+    latest = 0
+    if exports_dir.is_dir():
+        for entry in exports_dir.iterdir():
+            match = pattern.match(entry.name)
+            if match:
+                latest = max(latest, int(match.group(1)))
+    return latest + 1
+
+
 def _as_dict(value: object) -> dict:
     return value if isinstance(value, dict) else {}
 
@@ -2068,7 +2087,7 @@ Recorded narration:
             'PowerPoint native Chart/Table objects. This data-object route may '
             'normalize styling or omit fallback-only visuals. Default-off markers '
             'export as editable SVG-derived DrawingML shapes. The default-flow '
-            'output uses <project>_<ts>_native_charts_tables.pptx.'
+            'output uses <project>_ver<N>_native_charts_tables.pptx.'
         ),
     )
     parser.add_argument(
@@ -2212,7 +2231,7 @@ Recorded narration:
     parser.add_argument('--recorded-narration', type=str, default=None,
                         help='Prepare PowerPoint recorded timings and narrations from a complete audio '
                              'directory. Default-flow exports get the _narrated name suffix '
-                             '(<project>_<ts>_narrated.pptx) to tell them apart from silent exports.')
+                             '(<project>_ver<N>_narrated.pptx) to tell them apart from silent exports.')
     parser.add_argument('--narration-padding', type=non_negative_float, default=0.5,
                         help='Seconds to add after each narration before auto-advance (default: 0.5)')
     parser.add_argument(
@@ -3158,9 +3177,13 @@ Recorded narration:
         # Narration flags likewise mark _narrated (audio embedded per slide +
         # auto-advance timings). Flag-driven (not content-sniffed) so the name
         # is predictable; an explicit -o keeps the caller's exact name untouched.
+        # Default-flow names use `<title>_verN` auto-increment (slide-master
+        # convention); the timestamp survives only in the backup/<timestamp>/
+        # snapshot dir, so a re-export never overwrites the previous deck.
         native_tag = "_native_charts_tables" if args.native_objects else ""
         narrated_tag = "_narrated" if (args.recorded_narration or args.narration_audio_dir) else ""
-        native_path = exports_dir / f"{project_name}_{timestamp}{native_tag}{narrated_tag}.pptx"
+        version = _next_export_version(exports_dir, project_name)
+        native_path = exports_dir / f"{project_name}_ver{version}{native_tag}{narrated_tag}.pptx"
         # Preserve svg_output/ only when it is the actual source. A custom -s
         # directory remains the caller-owned source and is not copied under a
         # misleading svg_output backup name.

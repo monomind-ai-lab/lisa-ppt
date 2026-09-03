@@ -187,7 +187,7 @@ Successful round-trip export prints one deck receipt:
 cloned_passthrough=C patched=M rebuilt=R`. `patched` keeps source shape XML
 while order, notes, or motion may change; `rebuilt` means visible authoring or
 one of its referenced resources changed.
-Without `-o`, round-trip export names the deck `<workspace-directory-name>_<timestamp>[<flavor-suffix>].pptx` under `exports/`.
+Without `-o`, round-trip export names the deck `<workspace-directory-name>_ver<N>[<flavor-suffix>].pptx` under `exports/` (N auto-increments; the timestamp lives only in `backup/<timestamp>/`).
 
 Before export, run `python3 scripts/svg_quality_checker.py <workspace> --roundtrip`
 as the round-trip text-capacity gate. It resolves the output roster from
@@ -841,8 +841,8 @@ selection, audio generation, and the narrated re-export workflow.
 
 Behavior:
 - Default output (either Generate profile, no `-o`):
-  - `exports/<project_name>_<timestamp>.pptx` — native editable pptx (canonical output)
-  - `validation/<project_name>_<timestamp>.report.json` — package postflight, quality-gate linkage, unresolved resource audit, and published part counts
+  - `exports/<project_name>_ver<N>.pptx` — native editable pptx (canonical output; N auto-increments per export)
+  - `validation/<project_name>_ver<N>.report.json` — package postflight, quality-gate linkage, unresolved resource audit, and published part counts
   - `backup/<timestamp>/svg_output/` — copy of authored SVG source for re-export without re-running the LLM
 - `exports/` contains only final PPTX deliverables; machine-readable quality and postflight reports belong in `validation/`.
 - The default Generate flow always runs `finalize_svg.py` before export. This directory is the self-contained SVG visual preview; it is not packaged as a second PPTX. Quick-generate deliberately skips it.
@@ -904,7 +904,7 @@ Behavior:
   - Non-narrated export keeps the existing optional `<project>/animations.json` default
   - Narration timing merges into the existing slide timing DOM. While motion remains enabled, object-animation rows and the resolved page transition are preserved rather than regenerated; inherited `-a none` suppresses object rows, and `--no-animations` removes both motion layers
   - `--narration-audio-dir audio` is the lower-level embedding path: it embeds whatever files match and allows partial audio coverage
-  - Either narration flag names the default-flow export `<project_name>_<timestamp>_narrated.pptx`, telling it apart from silent exports in the same directory
+  - Either narration flag names the default-flow export `<project_name>_ver<N>_narrated.pptx`, telling it apart from silent exports in the same directory
   - This is intended for direct PowerPoint video export with "Use recorded timings and narrations"
   - Long-audio import and automatic long-audio splitting are not supported; keep narration assets page-level
   - Voice choices can be listed with `python3 scripts/notes_to_audio.py --list-common-voices`, `python3 scripts/notes_to_audio.py --list-voices --locale zh-CN`, or provider-specific `--provider <name> --list-voices`

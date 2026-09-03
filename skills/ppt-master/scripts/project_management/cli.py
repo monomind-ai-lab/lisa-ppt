@@ -331,7 +331,7 @@ class ProjectManager:
                     "- `sources/`: source materials and normalized markdown\n"
                     "- `analysis/`: machine-extracted intermediate analysis (PPTX intake, image_analysis.csv) — the pipeline's canonical must-read source/asset facts\n"
                     "- `validation/`: cold workflow audit log, SVG quality reports, and PPTX postflight audit reports\n"
-                    "- `exports/`: final native DrawingML pptx deliverables only (timestamped); `_native_charts_tables.pptx` name with `--native-charts-and-tables`, `_narrated.pptx` name when narration audio is embedded\n"
+                    "- `exports/`: final native DrawingML pptx deliverables only (`<title>_ver1.pptx`, `_ver2`, ... auto-increment per export); `_native_charts_tables.pptx` name with `--native-charts-and-tables`, `_narrated.pptx` name when narration audio is embedded\n"
                     "- `backup/<timestamp>/`: svg_output/ archive (always written in default-flow mode; safe to delete old timestamps)\n"
                 ),
                 encoding="utf-8",
