@@ -4483,16 +4483,21 @@
         2: ["direction", "narrative", "look", "style", "images", "preferences"]
     };
 
+    // One box holds the sticky impression strip and everything it is meant to
+    // accompany. A sticky element can only stick inside its own containing
+    // block, so the strip stays pinned exactly as far as this host reaches:
+    // the color, icon and typography sections belong inside it, or the strip
+    // un-pins the moment the preview scrolls past.
     function renderStyleChapter(host) {
-        var previewHost = el("div", "style-preview-host");
-        renderStylePreview(previewHost);
-        renderImageStrategyPreview(previewHost);
-        host.appendChild(previewHost);
+        var stickyHost = el("div", "style-preview-host");
+        renderStylePreview(stickyHost);
+        renderImageStrategyPreview(stickyHost);
         var styleGroup = el("div", "style-group");
         renderColor(styleGroup);
         renderIcons(styleGroup);
         renderTypography(styleGroup);
-        host.appendChild(styleGroup);
+        stickyHost.appendChild(styleGroup);
+        host.appendChild(stickyHost);
     }
 
     var CHAPTER_RENDERERS = {
