@@ -1,5 +1,5 @@
 ---
-description: Maintainer-only registry of PPT Master's route and supporting-workflow inventory.
+description: Maintainer-only registry of the route and supporting-workflow inventory of Lisa's PPT.
 ---
 
 # Workflow Registry

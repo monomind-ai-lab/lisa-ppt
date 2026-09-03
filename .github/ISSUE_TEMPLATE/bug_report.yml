@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a problem with PPT Master
+description: Report a problem with Lisa's PPT
 labels: ["bug"]
 body:
   - type: markdown

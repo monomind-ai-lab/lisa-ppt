@@ -28,7 +28,7 @@ Configuration source (process env wins, `.env` is the fallback layer):
      - Current working directory
      - Skill directory (e.g. `~/.agents/skills/lisa-ppt/.env`)
      - Repo root (when running from a clone)
-     - `~/.ppt-master/.env` (user-level config)
+     - `~/.lisa-ppt/.env` (user-level config; `~/.ppt-master/.env` is still read as a fallback)
 
 Supported keys:
   IMAGE_BACKEND    (optional) backend name; defaults to `codex` when unset

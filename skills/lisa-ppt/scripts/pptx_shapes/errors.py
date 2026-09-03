@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - PPTX Shape Errors
+Lisa's PPT - PPTX Shape Errors
 
 Shared exception types for the DrawingML preset-geometry package.
 

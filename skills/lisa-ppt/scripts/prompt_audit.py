@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Prompt Budget Audit Tool
+Lisa's PPT - Prompt Budget Audit Tool
 
 Audits the repository's agent-facing documents without modifying them. Reports
 exact o200k_base token counts, declared load-set budgets, Markdown references,
@@ -9,7 +9,7 @@ registry claims, schema-definition candidates, and cross-file duplication.
 Usage:
     python3 scripts/prompt_audit.py
     python3 scripts/prompt_audit.py --json
-    python3 scripts/prompt_audit.py --root /path/to/ppt-master
+    python3 scripts/prompt_audit.py --root /path/to/lisa-ppt
 
 Examples:
     python3 skills/lisa-ppt/scripts/prompt_audit.py
@@ -2220,7 +2220,7 @@ def render_text(report: dict[str, Any]) -> str:
     """Render the stable JSON report as a maintainer-oriented text summary."""
     summary = report["summary"]
     lines = [
-        "PPT Master Prompt Audit",
+        "Lisa's PPT Prompt Audit",
         "=======================",
         "Manifest: audit-only | runtime loading: disabled | budgets: fixed upper bounds",
         (
@@ -2326,7 +2326,7 @@ def render_text(report: dict[str, Any]) -> str:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Audit PPT Master's prompt budget and governance metadata without writes.",
+        description="Audit the prompt budget and governance metadata of Lisa's PPT without writes.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     default_root = Path(__file__).resolve().parents[3]

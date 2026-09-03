@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Authored Preset Shape Contract
+Lisa's PPT - Authored Preset Shape Contract
 
 Build and validate compact canonical SVG groups for newly authored PowerPoint
 preset shapes while retaining expanded authored input compatibility.
@@ -17,7 +17,7 @@ Examples:
     )
 
 Dependencies:
-    None (only uses standard library and local PPT Master modules)
+    None (only uses standard library and local Lisa's PPT modules)
 """
 
 from __future__ import annotations

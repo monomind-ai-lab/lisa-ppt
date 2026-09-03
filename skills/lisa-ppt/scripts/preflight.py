@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Environment Preflight
+Lisa's PPT - Environment Preflight
 
 Pre-pipeline environment gate. Run once per session before a deck run so a
 long pipeline never dies mid-way on a missing dependency. Fails
@@ -168,7 +168,7 @@ def check_codex_stubs() -> list[str]:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Pre-pipeline environment gate for PPT Master.",
+        description="Pre-pipeline environment gate for Lisa's PPT.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("--needs-images", action="store_true",

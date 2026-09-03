@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Project Management Paths
+Lisa's PPT - Project Management Paths
 
 Own the repository and Skill resource roots used by project-management modules.
 

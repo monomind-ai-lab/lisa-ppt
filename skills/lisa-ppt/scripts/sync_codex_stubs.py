@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Codex Stub Sync
+Lisa's PPT - Codex Stub Sync
 
 Regenerates the Codex discovery stubs under .codex/skills/ from the canonical
 skills/ tree. Each stub carries the canonical SKILL.md's name/description
@@ -35,7 +35,7 @@ if str(_SCRIPTS_DIR) not in sys.path:
 
 from console_encoding import configure_utf8_stdio  # noqa: E402
 
-# scripts/sync_codex_stubs.py: [0]=scripts [1]=ppt-master [2]=skills [3]=repo
+# scripts/sync_codex_stubs.py: [0]=scripts [1]=lisa-ppt [2]=skills [3]=repo
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SRC = REPO_ROOT / "skills"
 DST = REPO_ROOT / ".codex" / "skills"

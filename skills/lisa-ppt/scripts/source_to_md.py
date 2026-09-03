@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Unified Markdown Converter
+Lisa's PPT - Unified Markdown Converter
 
 Auto-detect source type and dispatch to the existing source_to_md converters.
 
@@ -242,7 +242,7 @@ def dispatch_single(
         extra_args = list(unknown_args)
         if output is None:
             emit_file = tempfile.NamedTemporaryFile(
-                prefix="ppt-master-web-result-",
+                prefix="lisa-ppt-web-result-",
                 suffix=".json",
                 delete=False,
             )

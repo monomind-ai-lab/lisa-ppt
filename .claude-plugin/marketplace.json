@@ -6,7 +6,7 @@
     "url": "https://github.com/monomind-ai-lab"
   },
   "metadata": {
-    "description": "PPT Master skill — AI generates natively editable PPTX from any document",
+    "description": "Lisa's PPT skill — AI generates natively editable PPTX from any document",
     "version": "6.1.0"
   },
   "plugins": [

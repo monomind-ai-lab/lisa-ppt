@@ -165,7 +165,7 @@ Auth: OAuth (ChatGPT)
 
 - "Run `/codex-image` again to generate another image."
 - For Next.js projects: suggest moving to `public/images/` if needed.
-- **ppt-master integration**: this project's PPT pipeline generates images through `image_gen.py --manifest` whose default backend `codex` (`scripts/image_backends/backend_codex.py`) uses the same `codex exec` + `image_gen` mechanism as this skill — no API key or `.env` needed, only `codex login`. Use `/codex-image` directly for one-off images outside the pipeline (e.g. re-rolling a single asset with `--out <project>/images --filename <slot>`).
+- **lisa-ppt integration**: this project's PPT pipeline generates images through `image_gen.py --manifest` whose default backend `codex` (`scripts/image_backends/backend_codex.py`) uses the same `codex exec` + `image_gen` mechanism as this skill — no API key or `.env` needed, only `codex login`. Use `/codex-image` directly for one-off images outside the pipeline (e.g. re-rolling a single asset with `--out <project>/images --filename <slot>`).
 
 ## Error Handling
 

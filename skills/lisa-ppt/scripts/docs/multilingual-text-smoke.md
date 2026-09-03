@@ -73,7 +73,7 @@ samples = {
 }
 rtl_languages = {"ar-SA", "he-IL"}
 
-with TemporaryDirectory(prefix="ppt-master-multilingual-smoke-") as tmp:
+with TemporaryDirectory(prefix="lisa-ppt-multilingual-smoke-") as tmp:
     root = Path(tmp)
 
     # Confirm UI canonicalizes Stage 1 and persists the same project language.
