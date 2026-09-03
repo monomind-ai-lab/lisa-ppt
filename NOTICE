@@ -3,23 +3,74 @@ Copyright (c) 2026 MonoMind AI Lab. MIT licensed — see LICENSE.
 
 This repository is a hard fork: a derivative of two MIT projects, one built on
 the other, plus two vendored skills, imported once and then developed
-independently — nothing is pulled from either source again. When the import
-lands here, LICENSE keeps the upstream copyright line, this file records both
-import commits, every file ported from slide-master, any later hand-made
-backport with the commit it came from, and a statement of changes; nothing
-carries sponsor or affiliate material.
+independently — nothing is pulled from either source again. LICENSE keeps the
+upstream copyright line beside MonoMind AI Lab's. This file records the import
+points, what was ported, what was removed, and the licences that travel with
+the code; docs/PROVENANCE.md itemises every file. A later hand-made backport
+is recorded here with the upstream commit it came from — never a merge, never
+a scheduled sync.
 
   Base pipeline:  PPT Master — https://github.com/hugohe3/ppt-master
                   Copyright (c) 2025-2026 Hugo He, MIT
+                  Imported once at tag v6.1.0, commit
+                  c40bca58e168fcef2facdc7612cc352d1233679b (2026-08-31).
   Refinements:    slide-master — https://github.com/byungjunjang/slide-master
                   byungjunjang, MIT (the repository asserts no copyright line
-                  of its own; credited by name, URL and imported commit)
+                  of its own; credited by name, URL and imported commit).
+                  Ported from commit
+                  166472bd2a22de9aa9fb6c8cdf8b0cdfc6b698ef (2026-08-04).
   Vendored skill: codex-image — https://github.com/wjb127/codex-image
-                  Copyright (c) 2026 wjb127, MIT (licence shipped in the skill)
+                  Copyright (c) 2026 wjb127, MIT — skills/codex-image/LICENSE
   Vendored skill: diagram-design — https://github.com/cathrynlavery/diagram-design
-                  Copyright (c) 2025 Cathryn Lavery, MIT (licence shipped in the skill)
-  Fonts:          Pretendard (SIL OFL 1.1), Noto Sans TC (SIL OFL 1.1),
-                  Plus Jakarta Sans (SIL OFL 1.1) — licence texts beside the files
+                  Copyright (c) 2025 Cathryn Lavery, MIT —
+                  skills/diagram-design/LICENSE
+  Fonts:          Pretendard v1.3.9 — Copyright (c) 2021 Kil Hyung-jin,
+                  SIL Open Font License 1.1 —
+                  skills/ppt-master/assets/fonts/Pretendard/LICENSE.txt
+                  (six weights bundled: Light, Regular, Medium, SemiBold,
+                  Bold, ExtraBold). Noto Sans TC and Plus Jakarta Sans (both
+                  SIL OFL 1.1) arrive with the rebrand, licence texts beside
+                  the files.
+  Icons:          skills/ppt-master/templates/icons/ — 47 MB, 11,801 SVGs —
+                  kept as imported; licences in its THIRD_PARTY_NOTICES.md.
+  Sounds:         the cue vocabulary, index and CC0-1.0 notices are kept; the
+                  audio files are not bundled (templates/sounds/README.md
+                  says where they are).
+
+Ported from slide-master, one commit each on the import branch (source paths
+in docs/PROVENANCE.md):
+  - the Codex-OAuth image backend as the zero-config default, with the
+    gpt-image-2 transparency workaround
+  - the codex-image skill
+  - _ver<N> auto-incrementing exports
+  - seven Korean-domain layouts: academic_defense, government_blue,
+    government_red, medical_university, psychology_attachment, ai_ops,
+    pixel_retro
+  - Korean strings for the confirm UI and the live editor (zh-TW kept)
+  - the house-font pattern: bundled Pretendard, dual-script registration, the
+    policy, an installer
+  - the instagram 1080x1350 canvas
+  - the diagram-design skill with its verbatim provenance record
+  - Korean router triggers
+  - the dual-host Codex stub sync and the preflight gate
+  - slide-master's Korean README, parked as
+    docs/upstream/README.slide-master.ko.md
+
+Removed from the imported tree (docs/PROVENANCE.md lists every path):
+  - the self-update script and the runtime attribution guard
+  - sponsor and affiliate material
+  - third-party corporate brand presets: accenture, alibaba, anthropic, aws,
+    bain, bcg, deloitte, google, huawei, ibm, jpmorgan, mckinsey, microsoft,
+    nvidia, pwc, tencent, xiaomi, 中国电信, 中国电建, 中汽研; deck presets
+    中国电信, 中汽研
+  - docs/assets/, references/ai-image-comparison/ and the sound audio files
+    (pointer READMEs left in place)
+  - upstream's redirect index.html; upstream's positioning documents and
+    maintainer playbook are parked untouched under docs/upstream/
+
+Not taken from slide-master: the jangpm personal brand and deck; the apple,
+naver, naver_ir, mckinsey, google and anthropic presets; its affiliate link;
+its Windows-only Korean font fallback stack.
 
 Lisa's PPT carries no runtime attribution guard. Attribution is this file and
 LICENSE, kept with the code.
