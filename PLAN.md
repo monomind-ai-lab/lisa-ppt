@@ -44,7 +44,7 @@ Both import points are recorded in NOTICE so the provenance stays auditable.
 | The gpt-image-2 transparency workaround (the model paints a checkerboard when asked for transparency): prompt rewrite + hard rule + honest guidance | `.claude/skills/codex-image/SKILL.md` step 2.5, `backend_codex.py:81` |
 | Version-numbered exports `exports/<title>_ver<N>.pptx` (+ `_native_charts`, `_narrated`), auto-incrementing | `SKILL.md:789–794` |
 | Seven Korean-domain layouts: `academic_defense`, `government_blue`, `government_red`, `medical_university`, `psychology_attachment`, `ai_ops`, `pixel_retro` | `templates/layouts/` |
-| Korean confirm-UI and live-editor strings; Korean router triggers | `scripts/confirm_ui/static/{catalogs.json,app.js}`, `scripts/svg_editor/static/app.js`, `ppt-template-fill/SKILL.md` |
+| Korean confirm-UI strings; Korean router triggers | `scripts/confirm_ui/static/{catalogs.json,app.js}`, `ppt-template-fill/SKILL.md` |
 | Korean README (the seed of the KO README) | `README.md` |
 | The house-font lock as a pattern: declared once in `CLAUDE.md`, enforced in `references/strategist.md`, exempted from the "≥3 candidates" rule, hierarchy by weight/size/tracking/colour never by family; converter registers the family for Latin and East-Asian slots | `CLAUDE.md:50–52`, `references/strategist.md:193–204`, `scripts/svg_to_pptx/drawingml/theme_fonts.py` |
 | `instagram` 1080×1350 canvas | `references/canvas-formats.md`, `scripts/config.py` |
@@ -102,8 +102,7 @@ is the study kept in the Lisa workspace (`slide-master-study-2026-09-03.md`).
   "slide master" term, and the on-disk machine identifiers
   (`ppt-master.*` schema ids, the `ppt-master-schema:` marker, the
   `ppt-master://` schema `$id`) that layouts, scaffolds and fixtures carry.
-  `confirm_ui/`, `svg_editor/` and `templates/layouts/` strings are left to
-  W3 and W2b.
+  `confirm_ui/` and `templates/layouts/` strings are left to W3 and W2b.
 - Manifests in Lisa's layout: root `.claude-plugin/plugin.json` (`lisa-ppt`
   1.0.0, `skills: ./skills/`), `.claude-plugin/marketplace.json`
   (`monomind-ppt`, one plugin sourced from `./`) and `.codex-plugin/plugin.json`;
@@ -133,8 +132,15 @@ is the study kept in the Lisa workspace (`slide-master-study-2026-09-03.md`).
 ### W3 · Intake UI rebuilt to the Ted & Lisa experience — nothing lost
 Keep, unchanged: the three-stage flow (direction → design system →
 images/execute), every question and option in `catalogs.json`, the receipts
-model and file ownership, the bundled design directions, the daemon/wait/
-shutdown CLI, live preview with click annotations.
+model and file ownership, the bundled design directions, and the daemon/wait/
+shutdown CLI.
+
+> **Superseded 2026-09-03** — the live preview and its click annotations were
+> part of W3 as written above, and have since been removed outright. The
+> deliverable is a `.pptx` and PowerPoint is its editor; a browser editor
+> annotating intermediate SVGs was redundant work in the middle of the
+> pipeline. `scripts/visual_review.py` remains as a standalone PNG renderer
+> for an agent's own opt-in visual self-check.
 
 Change:
 1. **Languages:** EN, KO and ZH-TW first-class — restore `zh-TW` from

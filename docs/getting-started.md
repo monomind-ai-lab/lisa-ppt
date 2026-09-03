@@ -4,12 +4,11 @@
 
 ---
 
-The short path to your first deck, how to use everything around it — templates, live preview, animations, narration, voice cloning — and where to look when something goes wrong. Sections follow roughly the order you meet them in a real run. Each is the quick version; follow the **Full guide →** link for depth.
+The short path to your first deck, how to use everything around it — templates, animations, narration, voice cloning — and where to look when something goes wrong. Sections follow roughly the order you meet them in a real run. Each is the quick version; follow the **Full guide →** link for depth.
 
 - [Set up the installation and working folders](#set-up-the-installation-and-working-folders)
 - [Start from a template](#start-from-a-template)
 - [Generate your first deck](#generate-your-first-deck)
-- [Live preview & visual edits](#live-preview--visual-edits)
 - [Animations & transitions](#animations--transitions)
 - [Narration & video](#narration--video)
 - [Use a cloned voice](#use-a-cloned-voice)
@@ -129,20 +128,6 @@ Full guide → [quick-generate profile](../skills/lisa-ppt/workflows/profiles/qu
 
 ---
 
-## Live preview & visual edits
-
-A browser preview opens at the URL reported by the launcher while the deck is being generated. It prefers `http://localhost:5050` and uses the next free port when `5050` is occupied.
-
-- **Watch pages render live** as the AI produces them.
-- **Edit directly, no AI** — select an element to change its text, color, font, or size in the side panel; drag it to reposition, or nudge with the arrow keys (`Shift` = 10px). `Ctrl+Z` undoes. Edits preview instantly and write to `svg_output/` when you click **Apply changes**.
-- **Or annotate for the AI** — click an element, type what you want changed, click **Add annotation** to stage it, then click **Apply changes** to write the annotation markers to `svg_output/`. Return to chat and say "apply my annotations"; the AI rewrites that region and re-exports the PPTX.
-
-The pipeline was chat-only by design; visual editing was folded in upstream after enough users asked for it (built on [@WodenJay](https://github.com/WodenJay)'s [PR #85](https://github.com/hugohe3/ppt-master/pull/85) to PPT Master).
-
-Full guide → [Live Preview Stage](../skills/lisa-ppt/workflows/stages/live-preview.md)
-
----
-
 ## Animations & transitions
 
 Exported decks carry page transitions and optional per-element object animations
@@ -189,7 +174,7 @@ The [FAQ](./faq.md) is the living troubleshooting reference — continuously upd
 |---|---|
 | The AI drifts or forgets a step | Ask it to re-read `skills/lisa-ppt/SKILL.md`, `skills/lisa-ppt/workflows/routing.md`, and the selected route authority. |
 | Visual quality disappoints | Switch to a large-context Claude model + `gpt-image-2` — the harness sets the floor, the model sets the ceiling. |
-| Text overflows or elements overlap | Re-run that page, or fix it in live preview; see the [FAQ](./faq.md). |
+| Text overflows or elements overlap | Re-run that page, or say what to change in chat; see the [FAQ](./faq.md). |
 | No image-generation API key | Use the host's native image tool when available; otherwise zero-config web search still works. See the [FAQ](./faq.md). |
 | Animations or some effects look off in another app | Microsoft PowerPoint is the primary motion-validation target. Keynote / WPS / LibreOffice can open the `.pptx`, but may remap or omit individual effects or Start semantics; validate motion-critical delivery in PowerPoint. |
 | A long deck might blow the context window | Generation can run in split mode; details in the [FAQ](./faq.md). |

@@ -87,8 +87,8 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run shows th
 /lisa-ppt projects/q3/sources/report.pdf, about 10 pages for the board, restrained
 ```
 
-Reads the source, opens the intake in your browser, writes one SVG per page
-with a live preview, checks the geometry, and exports
+Reads the source, opens the intake in your browser, writes one SVG per page,
+checks the geometry, and exports
 `projects/q3/exports/<title>_ver1.pptx`.
 
 ```text
@@ -150,9 +150,8 @@ writes notes and narration into the file and exports a `_narrated` sibling.
    question with a default. Every option is an id in the catalog, so the
    language you read the questions in never reaches the deck.
 3. **Images**, if you asked for them, through Codex's `image_gen`.
-4. **One SVG per page**, written in the confirmed design system, with a live
-   preview. Click a spot in the preview to annotate it and the agent fixes
-   that page.
+4. **One SVG per page**, written in the confirmed design system. Say what to
+   change in chat and the agent fixes that page.
 5. **The geometry gate.** Overlapping text, shapes off the canvas and awkward
    line breaks are found from glyph widths and fixed; flagged pages are
    rendered to pixels and looked at again. Ask, and it runs a visual review
@@ -256,8 +255,8 @@ it when you move machines.
 - **`diagram-design`**: diagram composition rules, vendored from
   cathrynlavery/diagram-design. Its standalone flow is switched off and the
   disabled text is kept verbatim as a record.
-- **The confirm UI**, the SVG editor with live preview, the DrawingML
-  converter, the quality checker, and the `.codex/skills` stub sync.
+- **The confirm UI**, the DrawingML converter, the quality checker, and the
+  `.codex/skills` stub sync.
 - **Templates**: fourteen layouts, the `monomind` brand, the `evidence-deck`
   and `paper-brief` styles beside upstream's twelve, the chart and table
   templates, and the icon library.

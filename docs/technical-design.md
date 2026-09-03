@@ -92,7 +92,6 @@ User Input (PDF/DOCX/XLSX/PPTX/URL/Markdown/topic text)
 [Image Acquisition] (when any resource row needs AI generation, web search, or slicing)
     ↓
 [Executor]
-    ├── Live preview starts and stays available during generation
     ├── Generate P01 → svg_quality_checker.py --stage first-page --json
     ├── Use P01 as a method sample to classify the complete issue set; fix every blocking error and selected advisory warnings
     ├── Generate P02 through the final page continuously → svg_output/ (one page gate per first-exercised `not-exercised` item; no other checker calls in between)
@@ -197,7 +196,6 @@ Use this table before reasoning about implementation details. Most failed runs s
 | User wants a reusable template workspace from one or more PPTX/SVG files, images/PDFs, documents/websites, brand assets, direct text, or a mixed reference bundle | Create Template (`create-template`) | the fixed entry reads every applicable evidence channel, dispatches one Create Brand, Create Style, Create Layout, or Create Deck child workflow, then returns a workspace root as a Generate Stage-1 candidate; structured children may export a review PPTX |
 | Default Generate reaches planning; an exact current-contract workspace root or current Create Template handoff may already be present | Generate PPTX Stage 1 | Step 3 prepares candidates without interaction; Stage 1 confirms communication plus free design/template use together; ordinary requests default to free design, explicit template intent or any root defaults to template mode, and only one root is preselected; selected workspaces are validated and installed before Stage 2 |
 | User asks to tune object-level animation order/effect/timing | Generate PPTX + `customize-animations` stage | optional export policy via `animations.json` |
-| User asks to preview, select, annotate, or re-export browser edits | Generate PPTX + `live-preview` stage | annotations apply only at defined handoff points |
 
 Ambiguous "optimize this PPT" requests reduce first to one discriminator: redesign the visible pages through Generate, or preserve the native deck and edit it through Edit Native PPTX. Within Generate, preserving page count/order/wording selects the `beautify-pptx` profile, while rebuilding the story uses the normal profile. Explicit Quick intent selects Quick inside Generate; otherwise Default applies.
 
@@ -362,7 +360,6 @@ lifecycle is:
 | `templates/` | copied template specs / SVG references / non-image template assets |
 | `svg_output/` | the only hand-authored SVG source directory |
 | `svg_final/` | mandatory normal-flow derived visual-preview SVGs; supported bitmap/SVG resources are inlined when possible, while EMF/WMF retain an external-reference exception; used for IDE/browser preview or manual insertion as SVG pictures |
-| `live_preview/` | preview server state, edit history, and annotation logs |
 | `notes/` | `total.md` and split per-slide speaker notes |
 | `validation/` | cold workflow audit log, SVG quality reports, and PPTX postflight audit reports |
 | `exports/` | timestamped native PPTX deliverables |
@@ -561,7 +558,7 @@ Generate routing selects one runtime authority before loading its procedure: [`w
 
 Global stop/continue policy is authoritative in [`failure-recovery.md`](../skills/lisa-ppt/workflows/governance/failure-recovery.md); its concrete recovery matrix and resume pointers currently cover Generate PPTX. This section does not duplicate those rules.
 
-Three boundaries are especially important to the architecture. First, page SVGs must be hand-authored by the current main agent, one page at a time; writing a Python/Node/shell generator to emit pages is prohibited because the resulting deck loses cross-page judgment and visual continuity. Second, default-pipeline cadence is `P01 → first-page gate → remaining pages (one page gate per first-exercised not-exercised item) → final gate`. P01 is a method sample: execution emits a `gate-signal`, then carries resolved method rules into later pages; no page batch interrupts P02 through the final page, and the only mid-run checker call is the first-exercise page gate. `quick-generate` retains serial hand-authoring and uses P01 as its visual-system calibration baseline, skips the first-page gate, and runs one lockless final gate after the complete roster exists. Third, routing is deterministic: raw PPTX template requests, beautify-profile requests, Edit Native PPTX requests, custom-animation stages, live-preview stages, and other registered triggers are not turned into open-ended user route questions when the repository already defines the boundary.
+Three boundaries are especially important to the architecture. First, page SVGs must be hand-authored by the current main agent, one page at a time; writing a Python/Node/shell generator to emit pages is prohibited because the resulting deck loses cross-page judgment and visual continuity. Second, default-pipeline cadence is `P01 → first-page gate → remaining pages (one page gate per first-exercised not-exercised item) → final gate`. P01 is a method sample: execution emits a `gate-signal`, then carries resolved method rules into later pages; no page batch interrupts P02 through the final page, and the only mid-run checker call is the first-exercise page gate. `quick-generate` retains serial hand-authoring and uses P01 as its visual-system calibration baseline, skips the first-page gate, and runs one lockless final gate after the complete roster exists. Third, routing is deterministic: raw PPTX template requests, beautify-profile requests, Edit Native PPTX requests, custom-animation stages, and other registered triggers are not turned into open-ended user route questions when the repository already defines the boundary.
 
 In the default pipeline, the Role Switching Protocol (mandated read of `references/<role>.md` before mode change) serves two reinforcing purposes: forcing fresh role instructions into context overrides drift from the previous mode, and the visible marker in the conversation transcript creates an audit trail so the user can see when the agent moved between modes — critical when reviewing why a particular decision was made.
 
@@ -957,7 +954,7 @@ Supporting files stay separate only to keep route contracts focused and load opt
 | Generation profiles | `image-to-pptx`, `beautify-pptx`, `quick-generate` | Image to PPTX currently requires Codex, always activates Quick, normalizes page frames, restores ordinary text natively, reconstructs low-resolution identity/decorative graphics under strict visual locks when needed, keeps charts/tables/data graphics native and verifiable, exact-source, or `manual_required`, and rebuilds scenes as at least clean-base plus subject/foreground layers; Beautify preserves wording/pages while redesigning layout and selects Quick only from explicit intent; Quick owns the direct SVG-to-PPTX lifecycle |
 | Template child workflows | `create-brand`, `create-style`, `create-layout`, `create-deck` | Create Template dispatches exactly one for identity-only, roster-free direction/method, brand-neutral/application-neutral structure, or a recurring application with integrated identity/structure |
 | Template-input stage | `apply-template-workspace` | Runs after Default Stage 1 confirms at least one workspace and before Stage 2; free design skips installation, while Quick may provide direct exact-root input |
-| Generation stages | `topic-research`, `resume-execute`, `refine-spec`, `verify-charts`, `visual-review`, `live-preview`, `customize-animations` | Generate PPTX at their defined intake, planning, editing, quality, or post-processing points |
+| Generation stages | `topic-research`, `resume-execute`, `refine-spec`, `verify-charts`, `visual-review`, `customize-animations` | Generate PPTX at their defined intake, planning, quality, or post-processing points |
 | Shared stage | `generate-audio` | Generate PPTX post-processing or Edit Native PPTX narration integration |
 | Governance | `failure-recovery` | Global stop/continue policy for all three routes; concrete recovery matrix and resume pointers for Generate PPTX |
 
