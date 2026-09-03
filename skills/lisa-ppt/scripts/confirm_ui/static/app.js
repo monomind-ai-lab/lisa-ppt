@@ -1329,6 +1329,11 @@
     var TEMPLATE_SELECTED_KEYS = [];
     var TEMPLATE_SELECTIONS = { brand: "", style: "", layout: "", deck: "", explicit: "" };
     var TEMPLATE_MODE = "";
+    // The two mode buttons and the gallery panel, held by reference. A
+    // chapter is built detached and only then appended, so the first paint
+    // cannot find these nodes in the document — see
+    // updateTemplateSelectionControls.
+    var TEMPLATE_SELECTION_NODES = null;
     var REC_ALIASES = {
         icons: {
             line: "tabler-outline",
@@ -1795,10 +1800,11 @@
         TEMPLATE_CARD_PAINTERS = [];
         var sec = section("T", "sec_template_choice", t("template_choice_hint"));
         var choices = el("div", "template-mode-choices");
-        choices.appendChild(renderTemplateModeChoice(
+        var freeChoice = renderTemplateModeChoice(
             "template-free-choice", "free_design", "template_free_title",
             "template_free_desc", chooseFreeDesign
-        ));
+        );
+        choices.appendChild(freeChoice);
         var useChoice = renderTemplateModeChoice(
             "template-use-choice", "templates", "template_use_title",
             "template_use_desc", chooseTemplateMode
@@ -1830,13 +1836,19 @@
         if (roots.length) panel.appendChild(el("div", "template-select-help", t("template_explicit_hint")));
         sec.appendChild(panel);
         host.appendChild(sec);
+        TEMPLATE_SELECTION_NODES = { free: freeChoice, use: useChoice, panel: panel };
         updateTemplateSelectionControls();
     }
 
+    // Reads the nodes renderTemplateSelection built rather than looking them
+    // up by id: the first call comes from that render, while the chapter is
+    // still detached from the document, and a document lookup would find
+    // nothing and leave the gallery open under "Free design".
     function updateTemplateSelectionControls() {
-        var freeChoice = document.getElementById("template-free-choice");
-        var useChoice = document.getElementById("template-use-choice");
-        var selectorPanel = document.getElementById("template-selector-panel");
+        var nodes = TEMPLATE_SELECTION_NODES || {};
+        var freeChoice = nodes.free;
+        var useChoice = nodes.use;
+        var selectorPanel = nodes.panel;
         var freeSelected = TEMPLATE_MODE === "free_design";
         var templatesSelected = TEMPLATE_MODE === "templates";
         if (freeChoice) {
@@ -4537,6 +4549,7 @@
         refreshBodySizeHint = function () {};
         refreshSizeInputs = function () {};
         DIRECTION_COMPONENT_PAINTERS = [];
+        TEMPLATE_SELECTION_NODES = null;
         (CHAPTER_ORDER[stage] || []).forEach(function (key) {
             var node = chapterHost(key, stage);
             var before = node.childElementCount;
