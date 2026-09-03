@@ -7,6 +7,13 @@
  * while template-application prose stays conditional. Final confirm saves the
  * flattened current values to result.json.
  */
+/* Lisa's PPT — confirm page.
+   The stage flow, the field set, the validators and the payload builders are
+   the confirm surface's contract (scripts/docs/confirm_ui.md) and are kept
+   as they were. What changed is the experience around them: Lisa's shell
+   (fixed height, a rail that is how you move, one chapter per screen), her
+   card grammar, her copy, and five UI languages of which the UI language is
+   presentation only — an answer is the same id in every language. */
 (function () {
     "use strict";
 
@@ -1484,7 +1491,7 @@
         _secCounter += 1;
         var sec = el("div", "section");
         var head = el("div", "section-head");
-        head.appendChild(el("span", "section-num", String(_secCounter)));
+        head.appendChild(el("span", "section-num", String(_secCounter).padStart(2, "0")));
         head.appendChild(el("span", "section-title", t(titleKey)));
         if (noteText) head.appendChild(el("span", "section-note", noteText));
         sec.appendChild(head);
@@ -1629,10 +1636,48 @@
     }
 
     function templateCandidateTitle(candidate) {
-        return localized(candidate, "label") || candidate.label || candidate.id || candidate.key;
+        var label = localized(candidate, "label") || candidate.label || candidate.id || candidate.key;
+        // The index registers a workspace by its id; the card shows it as a name.
+        if (candidate.source === "library" && label === candidate.id) return humanizeId(label);
+        return label;
     }
 
+    // Library summaries in the UI languages. Keyed by kind:id — the ids the
+    // registry and the receipt agree on — and read only when a card is drawn.
+    // English is the index's own summary; a language without an entry falls
+    // back to it. Never part of the candidate catalog or the selection.
+    var TEMPLATE_SUMMARIES = {
+        "layout:academic_defense": { ko: "논문 심사, 학술 발표, 연구 진행 보고, 연구비 신청.", zh_tw: "論文口試、學術簡報、研究進度報告、計畫申請。", zh: "论文答辩、学术报告、研究进展汇报、课题申请。", ja: "論文審査、学術発表、研究進捗報告、助成金申請。" },
+        "layout:ai_ops": { ko: "통신 AI 운영 아키텍처, IT 시스템 개요, 디지털 전환 제안, 스마트 인프라 보고.", zh_tw: "電信 AI 維運架構、IT 系統總覽、數位轉型提案、智慧基礎設施報告。", zh: "电信 AI 运维架构、IT 系统总览、数字化转型方案、智慧基础设施报告。", ja: "通信 AI 運用アーキテクチャ、IT システム概要、DX 提案、スマートインフラ報告。" },
+        "layout:editorial_bleed": { ko: "구조만 담은 16:9 시스템. 이미지가 화면 끝까지 차고, 글은 스크림 위에 얹히는 10개의 PowerPoint 레이아웃.", zh_tw: "只定結構的 16:9 系統：10 個 PowerPoint 版面，圖片出血到邊緣，文字壓在圖上的遮罩層。", zh: "只定结构的 16:9 系统：10 个 PowerPoint 版式，图片出血到边缘，文字压在图上的遮罩层。", ja: "構造だけの 16:9 システム。画像が端まで裁ち落とされ、文字はスクリム上に載る 10 の PowerPoint レイアウト。" },
+        "layout:government_blue": { ko: "핵심 사업 브리핑, 중장기 계획 발표, 업무 총괄, 투자 유치, 정책 해설.", zh_tw: "重點專案簡報、五年計畫報告、工作總結、招商推介、政策解讀。", zh: "重点项目汇报、五年规划宣讲、工作总结、招商推介、政策解读。", ja: "重点事業ブリーフィング、五カ年計画発表、業務総括、投資誘致、政策解説。" },
+        "layout:government_red": { ko: "정부 브리핑, 정책 해설, 업무 총괄, 사업 소개, 투자 유치.", zh_tw: "政府簡報、政策解讀、工作總結、專案介紹、招商推介。", zh: "政务汇报、政策解读、工作总结、项目介绍、招商推介。", ja: "行政ブリーフィング、政策解説、業務総括、事業紹介、投資誘致。" },
+        "layout:medical_university": { ko: "의학 학술 보고, 증례 토의, 연구 발표, 병원 업무 보고, 의학 교육과 연수.", zh_tw: "醫學學術報告、病例討論、研究簡報、醫院工作報告、醫學教育訓練。", zh: "医学学术报告、病例讨论、研究汇报、医院工作报告、医学教育培训。", ja: "医学学術報告、症例検討、研究発表、病院業務報告、医学教育・研修。" },
+        "layout:moments_square": { ko: "구조만 담은 1:1 시스템. 정사각 화면을 가로·세로로 나누는 8개의 PowerPoint 레이아웃.", zh_tw: "只定結構的 1:1 系統：8 個 PowerPoint 版面，在正方形畫布上同時用橫向與縱向分割。", zh: "只定结构的 1:1 系统：8 个 PowerPoint 版式，在正方形画布上同时用横向与纵向分割。", ja: "構造だけの 1:1 システム。正方形キャンバスを横にも縦にも分割する 8 の PowerPoint レイアウト。" },
+        "layout:pixel_retro": { ko: "기술 발표, 프로그래밍 튜토리얼, 게임 소개, 긱 스타일 쇼케이스.", zh_tw: "技術分享、程式教學、遊戲介紹、極客風展示。", zh: "技术分享、编程教程、游戏介绍、极客风展示。", ja: "技術トーク、プログラミング講座、ゲーム紹介、ギーク風ショーケース。" },
+        "layout:presentation_core": { ko: "구조만 담은 16:9 시스템. 일반·에디토리얼·이미지·프로세스·데이터 발표용 20개의 PowerPoint 레이아웃.", zh_tw: "只定結構的 16:9 系統：20 個 PowerPoint 版面，涵蓋一般、編輯、圖像、流程與數據簡報。", zh: "只定结构的 16:9 系统：20 个 PowerPoint 版式，涵盖一般、编辑、图像、流程与数据演示。", ja: "構造だけの 16:9 システム。一般・エディトリアル・画像・プロセス・データ発表向けの 20 の PowerPoint レイアウト。" },
+        "layout:presentation_core_43": { ko: "구조만 담은 4:3 시스템. 프로젝터·강의실·학술·회의실 발표용 16개의 PowerPoint 레이아웃.", zh_tw: "只定結構的 4:3 系統：16 個 PowerPoint 版面，適合投影機、教室、學術與會議室簡報。", zh: "只定结构的 4:3 系统：16 个 PowerPoint 版式，适合投影仪、教室、学术与会议室演示。", ja: "構造だけの 4:3 システム。プロジェクター・教室・学術・会議室向けの 16 の PowerPoint レイアウト。" },
+        "layout:psychology_attachment": { ko: "심리치료 교육, 학술 강의, 상담 사례 분석, 전문가 공유.", zh_tw: "心理治療訓練、學術講座、諮商個案分析、專業分享。", zh: "心理治疗培训、学术讲座、咨询个案分析、专业分享。", ja: "心理療法研修、学術講義、カウンセリング事例分析、専門家向け共有。" },
+        "layout:report_core": { ko: "구조만 담은 16:9 시스템. 두 마스터에 걸친 13개의 PowerPoint 레이아웃, 고정 페이지 크롬과 페이지 번호 자리 포함.", zh_tw: "只定結構的 16:9 系統：兩個母片、13 個 PowerPoint 版面，帶固定頁面框架與頁碼佔位。", zh: "只定结构的 16:9 系统：两个母版、13 个 PowerPoint 版式，带固定页面框架与页码占位。", ja: "構造だけの 16:9 システム。二つのマスターにまたがる 13 の PowerPoint レイアウト、固定ページ枠とページ番号プレースホルダー付き。" },
+        "layout:story_vertical": { ko: "구조만 담은 9:16 시스템. 위아래 스토리 안전 영역을 지키는 9개의 PowerPoint 레이아웃.", zh_tw: "只定結構的 9:16 系統：9 個 PowerPoint 版面，文字避開上下限時動態安全區。", zh: "只定结构的 9:16 系统：9 个 PowerPoint 版式，文字避开上下故事安全区。", ja: "構造だけの 9:16 システム。上下のストーリー安全領域を守る 9 の PowerPoint レイアウト。" },
+        "layout:xiaohongshu_post": { ko: "구조만 담은 3:4 세로 시스템. 세로형 소셜 화면의 1단 이미지·텍스트 포스트용 10개의 PowerPoint 레이아웃.", zh_tw: "只定結構的 3:4 直式系統：10 個 PowerPoint 版面，給高直式社群畫布上的單欄圖文貼文。", zh: "只定结构的 3:4 竖版系统：10 个 PowerPoint 版式，给高竖版社交画布上的单栏图文帖。", ja: "構造だけの 3:4 縦型システム。縦長ソーシャル画面の一段組み画像テキスト投稿向け 10 の PowerPoint レイアウト。" },
+        "style:academic-research": { ko: "질문·방법·결과에서 방어 가능한 주장을 세우고, 한계를 감추지 않는 연구 보고 방식.", zh_tw: "從問題、方法、結果建立站得住的主張，並讓限制始終可見的研究報告法。", zh: "从问题、方法、结果建立站得住的主张，并让局限始终可见的研究汇报法。", ja: "問い・方法・結果から擁護できる主張を組み立て、限界を見えるままにする研究報告法。" },
+        "style:consulting-decision": { ko: "결론을 먼저 말하고 근거로 뒷받침하는 의사결정 문서 방식. 절제된 분석형 디자인이 기본.", zh_tw: "先給答案、以證據帶動的決策文件法，預設為克制的分析型設計。", zh: "先给答案、以证据驱动的决策文档法，默认为克制的分析型设计。", ja: "結論先行・根拠主導の意思決定文書法。抑制の効いた分析的デザインが既定。" },
+        "style:creative-pitch": { ko: "하나의 아이디어를 실제 인사이트에 뿌리내리고, 그것이 닿을 모든 자리에서 살아 움직이게 보여주는 크리에이티브 제안 방식.", zh_tw: "把一個點子扎根在真實洞察上，並展示它在每個出現場合都活著的創意提案法。", zh: "把一个点子扎根在真实洞察上，并展示它在每个出现场合都活着的创意提案法。", ja: "一つのアイデアを本物のインサイトに根づかせ、現れるすべての場で生きている姿を見せるクリエイティブ提案法。" },
+        "style:incident-postmortem": { ko: "타임라인을 복원하고, 기여 요인과 책임 추궁을 분리하며, 검증 가능한 조치를 약속하는 비난 없는 장애 회고 방식.", zh_tw: "重建時間線、把促成因素與究責分開、承諾可驗證行動的無責備事故回顧法。", zh: "重建时间线、把促成因素与追责分开、承诺可验证行动的无指责事故复盘法。", ja: "時系列を再構成し、要因と責任追及を切り分け、検証可能な対策を約束する非難なきインシデント振り返り法。" },
+        "style:investor-pitch": { ko: "형용사 대신 근거로, 왜 지금인지에서 왜 이 팀인지까지 투자자를 이끄는 자금 조달 서사 방식.", zh_tw: "以證據而非形容詞，把投資人從「為何是現在」帶到「為何是這個團隊」的募資敘事法。", zh: "以证据而非形容词，把投资人从“为何是现在”带到“为何是这个团队”的融资叙事法。", ja: "形容詞ではなく根拠で、「なぜ今か」から「なぜこのチームか」まで投資家を導く資金調達ナラティブ法。" },
+        "style:narrative-keynote": { ko: "긴장, 전환, 구체적인 사람의 디테일로 하나의 아이디어를 얻어내는 이야기 중심 키노트 방식.", zh_tw: "以張力、轉折和具體的人物細節換來一個想法的故事型主題演講法。", zh: "以张力、转折和具体的人物细节换来一个想法的故事型主题演讲法。", ja: "緊張・転換・具体的な人間のディテールで一つのアイデアを勝ち取るストーリー主導の基調講演法。" },
+        "style:operating-review": { ko: "결과, 편차, 원인, 책임 있는 약속을 분리하고 나쁜 숫자를 순화하지 않는 정기 경영 리뷰 방식.", zh_tw: "把結果、差異、原因與負責的承諾分開，且不軟化壞數字的定期營運檢討法。", zh: "把结果、差异、原因与负责的承诺分开，且不软化坏数字的定期经营复盘法。", ja: "結果・差異・原因・責任ある約束を切り分け、悪い数字を和らげない定期事業レビュー法。" },
+        "style:product-launch": { ko: "모든 기능 주장은 이름 붙이기 전에 보여줄 수 있는 순간으로 먼저 증명하는 가치 우선 런칭 방식.", zh_tw: "每一項能力主張都先用可展示的時刻掙得、再被命名的價值優先發表法。", zh: "每一项能力主张都先用可演示的时刻挣得、再被命名的价值优先发布法。", ja: "あらゆる機能の主張を、名づける前に実演できる瞬間で勝ち取る価値優先のローンチ法。" },
+        "style:science-explainer": { ko: "익숙한 것에서 출발해 시각적 비유로 이해를 쌓되, 쉬움을 위해 정확성을 내주지 않는 대중 설명 방식.", zh_tw: "從熟悉的地方出發、以視覺類比建立理解，且不用準確性換取易讀性的科普說明法。", zh: "从熟悉的地方出发、以视觉类比建立理解，且不用准确性换取易读性的科普说明法。", ja: "身近なところから視覚的な比喩で理解を築き、分かりやすさのために正確さを手放さない一般向け解説法。" },
+        "style:solution-proposal": { ko: "먼저 이해했음을 증명하고, 구체적이고 비용이 잡힌 계획으로 일을 얻어내는 고객 대상 제안 방식.", zh_tw: "先證明理解，再以具體、有報價的計畫贏得工作的客戶提案法。", zh: "先证明理解，再以具体、有报价的计划赢得工作的客户提案法。", ja: "まず理解を証明し、具体的で費用の入った計画で仕事を勝ち取る顧客向け提案法。" },
+        "style:technical-deepdive": { ko: "모든 주장을 제약, 트레이드오프, 관찰 가능한 동작에 근거 짓는 메커니즘 우선 기술 설명 방식.", zh_tw: "把每個主張都落在限制、取捨與可觀察行為上的機制優先技術說明法。", zh: "把每个主张都落在约束、取舍与可观察行为上的机制优先技术说明法。", ja: "あらゆる主張を制約・トレードオフ・観測できる挙動に根づかせる仕組み優先の技術解説法。" },
+        "style:workshop-teaching": { ko: "목표, 시범, 연습, 솔직한 이해도 점검을 순서대로 놓는 실습 중심 교육 방식.", zh_tw: "依序安排目標、示範、練習與誠實理解檢核的做中學培訓法。", zh: "依次安排目标、示范、练习与诚实理解检核的做中学培训法。", ja: "目標・実演・練習・正直な理解確認を順に並べる実践型研修法。" }
+    };
+
     function templateCandidateSummary(candidate) {
+        var table = TEMPLATE_SUMMARIES[(candidate.kind || "") + ":" + (candidate.id || "")];
+        if (table && table[langField(LANG)]) return table[langField(LANG)];
         return localized(candidate, "summary") || candidate.summary || "";
     }
 
@@ -1659,56 +1704,90 @@
         updateTemplateSelectionControls();
     }
 
-    function templateOptionTitle(candidate) {
-        var details = [];
-        var summary = templateCandidateSummary(candidate);
-        if (summary) details.push(summary);
-        if (candidate.workspace_root) details.push(candidate.workspace_root);
-        return details.join(" · ");
+    // ---- the design-basis gallery ----------------------------------------
+    // Brand, Style, Layout, Deck and the specified roots each draw a gallery
+    // of cards in Lisa's grammar: thumbnail, name, what it is best for, the
+    // kind as a flag, and the id in mono — the id being what the receipt
+    // carries. A card toggles its slot; the selection model underneath
+    // (TEMPLATE_SELECTIONS, one contribution per kind) is unchanged.
+    var TEMPLATE_CARD_PAINTERS = [];
+    var TEMPLATE_THUMBS = {};   // /api/template-thumbs — candidate keys that have a prototype
+
+    function templateThumbSrc(candidate) {
+        if (!candidate || candidate.source !== "library" || !TEMPLATE_THUMBS[candidate.key]) return "";
+        return "/template-thumb/" + encodeURIComponent(candidate.kind || "") + "/" +
+            encodeURIComponent(candidate.id || "");
     }
 
-    function renderTemplateSelectField(slot, label, candidates) {
-        var field = el("div", "template-select-field template-select-field-" + slot);
-        var selectId = "template-select-" + slot;
-        var fieldLabel = el("label", "template-select-label", label);
-        fieldLabel.setAttribute("for", selectId);
-        field.appendChild(fieldLabel);
-
-        var select = el("select", "template-select");
-        select.id = selectId;
-        select.setAttribute("data-template-slot", slot);
-        var none = el("option", "", t("template_select_none"));
-        none.value = "";
-        select.appendChild(none);
-        candidates.forEach(function (candidate) {
-            var option = el("option", "", templateCandidateTitle(candidate));
-            option.value = candidate.key;
-            var title = templateOptionTitle(candidate);
-            if (title) option.title = title;
-            select.appendChild(option);
-        });
-        select.value = TEMPLATE_SELECTIONS[slot] || "";
-        select.disabled = !candidates.length;
-        select.addEventListener("change", function () {
-            chooseTemplateForSlot(slot, select.value);
-        });
-        field.appendChild(select);
-
-        if (slot === "explicit") {
-            field.appendChild(el(
-                "div",
-                "template-select-help",
-                candidates.length ? t("template_explicit_hint") : t("template_none_explicit")
-            ));
-            var path = el("div", "template-selected-path");
-            path.id = "template-explicit-path";
-            path.appendChild(el("span", "template-selected-path-label", t("template_source_path") + ":"));
-            var code = el("code", "template-selected-path-value");
-            code.id = "template-explicit-path-value";
-            path.appendChild(code);
-            field.appendChild(path);
+    function templateCard(slot, candidate, valueKey) {
+        var explicit = candidate.source === "explicit";
+        var cell = el("div", "tplcell");
+        var card = el("button", "tpl");
+        card.type = "button";
+        card.setAttribute("role", "radio");
+        var name = templateCandidateTitle(candidate);
+        var summary = explicit ? (candidate.summary || "") : templateCandidateSummary(candidate);
+        var flagText = explicit ? t("template_source_explicit") : templateKindLabel(candidate.kind);
+        var thumb = templateThumbSrc(candidate);
+        if (thumb) {
+            var img = document.createElement("img");
+            img.alt = "";
+            img.loading = "lazy";
+            img.src = thumb;
+            img.onerror = function () {
+                var noshot = el("span", "noshot", flagText);
+                if (img.parentNode) img.parentNode.replaceChild(noshot, img);
+            };
+            card.appendChild(img);
+        } else {
+            card.appendChild(el("span", "noshot", flagText));
         }
-        return field;
+        var meta = el("span", "tplmeta");
+        var copy = el("span");
+        copy.appendChild(el("b", "", name));
+        if (summary && candidate.kind === "layout") {
+            var best = el("span", "best");
+            best.appendChild(el("b", "", t("template_best_for") + " "));
+            best.appendChild(document.createTextNode(summary));
+            copy.appendChild(best);
+        } else if (summary) {
+            copy.appendChild(el("span", "note", summary));
+        }
+        copy.appendChild(el("span", "ttype", flagText));
+        copy.appendChild(el("span", "dep", explicit ? (candidate.workspace_root || "") : (candidate.id || candidate.key)));
+        meta.appendChild(copy);
+        card.appendChild(meta);
+        card.setAttribute("aria-label", name + ", " + flagText);
+        card.addEventListener("click", function () {
+            var current = TEMPLATE_SELECTIONS[slot] || "";
+            chooseTemplateForSlot(slot, current === valueKey ? "" : valueKey);
+        });
+        TEMPLATE_CARD_PAINTERS.push(function () {
+            card.setAttribute("aria-checked", (TEMPLATE_SELECTIONS[slot] || "") === valueKey ? "true" : "false");
+        });
+        cell.appendChild(card);
+        return cell;
+    }
+
+    function renderTemplateKind(panel, slot, label, candidates, keyOf) {
+        var block = el("div", "template-kind");
+        var head = el("div", "template-kind-label");
+        head.appendChild(el("span", "", label));
+        head.appendChild(el("span", "fcount", String(candidates.length)));
+        block.appendChild(head);
+        if (!candidates.length) {
+            block.appendChild(el("div", "template-none",
+                slot === "explicit" ? t("template_none_explicit") : t("template_none_registered")));
+        } else {
+            var grid = el("div", "gallery");
+            grid.setAttribute("role", "radiogroup");
+            grid.setAttribute("aria-label", label);
+            candidates.forEach(function (candidate) {
+                grid.appendChild(templateCard(slot, candidate, keyOf(candidate)));
+            });
+            block.appendChild(grid);
+        }
+        panel.appendChild(block);
     }
 
     function renderTemplateModeChoice(id, mode, titleKey, descKey, onSelect) {
@@ -1728,6 +1807,7 @@
 
     function renderTemplateSelection(host) {
         if (!TEMPLATE_OPTIONS) return;
+        TEMPLATE_CARD_PAINTERS = [];
         var sec = section("T", "sec_template_choice", t("template_choice_hint"));
         var choices = el("div", "template-mode-choices");
         choices.appendChild(renderTemplateModeChoice(
@@ -1744,31 +1824,28 @@
 
         var panel = el("div", "template-selector-panel");
         panel.id = "template-selector-panel";
-        panel.appendChild(el("div", "template-selector-hint", t("template_library_hint")));
-        var grid = el("div", "template-select-grid");
+        panel.appendChild(el("div", "template-selector-hint",
+            t("template_library_hint") + " " + t("template_deselect_hint")));
         TEMPLATE_KINDS.forEach(function (kind) {
-            var candidates = TEMPLATE_OPTIONS.library[kind] || [];
-            grid.appendChild(renderTemplateSelectField(kind, templateKindLabel(kind), candidates));
+            renderTemplateKind(panel, kind, templateKindLabel(kind),
+                TEMPLATE_OPTIONS.library[kind] || [],
+                function (candidate) { return candidate.key; });
         });
-        grid.appendChild(renderTemplateSelectField(
-            "explicit",
-            t("template_source_explicit"),
-            explicitRootOptions()
-        ));
-        panel.appendChild(grid);
+        var roots = explicitRootOptions().map(function (root) {
+            return {
+                source: "explicit",
+                kind: "",
+                label: root.label,
+                summary: root.summary,
+                workspace_root: root.workspace_root
+            };
+        });
+        renderTemplateKind(panel, "explicit", t("template_source_explicit"), roots,
+            function (root) { return root.workspace_root; });
+        if (roots.length) panel.appendChild(el("div", "template-select-help", t("template_explicit_hint")));
         sec.appendChild(panel);
         host.appendChild(sec);
         updateTemplateSelectionControls();
-    }
-
-    function updateTemplateExplicitPath() {
-        var path = document.getElementById("template-explicit-path");
-        var value = document.getElementById("template-explicit-path-value");
-        if (!path || !value) return;
-        var workspaceRoot = TEMPLATE_SELECTIONS.explicit || "";
-        path.hidden = !workspaceRoot;
-        value.textContent = workspaceRoot;
-        value.title = workspaceRoot;
     }
 
     function updateTemplateSelectionControls() {
@@ -1787,13 +1864,8 @@
             useChoice.setAttribute("aria-expanded", templatesSelected ? "true" : "false");
         }
         if (selectorPanel) selectorPanel.hidden = !templatesSelected;
-        TEMPLATE_KINDS.concat(["explicit"]).forEach(function (slot) {
-            var select = document.getElementById("template-select-" + slot);
-            if (select) select.value = TEMPLATE_SELECTIONS[slot] || "";
-        });
-        updateTemplateExplicitPath();
-        var status = document.getElementById("confirm-status");
-        if (status) status.textContent = "";
+        TEMPLATE_CARD_PAINTERS.forEach(function (paint) { paint(); });
+        setStatus("");
     }
 
     function normalizeRecId(field, value) {
@@ -3859,9 +3931,8 @@
         card.appendChild(textcol); card.appendChild(content); card.appendChild(chip);
         wrap.appendChild(card);
         host.appendChild(wrap);
-        // The strip is mounted inside the top bar on Stage 2, so it stays visible
-        // while the center form scrolls.
-        wrap.style.top = "0px";
+        // The strip sits at the top of the Style chapter and sticks there
+        // while the color, icon and type cards scroll under it (style.css).
 
         function paint() {
             var pal = (STATE.color && STATE.color.palette) || {};
@@ -4398,14 +4469,79 @@
         return t("page_title");
     }
 
+    // ---- chapters and the rail ------------------------------------------
+    // A stage renders as chapters: one screen each, all in the DOM at once,
+    // one shown at a time (Lisa's D-028). The rail lists them plus the
+    // confirm step and every step is a button (D-029). Content-bearing
+    // chapters come first; the output configuration is the last chapter of
+    // its stage (D-042). Chapters are presentation only — STATE, the
+    // payload builders and the validators never see them, so the JSON that
+    // leaves this page is the same as before the chapters existed.
+    var CHAPTERS = [];
+    var AT = 0;
+    var RAIL_STATE = "chapters";   // "chapters" | "waiting" | "done"
+    var LAST_SENT = null;          // the last payload posted, shown as the receipt
+    var CHAPTER_ORDER = {
+        1: ["purpose", "delivery", "canvas", "basis"],
+        2: ["direction", "narrative", "look", "style", "images", "preferences"]
+    };
+
+    function renderStyleChapter(host) {
+        var previewHost = el("div", "style-preview-host");
+        renderStylePreview(previewHost);
+        renderImageStrategyPreview(previewHost);
+        host.appendChild(previewHost);
+        var styleGroup = el("div", "style-group");
+        renderColor(styleGroup);
+        renderIcons(styleGroup);
+        renderTypography(styleGroup);
+        host.appendChild(styleGroup);
+    }
+
+    var CHAPTER_RENDERERS = {
+        purpose: [renderCommunication],
+        delivery: [renderDelivery],
+        canvas: [renderCanvas],
+        basis: [renderTemplateSelection],
+        direction: [renderTemplateApplication, renderDesignDirections],
+        narrative: [renderNarrativeDirection, renderReadingMode, renderPages],
+        look: [renderVisualDirection],
+        style: [renderStyleChapter],
+        images: [renderImageDirection],
+        preferences: [renderImageProduction, renderProactiveExecution, renderMode, renderRefine, renderDesignSpecDepth]
+    };
+
+    function chapterHost(key, stage) {
+        var node = el("section", "chapter screen");
+        node.dataset.chapter = key;
+        node.hidden = true;
+        if (key === "preferences") node.classList.add("prefs");
+        var head = el("div", "chapter-head");
+        head.appendChild(el("span", "stage-kicker", stageTitle(stage)));
+        var heading = el("h2", "screenhead", t("chap_" + key));
+        heading.tabIndex = -1;
+        head.appendChild(heading);
+        head.appendChild(el("p", "screenlead", t("lead_" + key)));
+        node.appendChild(head);
+        CHAPTERS.push({ key: key, node: node, heading: heading });
+        return node;
+    }
+
+    function showScreen(id) {
+        ["loading", "error", "sections", "waiting", "done"].forEach(function (name) {
+            var node = document.getElementById(name);
+            if (node) node.hidden = name !== id;
+        });
+    }
+
     function renderForStage(stage) {
         var host = document.getElementById("sections");
+        var body = document.getElementById("panelbody");
+        var keepAt = AT;
+        var keepScroll = body ? body.scrollTop : 0;
         host.innerHTML = "";
         _secCounter = 0;
-        var heading = document.querySelector("#topbar .topbar-titles h1");
-        if (heading) heading.textContent = stageTitle(stage);
-        var hint = document.getElementById("topbar-hint");
-        if (hint) hint.textContent = stage === 1 ? t("stage1_current_value_hint") : t("topbar_hint");
+        CHAPTERS = [];
         // Detach the previous preview's repaint closures before the sections
         // re-render: color/typography auto-select would otherwise call them and
         // write to now-detached nodes until renderStylePreview remounts them.
@@ -4416,38 +4552,16 @@
         refreshBodySizeHint = function () {};
         refreshSizeInputs = function () {};
         DIRECTION_COMPONENT_PAINTERS = [];
-        var previewHost = document.getElementById("topbar-preview");
-        if (previewHost) previewHost.innerHTML = "";
-        if (stage === 1) {
-            // Stage 1 closes the communication contract and its design basis in
-            // one submission. Detailed template controls stay hidden until the
-            // user explicitly chooses template-backed design.
-            renderCommunication(host);
-            renderDelivery(host);
-            renderCanvas(host);
-            renderTemplateSelection(host);
-        } else if (stage === 2) {
-            if (previewHost) renderStylePreview(previewHost);
-            if (previewHost) renderImageStrategyPreview(previewHost);
-            // Stage 2 confirms one coherent deck solution. Bundles provide a
-            // coordinated starting point; individual controls remain editable.
-            renderTemplateApplication(host);
-            renderDesignDirections(host);
-            renderNarrativeDirection(host);
-            renderVisualDirection(host);
-            renderReadingMode(host);
-            renderPages(host);
-            var styleGroup = el("div", "style-group");
-            renderColor(styleGroup);
-            renderIcons(styleGroup);
-            renderTypography(styleGroup);
-            host.appendChild(styleGroup);
-            renderImageDirection(host);
-            renderImageProduction(host);
-            renderProactiveExecution(host);
-            renderMode(host);
-            renderRefine(host);
-            renderDesignSpecDepth(host);
+        (CHAPTER_ORDER[stage] || []).forEach(function (key) {
+            var node = chapterHost(key, stage);
+            var before = node.childElementCount;
+            (CHAPTER_RENDERERS[key] || []).forEach(function (render) { render(node); });
+            // A chapter with nothing to ask — no installed template, no
+            // authored directions — is not a step and never reaches the rail.
+            if (node.childElementCount === before) { CHAPTERS.pop(); return; }
+            host.appendChild(node);
+        });
+        if (stage === 2) {
             var refreshDirectionIndicators = function () {
                 window.setTimeout(function () {
                     refreshDesignDirectionState();
@@ -4457,18 +4571,180 @@
             host.oninput = refreshDirectionIndicators;
             host.onchange = refreshDirectionIndicators;
             host.onclick = refreshDirectionIndicators;
+        } else {
+            host.oninput = null;
+            host.onchange = null;
+            host.onclick = null;
         }
-        updateActionBar(stage);
+        RAIL_STATE = "chapters";
+        showScreen("sections");
+        goChapter(Math.min(keepAt, Math.max(CHAPTERS.length - 1, 0)), { scrollTop: keepScroll, focus: false });
     }
 
     function renderAll() { renderForStage(STAGE); }
 
-    function updateActionBar(stage) {
-        var btn = document.getElementById("btn-confirm");
-        btn.disabled = false;
-        if (stage === 1) btn.textContent = t("btn_confirm_contract");
-        else if (stage === 2) btn.textContent = t("btn_confirm_final_plan");
-        else btn.textContent = t("btn_confirm");
+    function goChapter(index, opts) {
+        opts = opts || {};
+        if (!CHAPTERS.length) return;
+        var previous = AT;
+        AT = Math.max(0, Math.min(index, CHAPTERS.length - 1));
+        CHAPTERS.forEach(function (chapter, i) { chapter.node.hidden = i !== AT; });
+        // Editors sized while their chapter was hidden measured nothing; size
+        // them now that the chapter is on show.
+        Array.prototype.forEach.call(
+            CHAPTERS[AT].node.querySelectorAll("textarea.scheme-component-editor, textarea.custom-input"),
+            function (input) { if (input.style.display !== "none") fitTextareaToContent(input); }
+        );
+        var body = document.getElementById("panelbody");
+        if (body) body.scrollTop = (AT === previous && opts.scrollTop) ? opts.scrollTop : 0;
+        renderRail();
+        syncFooter();
+        if (opts.focus !== false) {
+            try { CHAPTERS[AT].heading.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+        }
+    }
+
+    function railSteps() {
+        return CHAPTERS.map(function (chapter) { return t("chap_" + chapter.key); })
+            .concat([t("chap_confirm")]);
+    }
+
+    // Rebuilt only when the set of steps changes; repainted on every move,
+    // so keyboard focus on a rail button survives a repaint.
+    function renderRail() {
+        var rail = document.getElementById("rail");
+        if (!rail) return;
+        var steps = railSteps();
+        var sig = LANG + "|" + STAGE + "|" + steps.join("|");
+        if (rail.dataset.sig !== sig) {
+            rail.dataset.sig = sig;
+            rail.innerHTML = "";
+            steps.forEach(function (label, i) {
+                var button = el("button", "chap");
+                button.type = "button";
+                button.dataset.go = String(i);
+                var bar = el("span", "barline");
+                bar.appendChild(el("span"));
+                button.appendChild(bar);
+                button.appendChild(el("span", "lbl", label));
+                rail.appendChild(button);
+            });
+        }
+        rail.setAttribute("aria-label", t("rail_label"));
+        paintRail();
+    }
+
+    // A passed step is full; the current one fills with how far down its
+    // screen you have scrolled; the confirm step is full once you are there.
+    function paintRail() {
+        var rail = document.getElementById("rail");
+        if (!rail) return;
+        var steps = railSteps();
+        var total = steps.length;
+        var now = RAIL_STATE === "chapters" ? AT : total - 1;
+        var body = document.getElementById("panelbody");
+        var range = body ? body.scrollHeight - body.clientHeight : 0;
+        var progress = range > 0 ? Math.round(body.scrollTop / range * 100) : 100;
+        var nameNode = document.getElementById("stepname");
+        if (nameNode) nameNode.textContent = steps[now] || "";
+        var countNode = document.getElementById("count");
+        if (countNode) countNode.textContent = t("count_of").replace("{i}", now + 1).replace("{n}", total);
+        Array.prototype.forEach.call(rail.children, function (button, i) {
+            var fill = i < now ? 100 : (i === now ? (RAIL_STATE === "chapters" ? Math.max(12, progress) : 100) : 0);
+            button.dataset.state = i < now ? "done" : (i === now ? "now" : "next");
+            button.firstChild.firstChild.style.width = fill + "%";
+            button.setAttribute("aria-label", t("step_of")
+                .replace("{i}", i + 1).replace("{n}", total).replace("{name}", steps[i]));
+            if (i === now) button.setAttribute("aria-current", "step");
+            else button.removeAttribute("aria-current");
+        });
+    }
+
+    function syncFooter() {
+        var flow = document.getElementById("flowactions");
+        var result = document.getElementById("resultactions");
+        var next = document.getElementById("btn-confirm");
+        var back = document.getElementById("btn-back");
+        var onResult = RAIL_STATE !== "chapters";
+        if (flow) flow.hidden = onResult;
+        if (result) result.hidden = !onResult;
+        if (onResult || !next) return;
+        var last = AT >= CHAPTERS.length - 1;
+        next.disabled = false;
+        if (!last) next.textContent = t("btn_next");
+        else if (STAGE === 1) next.textContent = t("btn_confirm_contract");
+        else if (STAGE === 2) next.textContent = t("btn_confirm_final_plan");
+        else next.textContent = t("btn_confirm");
+        if (back) back.hidden = AT === 0;
+    }
+
+    function updateActionBar(stage) { syncFooter(); }
+
+    // A refused submit names what is missing; when that lives on one
+    // chapter, the page goes there so the message and the control meet.
+    var STATUS_CHAPTER = {
+        template_selection_required: "basis",
+        template_selection_conflict: "basis",
+        image_usage_required: "images",
+        image_usage_none_exclusive: "images",
+        image_strategy_required: "images",
+        image_strategy_invalid: "images",
+        custom_color_required: "style",
+        design_system_required: "style"
+    };
+
+    function setStatus(key) {
+        var node = document.getElementById("confirm-status");
+        if (node) node.textContent = key ? t(key) : "";
+        var chapterKey = STATUS_CHAPTER[key];
+        if (!chapterKey || RAIL_STATE !== "chapters") return;
+        var index = -1;
+        CHAPTERS.forEach(function (chapter, i) { if (chapter.key === chapterKey) index = i; });
+        if (index >= 0 && index !== AT) goChapter(index);
+    }
+
+    function nextOrSubmit() {
+        if (RAIL_STATE !== "chapters") return;
+        if (AT < CHAPTERS.length - 1) { goChapter(AT + 1); return; }
+        if (STAGE === 1) submitStage1();
+        else if (STAGE === 2) submitStage2();
+        else confirm();
+    }
+
+    // ---- the two end states, each with its receipt ----------------------
+    function receiptJson(payload) {
+        return JSON.stringify(payload, null, 2);
+    }
+
+    function showWaiting(payload) {
+        if (payload) LAST_SENT = payload;
+        RAIL_STATE = "waiting";
+        document.getElementById("waiting-title").textContent = t("waiting_title");
+        document.getElementById("waiting-lead").textContent = t("waiting_lead");
+        document.getElementById("waiting-note").textContent = t("waiting_note");
+        document.getElementById("waiting-payload").textContent = LAST_SENT ? receiptJson(LAST_SENT) : "";
+        showScreen("waiting");
+        renderRail();
+        syncFooter();
+        var body = document.getElementById("panelbody");
+        if (body) body.scrollTop = 0;
+    }
+
+    function showDone(payload) {
+        if (payload) LAST_SENT = payload;
+        RAIL_STATE = "done";
+        document.getElementById("done-title").textContent = t("done_title");
+        document.getElementById("done-lead").textContent = t("done_lead");
+        document.getElementById("done-note").textContent = LAST_SENT ? t("done_note") : "";
+        document.getElementById("done-payload").textContent = LAST_SENT ? receiptJson(LAST_SENT) : "";
+        document.getElementById("done-fallback").hidden = !LAST_SENT;
+        var copy = document.getElementById("btn-copy");
+        if (copy) copy.hidden = !LAST_SENT;
+        showScreen("done");
+        renderRail();
+        syncFooter();
+        var body = document.getElementById("panelbody");
+        if (body) body.scrollTop = 0;
     }
 
     // ---- state init (once) ----------------------------------------------
@@ -4620,12 +4896,7 @@
     }
 
     // ---- confirm + close -------------------------------------------------
-    function showConfirmedOverlay() {
-        var ov = document.getElementById("confirmed-overlay");
-        ov.querySelector(".cf-title").textContent = t("confirmed_title");
-        ov.querySelector(".cf-hint").textContent = t("confirmed_hint");
-        ov.style.display = "flex";
-    }
+    function showConfirmedOverlay() { showDone(null); }
 
     // ---- staged submit + next-stage transitions -------------------------
     function communicationPayload() {
@@ -4681,7 +4952,7 @@
         valid = valid && (imageStrategy.rendering !== "custom" ||
             String(imageStrategy.behavior || "").trim());
         if (!valid) {
-            document.getElementById("confirm-status").textContent = t("custom_behavior_required");
+            setStatus("custom_behavior_required");
         }
         return !!valid;
     }
@@ -4691,14 +4962,14 @@
         var imageStrategy = payload.image_strategy || {};
         var rendering = String(imageStrategy.rendering || "").trim();
         if (!rendering) {
-            document.getElementById("confirm-status").textContent = t("image_strategy_required");
+            setStatus("image_strategy_required");
             return false;
         }
         var presetIds = imageStrategyCatalogCandidates().map(function (candidate) {
             return candidate.rendering;
         });
         if (rendering !== "custom" && presetIds.length && presetIds.indexOf(rendering) < 0) {
-            document.getElementById("confirm-status").textContent = t("image_strategy_invalid");
+            setStatus("image_strategy_invalid");
             return false;
         }
         return true;
@@ -4744,22 +5015,22 @@
             body: JSON.stringify(payload)
         }).then(function (r) {
             if (!r.ok) throw new Error("stage submit failed");
-            showDeriving();
+            showWaiting(payload);
             pollForStage(nextStage);
         }).catch(function () {
             btn.disabled = false;
-            document.getElementById("confirm-status").textContent = t("error_retry");
+            setStatus("error_retry");
         });
     }
 
     function imageUsageValid(value) {
         var ids = selectedImageUsageIds(value);
         if (!ids.length) {
-            document.getElementById("confirm-status").textContent = t("image_usage_required");
+            setStatus("image_usage_required");
             return false;
         }
         if (ids.indexOf("none") >= 0 && ids.length > 1) {
-            document.getElementById("confirm-status").textContent = t("image_usage_none_exclusive");
+            setStatus("image_usage_none_exclusive");
             return false;
         }
         return true;
@@ -4769,8 +5040,7 @@
         var valid = TEMPLATE_MODE === "free_design" ||
             (TEMPLATE_MODE === "templates" && TEMPLATE_SELECTED_KEYS.length > 0);
         if (!valid) {
-            document.getElementById("confirm-status").textContent =
-                t("template_selection_required");
+            setStatus("template_selection_required");
             return false;
         }
         if (TEMPLATE_MODE === "templates") {
@@ -4779,8 +5049,7 @@
                 var candidate = templateCandidateByKey(TEMPLATE_SELECTED_KEYS[i]);
                 if (!candidate) continue;
                 if (seenKinds[candidate.kind]) {
-                    document.getElementById("confirm-status").textContent =
-                        t("template_selection_conflict");
+                    setStatus("template_selection_conflict");
                     return false;
                 }
                 seenKinds[candidate.kind] = true;
@@ -4798,13 +5067,7 @@
         confirm();
     }
 
-    function showDeriving() {
-        document.getElementById("sections").style.display = "none";
-        document.getElementById("actionbar").style.display = "none";
-        var l = document.getElementById("loading");
-        l.textContent = t("deriving");
-        l.style.display = "block";
-    }
+    function showDeriving() { showWaiting(null); }
 
     // Poll session state first. It is derived from recommendation stage files
     // and result.json, so a recovered server can tell the existing page exactly when
@@ -4826,7 +5089,7 @@
                     return null;
                 });
             }).catch(function (err) {
-                var l = document.getElementById("loading");
+                var l = document.getElementById("waiting-note");
                 if (l) l.textContent = t("connection_lost") + " " + (err && err.message ? err.message : "");
                 setTimeout(function () { pollForStage(nextStage); }, 1500);
             });
@@ -4839,10 +5102,9 @@
             initProductionState();
         }
         STAGE = stage;
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("sections").style.display = "block";
-        document.getElementById("actionbar").style.display = "flex";
-        document.getElementById("confirm-status").textContent = "";
+        RAIL_STATE = "chapters";
+        AT = 0;
+        setStatus("");
         renderForStage(stage);
     }
 
@@ -4871,7 +5133,7 @@
             body: JSON.stringify(payload)
         }).then(function (r) {
             if (!r.ok) throw new Error("confirm failed");
-            showConfirmedOverlay();
+            showDone(payload);
             fetch("/api/shutdown", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -4880,16 +5142,15 @@
             setTimeout(function () { try { window.close(); } catch (e) { /* ignore */ } }, 400);
         }).catch(function () {
             btn.disabled = false;
-            document.getElementById("confirm-status").textContent = t("error_retry");
+            setStatus("error_retry");
         });
     }
 
     // ---- boot ------------------------------------------------------------
     function showError(msg) {
-        document.getElementById("loading").style.display = "none";
         var e = document.getElementById("error");
-        e.style.display = "block";
         e.textContent = msg;
+        showScreen("error");
     }
 
     function fetchJson(url, label) {
@@ -4926,6 +5187,16 @@
             .catch(function () { return {}; });
     }
 
+    function loadTemplateThumbs() {
+        return fetchJson("/api/template-thumbs", "template thumbnails")
+            .then(function (data) {
+                var out = {};
+                ((data && data.keys) || []).forEach(function (key) { out[String(key)] = true; });
+                return out;
+            })
+            .catch(function () { return {}; });
+    }
+
     function applyServerLanguage(data) {
         var requested = data && data.lang;
         if (requested !== "zh" && requested !== "en" && requested !== "ja" &&
@@ -4944,12 +5215,14 @@
             loadCatalogs(),
             fetchJson("/api/recommendations", "recommendations"),
             loadIconPreviews(),
-            loadAiImageComparison()
+            loadAiImageComparison(),
+            loadTemplateThumbs()
         ]).then(function (res) {
             CAT = res[0];
             REC = res[1];
             ICON_PREVIEWS = res[2] || {};
             AI_IMAGE_COMPARISON = res[3] || {};
+            TEMPLATE_THUMBS = res[4] || {};
             applyServerLanguage(REC);
             var activeStage = forceStage || stageNumber(REC);
             if (activeStage === 1) {
@@ -4988,7 +5261,13 @@
             applyStaticTranslations();
             refreshLangToggle(toggleBtn);
             if (REC && CAT) {
-                renderAll();   // STATE persists → selections preserved
+                // STATE persists → selections preserved; the end states are
+                // rewritten in place rather than re-entered.
+                if (RAIL_STATE === "waiting") showWaiting(null);
+                else if (RAIL_STATE === "done") showDone(null);
+                else renderAll();
+            } else {
+                renderRail();
             }
         };
         toggleBtn.addEventListener("click", function (e) {
@@ -5043,10 +5322,52 @@
         document.addEventListener("click", function () {
             if (!langMenu.hidden) setMenuOpen(false);
         });
-        document.getElementById("btn-confirm").addEventListener("click", function () {
-            if (STAGE === 1) submitStage1();
-            else if (STAGE === 2) submitStage2();
-            else confirm();
+        document.getElementById("btn-confirm").addEventListener("click", nextOrSubmit);
+        document.getElementById("btn-back").addEventListener("click", function () {
+            if (RAIL_STATE === "chapters") goChapter(AT - 1);
+        });
+        // A step on the rail goes to its chapter; the last step is the
+        // confirm, and reaching it is the submit — with the same validation
+        // the button runs, never silently.
+        document.getElementById("rail").addEventListener("click", function (e) {
+            var button = e.target && e.target.closest ? e.target.closest("button[data-go]") : null;
+            if (!button || RAIL_STATE !== "chapters") return;
+            var index = Number(button.dataset.go);
+            if (index >= CHAPTERS.length) {
+                goChapter(CHAPTERS.length - 1, { focus: false });
+                nextOrSubmit();
+            } else {
+                goChapter(index);
+            }
+        });
+        var panelBody = document.getElementById("panelbody");
+        if (panelBody) panelBody.addEventListener("scroll", function () {
+            if (RAIL_STATE === "chapters") paintRail();
+        }, { passive: true });
+        // ← → move between chapters, ⏎ continues — unless something that
+        // takes typing or has its own click has the focus.
+        document.addEventListener("keydown", function (e) {
+            if (RAIL_STATE !== "chapters" || !CHAPTERS.length || !langMenu.hidden) return;
+            var target = e.target || document.body;
+            var tag = String(target.tagName || "").toLowerCase();
+            var typing = tag === "input" || tag === "textarea" || tag === "select" || target.isContentEditable;
+            if (typing) return;
+            if (e.key === "ArrowLeft") { e.preventDefault(); goChapter(AT - 1); }
+            else if (e.key === "ArrowRight") { e.preventDefault(); goChapter(AT + 1); }
+            else if (e.key === "Enter" && tag !== "button" && tag !== "a" && tag !== "summary" &&
+                    !(target.closest && target.closest(".chip, .tpl, .font-card, .color-card, .template-mode-choice"))) {
+                e.preventDefault();
+                nextOrSubmit();
+            }
+        });
+        document.getElementById("btn-copy").addEventListener("click", function () {
+            var button = this;
+            var text = LAST_SENT ? receiptJson(LAST_SENT) : "";
+            if (!text || !navigator.clipboard) return;
+            navigator.clipboard.writeText(text).then(function () {
+                button.textContent = t("copied");
+                setTimeout(function () { button.textContent = t("copy_answers"); }, 1800);
+            }).catch(function () { /* the fold below still shows it */ });
         });
 
         // Session remains the first network read so completed runs can close
@@ -5056,8 +5377,7 @@
             return { phase: "strategist" };
         }).then(function (session) {
             if (session && session.status === "done") {
-                document.getElementById("loading").style.display = "none";
-                showConfirmedOverlay();
+                showDone(null);
                 return null;
             }
             return loadStrategistUi().catch(function (err) {
