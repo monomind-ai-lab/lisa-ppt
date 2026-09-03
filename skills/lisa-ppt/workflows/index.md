@@ -33,7 +33,6 @@ Maintainer-only inventory for adding, moving, or removing workflow documents. Ru
 | `refine-spec` | Planning stage | [`stages/refine-spec.md`](./stages/refine-spec.md) | After Design Spec Gate 1, before lock Gate 2 |
 | `verify-charts` | Quality gate | [`stages/verify-charts.md`](./stages/verify-charts.md) | Before Generate Step 7 |
 | `visual-review` | Quality gate | [`stages/visual-review.md`](./stages/visual-review.md) | Before Generate Step 7 |
-| `live-preview` | Editor stage | [`stages/live-preview.md`](./stages/live-preview.md) | Generate preview / post-export |
 | `customize-animations` | Post-processing stage | [`stages/customize-animations.md`](./stages/customize-animations.md) | Generate conditional export |
 | `generate-audio` | Shared audio stage | [`stages/generate-audio.md`](./stages/generate-audio.md) | Generate / Edit Native |
 | `failure-recovery` | Governance | [`governance/failure-recovery.md`](./governance/failure-recovery.md) | All routes |

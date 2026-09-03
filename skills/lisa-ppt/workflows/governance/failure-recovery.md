@@ -31,8 +31,6 @@ Global stop/continue rules for all three routes plus concrete Generate PPTX hand
 | Strict-alpha slice failure | Yes for every named output | Return the parent to preparation; correct an evidenced key/tolerance mismatch, then enlarge cells or split incompatible shape families and regenerate; a parent never substitutes for its slices | Only after automated recovery is exhausted | Quick §2 resource closure / Default Step 5 |
 | Residual `Pending` or `Failed` image row before Executor | Yes | Re-run the owning path; Default AI follows its three-outcome decision and reaches `Needs-Manual` only after manual confirmation; Quick follows its no-AI replan | Only when the owning rule requires a new choice or file | Step 5 terminal-state check |
 | User replaces/adds images after analysis | No | Re-run `analyze_images.py` before reading image facts | No | Step 4/5/6 image-fact read |
-| Live preview fails to start / closed by user | No | Continue generation; report unavailability | Only if the user requires browser preview | Step 6, or `live-preview` Step 1 on request |
-| Browser annotations submitted during generation | No | Defer application until after Step 7 | User asks to apply | `live-preview` Step 2 |
 | `svg_quality_checker.py` error | Yes | Review the complete issue set from one unfiltered run; fix all errors and selected warnings in one consolidated pass, then one verification rerun; a remaining failure is the next batch — never check between individual fixes | No unless a required asset is missing | Step 6 Visual Construction |
 | `svg_quality_checker.py` warning | No | Continue without mandatory modification; preserve compatible user syntax, report material advice when useful | No | Step 6 advisory handling |
 | Missing `notes/total.md` while Speaker Notes is enabled | Yes | Generate notes before Step 7 | No | Step 6 Logic Construction |
@@ -40,7 +38,6 @@ Global stop/continue rules for all three routes plus concrete Generate PPTX hand
 | `total_md_split.py` failure | Yes | Fix notes format/path, rerun Step 7.1 | Usually no | Step 7.1 |
 | `finalize_svg.py` failure | Yes | Fix SVG/assets, rerun Step 7.2 | Only if a source asset is missing | Step 7.2 |
 | `svg_to_pptx.py` failure | Yes | Without a current passing final report: get the complete blocking set from the final checker, fix, rerun the checker, proceed only after `passed`; otherwise fix the conversion issue and rerun Step 7.3 | Only if a required artifact is missing | Step 6 final quality gate or Step 7.3 |
-| Export succeeds but the user wants browser edits re-exported | No | Rerun Step 7.2 and 7.3 after the edits | No | Post-export live-preview handling |
 
 ---
 
@@ -83,6 +80,5 @@ Global stop/continue rules for all three routes plus concrete Generate PPTX hand
 | SVGs and notes complete | Step 7.1 |
 | Step 7.1 complete | Step 7.2 |
 | Step 7.2 complete, PPTX missing | Step 7.3 |
-| Browser annotations saved after export | [`live-preview`](../stages/live-preview.md) Step 2 |
 
 **Default — resume at the owning failed step**: do not restart planning or regenerate prior artifacts unless the owning source changed.
