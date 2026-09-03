@@ -157,7 +157,7 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 - **SmartArt。** 刻意不做。
 - **接續快速模式。** 快速模式一次跑完，沒有確認階段，也沒有可接續的設計紀錄。
 - **gpt-image-2 的透明圖片。** 要求透明背景時，模型會畫出棋盤格。`codex-image` 技能會改寫提示詞並告訴你；能用單色背景就用單色背景。
-- **保持小巧。** clone 下來約 90 MB 的歷史，檢出後約 70 MB：光是 `templates/icons/` 就有 11,801 個 SVG，48 MB，留在樹裡而不是改成 release 下載，好讓外掛安裝一次到齊；隨附的字型佔 32 MB。
+- **保持小巧——但要知道這裡的「小」是什麼意思。** 完整 clone 是 210 MB，`--depth 1` 是 131 MB，實測明細見下方[它有多大](#它有多大)。光是 `templates/icons/` 就有 12,027 個 SVG——內容只約 13 MB，但 12,027 個小檔案在檔案系統上進位成區塊後約佔 48 MB——留在樹裡而不是改成 release 下載，好讓外掛安裝一次到齊；隨附的字型佔 32 MB。
 - **在每個 Python 上都能跑。** 3.10 是底線，3.14 已驗證：`skia-pathops` 與 `uharfbuzz` 提供 abi3 wheel，流程本身在 3.11 上跑。
 
 ---
@@ -175,6 +175,32 @@ python3 skills/lisa-ppt/scripts/install_fonts.py            # --dry-run 只列�
 - **`diagram-design`**：圖解構圖規則，vendor 自 cathrynlavery/diagram-design。它的獨立流程已關閉，被停用的原文逐字保留作為紀錄。
 - **確認介面**、附即時預覽的 SVG 編輯器、DrawingML 轉換器、品質檢查器，以及 `.codex/skills` 的 stub 同步。
 - **範本**：十四套版型、`monomind` 品牌、與上游十二套並列的 `evidence-deck` 與 `paper-brief` 風格、圖表與表格範本，以及圖示庫。
+
+---
+
+## 它有多大
+
+在 `main` 上實測，2026-09-03：
+
+| | |
+|---|---|
+| `git clone` | **210 MB** — 94 MB 的工作目錄，加上 116 MB 的歷史 |
+| `git clone --depth 1` | **131 MB** — 同樣的工作目錄，歷史只有 37 MB |
+| 只算工作目錄 | 12,869 個檔案、55 MB 的內容，在磁碟上約 94 MB |
+
+這 94 MB 裡有 80 MB 來自兩個目錄，而且兩個都是刻意留下的：
+
+- **`skills/lisa-ppt/templates/icons/`** — 12,027 個 SVG。內容只有 13 MB，
+  在磁碟上卻約 48 MB：每個檔案不到 1 KB，但每個檔案仍要佔一個檔案系統區塊。
+  以檔案形式保留，因為一份得停下來去下載圖示的簡報，就是一份會停下來的簡報。
+- **`skills/lisa-ppt/assets/fonts/`** — 32 MB，四個字型家族共 19 個字重。
+  PPTX 不會內嵌字型，所以頁面指名的家族必須存在於開啟它的那台機器上，
+  由 `install_fonts.py` 負責安裝。
+
+歷史比工作目錄重，是因為 v6.1.0 匯入時帶進了上游的 `docs/assets/`（33 MB，
+一支主視覺 GIF）與 AI 影像對照圖庫（43 MB 的 PNG），兩者又在同一批 commit 中
+被移除。它們已經不在檔案樹裡，卻仍留在歷史中；現在各自只剩一個 README 指出去向。
+`--depth 1` 會跳過它們，而流程本身也不需要它們。
 
 ---
 

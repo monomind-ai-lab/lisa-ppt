@@ -230,10 +230,13 @@ it when you move machines.
 - **Transparent images from gpt-image-2.** Asked for a transparent background,
   the model paints a checkerboard. The `codex-image` skill rewrites the prompt
   and says so; ask for a flat background when you can.
-- **Stay small.** A clone is about 90 MB of history and checks out to about
-  70 MB: `templates/icons/` alone is 11,801 SVGs, 48 MB, kept in the tree
-  rather than moved to a release download so a plugin install is complete; the
-  bundled fonts are 32 MB.
+- **Stay small — but know what "small" means here.** A full clone is 210 MB
+  and `--depth 1` is 131 MB; the measured breakdown is in
+  [How big it is](#how-big-it-is) below. `templates/icons/` alone is
+  12,027 SVGs — only about 13 MB of content, but ~48 MB once the filesystem
+  rounds 12,027 tiny files up to blocks — kept in the tree rather than moved
+  to a release download so a plugin install is complete; the bundled fonts are
+  32 MB.
 - **Run on every Python.** 3.10 is the floor and 3.14 is verified:
   `skia-pathops` and `uharfbuzz` ship abi3 wheels, and the pipeline is
   exercised on 3.11.
@@ -261,6 +264,35 @@ it when you move machines.
 - **Templates**: fourteen layouts, the `monomind` brand, the `evidence-deck`
   and `paper-brief` styles beside upstream's twelve, the chart and table
   templates, and the icon library.
+
+---
+
+## How big it is
+
+Measured on `main`, 2026-09-03:
+
+| | |
+|---|---|
+| `git clone` | **210 MB** — a 94 MB checkout plus 116 MB of history |
+| `git clone --depth 1` | **131 MB** — the same checkout, 37 MB of history |
+| The checkout alone | 12,869 files, 55 MB of content, about 94 MB on disk |
+
+Two directories account for 80 of those 94 MB, and both are deliberate:
+
+- **`skills/lisa-ppt/templates/icons/`** — 12,027 SVGs. Only 13 MB of content,
+  but roughly 48 MB on disk: every file is under a kilobyte and every file
+  still takes a filesystem block. Kept as files, because a deck that has to
+  stop and fetch an icon is a deck that stops.
+- **`skills/lisa-ppt/assets/fonts/`** — 32 MB, 19 weights across four
+  families. PPTX does not embed fonts, so the family a page names has to exist
+  on the machine that opens it. `install_fonts.py` puts them there.
+
+The history is heavier than the checkout because the v6.1.0 import brought in
+upstream's `docs/assets/` (33 MB, a hero GIF) and its AI-image comparison
+gallery (43 MB of PNGs), and both were removed in the same series of commits.
+They are gone from the tree and still in the history; each is now a README
+pointing at where it went. `--depth 1` skips them, and nothing in the pipeline
+needs them.
 
 ---
 
