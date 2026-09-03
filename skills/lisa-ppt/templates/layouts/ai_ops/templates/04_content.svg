@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="ai_ops_master" data-pptx-master-name="AI Ops"
+  data-pptx-layout="content" data-pptx-layout-name="Content">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="content-top-strip" x="0" y="0" width="1280" height="4" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="content-header-rule" x1="0" y1="80" x2="1280" y2="80" stroke="#E7E6E6" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-title-accent" x="50" y="20" width="8" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-footer-band" x="0" y="680" width="1280" height="40" fill="#F2F2F2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-footer-accent" x="0" y="680" width="4" height="40" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-pagenum-badge" x="1210" y="688" width="30" height="24" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="content-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="72 20 1080 44">
+    <text id="content-title-carrier" data-pptx-carrier="true"
+      x="72" y="52" fill="#000000"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="32" font-weight="700">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="content-object-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="50 95 1180 560">
+    <text id="content-object-carrier" data-pptx-carrier="true"
+      x="50" y="133" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CONTENT_AREA}}</text>
+  </g>
+  <g id="content-source-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="440 684 400 32">
+    <text id="content-source-carrier" data-pptx-carrier="true"
+      x="640" y="706" text-anchor="middle" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{SOURCE}}</text>
+  </g>
+  <g id="content-section-slot" data-pptx-placeholder="footer" data-pptx-idx="3"
+    data-pptx-bounds="60 684 360 32">
+    <text id="content-section-carrier" data-pptx-carrier="true"
+      x="60" y="706" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{SECTION_NAME}}</text>
+  </g>
+  <g id="content-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="4"
+    data-pptx-bounds="1180 686 90 28">
+    <text id="content-pagenum-carrier" data-pptx-carrier="true"
+      x="1225" y="706" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="700">{{PAGE_NUM}}</text>
+  </g>
+</svg>

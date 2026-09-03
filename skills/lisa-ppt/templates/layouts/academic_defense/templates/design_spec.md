@@ -1,216 +1,65 @@
 ---
 layout_id: academic_defense
 kind: layout
-native_structure_mode: template
-summary: Thesis defense, academic presentations, research progress reports, grant applications.
+category: scenario
+summary: Thesis defense, academic presentations, research progress reports, grant applications — a 16:9 header-band system with a key-message strip, a two-column card agenda, and a full-bleed chapter divider.
+summary_ko: 학위 논문 심사, 학술 발표, 연구 진행 보고, 연구비 신청 — 상단 띠 아래 핵심 메시지 줄, 2열 카드 목차, 전면 챕터 구분 페이지로 이루어진 16:9 구조.
+summary_zh_tw: 學位論文答辯、學術簡報、研究進度報告、研究經費申請——頂部色帶配核心訊息列、雙欄卡片目錄與滿版章節分隔頁的 16:9 結構。
+display_name: Academic Defense
+display_name_ko: 학위 논문 심사
+display_name_zh_tw: 學位論文答辯
+keywords: [academic, defense, research, header-band, key-message]
 canvas_format: ppt169
+canvas_width: 1280
+canvas_height: 720
+canvas_viewbox: "0 0 1280 720"
+source_canvas_width: 1280
+source_canvas_height: 720
+source_viewbox: "0 0 1280 720"
+replication_mode: fidelity
+native_structure_mode: structured
 page_count: 5
 page_types: [cover, toc, chapter, content, ending]
+placeholders:
+  01_cover: ["{{TITLE}}", "{{SUBTITLE}}", "{{AUTHOR}}", "{{ADVISOR}}", "{{INSTITUTION}}", "{{DATE}}", "{{BRAND_LOGO}}"]
+  02_toc: ["{{PAGE_TITLE}}", "{{BRAND_LOGO}}", "{{TOC_ITEM_1_TITLE}}", "{{TOC_ITEM_1_DESC}}", "{{TOC_ITEM_2_TITLE}}", "{{TOC_ITEM_2_DESC}}", "{{TOC_ITEM_3_TITLE}}", "{{TOC_ITEM_3_DESC}}", "{{TOC_ITEM_4_TITLE}}", "{{TOC_ITEM_4_DESC}}", "{{TOC_ITEM_5_TITLE}}", "{{TOC_ITEM_5_DESC}}", "{{TOC_ITEM_6_TITLE}}", "{{TOC_ITEM_6_DESC}}", "{{PAGE_NUM}}"]
+  03_chapter: ["{{CHAPTER_NUM}}", "{{CHAPTER_TITLE}}", "{{CHAPTER_DESC}}", "{{FOOTER_NOTE}}"]
+  04_content: ["{{PAGE_TITLE}}", "{{BRAND_LOGO}}", "{{KEY_MESSAGE}}", "{{CONTENT_AREA}}", "{{SOURCE}}", "{{SECTION_NAME}}", "{{PAGE_NUM}}"]
+  05_ending: ["{{THANK_YOU}}", "{{ENDING_SUBTITLE}}", "{{CONTACT_INFO}}", "{{EMAIL}}", "{{INSTITUTION}}", "{{COPYRIGHT}}", "{{PAGE_NUM}}", "{{BRAND_LOGO}}"]
 ---
 
-# Academic Defense Template - Design Specification
+# Academic Defense — Design Specification
 
-> Suitable for academic thesis defense, research presentations, graduation project showcases, and similar scenarios.
+## IV. Signature Design Elements
 
----
+Academic Defense is a header-band system for material that is examined rather
+than pitched: a thesis defense, a research progress report, a grant
+application. Every page reads top-down from a dark header band to an open
+content field; the structure separates *what this page claims* (the
+key-message strip) from *the evidence for it* (the content field). The
+prototype paint (a dark header, a warm-red accent bar, pale panels) exists
+only to expose hierarchy and slot geometry; it is not an identity segment.
+Color, typography, logo, voice, and icon treatment remain downstream
+decisions.
 
-## I. Template Overview
+| Element | Template-specific behavior |
+|---|---|
+| One Master, four page planes | `academic_defense_master` carries a white plane. `cover` and `ending` raise a 100 px header band; `toc` and `content` use a 70 px band; `chapter` overrides the plane with a full-bleed dark Layout background carrying a wedge and an edge strip. |
+| Header band with accent bar | Every light page opens with a full-width band and a 6 px accent bar flush left — the one motif the roster repeats. The band holds the page title (28 px on 70 px bands) and a reserved 140 × 30 (140 × 50 on covers) logo zone at the right edge, typed `object` so a Brand can place its mark without the Layout owning it. |
+| Key-message strip | `content` places a 50 px strip under the header, with its own 6 px accent, carrying one-line `body` text at 18 px: the claim the page makes before the evidence. Its 40 px inset matches the content field. |
+| Open content field | `content` leaves `40 135 1200 515` as one `object` slot with no panel; the page's own composition (columns, cards, timeline, table) is Slide-local. The object carrier starts upper-left at 22 px. |
+| Card agenda | `toc` sets six 540 × 90 cards in two columns at a 115 px vertical rhythm. Cards 1–4 are filled panels with a 6 px left bar; cards 5–6 are dashed outlines, the same slot contract in muted paint, so a four-item agenda leaves the last row visibly optional. Ordinal indices `01`–`06` are Layout-owned atoms at 36 px; each card's `object` slot carries the item title (24 px) over its description (14 px) as one two-line frame starting at x 185. |
+| Ghost chapter number | `chapter` places a 280 px `object` slot behind the title at 8 % alpha, with the 56 px title and a 24 px description column starting at x 380 beside a 12 px accent bar and a short 6 px rule above the title. A `footer` slot at the lower right echoes the deck title. |
+| Centered cover and closing | `cover` and `ending` center every role: 56 px title, 28 / 24 px subtitle, a 440 px divider with a center dot, then a stacked presenter block (three `object` lines: author, advisor, institution) on the cover and a 560 × 130 contact card (one three-line `object` frame) on the closing page. A 55 px footer band carries `date` on the cover and `footer` copyright on the closing page. |
+| Footer chrome | Light pages end with a hairline at y 665; `content` carries a `object` source line at the left, a centered `footer` section name, and a right-aligned `slide-number`, all at 12–14 px inside `676 … 32` frames. |
+| Text entry | Header, key-message, content, and source slots begin at the left; centered alignment is reserved for the cover, the closing page, and the section name. |
 
-| Property       | Description                                            |
-| -------------- | ------------------------------------------------------ |
-| **Template Name** | academic_defense                                    |
-| **Use Cases**  | Thesis defense, academic presentations, research progress reports, grant applications |
-| **Design Tone** | Professional, rigorous, research-oriented, clear hierarchy |
-| **Theme Mode** | Light theme (white background + dark blue title bar)   |
+## V. Page Roster
 
----
-
-## II. Canvas Specification
-
-| Property       | Value                         |
-| -------------- | ----------------------------- |
-| **Format**     | Standard 16:9                 |
-| **Dimensions** | 1280 × 720 px                |
-| **viewBox**    | `0 0 1280 720`                |
-| **Page Margins** | Left/Right 40px, Top 0px, Bottom 35px |
-| **Safe Area**  | x: 40-1240, y: 70-665        |
-
----
-
-## III. Page Structure
-
-### General Layout
-
-| Area           | Position/Height | Description                            |
-| -------------- | --------------- | -------------------------------------- |
-| **Header**     | y=0, h=70px     | Dark blue background + red left bar + page title |
-| **Key Message Bar** | y=70, h=50px | Core message/summary area (light blue-gray background) |
-| **Content Area** | y=135, h=515px | Main content area                    |
-| **Footer**     | y=665, h=55px   | Data source, section name, page number |
-
-### Decorative Elements
-
-- **Left Red Bar**: Red (`#CC0000`), width 6px, used for header and card decoration
-- **Blue Border**: Accent blue (`#0066CC`), used for card borders
-- **Decorative Divider**: Blue (`#0066CC`), paired with decorative dots
-
----
-
-## IV. Page Types
-
-### 1. Cover Page (01_cover.svg)
-
-- White background
-- Dark blue top bar + red left vertical bar decoration
-- Top-right Logo placeholder area
-- Centered main title + subtitle
-- Decorative divider line (blue + dots)
-- Presenter info area (name, advisor, institution)
-- Bottom gray info area (date)
-
-### 2. Table of Contents Page (02_toc.svg)
-
-- White background
-- Standard header (dark blue + red vertical bar)
-- Card-style TOC item layout (2 columns)
-- Light blue-gray background cards + left colored vertical bar
-- Optional items use dashed borders
-
-### 3. Chapter Page (02_chapter.svg)
-
-- Dark blue full-screen background (`#003366`)
-- Right-side geometric decorations
-- Left red vertical bar decoration
-- Large semi-transparent background number
-- Prominent white chapter title
-- Light blue-gray chapter description
-- Red decorative horizontal line
-
-### 4. Content Page (03_content.svg)
-
-- White background
-- Standard header (dark blue + red vertical bar)
-- Key message bar (light blue-gray background + blue left vertical bar)
-- Flexible content area
-- Footer: data source, section name, page number
-
-### 5. Ending Page (04_ending.svg)
-
-- White background
-- Dark blue top bar
-- Centered thank-you message
-- Tagline
-- Decorative divider line
-- Contact info card (gray background)
-- Bottom gray area (copyright, page number)
-
----
-
-## V. SVG Page Roster
-
-| File | Role | Description |
-|------|------|-------------|
-| `01_cover.svg` | cover | Title slide; project name, presenter, date |
-| `02_chapter.svg` | chapter | Chapter divider page (large number + chapter title) |
-| `02_toc.svg` | toc | Table of contents listing major sections |
-| `03_content.svg` | content | Main content page; body of the deck |
-| `04_ending.svg` | ending | Closing/thank-you page |
-
-## VI. Layout Patterns
-
-| Pattern            | Use Cases                      |
-| ------------------ | ------------------------------ |
-| **Single Column Centered** | Cover, ending, key points |
-| **Two-Column Cards** | Table of contents            |
-| **Left-Right Split (5:5)** | Comparison display      |
-| **Left-Right Split (4:6)** | Image-text mixed layout |
-| **Card Grid**      | Research content list           |
-| **Timeline**       | Research progress               |
-| **Table**          | Data comparison, experiment results |
-
----
-
-## VII. Spacing Guidelines
-
-| Element            | Value  |
-| ------------------ | ------ |
-| Card gap           | 20px   |
-| Content block gap  | 24px   |
-| Card padding       | 20px   |
-| Card border radius | 8px    |
-| Icon-to-text gap   | 12px   |
-
----
-
-## VIII. Placeholder Specification
-
-Templates use `{{PLACEHOLDER}}` format placeholders. Common placeholders:
-
-| Placeholder        | Description        |
-| ------------------ | ------------------ |
-| `{{TITLE}}`        | Thesis/project main title |
-| `{{SUBTITLE}}`     | Subtitle           |
-| `{{AUTHOR}}`       | Presenter name     |
-| `{{ADVISOR}}`      | Advisor            |
-| `{{INSTITUTION}}`  | University/institution |
-| `{{DATE}}`         | Defense date       |
-| `{{PAGE_TITLE}}`   | Page title         |
-| `{{SECTION_NUM}}`  | Section number     |
-| `{{CHAPTER_NUM}}`  | Chapter number (large) |
-| `{{CHAPTER_TITLE}}`| Chapter title      |
-| `{{CHAPTER_DESC}}` | Chapter description |
-| `{{KEY_MESSAGE}}`  | Key message        |
-| `{{PAGE_NUM}}`     | Page number        |
-| `{{SOURCE}}`       | Data source        |
-| `{{SECTION_NAME}}` | Section name (footer) |
-| `{{TOC_ITEM_N_TITLE}}` | TOC item title (N=1..n) |
-| `{{TOC_ITEM_N_DESC}}` | TOC item description (N=1..n) |
-| `{{THANK_YOU}}`    | Thank-you message  |
-| `{{ENDING_SUBTITLE}}` | Ending subtitle/tagline |
-| `{{CONTACT_INFO}}` | Contact information |
-| `{{EMAIL}}`        | Email address      |
-| `{{COPYRIGHT}}`    | Copyright info     |
-| `{{LOGO}}`         | Logo text          |
-
----
-
-## IX. Component Specifications
-
-### 1. Tag
-
-```xml
-<!-- Blue background white text tag -->
-<rect x="40" y="150" width="80" height="28" fill="#0066CC" rx="4"/>
-<text x="80" y="170" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="bold">内容详解</text>
-
-<!-- Red background white text tag (emphasis) -->
-<rect x="40" y="150" width="80" height="28" fill="#CC0000" rx="4"/>
-<text x="80" y="170" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="bold">核心目标</text>
-```
-
-### 2. Flow Arrow
-
-```xml
-<!-- Horizontal flow arrow -->
-<line x1="200" y1="300" x2="350" y2="300" stroke="#0066CC" stroke-width="2"/>
-<polygon points="350,295 360,300 350,305" fill="#0066CC"/>
-```
-
-### 3. Data Highlight Box
-
-```xml
-<!-- Key data block -->
-<rect x="40" y="400" width="200" height="80" fill="#FFFFFF" stroke="#CC0000" stroke-width="2" rx="8"/>
-<text x="140" y="445" text-anchor="middle" fill="#CC0000" font-size="24" font-weight="bold">30%</text>
-<text x="140" y="470" text-anchor="middle" fill="#666666" font-size="12">关键指标</text>
-```
-
----
-
-## X. Usage Instructions
-
-1. Copy the template to the project directory
-2. Select the appropriate page template based on defense content needs
-3. Use placeholders to mark content that needs replacement
-4. Ensure presenter info and advisor info are complete
-5. Generate the final SVG through the Executor role
+| SVG | Layout key | PowerPoint picker name | Purpose |
+|---|---|---|---|
+| `01_cover.svg` | `cover` | Cover | Centered title and subtitle above a divider, a three-line presenter block, a date in the footer band, and a logo zone in the header band |
+| `02_toc.svg` | `toc` | Table of Contents | Header band with page title and logo zone over a two-column, six-card agenda with Layout-owned ordinals and a page number |
+| `03_chapter.svg` | `chapter` | Chapter | Full-bleed dark divider with a ghost chapter number, title with rule, description, and a footer echo |
+| `04_content.svg` | `content` | Content | Header band, key-message strip, open content field, and a source / section / page-number footer |
+| `05_ending.svg` | `ending` | Closing | Centered closing message and tagline above a divider, a contact card, and copyright with page number in the footer band |

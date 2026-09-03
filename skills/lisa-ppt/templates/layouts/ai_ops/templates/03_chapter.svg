@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="ai_ops_master" data-pptx-master-name="AI Ops"
+  data-pptx-layout="chapter" data-pptx-layout-name="Chapter">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="chapter-top-strip" x="0" y="0" width="1280" height="8" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-left-block" x="0" y="80" width="120" height="560" fill="#F2F2F2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-left-accent" x="0" y="80" width="8" height="560" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-right-block" x="1160" y="80" width="120" height="560" fill="#FDF3EB"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-right-accent" x="1272" y="80" width="8" height="560" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-badge" x="540" y="220" width="80" height="80" fill="#C00000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-title-rule" x1="480" y1="450" x2="800" y2="450" stroke="#C00000" stroke-width="3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-title-rule-thin" x1="520" y1="458" x2="760" y2="458" stroke="#2E75B6" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-bottom-accent" x="0" y="680" width="1280" height="10" fill="#FDF3EB"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-bottom-band" x="0" y="690" width="1280" height="30" fill="#2E75B6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="chapter-number-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="540 220 80 80">
+    <text id="chapter-number-carrier" data-pptx-carrier="true"
+      x="580" y="278" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" font-weight="700">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="chapter-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 372 1000 72">
+    <text id="chapter-title-carrier" data-pptx-carrier="true"
+      x="640" y="420" text-anchor="middle" fill="#000000"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" font-weight="700">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="chapter-desc-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="140 484 1000 40">
+    <text id="chapter-desc-carrier" data-pptx-carrier="true"
+      x="640" y="510" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{CHAPTER_DESC}}</text>
+  </g>
+</svg>

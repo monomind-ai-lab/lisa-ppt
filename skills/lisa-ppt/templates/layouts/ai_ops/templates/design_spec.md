@@ -1,302 +1,68 @@
 ---
 layout_id: ai_ops
 kind: layout
-native_structure_mode: template
-summary: Telecom AI operations architecture, IT system overviews, digital transformation proposals, smart infrastructure reports.
+category: scenario
+summary: AI operations architecture reviews, IT system overviews, digital transformation proposals, smart infrastructure reports — a 16:9 red/blue block system with a split left block on cover and closing, warm-gray summary bands, square numbered badges indexing tag chips, dashed module panels, and a dense one-page architecture overview.
+summary_ko: AI 운영 아키텍처 보고, IT 시스템 개요, 디지털 전환 제안, 스마트 인프라 보고서 — 표지와 마무리 페이지의 분할 좌측 블록, 웜 그레이 요약 띠, 태그 칩을 가리키는 정사각 번호 배지, 점선 모듈 패널, 고밀도 단일 페이지 아키텍처 개요로 이루어진 16:9 레드/블루 블록 구조.
+summary_zh_tw: AI 維運架構檢討、IT 系統總覽、數位轉型提案、智慧基礎設施報告——封面與結尾頁的分割左側色塊、暖灰摘要色帶、指向標籤方塊的方形編號徽章、虛線模組面板，以及高密度單頁架構總覽所構成的 16:9 紅藍色塊結構。
+display_name: AI Ops
+display_name_ko: AI 운영
+display_name_zh_tw: AI 維運
+keywords: [ai-ops, architecture, badges, dense, red-blue]
 canvas_format: ppt169
+canvas_width: 1280
+canvas_height: 720
+canvas_viewbox: "0 0 1280 720"
+source_canvas_width: 1280
+source_canvas_height: 720
+source_viewbox: "0 0 1280 720"
+replication_mode: fidelity
+native_structure_mode: structured
 page_count: 6
-page_types: [cover, toc, chapter, content, ending, reference_style]
+page_types: [cover, toc, chapter, content, ending, architecture_overview]
+placeholders:
+  01_cover: ["{{TITLE}}", "{{SUBTITLE}}", "{{TAG_1}}", "{{TAG_2}}", "{{TAG_3}}", "{{TAG_4}}", "{{TAG_5}}", "{{AUTHOR}}", "{{DATE}}"]
+  02_toc: ["{{PAGE_TITLE}}", "{{PAGE_TITLE_EN}}", "{{TOC_ITEM_1_TITLE}}", "{{TOC_ITEM_2_TITLE}}", "{{TOC_ITEM_3_TITLE}}", "{{TOC_ITEM_4_TITLE}}", "{{TOC_ITEM_5_TITLE}}", "{{TOC_SUMMARY}}"]
+  03_chapter: ["{{CHAPTER_NUM}}", "{{CHAPTER_TITLE}}", "{{CHAPTER_DESC}}"]
+  04_content: ["{{PAGE_TITLE}}", "{{CONTENT_AREA}}", "{{SOURCE}}", "{{SECTION_NAME}}", "{{PAGE_NUM}}"]
+  05_ending: ["{{THANK_YOU}}", "{{ENDING_SUBTITLE}}", "{{CONTACT_INFO}}", "{{COPYRIGHT}}", "{{TAG_1}}", "{{TAG_2}}", "{{TAG_3}}", "{{TAG_4}}"]
+  06_architecture_overview: ["{{PAGE_TITLE}}", "{{KEY_MESSAGE}}", "{{TARGET}}", "{{KPI_1}}", "{{KPI_2}}", "{{KPI_3}}", "{{KPI_4}}", "{{KPI_5}}", "{{KPI_6}}", "{{TAG_1}}", "{{TAG_2}}", "{{TAG_3}}", "{{TAG_4}}", "{{BLOCK_SUMMARY}}", "{{BLOCK_1}}", "{{BLOCK_2}}", "{{BLOCK_3}}", "{{SIDE_CONTENT}}", "{{CARD_1}}", "{{CARD_2}}", "{{CARD_3}}"]
 ---
 
-# ai_ops - Enterprise Digital Intelligence Design Specification
-
-> Suitable for telecom operator AI operations architecture, digital transformation proposals, smart infrastructure reports, IT system overview diagrams, and other high-information-density scenarios.
-
-> **Style Reference**: See `reference_style.svg` (Telecom Operator AI Operations Architecture Overview), which demonstrates the core visual language of this template.
-
----
-
-## I. Template Overview
-
-| Property           | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| **Template Name**  | ai_ops (Enterprise Digital Intelligence)                                       |
-| **Use Cases**      | Telecom AI operations architecture, IT system overviews, digital transformation proposals, smart infrastructure reports |
-| **Design Tone**    | Information-dense, structured, modular zoning, telecom/enterprise style        |
-| **Theme Mode**     | Light theme (white background + red-blue dual-color accents + warm gray panels) |
-| **Info Density**   | High density — a single page can accommodate 6-10 information modules, matching telecom reporting conventions |
-
----
-
-## II. Canvas Specification
-
-| Property           | Value                            |
-| ------------------ | -------------------------------- |
-| **Format**         | Standard 16:9                    |
-| **Dimensions**     | 1280 × 720 px                   |
-| **viewBox**        | `0 0 1280 720`                  |
-| **Page Margins**   | Left/right 30-50px, top 20px, bottom 40px |
-| **Content Safe Area** | x: 30-1250, y: 80-680        |
-| **Title Area**     | y: 20-80                        |
-| **Grid Baseline**  | 20px (high-density layouts require a finer grid) |
-
-> **Note**: Margins are narrower than standard templates (30px vs 60px) to accommodate the high-information-density reporting style common in telecom presentations.
-
----
-
-## III. Core Design Principles
-
-### Telecom High-Density Information Style
-
-This template emulates the visual language of telecom technical reports. The core characteristics are "**modular zoning + high information density + red-blue dual-color hierarchy**".
-
-1. **Left Red Vertical Bar**: A red rectangle (10×40px) before titles serves as a visual anchor — the most essential title identifier throughout the template.
-2. **Number Badges**: Red square badges (30×30px with white numbers) identify key initiatives/capability numbers (e.g., numbers 1-5 in "Five Key Initiatives").
-3. **Dashed Zone Frames**: `stroke-dasharray="5 5"` dashed rectangles group content modules, creating a structured, modular visual effect — a common "zone frame" in telecom reports.
-4. **Blue Label Bars**: `#2E75B6` blue-filled rectangles (full-width or fixed-width) serve as scenario/category headers carrying scenario names.
-5. **Warm Gray Overview Panels**: Panels with `#FDF3EB` background + `#F8CBAD` border carry overviews, summaries, and open platform entries.
-6. **Metric Card Groups**: White cards with `#F2F2F2` borders, closely arranged to display KPI metrics; values highlighted in `#C00000` red.
-7. **Light Blue Sub-modules**: `#5B9BD5` filled small rectangular cards displaying specific feature items (e.g., "AI One-Click Troubleshooting Assistant").
-8. **Gray Capability Base Cards**: Cards with `#E7E6E6` / `#F2F2F2` background for displaying foundational capabilities/platform components.
-
-### Advanced Features
-
-1. **Triangle Decorations**: The top area may use light semi-transparent triangles (`fill-opacity="0.3"`) as visual guides.
-2. **Star/Icon Accents**: Simple polygon stars near key achievements enhance visual impact.
-3. **Multi-level Nested Zones**: Outer dashed frame > inner label area > specific feature cards, forming a three-layer visual hierarchy.
-4. **Compact Line Spacing**: Module spacing compressed to 10-20px to maximize information capacity.
-
----
-
-## IV. Page Structure
-
-### General Layout
-
-| Area               | Position/Height  | Description                                          |
-| ------------------ | ---------------- | ---------------------------------------------------- |
-| **Title Area**     | y=20-80          | Red vertical bar + title text + optional subtitle overview bar |
-| **Overview Bar**   | y=80-140         | Full-width `#F2F2F2` background bar carrying the page's core summary |
-| **Content Area**   | y=140-670        | Main content area (densely packed multi-module layout) |
-| **Footer**         | y=680-720        | Red narrow bar with page number + chapter name + source citation |
-
-### Navigation Bar Design
-
-- **Title Vertical Bar**: Red rectangle `#C00000`, 10×40px, positioned left of the title text
-- **Title Text**: 10px from the vertical bar, 36px font size, `#C00000` or `#000000`
-- **Overview Bar**: Full-width light gray rectangle (h=60px), centered 16px body text carrying the page overview/introduction
-
-### Decorative Elements
-
-- **Number Badges**: 30×30px red squares + white numbers (centered)
-- **Blue Labels**: Fixed-width blue rectangles + white text (e.g., "Fault Boundary Identification")
-- **Dashed Zone Frames**: `stroke="#C00000"` or `stroke="#E7E6E6"`, `stroke-dasharray="5 5"`
-- **Warm Gray Panels**: `fill="#FDF3EB"` + `stroke="#F8CBAD"` + `stroke-width="2"`
-- **Light Blue Feature Cards**: `fill="#5B9BD5"` rectangles + white text
-
----
-
-## V. Page Types
-
-### 1. Cover Page (01_cover.svg)
-
-- **Background**: White `#FFFFFF`
-- **Left Decoration**: Full-height red-blue dual-color vertical bar (red upper half + blue lower half), width 60px
-- **Title Area**: Centered large title `{{TITLE}}` (red), with subtitle `{{SUBTITLE}}` inside a light gray overview bar below
-- **Middle Decoration**: Number badges (1-5) + blue scenario labels showcasing core capabilities/scenarios
-- **Bottom Info**: Speaker `{{AUTHOR}}` + date `{{DATE}}`
-- **Bottom Decoration**: Warm gray narrow bar + blue full-width bottom bar
-
-### 2. Chapter Page (02_chapter.svg)
-
-- **Background**: White `#FFFFFF`
-- **Left/Right Decoration**: Left red vertical bar + right blue vertical bar (echoing the cover dual-color scheme)
-- **Center**: Red number badge (80×80px large) `{{CHAPTER_NUM}}` + watermark number (160px light gray)
-- **Title**: Centered `{{CHAPTER_TITLE}}` (48px Bold)
-- **Decorative Line**: Red-blue dual lines (thick red line + thin blue line)
-- **Description**: `{{CHAPTER_DESC}}` in gray text
-
-### 3. Content Page (03_content.svg)
-
-- **Top**: 4px red top bar + white title bar (80px height)
-- **Title Identifier**: Red vertical bar (8×40px) + 32px Bold title `{{PAGE_TITLE}}`
-- **Content Area**: Dashed frame (`stroke-dasharray="5 5"`) marking content area `{{CONTENT_AREA}}`
-- **Footer**: Light gray bottom bar, left red vertical bar + chapter name `{{SECTION_NAME}}`, right red square page number `{{PAGE_NUM}}`
-- **Source Citation**: Footer centered `{{SOURCE}}`
-- **TOC**: Use canonical indexed placeholders such as `{{TOC_ITEM_1_TITLE}}`
-
-### 4. Ending Page (04_ending.svg)
-
-- **Layout**: Mirrors the cover — left red-blue dual-color vertical bar, bottom blue bar
-- **Central Panel**: Warm gray panel (`#FDF3EB` + `#F8CBAD` border) carrying the thank-you message
-- **Content**: `{{THANK_YOU}}` (red 64px Bold) + `{{ENDING_SUBTITLE}}` (blue 22px)
-- **Contact Info**: `{{CONTACT_INFO}}` + `{{COPYRIGHT}}`
-- **Bottom Decoration**: Number badges + blue labels, echoing the cover
-
----
-
-## VI. SVG Page Roster
-
-| File | Role | Description |
-|------|------|-------------|
-| `01_cover.svg` | cover | Title slide; project name, presenter, date |
-| `02_chapter.svg` | chapter | Chapter divider page (large number + chapter title) |
-| `02_toc.svg` | toc | Table of contents listing major sections |
-| `03_content.svg` | content | Main content page; body of the deck |
-| `04_ending.svg` | ending | Closing/thank-you page |
-| `reference_style.svg` | reference_style | Style reference card (developer aid; not used in normal decks) |
-
-## VII. Layout Patterns
-
-| Pattern                        | Applicable Scenarios                              |
-| ------------------------------ | ------------------------------------------------- |
-| **Architecture Overview**      | AI operations overview, system architecture panorama |
-| **Metrics Dashboard**          | KPI display, performance reports, data dashboards |
-| **Multi-Module Zoning**        | Capability lists, scenario matrices, domain displays |
-| **Process/Timeline**           | Implementation roadmap, deployment plan, evolution path |
-| **Top-Bottom Split**           | Objectives+results (top), scenarios+capabilities (bottom) |
-| **Left-Right Split (3:7)**     | Left navigation labels + right content area       |
-| **Card Matrix (2x3/3x3)**     | Capability modules, team assignments, project lists |
-| **Table**                      | Metric comparisons, progress tracking             |
-
-> **Recommended**: Telecom reports commonly use the "**Architecture Overview**" pattern — a single page presenting the complete architecture from objectives → results → scenarios → orchestration → foundational capabilities, unfolding top to bottom.
-
----
-
-## VIII. Common Components
-
-### Title Vertical Bar Decoration
-
-```xml
-<!-- Red vertical bar + title -->
-<rect x="30" y="20" width="10" height="40" fill="#C00000" />
-<text x="50" y="55" font-family="Microsoft YaHei, sans-serif" font-size="36" font-weight="bold" fill="#C00000">Page Title</text>
-```
-
-### Number Badge
-
-```xml
-<!-- Red square number badge -->
-<rect x="80" y="560" width="30" height="30" fill="#C00000" />
-<text x="95" y="582" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
-```
-
-### Blue Scenario Label
-
-```xml
-<!-- Blue label bar -->
-<rect x="120" y="310" width="220" height="40" fill="#2E75B6" />
-<text x="230" y="336" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Fault Boundary Identification</text>
-```
-
-### Metric Card
-
-```xml
-<!-- White metric card (values highlighted in red) -->
-<rect x="120" y="215" width="140" height="35" fill="#FFFFFF" stroke="#F2F2F2" stroke-width="2" />
-<text x="190" y="239" font-family="Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#000000" text-anchor="middle">Fault tickets reduced by<tspan fill="#C00000">30%</tspan></text>
-```
-
-### Dashed Zone Frame
-
-```xml
-<!-- Dashed content zone -->
-<rect x="120" y="390" width="940" height="150" fill="none" stroke="#C00000" stroke-width="2" stroke-dasharray="5 5" />
-```
-
-### Warm Gray Overview Bar
-
-```xml
-<!-- Full-width warm gray overview/summary bar -->
-<rect x="30" y="80" width="1220" height="60" fill="#F2F2F2" />
-<text x="640" y="115" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#000000" text-anchor="middle">Overview text content...</text>
-```
-
-### Warm Gray Panel
-
-```xml
-<!-- Warm gray panel (open platform/summary area) -->
-<rect x="1080" y="390" width="160" height="300" fill="#FDF3EB" stroke="#F8CBAD" stroke-width="2" />
-```
-
-### Light Blue Feature Card
-
-```xml
-<!-- Feature module card -->
-<rect x="160" y="450" width="240" height="30" fill="#5B9BD5" />
-<text x="280" y="471" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">AI One-Click Troubleshooting Assistant</text>
-```
-
-### Gray Capability Base Card
-
-```xml
-<!-- Foundational capability card -->
-<rect x="120" y="630" width="80" height="40" fill="#F2F2F2" stroke="#D9D9D9" stroke-width="1" />
-<text x="160" y="655" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#000000" text-anchor="middle">Core Network</text>
-```
-
----
-
-## IX. Spacing Specification
-
-| Element                        | Value     |
-| ------------------------------ | --------- |
-| Page left/right margins        | 30-50px   |
-| Page top/bottom margins        | 20-40px   |
-| Title area height              | 60px      |
-| Overview bar height            | 60px      |
-| Title to overview bar spacing  | 0px       |
-| Overview bar to content spacing | 10-20px  |
-| Module spacing                 | 10-20px   |
-| Card spacing                   | 10px      |
-| Card inner padding             | 15-20px   |
-| Badge to label spacing         | 5-10px    |
-| Footer height                  | 40px      |
-
-> **Compact Principle**: The telecom style pursues maximum information per page; spacing is generally 30-50% smaller than standard templates.
-
----
-
-## X. Placeholder Specification
-
-The template uses `{{PLACEHOLDER}}` format placeholders:
-
-| Placeholder         | Description              | Applicable Template |
-| ------------------- | ------------------------ | ------------------- |
-| `{{TITLE}}`         | Main title               | Cover               |
-| `{{SUBTITLE}}`      | Subtitle/overview        | Cover               |
-| `{{AUTHOR}}`        | Speaker/organization     | Cover               |
-| `{{DATE}}`          | Date                     | Cover               |
-| `{{CHAPTER_NUM}}`   | Chapter number           | Chapter page        |
-| `{{CHAPTER_TITLE}}` | Chapter title            | Chapter page        |
-| `{{CHAPTER_DESC}}`  | Chapter description      | Chapter page        |
-| `{{PAGE_TITLE}}`    | Page title               | Content page        |
-| `{{CONTENT_AREA}}`  | Content area identifier  | Content page        |
-| `{{SECTION_NAME}}`  | Section name (footer)    | Content page        |
-| `{{SOURCE}}`        | Data source (footer)     | Content page        |
-| `{{PAGE_NUM}}`      | Page number              | Content/ending page |
-| `{{THANK_YOU}}`     | Thank-you message        | Ending page         |
-| `{{ENDING_SUBTITLE}}` | Slogan/tagline         | Ending page         |
-| `{{CONTACT_INFO}}`  | Contact information      | Ending page         |
-| `{{COPYRIGHT}}`     | Copyright                | Ending page         |
-
----
-
-## XI. Usage Notes
-
-1. Copy this template directory to the project `templates/` directory
-2. Review `reference_style.svg` to understand the core visual style
-3. Select appropriate page templates based on content needs
-4. Mark content to be replaced using placeholders
-5. Generate final SVG through the Executor role
-6. For high-information-density pages, refer to the multi-module zoning layout in `reference_style.svg`
-
----
-
-## XII. Design Highlights
-
-- **Telecom DNA**: Derived from real telecom AI operations architecture reports, naturally suited for telecom/enterprise presentation styles
-- **High Information Density**: A single page can accommodate a complete architecture view (objectives → results → scenarios → orchestration → foundational capabilities)
-- **Red-Blue Dual-Color Hierarchy**: Red = core/emphasis/objectives, Blue = scenarios/modules/capabilities — clear visual hierarchy
-- **Number Badge System**: Red square numbers throughout create a "N Key Initiatives" visual narrative
-- **Three-Level Nested Zoning**: Dashed outer frame → category labels → feature cards for structured expression of complex architectures
-- **Metric Card Groups**: Compactly arranged KPI metrics with red-highlighted values for instant readability
+# AI Ops — Design Specification
+
+## IV. Signature Design Elements
+
+AI Ops is a red/blue block system for dense operations and architecture
+reporting: a thin strip along the top edge, a two-color block split at
+mid-height down the left edge of the cover and the closing page, light bands
+that hold a page's one-line summary, square numbered badges that index the
+chip beside them, and dashed panels that zone a page into modules. The
+prototype paint (a deep red, a mid blue, a lighter blue for small chips,
+light-gray and pale warm panels) exists only to expose hierarchy and slot
+geometry; it is not an identity segment. Color, typography, logo, voice, and
+icon treatment remain downstream decisions.
+
+| Element | Template-specific behavior |
+|---|---|
+| One Master, six page planes | `ai_ops_master` carries a white plane; every page keeps it and adds its own Layout chrome. `cover`, `toc`, `chapter`, and `ending` open with an 8 px top strip and close with a 10 px accent over a 30 px band at y 680–720; `content` uses a 4 px strip and a 40 px footer band; `architecture_overview` has no bottom chrome so its base row can reach y 690. |
+| Split left block | `cover` and `ending` carry a 60 px block down the left edge, split at y 360 into an upper and a lower half in the two accent paints. `toc` widens it into a 320 px panel that carries the agenda `title` (56 px, centered) and a `subtitle` eyebrow (20 px) beneath it. `chapter` reduces it to 120 px side blocks with an 8 px edge bar on each side. |
+| Badge + chip rows | Square badges (40 × 40 on the cover and agenda, 30 × 30 on the closing page and the overview base row, 30 × 25 on the overview side panel) carry Layout-owned ordinals `1`–`5` at 22 / 16 / 18 px. Each badge indexes a chip rect 10 px to its right whose text is an `object` slot (`{{TAG_n}}` on the cover and closing page, `{{TOC_ITEM_n_TITLE}}` on the agenda); the chips sit on a 200 px horizontal pitch (cover, closing) or an 80 px vertical pitch (agenda). Chip rects are Layout atoms; the chip label is centered on the rect. |
+| Summary bands and warm panels | A 60 px light band directly under the title (cover at y 280, overview at y 80) carries one centered line — `subtitle` on the cover, `body` `{{KEY_MESSAGE}}` on the overview. Warm panels with a 2 px border hold the agenda summary (420 × 400, one centered `object`), the closing message (720 × 320, four centered lines), and the overview side column (160 × 300, one open `object` field). |
+| Dashed module panels | `architecture_overview` zones the orchestration row with a 940 × 150 dashed outer panel whose 30 px header band is a centered `object` (`{{BLOCK_SUMMARY}}`), and three 280 × 90 dashed sub-panels on a 300 px pitch, each an open `object` field (`{{BLOCK_1..3}}`) whose carrier starts upper-left at 14 px. A single ordinal badge sits outside the panel at the left edge. |
+| Architecture overview ladder | The signature page reads top-down: title with a 10 × 40 accent bar (36 px), summary band, a 680 × 40 rounded target bar (`object`, centered 20 px), six 140 × 35 KPI chips on a 150 px pitch (one `object` each, centered 14 px), four 220 × 40 tag chips on a 240 px pitch (one `object` each, centered 16 px), the orchestration row, the side panel, and three 300 × 110 base boxes on a 320 / 330 px pitch, each with a badge on its upper-left corner, a dashed title rule at y 605, and one `object` slot (`{{CARD_n}}`) whose carrier is a centered 14 px title line above the rule. A pale triangle behind the KPI and tag rows is a Layout atom. |
+| Chapter divider | `chapter` centers an 80 × 80 badge whose number is an `object` slot at 48 px, a 48 px `title` in a `140 372 1000 72` frame, a paired thick / thin rule at y 450 / 458, and a 20 px `object` description line. |
+| Content page | `content` opens with an 8 × 40 accent bar beside a 32 px `title` and a hairline at y 80, leaves `50 95 1180 560` as one `object` field with no panel (carrier upper-left at 22 px), and ends with a 40 px footer band carrying a `footer` section name at the left, a centered `object` source line, and a 30 × 24 square badge holding the `slide-number`. |
+| Cover and closing | `cover` centers a 56 px `title`, the `subtitle` band, the five-chip row, a 1040 px dashed divider at y 480, then an `object` author line and a `date` line. `ending` centers a 64 px `title`, a tracked 22 px `subtitle`, a 320 px hairline at y 400, an `object` contact line and a `footer` copyright line inside the warm panel, with a four-chip echo row at y 580. |
+| Text entry | The content field, the section name, and the open overview fields (sub-panels, side panel) begin at the left; every other role — cover, agenda, chapter, closing, chip labels, KPI chips, target bar, card titles — is centered on its zone. |
+
+## V. Page Roster
+
+| SVG | Layout key | PowerPoint picker name | Purpose |
+|---|---|---|---|
+| `01_cover.svg` | `cover` | Cover | Split left block, centered title over a subtitle band, a five-badge tag row above a dashed divider, then author and date lines |
+| `02_toc.svg` | `toc` | Table of Contents | Left panel with the agenda title and eyebrow, five badge-indexed item chips, and a warm summary panel at the right |
+| `03_chapter.svg` | `chapter` | Chapter | Side blocks with edge bars, a centered badge holding the chapter number, title with paired rules, and a description line |
+| `04_content.svg` | `content` | Content | Accent-bar title over an open content field, with a section / source / badge page-number footer band |
+| `05_ending.svg` | `ending` | Closing | Split left block, a warm panel with closing message, tagline, hairline, contact and copyright lines, and a four-badge tag echo row |
+| `06_architecture_overview.svg` | `architecture_overview` | Architecture Overview | Dense one-page ladder: accent-bar title, summary band, target bar, six KPI chips, four tag chips, a dashed orchestration panel with three sub-panels, a side panel, and three base boxes |

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="psychology_attachment_master" data-pptx-master-name="Psychology Attachment"
+  data-pptx-layout="chapter" data-pptx-layout-name="Chapter">
+  <defs>
+    <linearGradient id="chapter-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E5C8E"/>
+      <stop offset="100%" stop-color="#1E3A5F"/>
+    </linearGradient>
+  </defs>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#F8FAFC"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="chapter-gradient-plane" x="0" y="0" width="1280" height="720" fill="url(#chapter-gradient)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-one" cx="1100" cy="150" r="200" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-two" cx="1100" cy="150" r="150" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-three" cx="1100" cy="150" r="100" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-four" cx="180" cy="600" r="120" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-ring-five" cx="180" cy="600" r="80" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-diagonal-one" x1="0" y1="200" x2="300" y2="350" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-diagonal-two" x1="0" y1="250" x2="250" y2="400" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-diagonal-three" x1="980" y1="720" x2="1280" y2="520" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-diagonal-four" x1="1030" y1="720" x2="1280" y2="570" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-badge-capsule" x="560" y="280" width="160" height="40" rx="20" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-title-rule" x="540" y="470" width="200" height="3" rx="1.5" fill="#E07843"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-quote-card" x="240" y="510" width="800" height="100" rx="12" fill="#FFFFFF" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-quote-bar" x="240" y="510" width="4" height="100" rx="2" fill="#3D8B7A"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-chip-one" x="390" y="640" width="100" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-chip-two" x="510" y="640" width="80" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-chip-three" x="610" y="640" width="100" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-chip-four" x="730" y="640" width="120" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="chapter-number-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="140 108 1000 146">
+    <text id="chapter-number-carrier" data-pptx-carrier="true"
+      x="640" y="220" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.15"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="120" font-weight="700">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="chapter-badge-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="560 280 160 40">
+    <text id="chapter-badge-carrier" data-pptx-carrier="true"
+      x="640" y="307" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="chapter-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 344 1000 62">
+    <text id="chapter-title-carrier" data-pptx-carrier="true"
+      x="640" y="390" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" font-weight="700">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="chapter-echo-slot" data-pptx-placeholder="subtitle" data-pptx-idx="3"
+    data-pptx-bounds="140 414 1000 38">
+    <text id="chapter-echo-carrier" data-pptx-carrier="true"
+      x="640" y="440" text-anchor="middle" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="24">{{CHAPTER_EN}}</text>
+  </g>
+  <g id="chapter-quote-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="264 524 752 72">
+    <text id="chapter-quote-carrier" data-pptx-carrier="true"
+      x="270" y="550" fill="#E5E7EB"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-style="italic">{{QUOTE}}<tspan x="270" dy="35" fill="#94A3B8" font-size="14" font-style="normal">{{QUOTE_AUTHOR}}</tspan></text>
+  </g>
+  <g id="chapter-tag-one-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="390 640 100 28">
+    <text id="chapter-tag-one-carrier" data-pptx-carrier="true"
+      x="440" y="659" text-anchor="middle" fill="#CBD5E1"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_1}}</text>
+  </g>
+  <g id="chapter-tag-two-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="510 640 80 28">
+    <text id="chapter-tag-two-carrier" data-pptx-carrier="true"
+      x="550" y="659" text-anchor="middle" fill="#CBD5E1"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_2}}</text>
+  </g>
+  <g id="chapter-tag-three-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="610 640 100 28">
+    <text id="chapter-tag-three-carrier" data-pptx-carrier="true"
+      x="660" y="659" text-anchor="middle" fill="#CBD5E1"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_3}}</text>
+  </g>
+  <g id="chapter-tag-four-slot" data-pptx-placeholder="object" data-pptx-idx="8"
+    data-pptx-bounds="730 640 120 28">
+    <text id="chapter-tag-four-carrier" data-pptx-carrier="true"
+      x="790" y="659" text-anchor="middle" fill="#CBD5E1"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{TAG_4}}</text>
+  </g>
+  <g id="chapter-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="9"
+    data-pptx-bounds="1100 668 124 24">
+    <text id="chapter-pagenum-carrier" data-pptx-carrier="true"
+      x="1220" y="685" text-anchor="end" fill="#64748B"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{PAGE_NUM}}</text>
+  </g>
+</svg>

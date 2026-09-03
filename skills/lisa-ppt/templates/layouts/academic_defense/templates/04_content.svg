@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="academic_defense_master" data-pptx-master-name="Academic Defense"
+  data-pptx-layout="content" data-pptx-layout-name="Content">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="content-header-band" x="0" y="0" width="1280" height="70" fill="#003366"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-header-accent" x="0" y="0" width="6" height="70" fill="#CC0000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-message-band" x="0" y="70" width="1280" height="50" fill="#E8F4FC"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-message-accent" x="0" y="70" width="6" height="50" fill="#0066CC"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="content-footer-rule" x1="40" y1="665" x2="1240" y2="665" stroke="#E8F4FC" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="content-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="40 16 1040 42">
+    <text id="content-title-carrier" data-pptx-carrier="true"
+      x="40" y="46" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="content-logo-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="1100 16 140 42">
+    <text id="content-logo-carrier" data-pptx-carrier="true"
+      x="1220" y="46" text-anchor="end" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="700">{{BRAND_LOGO}}</text>
+  </g>
+  <g id="content-message-slot" data-pptx-placeholder="body" data-pptx-idx="2"
+    data-pptx-bounds="40 76 1200 40">
+    <text id="content-message-carrier" data-pptx-carrier="true"
+      x="40" y="102" fill="#333333"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{KEY_MESSAGE}}</text>
+  </g>
+  <g id="content-object-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="40 135 1200 515">
+    <text id="content-object-carrier" data-pptx-carrier="true"
+      x="40" y="173" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CONTENT_AREA}}</text>
+  </g>
+  <g id="content-source-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="40 676 480 32">
+    <text id="content-source-carrier" data-pptx-carrier="true"
+      x="40" y="698" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{SOURCE}}</text>
+  </g>
+  <g id="content-section-slot" data-pptx-placeholder="footer" data-pptx-idx="5"
+    data-pptx-bounds="540 676 200 32">
+    <text id="content-section-carrier" data-pptx-carrier="true"
+      x="640" y="698" text-anchor="middle" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{SECTION_NAME}}</text>
+  </g>
+  <g id="content-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="6"
+    data-pptx-bounds="1100 676 124 32">
+    <text id="content-pagenum-carrier" data-pptx-carrier="true"
+      x="1220" y="698" text-anchor="end" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{PAGE_NUM}}</text>
+  </g>
+</svg>

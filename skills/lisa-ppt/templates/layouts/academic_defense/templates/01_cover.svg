@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-pptx-master="academic_defense-master" data-pptx-master-name="Academic Defense" data-pptx-layout="01_cover" data-pptx-layout-name="Cover">
-  <!-- 背景 -->
-  <rect id="master-bg" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false"/>
-
-  <!-- ==================== 顶部装饰区域 ==================== -->
-  <!-- 深蓝色主横条 -->
-  <rect id="layout-01_cover-header" x="0" y="0" width="1280" height="100" fill="#003366" data-pptx-layer="layout" data-pptx-editable="false"/>
-  <!-- 左侧红色竖条装饰 -->
-  <rect id="layout-01_cover-headbar" x="0" y="0" width="6" height="100" fill="#CC0000" data-pptx-layer="layout" data-pptx-editable="false"/>
-  <!-- 底部信息条 -->
-  <rect id="layout-01_cover-footer" x="0" y="665" width="1280" height="55" fill="#F5F7FA" data-pptx-layer="layout" data-pptx-editable="false"/>
-
-  <!-- ==================== 主内容区域 ==================== -->
-  <!-- 主标题 -->
-  <g id="title-slot" data-pptx-placeholder="title" data-pptx-placeholder-bounds="140 288 1000 68">
-    <text x="640" y="340" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="bold" id="slot-01_cover-title-1" data-pptx-placeholder-carrier="true">
-      {{TITLE}}
-    </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="academic_defense_master" data-pptx-master-name="Academic Defense"
+  data-pptx-layout="cover" data-pptx-layout-name="Cover">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="cover-header-band" x="0" y="0" width="1280" height="100" fill="#003366"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-header-accent" x="0" y="0" width="6" height="100" fill="#CC0000"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-footer-band" x="0" y="665" width="1280" height="55" fill="#F5F7FA"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-logo-frame" x="1080" y="25" width="160" height="50" rx="4" fill="none"
+    stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-divider" x1="420" y1="450" x2="860" y2="450" stroke="#0066CC" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="cover-divider-dot" cx="640" cy="450" r="5" fill="#0066CC"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="cover-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 272 1000 88">
+    <text id="cover-title-carrier" data-pptx-carrier="true"
+      x="640" y="340" text-anchor="middle" fill="#003366"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700">{{TITLE}}</text>
   </g>
-
-  <!-- 副标题 -->
-  <g id="subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-placeholder-idx="2" data-pptx-placeholder-bounds="140 382 1000 40">
-    <text x="640" y="410" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" id="slot-01_cover-subtitle-2" data-pptx-placeholder-carrier="true">
-      {{SUBTITLE}}
-    </text>
+  <g id="cover-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="140 376 1000 48">
+    <text id="cover-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="410" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28">{{SUBTITLE}}</text>
   </g>
-
-  <!-- 右上角 Logo 区域占位 -->
-  <g id="cover-logo">
-    <rect x="1080" y="25" width="160" height="50" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.3" rx="4"/>
-    <text x="1160" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold" id="semantic-01_cover-logo-1" data-pptx-role="logo">
-      {{LOGO}}
-    </text>
+  <g id="cover-author-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="240 492 800 40">
+    <text id="cover-author-carrier" data-pptx-carrier="true"
+      x="640" y="520" text-anchor="middle" fill="#333333"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="24">{{AUTHOR}}</text>
   </g>
-
-  <!-- 装饰分割线 -->
-  <g id="cover-divider">
-    <line x1="420" y1="450" x2="860" y2="450" stroke="#0066CC" stroke-width="2"/>
-    <circle cx="640" cy="450" r="5" fill="#0066CC"/>
+  <g id="cover-advisor-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="240 536 800 36">
+    <text id="cover-advisor-carrier" data-pptx-carrier="true"
+      x="640" y="560" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{ADVISOR}}</text>
   </g>
-
-  <!-- ==================== 答辩人信息区域 ==================== -->
-  <g id="cover-presenter">
-    <text x="640" y="520" text-anchor="middle" fill="#333333" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24">
-      答辩人：{{AUTHOR}}
-    </text>
-    <text x="640" y="560" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">
-      指导老师：{{ADVISOR}}
-    </text>
-    <text x="640" y="600" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">
-      {{INSTITUTION}}
-    </text>
+  <g id="cover-institution-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="240 576 800 36">
+    <text id="cover-institution-carrier" data-pptx-carrier="true"
+      x="640" y="600" text-anchor="middle" fill="#666666"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{INSTITUTION}}</text>
   </g>
-
-  <!-- ==================== 底部信息 ==================== -->
-  <g id="cover-date">
-    <text x="640" y="698" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14">
-      {{DATE}}
-    </text>
+  <g id="cover-date-slot" data-pptx-placeholder="date" data-pptx-idx="5"
+    data-pptx-bounds="340 676 600 32">
+    <text id="cover-date-carrier" data-pptx-carrier="true"
+      x="640" y="698" text-anchor="middle" fill="#999999"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{DATE}}</text>
+  </g>
+  <g id="cover-logo-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="1080 25 160 50">
+    <text id="cover-logo-carrier" data-pptx-carrier="true"
+      x="1160" y="58" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="700">{{BRAND_LOGO}}</text>
   </g>
 </svg>

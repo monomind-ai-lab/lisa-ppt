@@ -1,142 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" data-pptx-master="pixel_retro-master" data-pptx-master-name="Pixel Retro" data-pptx-layout="01_cover" data-pptx-layout-name="Cover">
-  <!-- 模板: 封面页 - 像素复古风格 -->
-  
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="pixel_retro_master" data-pptx-master-name="Pixel Retro"
+  data-pptx-layout="cover" data-pptx-layout-name="Cover">
   <defs>
-    <!-- 霓虹绿发光效果 -->
-    <filter id="glowGreen" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <!-- 赛博粉发光效果 -->
-    <filter id="glowPink" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <!-- 电光蓝发光效果 -->
-    <filter id="glowBlue" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <filter id="cover-glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+      <feFlood flood-color="#39FF14" flood-opacity="0.45" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  
-  <!-- 深空黑背景 -->
-  <rect id="master-bg" width="1280" height="720" fill="#0D1117" data-pptx-layer="master" data-pptx-editable="false"/>
-  
-  <!-- 扫描线网格背景（低透明度） -->
-  <line x1="0" y1="60" x2="1280" y2="60" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="0" y1="120" x2="1280" y2="120" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="0" y1="180" x2="1280" y2="180" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="0" y1="540" x2="1280" y2="540" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="0" y1="600" x2="1280" y2="600" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="0" y1="660" x2="1280" y2="660" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="60" y1="0" x2="60" y2="720" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  <line x1="1220" y1="0" x2="1220" y2="720" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1" />
-  
-  <!-- 顶部装饰线（霓虹双线） -->
-  <rect x="40" y="30" width="1200" height="8" fill="#39FF14" fill-opacity="0.8" />
-  <rect x="40" y="42" width="1200" height="4" fill="#39FF14" fill-opacity="0.4" />
-  
-  <!-- 左上角像素装饰 -->
-  <rect x="40" y="60" width="16" height="16" fill="#39FF14" />
-  <rect x="60" y="60" width="16" height="16" fill="#39FF14" fill-opacity="0.6" />
-  <rect x="80" y="60" width="16" height="16" fill="#39FF14" fill-opacity="0.3" />
-  
-  <!-- 右上角像素装饰 -->
-  <rect x="1184" y="60" width="16" height="16" fill="#FF2E97" fill-opacity="0.3" />
-  <rect x="1204" y="60" width="16" height="16" fill="#FF2E97" fill-opacity="0.6" />
-  <rect x="1224" y="60" width="16" height="16" fill="#FF2E97" />
-  
-  <!-- 中央像素风控制台图形 -->
-  <g transform="translate(540, 140)">
-    <!-- 控制台外壳 -->
-    <rect x="0" y="0" width="200" height="80" fill="#161B22" stroke="#39FF14" stroke-width="3" rx="8" />
-    <!-- 左侧按钮（绿色发光） -->
-    <rect x="25" y="20" width="40" height="40" fill="#0D1117" stroke="#8B949E" stroke-width="2" rx="4" />
-    <circle cx="45" cy="40" r="12" fill="#39FF14" filter="url(#glowGreen)" />
-    <!-- 右侧按钮（粉色方块） -->
-    <rect x="135" y="20" width="40" height="40" fill="#0D1117" stroke="#8B949E" stroke-width="2" rx="4" />
-    <rect x="147" y="32" width="16" height="16" fill="#FF2E97" />
-    <!-- 中间连接条 -->
-    <rect x="85" y="35" width="30" height="10" fill="#00D4FF" rx="2" />
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#0D1117"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <line id="cover-scan-h-one" x1="0" y1="60" x2="1280" y2="60" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-h-two" x1="0" y1="120" x2="1280" y2="120" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-h-three" x1="0" y1="180" x2="1280" y2="180" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-h-four" x1="0" y1="540" x2="1280" y2="540" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-h-five" x1="0" y1="600" x2="1280" y2="600" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-h-six" x1="0" y1="660" x2="1280" y2="660" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-v-left" x1="60" y1="0" x2="60" y2="720" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="cover-scan-v-right" x1="1220" y1="0" x2="1220" y2="720" stroke="#39FF14" stroke-width="1" stroke-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-top-rule-main" x="40" y="30" width="1200" height="8" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-top-rule-echo" x="40" y="42" width="1200" height="4" fill="#39FF14" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-tl-one" x="40" y="60" width="16" height="16" fill="#39FF14"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-tl-two" x="60" y="60" width="16" height="16" fill="#39FF14" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-tl-three" x="80" y="60" width="16" height="16" fill="#39FF14" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-tr-one" x="1184" y="60" width="16" height="16" fill="#FF2E97" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-tr-two" x="1204" y="60" width="16" height="16" fill="#FF2E97" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-tr-three" x="1224" y="60" width="16" height="16" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-console-shell" x="540" y="140" width="200" height="80" rx="8" fill="#161B22"
+    stroke="#39FF14" stroke-width="3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-console-left-key" x="565" y="160" width="40" height="40" rx="4" fill="#0D1117"
+    stroke="#8B949E" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="cover-console-left-lamp" cx="585" cy="180" r="12" fill="#39FF14" filter="url(#cover-glow-green)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-console-right-key" x="675" y="160" width="40" height="40" rx="4" fill="#0D1117"
+    stroke="#8B949E" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-console-right-lamp" x="687" y="172" width="16" height="16" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-console-bridge" x="625" y="175" width="30" height="10" rx="2" fill="#00D4FF"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-divider" x="440" y="410" width="400" height="3" fill="#00D4FF" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-chip-one" x="290" y="460" width="140" height="40" fill="#161B22" stroke="#39FF14" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-chip-two" x="450" y="460" width="140" height="40" fill="#161B22" stroke="#00D4FF" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-chip-three" x="610" y="460" width="140" height="40" fill="#161B22" stroke="#FF2E97" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-chip-four" x="770" y="460" width="140" height="40" fill="#161B22" stroke="#FFD700" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-bl-one" x="40" y="640" width="12" height="12" fill="#39FF14"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-bl-two" x="56" y="640" width="12" height="12" fill="#39FF14" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-bl-three" x="72" y="640" width="12" height="12" fill="#39FF14" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-br-one" x="1196" y="640" width="12" height="12" fill="#FF2E97" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-br-two" x="1212" y="640" width="12" height="12" fill="#FF2E97" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-pixel-br-three" x="1228" y="640" width="12" height="12" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-bottom-rule-echo" x="40" y="680" width="1200" height="4" fill="#39FF14" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="cover-bottom-rule-main" x="40" y="688" width="1200" height="8" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="cover-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 268 1000 72">
+    <text id="cover-title-carrier" data-pptx-carrier="true"
+      x="640" y="320" text-anchor="middle" fill="#39FF14" filter="url(#cover-glow-green)"
+      font-family="Consolas, Monaco, monospace" font-size="52" font-weight="700">{{TITLE}}</text>
   </g>
-  
-  <!-- 主标题（霓虹发光） -->
-  <g id="title-slot" data-pptx-placeholder="title" data-pptx-placeholder-bounds="140 276 1000 60">
-    <text x="640" y="320" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="52" font-weight="bold" fill="#39FF14" filter="url(#glowGreen)" id="slot-01_cover-title-1" data-pptx-placeholder-carrier="true">
-      {{TITLE}}
-    </text>
+  <g id="cover-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="140 352 1000 40">
+    <text id="cover-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="380" text-anchor="middle" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28">{{SUBTITLE}}</text>
   </g>
-  
-  <!-- 副标题 -->
-  <g id="subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-placeholder-idx="2" data-pptx-placeholder-bounds="140 352 1000 40">
-    <text x="640" y="380" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Microsoft YaHei, sans-serif" font-size="28" fill="#E6EDF3" id="slot-01_cover-subtitle-2" data-pptx-placeholder-carrier="true">
-      {{SUBTITLE}}
-    </text>
+  <g id="cover-tag-one-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="290 460 140 40">
+    <text id="cover-tag-one-carrier" data-pptx-carrier="true"
+      x="360" y="487" text-anchor="middle" fill="#39FF14"
+      font-family="Consolas, Monaco, monospace" font-size="16">{{TAG_1}}</text>
   </g>
-  
-  <!-- 分隔线 -->
-  <rect x="440" y="410" width="400" height="3" fill="#00D4FF" fill-opacity="0.8" />
-  
-  <!-- 功能按钮组 -->
-  <g transform="translate(290, 460)">
-    <rect x="0" y="0" width="140" height="40" fill="#161B22" stroke="#39FF14" stroke-width="2" />
-    <text x="70" y="27" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#39FF14">💾 SAVE</text>
+  <g id="cover-tag-two-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="450 460 140 40">
+    <text id="cover-tag-two-carrier" data-pptx-carrier="true"
+      x="520" y="487" text-anchor="middle" fill="#00D4FF"
+      font-family="Consolas, Monaco, monospace" font-size="16">{{TAG_2}}</text>
   </g>
-  <g transform="translate(450, 460)">
-    <rect x="0" y="0" width="140" height="40" fill="#161B22" stroke="#00D4FF" stroke-width="2" />
-    <text x="70" y="27" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#00D4FF">🔀 BRANCH</text>
+  <g id="cover-tag-three-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="610 460 140 40">
+    <text id="cover-tag-three-carrier" data-pptx-carrier="true"
+      x="680" y="487" text-anchor="middle" fill="#FF2E97"
+      font-family="Consolas, Monaco, monospace" font-size="16">{{TAG_3}}</text>
   </g>
-  <g transform="translate(610, 460)">
-    <rect x="0" y="0" width="140" height="40" fill="#161B22" stroke="#FF2E97" stroke-width="2" />
-    <text x="70" y="27" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#FF2E97">⏪ REVERT</text>
+  <g id="cover-tag-four-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="770 460 140 40">
+    <text id="cover-tag-four-carrier" data-pptx-carrier="true"
+      x="840" y="487" text-anchor="middle" fill="#FFD700"
+      font-family="Consolas, Monaco, monospace" font-size="16">{{TAG_4}}</text>
   </g>
-  <g transform="translate(770, 460)">
-    <rect x="0" y="0" width="140" height="40" fill="#161B22" stroke="#FFD700" stroke-width="2" />
-    <text x="70" y="27" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#FFD700">🤝 COLLAB</text>
+  <g id="cover-cta-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="240 556 800 34">
+    <text id="cover-cta-carrier" data-pptx-carrier="true"
+      x="640" y="580" text-anchor="middle" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="24">{{CTA_TEXT}}</text>
   </g>
-  
-  <!-- 底部提示语 -->
-  <text x="640" y="580" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="24" fill="#8B949E">
-    ▶ PRESS START TO LEARN ◀
-  </text>
-  
-  <!-- 作者/单位信息 -->
-  <text x="640" y="620" text-anchor="middle" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="18" fill="#8B949E">
-    {{AUTHOR}}
-  </text>
-  
-  <!-- 左下角像素装饰 -->
-  <rect x="40" y="640" width="12" height="12" fill="#39FF14" />
-  <rect x="56" y="640" width="12" height="12" fill="#39FF14" fill-opacity="0.6" />
-  <rect x="72" y="640" width="12" height="12" fill="#39FF14" fill-opacity="0.3" />
-  
-  <!-- 右下角像素装饰 -->
-  <rect x="1196" y="640" width="12" height="12" fill="#FF2E97" fill-opacity="0.3" />
-  <rect x="1212" y="640" width="12" height="12" fill="#FF2E97" fill-opacity="0.6" />
-  <rect x="1228" y="640" width="12" height="12" fill="#FF2E97" />
-  
-  <!-- 版本号 -->
-  <text x="1200" y="660" text-anchor="end" font-family="Consolas, monospace" font-size="14" fill="#8B949E">
-    {{VERSION}}
-  </text>
-  
-  <!-- 页码 -->
-  <text x="60" y="660" font-family="Consolas, monospace" font-size="14" fill="#8B949E">
-    01/{{TOTAL_PAGES}}
-  </text>
-  
-  <!-- 底部装饰线（霓虹双线） -->
-  <rect x="40" y="680" width="1200" height="4" fill="#39FF14" fill-opacity="0.4" />
-  <rect x="40" y="688" width="1200" height="8" fill="#39FF14" fill-opacity="0.8" />
-
+  <g id="cover-author-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="240 600 800 28">
+    <text id="cover-author-carrier" data-pptx-carrier="true"
+      x="640" y="620" text-anchor="middle" fill="#8B949E"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{AUTHOR}}</text>
+  </g>
+  <g id="cover-version-slot" data-pptx-placeholder="object" data-pptx-idx="8"
+    data-pptx-bounds="900 646 300 20">
+    <text id="cover-version-carrier" data-pptx-carrier="true"
+      x="1200" y="660" text-anchor="end" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{VERSION}}</text>
+  </g>
+  <g id="cover-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="9"
+    data-pptx-bounds="60 646 300 20">
+    <text id="cover-pagenum-carrier" data-pptx-carrier="true"
+      x="60" y="660" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{PAGE_NUM}} / {{TOTAL_PAGES}}</text>
+  </g>
 </svg>

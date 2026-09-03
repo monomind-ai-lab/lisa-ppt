@@ -1,132 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" data-pptx-master="pixel_retro-master" data-pptx-master-name="Pixel Retro" data-pptx-layout="02_toc" data-pptx-layout-name="Agenda">
-  <!-- 模板: 目录页 - 像素复古风格 -->
-  
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="pixel_retro_master" data-pptx-master-name="Pixel Retro"
+  data-pptx-layout="toc" data-pptx-layout-name="Table of Contents">
   <defs>
-    <filter id="glowGreen" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <filter id="toc-glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+      <feFlood flood-color="#39FF14" flood-opacity="0.45" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  
-  <!-- 深空黑背景 -->
-  <rect id="master-bg" width="1280" height="720" fill="#0D1117" data-pptx-layer="master" data-pptx-editable="false"/>
-  
-  <!-- 顶部装饰线 -->
-  <rect x="0" y="0" width="1280" height="4" fill="#39FF14" fill-opacity="0.8" />
-  <rect x="0" y="4" width="1280" height="2" fill="#39FF14" fill-opacity="0.4" />
-  
-  <!-- 页面标题 -->
-  <g id="title-slot" data-pptx-placeholder="title" data-pptx-placeholder-bounds="60 38 1040 44">
-    <text x="60" y="70" font-family="Consolas, Monaco, monospace" font-size="36" font-weight="bold" fill="#39FF14" filter="url(#glowGreen)" id="slot-02_toc-title-1" data-pptx-placeholder-carrier="true">
-      📍 {{PAGE_TITLE}}
-    </text>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#0D1117"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="toc-top-rule-main" x="0" y="0" width="1280" height="4" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-top-rule-echo" x="0" y="4" width="1280" height="2" fill="#39FF14" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-title-rule" x="60" y="120" width="200" height="2" fill="#30363D"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-one" x="60" y="160" width="560" height="80" fill="#161B22" stroke="#39FF14" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-chip-one" x="60" y="160" width="100" height="24" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-index-block-one" x="80" y="195" width="40" height="40" fill="#39FF14"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-two" x="60" y="260" width="560" height="80" fill="#161B22" stroke="#00D4FF" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-chip-two" x="60" y="260" width="100" height="24" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-index-block-two" x="80" y="295" width="40" height="40" fill="#00D4FF"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-three" x="60" y="360" width="560" height="80" fill="#161B22" stroke="#FFD700" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-chip-three" x="60" y="360" width="100" height="24" fill="#FFD700"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-index-block-three" x="80" y="395" width="40" height="40" fill="#FFD700"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-card-four" x="60" y="460" width="560" height="80" fill="#161B22" stroke="#8B949E" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-chip-four" x="60" y="460" width="100" height="24" fill="#238636"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-index-block-four" x="80" y="495" width="40" height="40" fill="#238636"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="toc-index-one" x="100" y="222" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="24" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">01</text>
+  <text id="toc-index-two" x="100" y="322" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="24" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">02</text>
+  <text id="toc-index-three" x="100" y="422" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="24" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">03</text>
+  <text id="toc-index-four" x="100" y="522" text-anchor="middle" fill="#FFFFFF"
+    font-family="Consolas, Monaco, monospace" font-size="24" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">04</text>
+  <rect id="toc-panel" x="680" y="160" width="540" height="380" fill="#161B22" stroke="#30363D" stroke-width="2"
+    stroke-dasharray="8 4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-progress-track" x="720" y="240" width="460" height="30" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-stat-tile-one" x="720" y="300" width="140" height="80" fill="#0D1117" stroke="#39FF14" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-stat-tile-two" x="880" y="300" width="140" height="80" fill="#0D1117" stroke="#FFD700" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-stat-tile-three" x="1040" y="300" width="140" height="80" fill="#0D1117" stroke="#238636" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-start-button" x="850" y="460" width="200" height="50" fill="#39FF14"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="toc-start-label" x="950" y="493" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="18" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">▶ START</text>
+  <rect id="toc-bottom-rule-echo" x="0" y="712" width="1280" height="4" fill="#39FF14" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="toc-bottom-rule-main" x="0" y="716" width="1280" height="4" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="toc-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="60 34 1040 48">
+    <text id="toc-title-carrier" data-pptx-carrier="true"
+      x="60" y="70" fill="#39FF14" filter="url(#toc-glow-green)"
+      font-family="Consolas, Monaco, monospace" font-size="36" font-weight="700">{{PAGE_TITLE}}</text>
   </g>
-  <text x="60" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Microsoft YaHei, sans-serif" font-size="18" fill="#8B949E">
-    {{PAGE_TITLE_EN}}
-  </text>
-  
-  <!-- 分隔线 -->
-  <rect x="60" y="120" width="200" height="2" fill="#30363D" />
-  
-  <!-- 目录区域 -->
-  <g transform="translate(60, 160)">
-    
-    <!-- 第一章节 - 关键必学 -->
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="560" height="80" fill="#161B22" stroke="#39FF14" stroke-width="2" />
-      <!-- 重要度标签 -->
-      <rect x="0" y="0" width="100" height="24" fill="#FF2E97" />
-      <text x="50" y="17" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#FFFFFF" font-weight="bold">🔴 关键必学</text>
-      <!-- 章节序号 -->
-      <rect x="20" y="35" width="40" height="40" fill="#39FF14" />
-      <text x="40" y="62" text-anchor="middle" font-family="Consolas, monospace" font-size="24" font-weight="bold" fill="#0D1117">01</text>
-      <!-- 章节标题 -->
-      <text x="80" y="60" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="20" fill="#E6EDF3">{{TOC_ITEM_1_TITLE}}</text>
-    </g>
-    
-    <!-- 第二章节 -->
-    <g transform="translate(0, 100)">
-      <rect x="0" y="0" width="560" height="80" fill="#161B22" stroke="#00D4FF" stroke-width="2" />
-      <rect x="0" y="0" width="100" height="24" fill="#FF2E97" />
-      <text x="50" y="17" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#FFFFFF" font-weight="bold">🔴 关键必学</text>
-      <rect x="20" y="35" width="40" height="40" fill="#00D4FF" />
-      <text x="40" y="62" text-anchor="middle" font-family="Consolas, monospace" font-size="24" font-weight="bold" fill="#0D1117">02</text>
-      <text x="80" y="60" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="20" fill="#E6EDF3">{{TOC_ITEM_2_TITLE}}</text>
-    </g>
-    
-    <!-- 第三章节 - 建议了解 -->
-    <g transform="translate(0, 200)">
-      <rect x="0" y="0" width="560" height="80" fill="#161B22" stroke="#FFD700" stroke-width="2" />
-      <rect x="0" y="0" width="100" height="24" fill="#FFD700" />
-      <text x="50" y="17" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#0D1117" font-weight="bold">🟡 建议了解</text>
-      <rect x="20" y="35" width="40" height="40" fill="#FFD700" />
-      <text x="40" y="62" text-anchor="middle" font-family="Consolas, monospace" font-size="24" font-weight="bold" fill="#0D1117">03</text>
-      <text x="80" y="60" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="20" fill="#E6EDF3">{{TOC_ITEM_3_TITLE}}</text>
-    </g>
-    
-    <!-- 第四章节 - 可选内容 -->
-    <g transform="translate(0, 300)">
-      <rect x="0" y="0" width="560" height="80" fill="#161B22" stroke="#8B949E" stroke-width="2" />
-      <rect x="0" y="0" width="100" height="24" fill="#238636" />
-      <text x="50" y="17" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#FFFFFF" font-weight="bold">🟢 可选内容</text>
-      <rect x="20" y="35" width="40" height="40" fill="#238636" />
-      <text x="40" y="62" text-anchor="middle" font-family="Consolas, monospace" font-size="24" font-weight="bold" fill="#FFFFFF">04</text>
-      <text x="80" y="60" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="20" fill="#8B949E">{{TOC_ITEM_4_TITLE}}</text>
-    </g>
-    
+  <g id="toc-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="60 82 1040 26">
+    <text id="toc-subtitle-carrier" data-pptx-carrier="true"
+      x="60" y="100" fill="#8B949E"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{PAGE_TITLE_EN}}</text>
   </g>
-  
-  <!-- 右侧装饰区域 -->
-  <g transform="translate(680, 160)">
-    <rect x="0" y="0" width="540" height="380" fill="#161B22" stroke="#30363D" stroke-width="2" stroke-dasharray="8 4" />
-    
-    <!-- 进度指示 -->
-    <text x="270" y="50" text-anchor="middle" font-family="Consolas, monospace" font-size="20" fill="#00D4FF">📊 学习进度</text>
-    
-    <!-- 进度条 -->
-    <rect x="40" y="80" width="460" height="30" fill="#0D1117" stroke="#30363D" stroke-width="1" />
-    <rect x="42" y="82" width="0" height="26" fill="#39FF14" fill-opacity="0.8" />
-    <text x="270" y="102" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#8B949E">0% 完成</text>
-    
-    <!-- 统计信息 -->
-    <g transform="translate(40, 140)">
-      <rect x="0" y="0" width="140" height="80" fill="#0D1117" stroke="#39FF14" stroke-width="2" />
-      <text x="70" y="35" text-anchor="middle" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#39FF14">{{STAT_1}}</text>
-      <text x="70" y="60" text-anchor="middle" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="14" fill="#8B949E">关键内容</text>
-    </g>
-    <g transform="translate(160, 140)">
-      <rect x="0" y="0" width="140" height="80" fill="#0D1117" stroke="#FFD700" stroke-width="2" />
-      <text x="70" y="35" text-anchor="middle" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#FFD700">{{STAT_2}}</text>
-      <text x="70" y="60" text-anchor="middle" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="14" fill="#8B949E">建议了解</text>
-    </g>
-    <g transform="translate(320, 140)">
-      <rect x="0" y="0" width="140" height="80" fill="#0D1117" stroke="#238636" stroke-width="2" />
-      <text x="70" y="35" text-anchor="middle" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#238636">{{STAT_3}}</text>
-      <text x="70" y="60" text-anchor="middle" font-family="-apple-system, Microsoft YaHei, sans-serif" font-size="14" fill="#8B949E">可选内容</text>
-    </g>
-    
-    <!-- 提示信息 -->
-    <text x="270" y="280" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#8B949E">
-      █ 点击章节开始学习
-    </text>
-    
-    <!-- 开始按钮 -->
-    <g transform="translate(170, 300)">
-      <rect x="0" y="0" width="200" height="50" fill="#39FF14" />
-      <text x="100" y="33" text-anchor="middle" font-family="Consolas, monospace" font-size="18" font-weight="bold" fill="#0D1117">▶ START</text>
-    </g>
+  <g id="toc-tag-one-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="60 160 100 24">
+    <text id="toc-tag-one-carrier" data-pptx-carrier="true"
+      x="110" y="177" text-anchor="middle" fill="#FFFFFF"
+      font-family="Consolas, Monaco, monospace" font-size="12" font-weight="700">{{TAG_1}}</text>
   </g>
-  
-  <!-- 底部装饰线 -->
-  <rect x="0" y="712" width="1280" height="4" fill="#39FF14" fill-opacity="0.4" />
-  <rect x="0" y="716" width="1280" height="4" fill="#39FF14" fill-opacity="0.8" />
-  
-  <!-- 页码 -->
-  <text x="60" y="690" font-family="Consolas, monospace" font-size="14" fill="#8B949E">02/{{TOTAL_PAGES}}</text>
-  <text x="1220" y="690" text-anchor="end" font-family="Consolas, monospace" font-size="14" fill="#8B949E">Table of Contents</text>
-
+  <g id="toc-tag-two-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="60 260 100 24">
+    <text id="toc-tag-two-carrier" data-pptx-carrier="true"
+      x="110" y="277" text-anchor="middle" fill="#FFFFFF"
+      font-family="Consolas, Monaco, monospace" font-size="12" font-weight="700">{{TAG_2}}</text>
+  </g>
+  <g id="toc-tag-three-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="60 360 100 24">
+    <text id="toc-tag-three-carrier" data-pptx-carrier="true"
+      x="110" y="377" text-anchor="middle" fill="#0D1117"
+      font-family="Consolas, Monaco, monospace" font-size="12" font-weight="700">{{TAG_3}}</text>
+  </g>
+  <g id="toc-tag-four-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="60 460 100 24">
+    <text id="toc-tag-four-carrier" data-pptx-carrier="true"
+      x="110" y="477" text-anchor="middle" fill="#FFFFFF"
+      font-family="Consolas, Monaco, monospace" font-size="12" font-weight="700">{{TAG_4}}</text>
+  </g>
+  <g id="toc-item-one-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="140 195 460 40">
+    <text id="toc-item-one-carrier" data-pptx-carrier="true"
+      x="140" y="220" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{TOC_ITEM_1_TITLE}}</text>
+  </g>
+  <g id="toc-item-two-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="140 295 460 40">
+    <text id="toc-item-two-carrier" data-pptx-carrier="true"
+      x="140" y="320" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{TOC_ITEM_2_TITLE}}</text>
+  </g>
+  <g id="toc-item-three-slot" data-pptx-placeholder="object" data-pptx-idx="8"
+    data-pptx-bounds="140 395 460 40">
+    <text id="toc-item-three-carrier" data-pptx-carrier="true"
+      x="140" y="420" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{TOC_ITEM_3_TITLE}}</text>
+  </g>
+  <g id="toc-item-four-slot" data-pptx-placeholder="object" data-pptx-idx="9"
+    data-pptx-bounds="140 495 460 40">
+    <text id="toc-item-four-carrier" data-pptx-carrier="true"
+      x="140" y="520" fill="#8B949E"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{TOC_ITEM_4_TITLE}}</text>
+  </g>
+  <g id="toc-message-slot" data-pptx-placeholder="body" data-pptx-idx="10"
+    data-pptx-bounds="720 186 460 32">
+    <text id="toc-message-carrier" data-pptx-carrier="true"
+      x="950" y="210" text-anchor="middle" fill="#00D4FF"
+      font-family="Consolas, Monaco, monospace" font-size="20">{{KEY_MESSAGE}}</text>
+  </g>
+  <g id="toc-stat-one-slot" data-pptx-placeholder="object" data-pptx-idx="11"
+    data-pptx-bounds="720 300 140 80">
+    <text id="toc-stat-one-carrier" data-pptx-carrier="true"
+      x="790" y="335" text-anchor="middle" fill="#39FF14"
+      font-family="Consolas, Monaco, monospace" font-size="32" font-weight="700">{{STAT_1}}<tspan x="790" dy="25" fill="#8B949E" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{STAT_1_LABEL}}</tspan></text>
+  </g>
+  <g id="toc-stat-two-slot" data-pptx-placeholder="object" data-pptx-idx="12"
+    data-pptx-bounds="880 300 140 80">
+    <text id="toc-stat-two-carrier" data-pptx-carrier="true"
+      x="950" y="335" text-anchor="middle" fill="#FFD700"
+      font-family="Consolas, Monaco, monospace" font-size="32" font-weight="700">{{STAT_2}}<tspan x="950" dy="25" fill="#8B949E" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{STAT_2_LABEL}}</tspan></text>
+  </g>
+  <g id="toc-stat-three-slot" data-pptx-placeholder="object" data-pptx-idx="13"
+    data-pptx-bounds="1040 300 140 80">
+    <text id="toc-stat-three-carrier" data-pptx-carrier="true"
+      x="1110" y="335" text-anchor="middle" fill="#238636"
+      font-family="Consolas, Monaco, monospace" font-size="32" font-weight="700">{{STAT_3}}<tspan x="1110" dy="25" fill="#8B949E" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{STAT_3_LABEL}}</tspan></text>
+  </g>
+  <g id="toc-section-slot" data-pptx-placeholder="footer" data-pptx-idx="14"
+    data-pptx-bounds="820 674 400 22">
+    <text id="toc-section-carrier" data-pptx-carrier="true"
+      x="1220" y="690" text-anchor="end" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{SECTION_NAME}}</text>
+  </g>
+  <g id="toc-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="15"
+    data-pptx-bounds="60 674 300 22">
+    <text id="toc-pagenum-carrier" data-pptx-carrier="true"
+      x="60" y="690" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{PAGE_NUM}} / {{TOTAL_PAGES}}</text>
+  </g>
 </svg>
