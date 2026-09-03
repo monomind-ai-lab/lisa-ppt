@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="government_blue_master" data-pptx-master-name="Government Blue"
+  data-pptx-layout="chapter" data-pptx-layout-name="Chapter">
+  <defs>
+    <linearGradient id="chapter-plane-paint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0050B3" stop-opacity="1"/>
+      <stop offset="0.5" stop-color="#003D8F" stop-opacity="1"/>
+      <stop offset="1" stop-color="#001F4D" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="chapter-top-paint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B4D8" stop-opacity="1"/>
+      <stop offset="1" stop-color="#0050B3" stop-opacity="1"/>
+    </linearGradient>
+    <radialGradient id="chapter-glow-paint" cx="0.8" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#00B4D8" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#00B4D8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="chapter-plane" x="0" y="0" width="1280" height="720" fill="url(#chapter-plane-paint)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-glow" x="0" y="0" width="1280" height="720" fill="url(#chapter-glow-paint)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-orb-one" cx="1200" cy="100" r="300" fill="#FFFFFF" fill-opacity="0.02"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-orb-two" cx="100" cy="620" r="250" fill="#FFFFFF" fill-opacity="0.02"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="chapter-orb-three" cx="1100" cy="150" r="150" fill="#00B4D8" fill-opacity="0.03"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-top-strip" x="0" y="0" width="1280" height="6" fill="url(#chapter-top-paint)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-grid-row-one" x1="0" y1="240" x2="1280" y2="240" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-grid-row-two" x1="0" y1="480" x2="1280" y2="480" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-grid-col-one" x1="426" y1="0" x2="426" y2="720" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="chapter-grid-col-two" x1="854" y1="0" x2="854" y2="720" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-side-bar" x="80" y="260" width="6" height="200" fill="#00B4D8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-side-hairline" x="92" y="280" width="3" height="160" fill="#90E0EF" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-title-rule" x="580" y="370" width="120" height="6" fill="#00B4D8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-title-rule-accent" x="600" y="382" width="80" height="3" fill="#90E0EF" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-footer-band" x="0" y="680" width="1280" height="40" fill="#001F4D" fill-opacity="0.5"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="chapter-footer-band-accent" x="0" y="680" width="400" height="40" fill="url(#chapter-top-paint)" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="chapter-number-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="340 150 600 226">
+    <text id="chapter-number-carrier" data-pptx-carrier="true"
+      x="640" y="310" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.05"
+      stroke="#00B4D8" stroke-width="1" stroke-opacity="0.2"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="180" font-weight="700">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="chapter-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 396 1000 64">
+    <text id="chapter-title-carrier" data-pptx-carrier="true"
+      x="640" y="440" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" font-weight="700">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="chapter-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="2"
+    data-pptx-bounds="140 470 1000 34">
+    <text id="chapter-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="490" text-anchor="middle" fill="#90E0EF" letter-spacing="4"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CHAPTER_SUBTITLE}}</text>
+  </g>
+  <g id="chapter-footer-slot" data-pptx-placeholder="footer" data-pptx-idx="3"
+    data-pptx-bounds="340 684 600 32">
+    <text id="chapter-footer-carrier" data-pptx-carrier="true"
+      x="640" y="707" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.6"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{ORGANIZATION}}</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="government_blue_master" data-pptx-master-name="Government Blue"
+  data-pptx-layout="content" data-pptx-layout-name="Content">
+  <defs>
+    <linearGradient id="content-plane-paint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8FCFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="content-top-paint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B4D8" stop-opacity="1"/>
+      <stop offset="1" stop-color="#0050B3" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="content-badge-paint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0077B6" stop-opacity="1"/>
+      <stop offset="1" stop-color="#0050B3" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="content-plane" x="0" y="0" width="1280" height="720" fill="url(#content-plane-paint)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-top-strip" x="0" y="0" width="1280" height="6" fill="url(#content-top-paint)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-number-badge" x="60" y="30" width="50" height="50" rx="6" fill="url(#content-badge-paint)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-logo-rule" x="1100" y="58" width="120" height="2" fill="url(#content-top-paint)" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="content-header-rule" x1="60" y1="95" x2="1220" y2="95" stroke="#E4E7EB" stroke-width="1" stroke-dasharray="6 4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-footer-rule" x="0" y="716" width="1280" height="4" fill="#0050B3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="content-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="130 30 950 50">
+    <text id="content-title-carrier" data-pptx-carrier="true"
+      x="130" y="65" fill="#1A1A1A"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="content-number-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="60 30 50 50">
+    <text id="content-number-carrier" data-pptx-carrier="true"
+      x="85" y="65" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">{{CHAPTER_NUM}}</text>
+  </g>
+  <g id="content-logo-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="1100 30 120 26">
+    <text id="content-logo-carrier" data-pptx-carrier="true"
+      x="1220" y="50" text-anchor="end" fill="#718096"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{BRAND_LOGO}}</text>
+  </g>
+  <g id="content-object-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="60 110 1160 550">
+    <text id="content-object-carrier" data-pptx-carrier="true"
+      x="60" y="148" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CONTENT_AREA}}</text>
+  </g>
+  <g id="content-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="4"
+    data-pptx-bounds="540 676 200 32">
+    <text id="content-pagenum-carrier" data-pptx-carrier="true"
+      x="640" y="695" text-anchor="middle" fill="#718096"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{PAGE_NUM}}</text>
+  </g>
+  <g id="content-footer-slot" data-pptx-placeholder="footer" data-pptx-idx="5"
+    data-pptx-bounds="1000 676 220 32">
+    <text id="content-footer-carrier" data-pptx-carrier="true"
+      x="1220" y="695" text-anchor="end" fill="#718096" fill-opacity="0.6"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{FOOTER_NOTE}}</text>
+  </g>
+</svg>
