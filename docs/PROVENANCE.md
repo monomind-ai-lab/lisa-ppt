@@ -60,11 +60,14 @@ left are in this repository.
 | `skills/lisa-ppt/references/ai-image-comparison/` (43 MB) | trimmed; pointer README; nothing reads it |
 | `skills/lisa-ppt/templates/sounds/{bigsoundbank,kenney-interface,kenney-ui}/` (12 MB) | trimmed; vocabulary, index and notices kept; README says where the files are |
 
-Moved, untouched, under `docs/upstream/` for W2 to decide: `README.ppt-master.md`
-and `README_CN.ppt-master.md` (sponsor sections stripped, noted at the top),
-`why-ppt-master.md`, `project-positioning.md`, `what-is-ppt.md`, `roadmap.md`
-(+ `zh/`), `MAINTAINER_PLAYBOOK.ppt-master.md`. Their relative links may not
-resolve there.
+Parked untouched under `docs/upstream/` as the record of what was imported:
+`README.ppt-master.md` and `README_CN.ppt-master.md` (sponsor sections
+stripped, noted at the top) and `README.slide-master.ko.md`. Their relative
+links may not resolve there. Upstream's `why-ppt-master.md`,
+`project-positioning.md`, `what-is-ppt.md`, `roadmap.md` (+ `zh/`) and
+`MAINTAINER_PLAYBOOK.ppt-master.md` were parked by the import and deleted by
+the rebrand: they describe upstream's product direction and maintenance, not
+this repository's; the two READMEs and NOTICE carry the attribution.
 
 Repointed to `monomind-ai-lab/lisa-ppt` because the text is about this
 repository: the image-search user agent (`LisaPPT/1.0`), `marketplace.json`,
@@ -83,6 +86,18 @@ brand and deck presets; the PackyCode affiliate link in its `docs/faq.md`;
 v6.1.0's Edit Native PPTX route covers both); the
 `Pretendard, "Malgun Gothic", sans-serif` fallback stack as-is (Windows-Korean;
 the per-language cross-platform tail is the rebrand's).
+
+## Bundled fonts
+
+Fetched once from the upstream repositories at the commits below; the OFL
+text beside each family is the upstream licence file verbatim.
+
+| Here | Source | Files |
+|---|---|---|
+| `skills/lisa-ppt/assets/fonts/Pretendard/` | slide-master `166472bd` (see above), originally [orioncactus/pretendard](https://github.com/orioncactus/pretendard) v1.3.9 | 6 OTF + `LICENSE.txt` |
+| `skills/lisa-ppt/assets/fonts/NotoSansTC/` | [notofonts/noto-cjk](https://github.com/notofonts/noto-cjk) tag `Sans2.004` (`523d033d`), `Sans/SubsetOTF/TC/` | `NotoSansTC-{Light,Regular,Medium,Bold}.otf` + `LICENSE.txt` (repository `LICENSE`) |
+| `skills/lisa-ppt/assets/fonts/PlusJakartaSans/` | [tokotype/PlusJakartaSans](https://github.com/tokotype/PlusJakartaSans) `18d1cd2f` (master, 2024-01-18), `fonts/ttf/` | `PlusJakartaSans-{Light,Regular,Medium,SemiBold,Bold,ExtraBold}.ttf` + `LICENSE.txt` (`OFL.txt`) |
+| `skills/lisa-ppt/assets/fonts/JetBrainsMono/` | [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) tag `v2.304` (`cd5227bd`), `fonts/ttf/` | `JetBrainsMono-{Regular,Medium,SemiBold}.ttf` + `LICENSE.txt` (`OFL.txt`) |
 
 ## Backports
 

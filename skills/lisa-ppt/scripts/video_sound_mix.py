@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Video Sound Mix
+Lisa's PPT - Video Sound Mix
 
 Recover transition and object-animation sound cues from the final narrated
 PPTX, calibrate them to a PowerPoint-exported video, render an independent SFX
@@ -1253,7 +1253,7 @@ def mix_video_sounds(
     temporary_video = _temporary_output(output_path, ".mp4")
     temporary_report = _temporary_output(report_path, ".json")
     try:
-        with tempfile.TemporaryDirectory(prefix="ppt-master-video-sounds-") as raw_dir:
+        with tempfile.TemporaryDirectory(prefix="lisa-ppt-video-sounds-") as raw_dir:
             cues = _resolve_sound_cues(
                 pptx_path=pptx_path,
                 trace_slides=trace_slides,
@@ -1482,7 +1482,7 @@ def build_parser() -> argparse.ArgumentParser:
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("project_path", help="PPT Master project directory")
+    parser.add_argument("project_path", help="Lisa's PPT project directory")
     parser.add_argument(
         "--pptx",
         required=True,

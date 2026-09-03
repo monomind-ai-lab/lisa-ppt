@@ -4,7 +4,7 @@
 
 ---
 
-This guide walks you through installing PPT Master on Windows step by step. Follow along and you'll have a working setup in under 10 minutes.
+This guide walks you through installing Lisa's PPT on Windows step by step. Follow along and you'll have a working setup in under 10 minutes.
 
 ---
 
@@ -46,7 +46,7 @@ git clone https://github.com/monomind-ai-lab/lisa-ppt.git
 Then enter the cloned folder:
 
 ```powershell
-cd ppt-master
+cd lisa-ppt
 ```
 
 ---
@@ -54,7 +54,7 @@ cd ppt-master
 ## Step 3 — Install Dependencies
 
 ```powershell
-cd C:\Users\YourName\ppt-master   # ← adjust to your actual path
+cd C:\Users\YourName\lisa-ppt   # ← adjust to your actual path
 pip install -r requirements.txt
 ```
 
@@ -78,7 +78,7 @@ python -c "import pptx; import fitz; print('All core dependencies OK')"
 
 ## Step 5 — Run a Minimal Example
 
-Open the `ppt-master` folder in an agent-capable AI tool (Claude Code, Codex, Cursor, a VS Code agent, etc.) and type in the chat:
+Open the `lisa-ppt` folder in an agent-capable AI tool (Claude Code, Codex, Cursor, a VS Code agent, etc.) and type in the chat:
 
 ```
 Quickly generate a simple 3-page test PPT with a cover, one content page, and a closing page. Topic: "Hello World". No need to confirm with me.

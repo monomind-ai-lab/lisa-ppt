@@ -2,7 +2,7 @@
 
 **The single source of truth for colors, typography, and tokens.** Every diagram draws from this — not from hex values inlined in other reference files. If you want to change the visual skin of Schematic, change this file.
 
-**Upstream skin record (ported from the sibling slide-svg project, Jangpm theme).** This file arrived pre-skinned to that project's active theme — monochrome neutrals + a single `#4633E3` indigo accent, Pretendard typography. In ppt-master, colors / fonts / icons always come from the project's `spec_lock.md` (see the SKILL.md integration note); read this guide for the semantic-role vocabulary and token discipline only. **Do NOT run `onboarding.md`** (URL skin extraction).
+**Upstream skin record (ported from the sibling slide-svg project, Jangpm theme).** This file arrived pre-skinned to that project's active theme — monochrome neutrals + a single `#4633E3` indigo accent, Pretendard typography. In lisa-ppt, colors / fonts / icons always come from the project's `spec_lock.md` (see the SKILL.md integration note); read this guide for the semantic-role vocabulary and token discipline only. **Do NOT run `onboarding.md`** (URL skin extraction).
 
 ---
 
@@ -31,7 +31,7 @@ Every token is referred to by **semantic role**, not by its hex value. Type refe
 ### Light-only
 
 Diagrams render on light slides only; the upstream dark-mode inversion rule is dropped.
-Express opacity per element via `fill-opacity` / `stroke-opacity` (never `rgba(...)`), per [`shared-standards.md`](../../ppt-master/references/shared-standards.md).
+Express opacity per element via `fill-opacity` / `stroke-opacity` (never `rgba(...)`), per [`shared-standards.md`](../../lisa-ppt/references/shared-standards.md).
 
 ---
 
@@ -54,7 +54,7 @@ serif/sans/mono contrast collapses under the lock — recover hierarchy with siz
 
 Every `<text>` carries the full chain inline — `font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif"`.
 
-**Forbidden:** `@font-face`, Google Fonts `<link>`, and any web-font import — banned by [`shared-standards.md`](../../ppt-master/references/shared-standards.md). There is no `<link rel="stylesheet">`; diagrams are native SVG, not HTML.
+**Forbidden:** `@font-face`, Google Fonts `<link>`, and any web-font import — banned by [`shared-standards.md`](../../lisa-ppt/references/shared-standards.md). There is no `<link rel="stylesheet">`; diagrams are native SVG, not HTML.
 
 ---
 

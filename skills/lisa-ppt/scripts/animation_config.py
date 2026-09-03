@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Animation Config Tool
+Lisa's PPT - Animation Config Tool
 
 Create and validate optional PPTX animation and deterministic Morph sidecars.
 

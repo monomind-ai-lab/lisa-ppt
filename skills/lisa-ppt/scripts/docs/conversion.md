@@ -314,7 +314,7 @@ options, exact `p14:dur`, optional `advTm`, and an internal WAV transition
 sound. Sound bytes are extracted under the selected media directory with a
 content-addressed filename and referenced from the sidecar.
 
-This is a PPT Master-owned semantic loop, not a general transition normalizer.
+This is a Lisa's PPT-owned semantic loop, not a general transition normalizer.
 Unknown effects, legacy `p:transition@spd`, visual effects without exact
 `p14:dur`, `advClick="0"`, malformed carriers, and unsupported or broken sound
 relationships produce `transition-not-reconstructed` in tolerant mode;
@@ -498,14 +498,14 @@ shape = slide.shapes.add_shape(
     Inches(1),
 )
 shape.text = "PPTX import smoke check"
-presentation.save("/tmp/ppt-master-smoke-healthy.pptx")
+presentation.save("/tmp/lisa-ppt-smoke-healthy.pptx")
 PY
 
 python3 "skills/lisa-ppt/scripts/pptx_to_svg.py" \
-  "/tmp/ppt-master-smoke-healthy.pptx" \
+  "/tmp/lisa-ppt-smoke-healthy.pptx" \
   --inheritance-mode flat \
-  -o "/tmp/ppt-master-smoke-healthy"
-python3 -c "import json; from pathlib import Path; report = json.loads(Path('/tmp/ppt-master-smoke-healthy/conversion-report.json').read_text()); assert report['summary'] == {'slides': 1, 'warnings': 0}, report['summary']; print('OK: 1 slide, 0 warnings')"
+  -o "/tmp/lisa-ppt-smoke-healthy"
+python3 -c "import json; from pathlib import Path; report = json.loads(Path('/tmp/lisa-ppt-smoke-healthy/conversion-report.json').read_text()); assert report['summary'] == {'slides': 1, 'warnings': 0}, report['summary']; print('OK: 1 slide, 0 warnings')"
 ```
 
 Expected: both commands exit `0`; the assertion prints
@@ -526,8 +526,8 @@ from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.util import Inches
 
-base = Path("/tmp/ppt-master-color-smoke-base.pptx")
-target = Path("/tmp/ppt-master-color-smoke.pptx")
+base = Path("/tmp/lisa-ppt-color-smoke-base.pptx")
+target = Path("/tmp/lisa-ppt-color-smoke.pptx")
 presentation = Presentation()
 slide = presentation.slides.add_slide(presentation.slide_layouts[6])
 for left, color in ((1, (0x44, 0x72, 0xC4)), (4, (0xED, 0x7D, 0x31))):
@@ -564,14 +564,14 @@ Run tolerant import and verify both the recovery report and the visible SVG:
 
 ```bash
 python3 "skills/lisa-ppt/scripts/pptx_to_svg.py" \
-  "/tmp/ppt-master-color-smoke.pptx" \
+  "/tmp/lisa-ppt-color-smoke.pptx" \
   --inheritance-mode flat \
-  -o "/tmp/ppt-master-smoke-color-tolerant"
+  -o "/tmp/lisa-ppt-smoke-color-tolerant"
 python3 -c '
 import json
 from pathlib import Path
 
-output = Path("/tmp/ppt-master-smoke-color-tolerant")
+output = Path("/tmp/lisa-ppt-smoke-color-tolerant")
 report = json.loads((output / "conversion-report.json").read_text())
 diagnostics = report["diagnostics"]
 svg = (output / "svg" / "slide_01.svg").read_text()
@@ -594,10 +594,10 @@ Run the same probe in strict mode:
 
 ```bash
 python3 "skills/lisa-ppt/scripts/pptx_to_svg.py" \
-  "/tmp/ppt-master-color-smoke.pptx" \
+  "/tmp/lisa-ppt-color-smoke.pptx" \
   --inheritance-mode flat \
   --strict \
-  -o "/tmp/ppt-master-smoke-color-strict"
+  -o "/tmp/lisa-ppt-smoke-color-strict"
 ```
 
 Expected: exit `1`, no traceback, and one error line:

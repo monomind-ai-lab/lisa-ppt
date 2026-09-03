@@ -2,7 +2,7 @@
 
 # Sound Effect Library
 
-This directory is PPT Master's global sound-effect library. It contains 186
+This directory is the global sound-effect library of Lisa's PPT. It contains 186
 CC0 sound effects prepared as PowerPoint-compatible WAV files:
 
 | Namespace | Source | Files | Primary use |

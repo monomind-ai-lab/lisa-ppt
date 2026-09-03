@@ -1,0 +1,173 @@
+<!doctype html>
+<!-- LISA:CONTENT-MAP
+     Editable regions, fenced by LISA:CONTENT-START/END comments:
+       slides — the deck's slides, cover through closing (all placeholder content, incl. data-screen-label on each <section>)
+       notes — the speaker-notes JSON
+     Named edit points outside the fences:
+       <title> in <head>
+     Synthetic fixture for lisa_html_intake tests: one of every MonoMind deck
+     canvas component, one embedded image, one element the importer must not
+     recognise. Not a real deck. -->
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Synthetic MonoMind deck</title>
+<style>
+:root {
+  --bg: #eef6ff;
+  --surface: rgba(255, 255, 255, 0.74);
+  --fg: #102033;
+  --fg-2: #34465f;
+  --muted: #60708a;
+  --meta: #4f8cff;
+  --border: rgba(255, 255, 255, 0.64);
+  --accent: #4f8cff;
+  --accent-on: #ffffff;
+  --success: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+}
+:root {
+  --font-display: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  --font-body:    "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+}
+:root {
+  --glass-hair:  color-mix(in srgb, var(--accent-on) 22%, transparent);
+  --fg-inv:      var(--accent-on);
+  --muted-inv:   color-mix(in srgb, var(--accent-on) 72%, transparent);
+}
+</style>
+</head>
+<body>
+<!-- LISA:CONTENT-START slides -->
+  <section class="slide hero dark is-photo cover-hero" data-screen-label="01 Cover" role="group" aria-label="Slide 01 Cover">
+    <a class="brand-mark" href="https://monomind.one/?ref=deck-mark" aria-label="MonoMind AI Lab"></a>
+    <div class="cover-kicker"><p class="eyebrow">MonoMind AI Lab · Fixture</p></div>
+    <div class="cover-title">
+      <h1 class="h-hero">Every canvas&nbsp;component.</h1>
+      <p class="lead">One synthetic deck that carries each MonoMind component once.</p>
+    </div>
+    <div class="cover-meta"><span>4 pages</span><span>Cover · Cards · Canvas · Close</span><span>fixture</span></div>
+  </section>
+
+  <section class="slide dark dg-slide dg-center" data-screen-label="02 Cards" role="group" aria-label="Slide 02 Cards">
+    <a class="brand-mark" href="https://monomind.one/?ref=deck-mark" aria-label="MonoMind AI Lab"></a>
+    <p class="eyebrow">Part 1 · Why</p>
+    <h2 class="h-md">Four questions, one grid.</h2>
+    <p class="lead">A card grid and a loop line.</p>
+    <div class="dg-canvas">
+      <div class="grid-4">
+        <div class="qcard"><div class="qn">Q1</div><h4>What is true now?</h4><p>State and blockers.</p></div>
+        <div class="qcard"><div class="qn">Q2</div><h4>Which decisions constrain?</h4><p>Accepted choices.</p></div>
+        <div class="qcard"><div class="qn">Q3</div><h4>What was learned?</h4><p>Verified lessons.</p></div>
+        <div class="qcard"><div class="qn">Q4</div><h4>Where is the evidence?</h4><p>Links to the record.</p></div>
+      </div>
+      <div class="dg-loop"><b>Unlike chat history</b>, this context stays portable.</div>
+    </div>
+  </section>
+
+  <section class="slide dark dg-slide dg-center" data-screen-label="03 Canvas" role="group" aria-label="Slide 03 Canvas">
+    <a class="brand-mark" href="https://monomind.one/?ref=deck-mark" aria-label="MonoMind AI Lab"></a>
+    <p class="eyebrow">Part 2 · How</p>
+    <h2 class="h-md">Every other component.</h2>
+    <div class="dg-canvas">
+      <div class="dg-startbar">Start of the canvas</div>
+      <div class="dg-frame is-accent">
+        <div class="dg-frame-label">A table in a panel</div>
+        <table class="tbl">
+          <thead><tr><th style="width:26%"><span class="th-lbl"><svg class="th-ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="4"/></svg>File</span></th><th>What it answers</th></tr></thead>
+          <tbody>
+            <tr><td class="k">NOW.md</td><td>What is true now?</td></tr>
+            <tr><td class="k">DECISIONS.md</td><td>Which choices constrain the work?</td></tr>
+          </tbody>
+        </table>
+        <p class="dg-frame-note">Two rows, one key column.</p>
+      </div>
+      <div class="dg-arrow"><span class="cap">install &amp; operate</span><span class="ln"></span></div>
+      <div class="dg-frame">
+        <div class="dg-frame-label">Collaborators</div>
+        People &amp; agents — read <b>NOW.md</b> to start.
+        <div class="dg-chip-row">
+          <div class="dg-chip"><div class="nm">NOW.md</div><p class="ds">Current state</p></div>
+          <div class="dg-chip is-optional"><div class="nm">Graphify</div><p class="ds">Optional navigation</p></div>
+        </div>
+      </div>
+      <ul class="dg-treeview">
+        <li class="root"><span class="nm">repo/</span></li>
+        <li><span class="nm">skills/</span>
+          <ul>
+            <li><span class="nm">SKILL.md</span><span class="dsc">Protocol</span></li>
+          </ul>
+        </li>
+        <li><span class="nm">README.md</span><span class="dsc">Read order</span></li>
+      </ul>
+      <div class="dg-leader-row"><span class="dg-leader-name">NOW.md</span><span class="dg-leader-desc">Current state</span></div>
+      <div class="dg-leader-row"><span class="dg-leader-name">LEARNINGS.md</span><span class="dg-leader-desc">Verified lessons</span></div>
+      <div class="dg-leader-row"><span class="dg-leader-name">DECISIONS.md</span><span class="dg-leader-desc">Rationale</span></div>
+      <p class="dg-phase-label">At the start of work</p>
+      <div class="dg-step"><span class="nb-circle">1</span><div><h4>Read NOW.md</h4><p>Current state</p></div></div>
+      <div class="dg-step"><span class="nb-circle">2</span><div><h4>Search decisions</h4><p>For the topic</p></div></div>
+      <div class="wf-row">
+        <div class="wf-phase">Install<br><span>once</span></div>
+        <div class="wf-track">
+          <div class="wf-node"><span class="n">1</span><h4>Prompt the agent</h4><p>A short prompt.</p></div>
+          <span class="wf-link" aria-hidden="true"></span>
+          <div class="wf-node"><span class="n">2</span><h4>Approve the plan</h4><p>Before writing.</p></div>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Existing files are preserved <b>byte-for-byte</b>.</li>
+        <li>Nothing is migrated behind your back.</li>
+      </ul>
+      <p class="code" id="install-prompt">Install Project Context using
+https://example.invalid/repo. Wait for approval.</p>
+      <div class="dg-flag-row">
+        <div class="dg-flag"><div class="fl">--dry-run</div><div class="fd">Inspect first</div></div>
+        <div class="dg-flag"><div class="fl">--apply</div><div class="fd">Write the plan</div></div>
+      </div>
+      <ol class="dg-ordered">
+        <li><span><b>Inspect</b> — brand-new or existing?</span></li>
+        <li><span><b>Verify</b> — report the result</span></li>
+      </ol>
+      <div class="dg-map">
+        <div class="dg-map-h">Primary artifacts</div><div></div><div class="dg-map-h">Context files</div>
+        <div class="dg-map-row-l">Source code</div><div class="dg-map-arrow">→</div><div class="dg-map-row-r">Evidence links</div>
+        <div class="dg-map-row-l">Tests</div><div class="dg-map-arrow">→</div><div class="dg-map-row-r">Lessons</div>
+      </div>
+      <div class="dg-map-summary">Markdown-based and portable.</div>
+      <div class="grid-img">
+        <div>
+          <div class="plate"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="A one-pixel plate"></div>
+          <p class="plate-cap">Opt-in · never required</p>
+        </div>
+      </div>
+      <div class="mystery">A component the importer has never seen.</div>
+      <div class="dg-endbar is-accent">The next collaborator inherits structured context.</div>
+    </div>
+  </section>
+
+  <section class="slide hero dark is-photo" data-screen-label="04 Close" role="group" aria-label="Slide 04 Close">
+    <a class="brand-mark" href="https://monomind.one/?ref=deck-mark" aria-label="MonoMind AI Lab"></a>
+    <div class="close-grid">
+      <div>
+        <p class="eyebrow">Get started</p>
+        <h2 class="h-hero">Clarity comes with context.</h2>
+        <p class="lead">Paste the prompt into any agent.</p>
+      </div>
+      <div class="close-links">
+        <a class="is-accent" href="https://example.invalid/repo">the repository</a>
+        <a href="https://example.invalid/license">MIT</a>
+      </div>
+      <p class="deck-colophon">Made with <a href="https://html.monomind.one/?ref=file"><span class="notranslate" translate="no">Hi Ted, Meet Lisa</span></a></p>
+    </div>
+  </section>
+<!-- LISA:CONTENT-END slides -->
+<!-- LISA:CONTENT-START notes -->
+<script type="application/json" id="speaker-notes">
+[]
+</script>
+<!-- LISA:CONTENT-END notes -->
+</body></html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- LISA:CONTENT-MAP
+     Editable regions, fenced by LISA:CONTENT-START/END comments:
+       slides — pages 01–10 (all placeholder content, incl. data-label-zh/en on each <section>)
+     Named edit points outside the fences:
+       <title> in <head>
+       body data-title-zh / data-title-en
+       optional [HOME URL] / [REPOSITORY URL] menu items inside the commented-out chrome
+     Everything else (head, CSS, chrome markup, scripts, artwork) is load-bearing:
+     copy this file with cp, never retype it, and edit only what is named here. -->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>Lumen Docs 開源文件平台｜翻譯制度規劃輸入</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#0d0d0d;
+  --ink-soft:#5c5c5c;
+  --ink-faint:#a8a8a8;
+  --rule:#e2e2e2;
+  --red:#ff3300;
+  --red-wash:rgba(255,51,0,.07);
+  --blue:#0044ff;
+  --blue-wash:rgba(0,68,255,.06);
+  --amber:#ffb300;
+  --grid:rgba(13,13,13,.055);
+  --track:#f0f0f0;              
+  --decision-bg:#fafafa;        
+  --invert-bg:#0d0d0d;          
+  --invert-ink:#ffffff;
+  --invert-soft:#a8a8a8;
+  --chrome-bg:rgba(255,255,255,.86);
+
+  --font-display:'Archivo','Noto Sans TC',sans-serif;
+  --font-body:'Noto Sans TC','Archivo',sans-serif;
+
+  --title-size:clamp(2.1rem,6.4vw,5.2rem);
+  --h2-size:clamp(1.32rem,3.45vw,2.65rem);
+  --lead-size:clamp(.95rem,1.75vw,1.4rem);
+  --body-size:clamp(.78rem,1.15vw,1.02rem);
+  --micro-size:clamp(.6rem,.82vw,.76rem);
+  --mega-size:clamp(3rem,11vw,9rem);
+
+  --slide-padding:clamp(1.4rem,4.5vw,4.5rem);
+  --gap:clamp(.7rem,1.7vw,1.6rem);
+  --chrome-clear:46px;          
+
+  --ease:cubic-bezier(.16,1,.3,1);
+  --dur:.72s;
+}
+:root{--chrome-clear:40px}
+body[data-lang="en"]{--font-body:'Archivo','Noto Sans TC',sans-serif}
+</style>
+</head>
+<body data-lang="zh-TW" data-title-zh="Lumen Docs 開源文件平台｜翻譯制度規劃輸入" data-title-en="Lumen Docs open documentation platform | translation policy input">
+<!-- two-slide sample extracted from paper-brief.html (MonoMind's own preview) for the importer tests -->
+<!-- LISA:CONTENT-START slides -->
+<section class="slide" data-label-zh="兩種算法" data-label-en="Two readings">
+  <div class="slide-content" style="gap:clamp(.9rem,2.2vw,2rem)">
+    <p class="eyebrow reveal"><span class="zh">兩種算法</span><span class="en">TWO WAYS TO COUNT</span></p>
+    <h2 class="reveal"><span class="zh">同一批文件，兩個差很多的數字</span><span class="en">The same pages, two very different numbers</span></h2>
+    <div class="split reveal">
+      <div class="card"><div class="ct"><span class="zh">目前對外宣稱的覆蓋率</span><span class="en">COVERAGE, AS PUBLISHED</span></div><div class="cn">78%</div><div class="cd"><span class="zh">分母是全部頁面，分子是「曾經被翻譯過」的頁面。</span><span class="en">All pages below the line; pages ever translated above it.</span></div></div>
+      <div class="card bad"><div class="ct"><span class="zh">與原文同版的比例</span><span class="en">IN STEP WITH THE SOURCE</span></div><div class="cn">31%</div><div class="cd"><span class="zh">分子改成「翻譯版本等於當前原文版本」，數字掉了 47 個百分點。</span><span class="en">Change the numerator to &ldquo;matches the current source version&rdquo; and the figure drops 47 points.</span></div></div>
+    </div>
+    <p class="body reveal"><span class="zh">兩個數字都沒有算錯，差別在於<span class="hl">承不承認文件會改版</span>。<br><span style="font-size:.88em;color:var(--ink-faint)">註：本頁所有數字為版型示範用，並非任何真實專案的統計。</span></span><span class="en">Neither number is miscalculated. The difference is <span class="hl">whether you admit that documentation changes</span>.<br><span style="font-size:.88em;color:var(--ink-faint)">Note: every figure on this page is illustrative, and describes no real project.</span></span></p>
+    <div class="decision reveal">
+      <div class="dq"><span class="zh">建議做法</span><span class="en">Recommendation</span></div>
+      <div class="da"><span class="zh">對外只公布同步率，覆蓋率降為內部指標。同時在建置流程加入一個檢查：原文檔案更新時，把對應的譯文標記為待更新，並自動開一則 issue。</span><span class="en">Publish only the sync rate; demote coverage to an internal metric. Add one check to the build: when a source file changes, mark its translations as pending and open an issue automatically.</span></div>
+    </div>
+  </div>
+  <span class="pagenum">04</span>
+</section>
+<section class="slide" data-label-zh="審閱人力" data-label-en="Reviewer cover">
+  <div class="slide-content">
+    <p class="eyebrow reveal"><span class="zh">審閱人力分布</span><span class="en">WHERE THE REVIEWERS ARE</span></p>
+    <h2 class="reveal"><span class="zh">三個語系靠一個人撐著</span><span class="en">Three locales rest on one person each</span></h2>
+    <div class="bars reveal">
+      <div class="bar blue"><div class="lab"><span class="zh">語系 A</span><span class="en">Locale A</span></div><div class="track"><div class="fill" style="--w:92%"></div></div><div class="val"><span class="zh">6 人</span><span class="en">6</span></div></div>
+      <div class="bar blue"><div class="lab"><span class="zh">語系 B</span><span class="en">Locale B</span></div><div class="track"><div class="fill" style="--w:68%"></div></div><div class="val"><span class="zh">4 人</span><span class="en">4</span></div></div>
+      <div class="bar"><div class="lab"><span class="zh">語系 C</span><span class="en">Locale C</span></div><div class="track"><div class="fill" style="--w:44%"></div></div><div class="val"><span class="zh">3 人</span><span class="en">3</span></div></div>
+      <div class="bar warn"><div class="lab"><span class="zh">語系 D</span><span class="en">Locale D</span></div><div class="track"><div class="fill" style="--w:22%"></div></div><div class="val"><span class="zh">2 人</span><span class="en">2</span></div></div>
+      <div class="bar accent"><div class="lab"><span class="zh">語系 E &middot; F &middot; G</span><span class="en">Locales E &middot; F &middot; G</span></div><div class="track"><div class="fill" style="--w:8%"></div></div><div class="val"><span class="zh">各 1 人</span><span class="en">1 each</span></div></div>
+    </div>
+    <p class="body reveal"><span class="zh">最後一列不是「人少」，是<span class="hl">沒有備援</span>。審閱者一旦停止參與，該語系的發行就停在原地，而且沒有任何流程會發現這件事。</span><span class="en">The last row is not &ldquo;short-staffed&rdquo;, it is <span class="hl">unbacked</span>. If that reviewer stops, the locale stops releasing, and no process in place would notice.</span></p>
+  </div>
+  <span class="pagenum">06</span>
+</section>
+<!-- LISA:CONTENT-END slides -->
+
+</body>
+</html>

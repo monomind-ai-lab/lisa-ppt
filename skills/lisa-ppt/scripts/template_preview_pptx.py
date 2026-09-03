@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Template Preview PPTX Exporter
+Lisa's PPT - Template Preview PPTX Exporter
 
 Export complete Slide SVG prototypes as a structured review deck.
 
@@ -379,7 +379,7 @@ def main(argv: list[str] | None = None) -> int:
             all_svg_files
         )
 
-        print("PPT Master - Template Preview PPTX Exporter")
+        print("Lisa's PPT - Template Preview PPTX Exporter")
         print(f"  Workspace: {workspace}")
         print(f"  Template source: {template_dir}")
         print(f"  Slide SVG prototypes: {len(svg_files)}")

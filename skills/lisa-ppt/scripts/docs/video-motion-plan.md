@@ -1,8 +1,8 @@
 # Video Motion Plan
 
 `video_motion_plan.py` converts a resolved SVG-to-PPTX conversion trace into a
-renderer-neutral motion plan. It is the handoff between PPT Master's canonical
-custom animation and any SVG-native or post-production video renderer.
+renderer-neutral motion plan. It is the handoff between the canonical custom
+animation of Lisa's PPT and any SVG-native or post-production video renderer.
 
 The planner exists to prevent a video path from reducing animation to delay
 values. The conversion trace is authoritative because it already contains the

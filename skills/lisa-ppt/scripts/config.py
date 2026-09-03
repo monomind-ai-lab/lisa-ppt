@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Unified Configuration Management Module
+Lisa's PPT - Unified Configuration Management Module
 
 Centrally manages all project configuration items to ensure consistency and maintainability.
 
@@ -50,8 +50,11 @@ CHART_TEMPLATES_DIR = TEMPLATES_DIR / 'charts'
 # Environment Configuration
 # ============================================================
 
-USER_CONFIG_DIR = Path.home() / '.ppt-master'
+USER_CONFIG_DIR = Path.home() / '.lisa-ppt'
 USER_ENV_FILE = USER_CONFIG_DIR / '.env'
+# The pre-rebrand user-level path; still read, after USER_ENV_FILE, so an
+# existing configuration keeps working.
+LEGACY_USER_ENV_FILE = Path.home() / '.ppt-master' / '.env'
 
 
 def get_env_candidates() -> list[Path]:
@@ -61,6 +64,7 @@ def get_env_candidates() -> list[Path]:
         PROJECT_ROOT / '.env',
         REPO_ROOT / '.env',
         USER_ENV_FILE,
+        LEGACY_USER_ENV_FILE,
     ]
 
 
@@ -661,7 +665,7 @@ class Config:
 def build_parser() -> argparse.ArgumentParser:
     """Build the command-line parser."""
     parser = argparse.ArgumentParser(
-        description="PPT Master configuration management tool.",
+        description="Lisa's PPT configuration management tool.",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("list-formats", help="List all canvas formats")

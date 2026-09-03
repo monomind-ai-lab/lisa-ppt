@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Source to Markdown Dispatcher
+Lisa's PPT - Source to Markdown Dispatcher
 
 Shared routing and backend command construction for source-to-Markdown tools.
 

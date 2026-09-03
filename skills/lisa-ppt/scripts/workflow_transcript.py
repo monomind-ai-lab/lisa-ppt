@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Automatic Workflow Transcript
+Lisa's PPT - Automatic Workflow Transcript
 
 Internal runtime helper that records a project-scoped Python tool's command
 envelope and material text outcomes in an existing project workflow log.
@@ -25,8 +25,11 @@ from pathlib import Path
 from typing import TextIO
 
 WORKFLOW_LOG_RELATIVE_PATH = Path("validation/workflow.log")
-PROJECT_PATH_ENV = "PPT_MASTER_PROJECT_PATH"
-DISABLE_TRANSCRIPT_ENV = "PPT_MASTER_DISABLE_WORKFLOW_TRANSCRIPT"
+PROJECT_PATH_ENV = "LISA_PPT_PROJECT_PATH"
+DISABLE_TRANSCRIPT_ENV = "LISA_PPT_DISABLE_WORKFLOW_TRANSCRIPT"
+# Pre-rebrand names, still honoured so an existing shell setup keeps working.
+_LEGACY_PROJECT_PATH_ENV = "PPT_MASTER_PROJECT_PATH"
+_LEGACY_DISABLE_TRANSCRIPT_ENV = "PPT_MASTER_DISABLE_WORKFLOW_TRANSCRIPT"
 _EXCLUDED_ENTRYPOINTS = {"workflow_log.py"}
 _CRITICAL_MARKERS = ("[ERROR]", "[FAIL]")
 _ALWAYS_RETAIN_MARKERS = (
@@ -80,7 +83,10 @@ def _candidate_directory(value: str) -> Path | None:
 
 def _find_project_root(argv: list[str]) -> Path | None:
     """Find the first ancestor that already owns a workflow log."""
-    explicit_project = os.environ.get(PROJECT_PATH_ENV, "").strip()
+    explicit_project = (
+        os.environ.get(PROJECT_PATH_ENV, "").strip()
+        or os.environ.get(_LEGACY_PROJECT_PATH_ENV, "").strip()
+    )
     values = [explicit_project, *argv[1:], str(Path.cwd())]
     for value in values:
         directory = _candidate_directory(value)
@@ -302,7 +308,7 @@ def install_auto_transcript(argv: list[str] | None = None) -> Path | None:
     effective_argv = list(sys.argv if argv is None else argv)
     if _ACTIVE_TRANSCRIPT is not None:
         return None
-    if os.environ.get(DISABLE_TRANSCRIPT_ENV):
+    if os.environ.get(DISABLE_TRANSCRIPT_ENV) or os.environ.get(_LEGACY_DISABLE_TRANSCRIPT_ENV):
         return None
     if Path(effective_argv[0]).name in _EXCLUDED_ENTRYPOINTS:
         return None

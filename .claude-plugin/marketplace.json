@@ -1,42 +1,15 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "monomind-ppt",
   "owner": {
     "name": "MonoMind AI Lab",
-    "url": "https://github.com/monomind-ai-lab"
+    "url": "https://monomind.one"
   },
-  "metadata": {
-    "description": "PPT Master skill — AI generates natively editable PPTX from any document",
-    "version": "6.1.0"
-  },
+  "description": "MonoMind's agent skill for natively editable PowerPoint: the .pptx side of Hi Ted, Meet Lisa.",
   "plugins": [
     {
       "name": "lisa-ppt",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/monomind-ai-lab/lisa-ppt.git",
-        "path": "skills"
-      },
-      "description": "Generate natively editable PPTX from PDF / DOCX / URL / Markdown — real DrawingML shapes, text boxes, charts, and animations. Note: run `pip install -r requirements.txt` inside the installed plugin directory for the Python post-processing scripts to work.",
-      "author": {
-        "name": "MonoMind AI Lab",
-        "url": "https://github.com/monomind-ai-lab"
-      },
-      "homepage": "https://github.com/monomind-ai-lab/lisa-ppt",
-      "repository": "https://github.com/monomind-ai-lab/lisa-ppt",
-      "license": "MIT",
-      "category": "productivity",
-      "keywords": [
-        "pptx",
-        "presentation",
-        "powerpoint",
-        "svg",
-        "drawingml",
-        "ai",
-        "skill",
-        "office",
-        "document-conversion"
-      ]
+      "source": "./",
+      "description": "Turns a document or a brief into a natively editable PowerPoint deck. Every shape, text box and chart is a PowerPoint object; one .pptx, no web mode."
     }
   ]
 }

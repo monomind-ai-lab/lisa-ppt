@@ -4,7 +4,7 @@
 
 ---
 
-PPT Master can turn the speaker notes into per-slide narration via [`edge-tts`](https://github.com/rany2/edge-tts) (Microsoft Edge's online neural voices) by default, or via ElevenLabs, MiniMax, Qwen TTS, and CosyVoice when you need higher-quality cloud narration or a cloned voice. Edge, ElevenLabs, MiniMax, and timestamp-capable CosyVoice voices generate page-local SRT from provider timing returned with the same synthesis. Qwen remains audio-only because its current TTS API exposes no timestamps. The audio can then be embedded back into the PPTX for PowerPoint's native video export.
+Lisa's PPT can turn the speaker notes into per-slide narration via [`edge-tts`](https://github.com/rany2/edge-tts) (Microsoft Edge's online neural voices) by default, or via ElevenLabs, MiniMax, Qwen TTS, and CosyVoice when you need higher-quality cloud narration or a cloned voice. Edge, ElevenLabs, MiniMax, and timestamp-capable CosyVoice voices generate page-local SRT from provider timing returned with the same synthesis. Qwen remains audio-only because its current TTS API exposes no timestamps. The audio can then be embedded back into the PPTX for PowerPoint's native video export.
 
 ## What you get
 
@@ -20,12 +20,12 @@ PPT Master can turn the speaker notes into per-slide narration via [`edge-tts`](
 
 ## How it works
 
-1. **Speaker notes are written as pure spoken narration.** PPT Master's notes spec deliberately produces TTS-friendly prose — no bracketed stage markers, no `Key points:` / `Duration:` meta-lines — so what is read aloud is exactly what's on the page.
+1. **Speaker notes are written as pure spoken narration.** The notes spec deliberately produces TTS-friendly prose — no bracketed stage markers, no `Key points:` / `Duration:` meta-lines — so what is read aloud is exactly what's on the page.
 2. **AI picks the voice for you.** When you ask for narration, the AI checks the deck's primary language (`zh-CN` / `en-US` / `ja-JP` / `ko-KR` / …), pulls the selected provider's voice catalog, and recommends 3–6 candidates with a one-line tone description for each (e.g. "steady male voice for financial reporting"). It also recommends a speaking rate or provider defaults based on notes density.
 3. **Settings resolve once.** Default Generate and Edit Native PPTX ask once for provider, voice, rate, embedding, and optional video export. Quick uses explicit values and automatically resolves unspecified provider, voice, rate, and embedding choices; video remains off unless direct video delivery was requested.
 4. **Generation runs.** Edge, ElevenLabs, MiniMax, and timestamp-capable CosyVoice voices write each page's audio and SRT from provider timing returned by the same synthesis; Qwen and explicit CosyVoice audio-only mode write audio only. A complete run atomically writes `audio/manifest.json` for provenance. For Generate PPTX with narration-cue synchronization, page-local SRT and canonical custom animation let the AI map current SVG content groups to numbered SRT cues and derive click-free `narration_animations.json`; narration-independent custom motion keeps canonical timing, while no animation sidecar inherits the base export's resolved motion. It then re-exports the deck with audio attached and, when page-local SRT exists, merges it using timing values read from that final PPTX. Automatic video delivery continues through PowerPoint's native encoder and, when cues exist, the verified sound mix. An explicitly selected slideshow capture instead records PowerPoint's real-time full-screen picture and system audio, skips that mixer, and aligns any delivery SRT against the accepted capture. Long-audio import and automatic long-audio splitting are not supported.
 
-Subtitles remain external artifacts: PPT Master does not embed them into the PPTX or burn them into the MP4. Automatic video export delegates to installed Windows PowerPoint; it is not a separate renderer.
+Subtitles remain external artifacts: Lisa's PPT does not embed them into the PPTX or burn them into the MP4. Automatic video export delegates to installed Windows PowerPoint; it is not a separate renderer.
 
 The shared stage is documented in [`workflows/stages/generate-audio.md`](../skills/lisa-ppt/workflows/stages/generate-audio.md).
 
@@ -183,7 +183,7 @@ MiniMax requests word-level subtitles on the same non-streaming T2A request and 
 
 CosyVoice timestamp support is model/voice-specific: cloned voices from `cosyvoice-v3.5-plus`, `cosyvoice-v3.5-flash`, `cosyvoice-v3-plus`, `cosyvoice-v3-flash`, and `cosyvoice-v2` are supported, as are system voices explicitly marked timestamp-capable in the [CosyVoice voice list](https://help.aliyun.com/en/model-studio/cosyvoice-voice-list). The model and voice family must match. If a selected voice cannot return timing and audio-only output is intentional, pass `--cosyvoice-audio-only`.
 
-Qwen's current TTS HTTP and realtime responses return audio but no word or character alignment. PPT Master therefore keeps Qwen audio-only instead of estimating SRT timing. Choose Edge, ElevenLabs, MiniMax, or a timestamp-capable CosyVoice voice when page-local subtitles are required.
+Qwen's current TTS HTTP and realtime responses return audio but no word or character alignment. Lisa's PPT therefore keeps Qwen audio-only instead of estimating SRT timing. Choose Edge, ElevenLabs, MiniMax, or a timestamp-capable CosyVoice voice when page-local subtitles are required.
 
 ### Provider capability and parameter choices
 
@@ -199,7 +199,7 @@ The CLI rejects out-of-range ElevenLabs stability/similarity/style values, Eleve
 
 These decisions follow the current [ElevenLabs speech-with-timing API](https://elevenlabs.io/docs/api-reference/text-to-speech/convert-with-timestamps), [ElevenLabs model guide](https://elevenlabs.io/docs/overview/capabilities/text-to-speech), [Qwen TTS API](https://www.alibabacloud.com/help/en/model-studio/qwen-tts-api), and [Qwen-Audio-TTS/CosyVoice HTTP API](https://help.aliyun.com/en/model-studio/cosyvoice-tts-http-api). Alibaba Cloud now recommends a workspace-specific Beijing domain for the CosyVoice HTTP endpoint; pass it through `--cosyvoice-base-url` when available. The legacy domain remains functional.
 
-Alibaba Cloud's current [TTS model guide](https://www.alibabacloud.com/help/en/model-studio/tts-model/) recommends Qwen-Audio 3.0 for new preset/cloned-voice workflows. Those model IDs use the Qwen-Audio-TTS/CosyVoice API and a different voice contract, and still do not provide timestamps. PPT Master therefore does not silently replace the compatible `qwen3-tts-flash` default; migrate the model and its matching voice explicitly when audio quality is the reason, not subtitle parity.
+Alibaba Cloud's current [TTS model guide](https://www.alibabacloud.com/help/en/model-studio/tts-model/) recommends Qwen-Audio 3.0 for new preset/cloned-voice workflows. Those model IDs use the Qwen-Audio-TTS/CosyVoice API and a different voice contract, and still do not provide timestamps. Lisa's PPT therefore does not silently replace the compatible `qwen3-tts-flash` default; migrate the model and its matching voice explicitly when audio quality is the reason, not subtitle parity.
 
 `audio/` is the single active narration set. The manifest records its source, so provider subdirectories are not created by default. Before regeneration, the script removes stale `manifest.json` and `total.srt`; audio-only providers also remove same-stem stale page SRT files. Use a separate explicit output directory only when you intentionally need to preserve an alternate provider run.
 
@@ -239,9 +239,9 @@ Audio embedded into PPTX must use a PowerPoint-reliable format: `m4a` (AAC), `mp
 
 ## Use a cloned voice
 
-Four cloud providers — **ElevenLabs**, **MiniMax**, **Qwen**, **CosyVoice** — let you clone a voice from a short sample and then synthesize new speech in that voice. PPT Master narrates the entire deck in your cloned voice as long as you can hand it a `voice_id`. (`edge` does not support cloning.)
+Four cloud providers — **ElevenLabs**, **MiniMax**, **Qwen**, **CosyVoice** — let you clone a voice from a short sample and then synthesize new speech in that voice. Lisa's PPT narrates the entire deck in your cloned voice as long as you can hand it a `voice_id`. (`edge` does not support cloning.)
 
-**The split of responsibilities**: voice cloning itself happens in the provider's console or API — you upload a sample (typically 10 s – a few minutes of clean audio) and the provider returns a `voice_id`. PPT Master is on the *consumption* side: it takes that `voice_id` and reads every slide's notes in that voice. PPT Master never uploads your sample anywhere.
+**The split of responsibilities**: voice cloning itself happens in the provider's console or API — you upload a sample (typically 10 s – a few minutes of clean audio) and the provider returns a `voice_id`. Lisa's PPT is on the *consumption* side: it takes that `voice_id` and reads every slide's notes in that voice. Lisa's PPT never uploads your sample anywhere.
 
 | Provider | Where to clone | Sample length |
 |---|---|---|
@@ -286,7 +286,7 @@ Cloud TTS providers do not require extra Python packages; they use HTTPS directl
 
 Automatic MP4 export adds no Python package. It requires Windows PowerPoint 2016+ and Windows PowerShell; macOS and systems without compatible PowerPoint keep the narrated PPTX and use manual export.
 
-Real-time slideshow capture adds no PPT Master package. It requires desktop
+Real-time slideshow capture adds no Lisa's PPT package. It requires desktop
 Windows PowerPoint plus a recorder that can capture the presentation picture
 and application/system audio. [OBS Studio](https://obsproject.com/kb/quick-start-guide)
 and [Windows Game Bar](https://support.microsoft.com/en-us/accessibility/windows/use-a-screen-reader-to-record-your-screen-with-xbox-game-bar)
@@ -345,7 +345,7 @@ audio player; the recorder only captures its output.
 5. Confirm that the final file has video and audio streams, narration is intelligible, every configured cue is audible exactly once, animations/transitions completed, and no dropped frames or desktop UI are visible.
 6. When page-local SRT exists, run `video_subtitles.py` against the final trimmed capture. It aligns the frozen narration text to the actual recorded audio.
 
-The current capture acceptance is human-audited; PPT Master does not claim a
+The current capture acceptance is human-audited; Lisa's PPT does not claim a
 machine cue receipt for it. If cue levels mask narration or clip, repair the
 PPTX/cue assets and record again, or use native export plus the deterministic
 gain/limiter mix. A Linux host can prepare the complete narrated PPTX, audio,
@@ -370,6 +370,6 @@ path when animation fidelity matters.
 **Tips**:
 
 - **Generated narration does not need a microphone** — native export needs no recording session. Real-time slideshow capture records application/system audio with the microphone disabled. Re-runs reuse the same notes and settings, but cloud models may still produce small nondeterministic differences.
-- **Animation fidelity on Windows** — PowerPoint's Windows video export preserves PPT Master's native visual page transitions and click-free object animation. Animation sound uses either the verified post-export mix or the mutually exclusive real-time slideshow capture above. Mac movie export has the limitation noted above. See [Animations & Transitions](./animations.md).
+- **Animation fidelity on Windows** — PowerPoint's Windows video export preserves the native visual page transitions and click-free object animation Lisa's PPT writes. Animation sound uses either the verified post-export mix or the mutually exclusive real-time slideshow capture above. Mac movie export has the limitation noted above. See [Animations & Transitions](./animations.md).
 - **Want to tweak just one slide's audio?** Edit `notes/<page>.md`, re-run `notes_to_audio.py` and the embedding step, then re-export the video — total turnaround is usually under a minute per slide.
 - **File size**: a 20-page deck at Full HD typically lands at 30–80 MB depending on imagery. Drop to HD if you need a smaller file for sharing.

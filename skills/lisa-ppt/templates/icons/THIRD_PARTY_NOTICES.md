@@ -1,7 +1,7 @@
 # Third-Party Icon Notices
 
-The SVG files under this directory include third-party assets. PPT Master's
-MIT license covers PPT Master itself; it does not replace the licenses,
+The SVG files under this directory include third-party assets. The MIT
+license of Lisa's PPT covers Lisa's PPT itself; it does not replace the licenses,
 attribution requirements, brand guidelines, or trademark rights that apply to
 these assets.
 
@@ -11,7 +11,7 @@ Snapshot date: **2026-08-09**.
 
 | Directory | Upstream baseline | Bundled files | Compatibility boundary |
 |---|---|---:|---|
-| `chunk-filled` | [CHUNK Icons](https://www.figma.com/community/file/1327310800295849271/chunk-icons), versionless snapshot cross-checked against the [SVG Repo collection](https://www.svgrepo.com/collection/chunk-16px-thick-interface-icons/) and [Wikimedia Commons category](https://commons.wikimedia.org/wiki/Category:Chunk_Icons) | 641 | PPT Master-normalized files; historical local basenames remain stable |
+| `chunk-filled` | [CHUNK Icons](https://www.figma.com/community/file/1327310800295849271/chunk-icons), versionless snapshot cross-checked against the [SVG Repo collection](https://www.svgrepo.com/collection/chunk-16px-thick-interface-icons/) and [Wikimedia Commons category](https://commons.wikimedia.org/wiki/Category:Chunk_Icons) | 641 | Lisa's PPT-normalized files; historical local basenames remain stable |
 | `tabler-filled` | [Tabler Icons v3.46.0](https://github.com/tabler/tabler-icons/releases/tag/v3.46.0), commit `8ac7d81b72ece11072ef25ea9fd92e80c6f3c9fc` | 1,055 | 1,054 upstream files plus 1 legacy spelling alias |
 | `tabler-outline` | [Tabler Icons v3.46.0](https://github.com/tabler/tabler-icons/releases/tag/v3.46.0), commit `8ac7d81b72ece11072ef25ea9fd92e80c6f3c9fc` | 5,138 | 5,130 upstream files plus 8 legacy spelling aliases |
 | `phosphor-duotone` | [`@phosphor-icons/core@2.1.1`](https://www.npmjs.com/package/@phosphor-icons/core/v/2.1.1), npm integrity `sha512-v4ARvrip4qBCImOE5rmPUylOEK4iiED9ZyKjcvzuezqMaiRASCHKcRIuvvxL/twvLpkfnEODCOJp5dM4eZilxQ==` | 1,518 | 1,512 upstream files plus 6 legacy aliases; upstream `-duotone` filename suffixes are removed locally |
@@ -38,7 +38,7 @@ or recommends those marks.
 **CHUNK Icons** by **Noah Jacobus** is licensed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-PPT Master modifications: root dimensions were normalized to 24 by 24,
+Lisa's PPT modifications: root dimensions were normalized to 24 by 24,
 hard-coded black fills were changed to `currentColor`, SVG Repo wrapper
 metadata was removed, and historical local filenames were retained. The icon
 geometry remains sourced from CHUNK. The `r` glyph was restored from the

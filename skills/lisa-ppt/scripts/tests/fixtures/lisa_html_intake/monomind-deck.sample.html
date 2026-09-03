@@ -1,0 +1,158 @@
+<!doctype html>
+<!-- LISA:CONTENT-MAP
+     Editable regions, fenced by LISA:CONTENT-START/END comments:
+       slides — the deck's slides, cover through closing (all placeholder content, incl. data-screen-label on each <section>)
+       notes — the speaker-notes JSON
+     Named edit points outside the fences:
+       <title> in <head>
+       the known-terms TERMS regex in the translation-guard script (add product terms there)
+     Everything else (head, CSS, chrome markup, scripts, artwork) is load-bearing:
+     copy this file with cp, never retype it, and edit only what is named here. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project Context · How It Works</title>
+<style>
+:root {
+  --bg: #eef6ff;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-warm: rgba(238, 246, 255, 0.72);
+  --fg: #102033;
+  --fg-2: #34465f;
+  --muted: #60708a;
+  --meta: #4f8cff;
+  --border: rgba(255, 255, 255, 0.64);
+  --border-soft: rgba(255, 255, 255, 0.38);
+  --accent: #4f8cff;
+  --accent-on: #ffffff;
+  --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+  --accent-active: color-mix(in oklab, var(--accent), black 14%);
+  --success: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 36px;
+  --text-3xl: 54px;
+  --text-4xl: 76px;
+  --leading-body: 1.55;
+  --leading-tight: 1.04;
+  --tracking-display: -0.025em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 104px;
+  --section-y-tablet: 72px;
+  --section-y-phone: 52px;
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 24px 80px rgba(79, 140, 255, 0.18);
+  --focus-ring: 0 0 0 4px rgba(79, 140, 255, 0.28);
+  --motion-fast: 180ms;
+  --motion-base: 280ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --container-max: 1180px;
+  --container-gutter-desktop: 36px;
+  --container-gutter-tablet: 24px;
+  --container-gutter-phone: 16px;
+}
+:root {
+  --font-display: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  --font-body:    "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+}
+:root {
+  
+  --halo-a:      color-mix(in srgb, var(--accent) 24%, transparent);
+  --halo-b:      color-mix(in srgb, var(--fg-2)  12%, transparent);
+
+  
+  --glass-hi:    color-mix(in srgb, var(--accent-on) 10%, transparent);
+  --glass-hi-2:  color-mix(in srgb, var(--accent-on) 16%, transparent);
+  --glass-hair:  color-mix(in srgb, var(--accent-on) 22%, transparent);
+  --fg-inv:      var(--accent-on);
+  --muted-inv:   color-mix(in srgb, var(--accent-on) 72%, transparent);
+
+  
+  --accent-wash: color-mix(in srgb, var(--accent) 10%, transparent);
+  --accent-hair: color-mix(in srgb, var(--accent) 46%, transparent);
+  --accent-glow: 0 24px 80px color-mix(in srgb, var(--accent) 22%, transparent);
+
+  --hair:        color-mix(in srgb, var(--fg-2) 24%, transparent);
+
+  --blur: blur(22px) saturate(140%);
+}
+:root {
+  
+  --text-xs: 13.5px;   
+  --text-sm: 15.5px;   
+  --text-base: 18px;   
+  --text-lg: 20px;     
+  --text-xl: 28px;     
+  
+  --text-2xl: 46px;    
+  --text-3xl: 68px;    
+  --text-4xl: 100px;   
+  --leading-body: 1.65;
+  
+  --space-1: 5px;  --space-2: 11px; --space-3: 16px; --space-4: 22px;
+  --space-5: 28px; --space-6: 34px; --space-8: 44px; --space-12: 64px;
+}
+</style>
+</head>
+<body>
+<!-- two-slide sample extracted from monomind-deck.html (MonoMind's own preview) for the importer tests -->
+<!-- LISA:CONTENT-START slides -->
+<section class="slide hero dark is-photo cover-hero" data-screen-label="01 Cover" data-od-id="slide-cover" role="group" aria-label="Slide 01 Cover">
+    <a class="brand-mark" href="https://monomind.one/?ref=deck-mark" target="_blank" rel="noopener noreferrer" aria-label="MonoMind AI Lab — opens monomind.one in a new tab"></a>
+    <div class="cover-kicker" data-od-id="cover-kicker">
+      <p class="eyebrow">MonoMind AI Lab · Open source · MIT</p>
+    </div>
+
+    <div class="cover-title" data-od-id="cover-title">
+      <h1 class="h-hero">The complete guide to Project&nbsp;Context.</h1>
+      <p class="lead">Shared project context that outlives any one person, agent, or chat. A context pipeline you build straight into a repository or project folder — plain Markdown, Git-tracked, owned by the project.</p>
+    </div>
+
+    <div class="cover-meta" data-od-id="cover-meta">
+      <span>18 pages</span>
+      <span>Install · Operate · Extend</span>
+      <span>github.com/monomind-ai-lab</span>
+    </div>
+  </section>
+<section class="slide dark dg-slide dg-center" data-screen-label="02 Why it matters" data-od-id="slide-why" role="group" aria-label="Slide 02 Why it matters">
+    <a class="brand-mark" href="https://monomind.one/?ref=deck-mark" target="_blank" rel="noopener noreferrer" aria-label="MonoMind AI Lab — opens monomind.one in a new tab"></a>
+    <p class="eyebrow">Part 1 · Why</p>
+    <h2 class="h-md">A collaborator returning after three weeks should not rebuild the project from stale chats.</h2>
+    <p class="lead">Project Context answers four questions through a small set of typed Markdown records and a maintenance protocol that works across repositories and agent harnesses.</p>
+
+    <div class="dg-canvas">
+      <div class="grid-4">
+        <div class="qcard" data-od-id="q-now"><div class="qn">Q1</div><h4>What is true now?</h4><p>Active state, blockers, and what happens next.</p></div>
+        <div class="qcard" data-od-id="q-decisions"><div class="qn">Q2</div><h4>Which decisions constrain the work?</h4><p>Accepted choices, with the rationale intact.</p></div>
+        <div class="qcard" data-od-id="q-learnings"><div class="qn">Q3</div><h4>What has already been learned?</h4><p>Verified lessons future collaborators should reuse.</p></div>
+        <div class="qcard" data-od-id="q-evidence"><div class="qn">Q4</div><h4>Where is the evidence?</h4><p>Links to the source, dataset, review, or record.</p></div>
+      </div>
+
+      <div class="dg-loop" data-od-id="why-summary"><b>Unlike chat history, proprietary memory, or generated documentation</b>, that context stays portable across collaborators and tools — and remains owned by the project.</div>
+    </div>
+  </section>
+<!-- LISA:CONTENT-END slides -->
+
+</body>
+</html>

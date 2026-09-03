@@ -4,7 +4,7 @@
 > `projects/` tree. Copy every other local path, even when `--move` is supplied.
 > Use `--copy` to preserve a projects-local source.
 
-Project tools create, validate, and inspect the standard PPT Master workspace.
+Project tools create, validate, and inspect the standard Lisa's PPT workspace.
 
 ## `project_manager.py`
 
@@ -184,7 +184,7 @@ For a Python helper whose arguments and working directory do not identify the
 active project, set the routing signal on the same command:
 
 ```bash
-PPT_MASTER_PROJECT_PATH="<project_path>" python3 scripts/<helper>.py <args...>
+LISA_PPT_PROJECT_PATH="<project_path>" python3 scripts/<helper>.py <args...>
 ```
 
 This variable selects only the destination transcript; it does not authorize

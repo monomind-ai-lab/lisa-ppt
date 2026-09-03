@@ -4,7 +4,7 @@
 
 ---
 
-PPT Master writes **page transitions** and optional **element object
+Lisa's PPT writes **page transitions** and optional **element object
 animations** as real PowerPoint OOXML, not embedded video. Object animation
 includes entrance, emphasis, motion-path, and exit effects. This guide covers
 the choices and commands users need; exact effect mappings, the complete
@@ -126,7 +126,7 @@ audio/video workflows because they require media or bookmark targets.
 
 ## Add Sound After Choosing Motion
 
-Sound effects are off by default. PPT Master includes a global CC0 sound
+Sound effects are off by default. Lisa's PPT includes a global CC0 sound
 library, but it is not copied during strategy or ordinary project setup. First
 finish the SVG pages and choose the visual transition/object motion. Only when
 one of those resolved beats has a specific auditory job should you read the
@@ -139,7 +139,7 @@ python3 skills/lisa-ppt/scripts/sound_sync.py \
 ```
 
 The command copies only the selected files into
-`<project>/sounds/<namespace>/`. With no selected cue, PPT Master creates no
+`<project>/sounds/<namespace>/`. With no selected cue, Lisa's PPT creates no
 project sound directory and copies nothing. After reviewing the vocabulary,
 the CLI may narrow an already-considered label, tag, or context without deciding
 fit:
@@ -264,7 +264,7 @@ When a user asks the AI to tune individual objects, use the [`customize-animatio
 
 ## Validation & Compatibility
 
-PPT Master validates animation settings strictly: unknown effects or Start modes, invalid timing values, missing slide/group references, and attempts to animate structural objects fail instead of silently changing behavior. Export also reads the candidate PPTX back before replacing an existing output.
+Lisa's PPT validates animation settings strictly: unknown effects or Start modes, invalid timing values, missing slide/group references, and attempts to animate structural objects fail instead of silently changing behavior. Export also reads the candidate PPTX back before replacing an existing output.
 
 | Boundary | User-facing consequence |
 |---|---|

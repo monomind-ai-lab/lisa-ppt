@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Environment Preflight
+Lisa's PPT - Environment Preflight
 
 Pre-pipeline environment gate. Run once per session before a deck run so a
 long pipeline never dies mid-way on a missing dependency. Fails
@@ -50,7 +50,10 @@ OPTIONAL_MODULES = (
     ("playwright", "playwright", "visual-review rendering is skipped "
      "(static geometry gate still runs)"),
 )
-FONT_FAMILY = "Pretendard"
+# Every family directory bundled under assets/fonts/ is a house family the
+# prompts may name; each must be installed where decks are authored or opened.
+FONTS_DIR = _SCRIPTS_DIR.parent / "assets" / "fonts"
+FONT_FAMILY = "Pretendard"  # fallback when the bundle directory is absent
 # Per-directory guard against a pathological scan. Hitting it means "unknown",
 # never "not installed" — see font_installed().
 FONT_SCAN_CAP = 20000
@@ -121,21 +124,40 @@ def font_installed(family: str = FONT_FAMILY) -> Optional[bool]:
     return None if truncated else False
 
 
+def bundled_font_families() -> list[str]:
+    """House families bundled under assets/fonts/, one directory each."""
+    if not FONTS_DIR.is_dir():
+        return [FONT_FAMILY]
+    names = sorted(
+        p.name for p in FONTS_DIR.iterdir()
+        if p.is_dir() and any(f.suffix.lower() in FONT_SUFFIXES for f in p.iterdir())
+    )
+    return names or [FONT_FAMILY]
+
+
 def check_fonts() -> list[str]:
-    state = font_installed()
-    if state is True:
-        return []
-    if state is None:
-        return [
-            f"could not determine whether '{FONT_FAMILY}' is installed — a font "
-            f"directory exceeded {FONT_SCAN_CAP} entries; verify manually if the "
-            f"deck renders with fallback fonts"
-        ]
-    return [
-        f"'{FONT_FAMILY}' font not found in system/user font directories — "
-        f"decks render with fallback fonts in preview and export. Install with "
-        f"python3 skills/lisa-ppt/scripts/install_fonts.py (repository AGENTS.md font policy)"
-    ]
+    warns = []
+    missing = []
+    for family in bundled_font_families():
+        state = font_installed(family)
+        if state is True:
+            continue
+        if state is None:
+            warns.append(
+                f"could not determine whether '{family}' is installed — a font "
+                f"directory exceeded {FONT_SCAN_CAP} entries; verify manually if the "
+                f"deck renders with fallback fonts"
+            )
+        else:
+            missing.append(family)
+    if missing:
+        warns.append(
+            f"house font(s) not found in system/user font directories: "
+            f"{', '.join(missing)} — decks render with fallback fonts in preview "
+            f"and export. Install with python3 skills/lisa-ppt/scripts/install_fonts.py "
+            f"(repository AGENTS.md font policy)"
+        )
+    return warns
 
 
 def check_image_backend() -> list[str]:
@@ -168,7 +190,7 @@ def check_codex_stubs() -> list[str]:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Pre-pipeline environment gate for PPT Master.",
+        description="Pre-pipeline environment gate for Lisa's PPT.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("--needs-images", action="store_true",

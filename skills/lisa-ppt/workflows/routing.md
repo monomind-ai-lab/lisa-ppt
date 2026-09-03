@@ -1,10 +1,10 @@
 ---
-description: Deterministic selection among PPT Master's three top-level artifact routes.
+description: Deterministic selection among the three top-level artifact routes of Lisa's PPT.
 ---
 
 # Routing Rules
 
-Route selection authority for PPT Master. Select exactly one top-level route, then activate only the child workflows, profiles, and stages owned by that route.
+Route selection authority for Lisa's PPT. Select exactly one top-level route, then activate only the child workflows, profiles, and stages owned by that route.
 
 **Hard rule**: when this file conflicts with a route summary elsewhere in the Skill package or a repository-level document, this file wins for route selection. After selection, the active runtime authority owns execution.
 
@@ -42,6 +42,7 @@ Route selection authority for PPT Master. Select exactly one top-level route, th
 | Existing PPTX must preserve wording, page count, and order 1:1 | Activate [`beautify-pptx`](./profiles/beautify-pptx.md); Quick when that profile's explicit trigger also matches, otherwise `generate-pptx` |
 | Effective delivery purpose is recorded, self-running, or video-directed | Inside the selected runtime, load [`video-design`](../references/video-design.md) before whole-solution/page planning; a design reference, not a profile — notes, animation, audio, and native MP4 stay with their stages |
 | Explicit quick/fast, skip-strategy, or direct SVG-to-PPTX intent without an active fidelity profile | Load [`quick-generate`](./profiles/quick-generate.md) directly without `generate-pptx.md`: prepare sources/resources as needed, decide without interaction, apply at most one exact workspace root per kind supplied for this run (otherwise free design), omit Strategist/Confirm UI/spec/lock, hand-author SVG, run the lockless final checker, export |
+| The source is a Hi Ted, Meet Lisa HTML slide deck (a `LISA:CONTENT-MAP` header, `section.slide` carrying `data-screen-label` or `data-label-*`, the template's `:root` tokens), or the user runs `/lisa-ppt <deck>.html` or asks for a PPTX from a Lisa deck | Run [`lisa-deck`](./lisa-deck.md) in place of Generate Steps 1–2: `lisa_html_intake.py` writes typed `sources/` plus a pre-filled `design_spec.md` from the deck's own tokens; then continue Default Generate at Step 3 — Stage 1 / Stage 2 confirmation is unchanged and never skipped. Explicit Quick intent runs the importer, then `quick-generate`. Lisa document-kind files are ordinary HTML for Step 1 |
 | Topic only, or sources leave planning-critical factual gaps | Run [`topic-research`](./stages/topic-research.md) inside the selected profile's source preparation — immediately for topic-only input, after conversion and reading for source-backed input; research only the identified gaps |
 | Existing PPTX must be split, merged, or re-outlined into newly designed pages | Treat the PPTX as source content through the selected Generate authority's intake; Default unless explicit Quick intent |
 | Existing PPTX pages dropped, reordered, or repeated without redesign | Not Generate: Edit Native PPTX, whose `page_plan.json` owns selection, order, and repetition |

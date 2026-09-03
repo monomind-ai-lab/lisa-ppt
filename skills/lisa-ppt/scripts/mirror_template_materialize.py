@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Mirror Template Materializer
+Lisa's PPT - Mirror Template Materializer
 
 Materialize a deterministic structured SVG template workspace from one Type A
 PPTX import workspace. The editable authoring IR is the only authoring input;
@@ -13,7 +13,7 @@ Usage:
         <import_workspace> <template_workspace>
 
 Dependencies:
-    None (standard library and sibling PPT Master modules only).
+    None (standard library and sibling Lisa's PPT modules only).
 """
 
 from __future__ import annotations

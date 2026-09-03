@@ -1,7 +1,7 @@
 # Third-Party Sound Notices
 
 The WAV files under this directory are modified copies of third-party CC0
-sound assets. PPT Master's MIT license covers PPT Master itself; the source
+sound assets. The MIT license of Lisa's PPT covers Lisa's PPT itself; the source
 declarations below describe the bundled sounds.
 
 ## Bundled snapshot

@@ -2,7 +2,7 @@
 name: diagram-design
 description: >
   Diagram design reference library (14 types — architecture, flowchart, sequence, state, ER,
-  timeline, swimlane, quadrant, nested, tree, org chart, layers, venn, pyramid). In ppt-master this
+  timeline, swimlane, quadrant, nested, tree, org chart, layers, venn, pyramid). In lisa-ppt this
   is consumed by the Executor when hand-authoring diagram-type SVG pages — it is NOT a standalone
   HTML generator here. Read for deep per-type layout conventions.
 license: MIT
@@ -12,20 +12,20 @@ metadata:
 
 # Diagram Design
 
-> **ppt-master integration note:** This skill is vendored as a *reference library*. In this repo, diagram
-> slides are hand-authored by ppt-master's Executor as SVG pages in `svg_output/` — not emitted as
+> **lisa-ppt integration note:** This skill is vendored as a *reference library*. In this repo, diagram
+> slides are hand-authored by lisa-ppt's Executor as SVG pages in `svg_output/` — not emitted as
 > standalone HTML. Do NOT run the URL onboarding flow (`references/onboarding.md`) or the upstream
 > style-guide gate; colors, fonts, and icons always come from the project's `spec_lock.md`, and the SVG
-> must obey ppt-master's technical constraints
+> must obey lisa-ppt's technical constraints
 > (`skills/lisa-ppt/references/shared-standards.md`). The guidance below is upstream
 > context — read it for per-type layout conventions, node/edge discipline, and complexity budgets,
-> then author the page per ppt-master SKILL.md Step 6.
+> then author the page per lisa-ppt SKILL.md Step 6.
 >
 > The upstream onboarding / one-time-setup / standalone-HTML-export sections (§0 style-guide gate,
 > §5 Design System skinning, §6 HTML-skin SVG primitives, §7 page layout, §8 summary cards,
 > §10 templates & variants, §11 HTML output) are preserved **verbatim** in
 > [`references/diagram-onboarding-legacy.md`](references/diagram-onboarding-legacy.md) —
-> upstream provenance record only, never executed in ppt-master.
+> upstream provenance record only, never executed in lisa-ppt.
 
 Fourteen diagram types. One shared design system, complexity budget, and taste gate. Type-specific conventions live in `references/` and are loaded only when you pick a type.
 

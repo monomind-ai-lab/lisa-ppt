@@ -7,7 +7,7 @@ description: >
   Use when the user asks to create, generate, reconstruct, regenerate, beautify,
   redesign, template, fill, or enhance a presentation, PPT, PPTX, slide deck, or
   courseware — including adding narration or animation to one — requests a
-  presentation-authored narrated/self-running video, or mentions ppt-master —
+  presentation-authored narrated/self-running video, or mentions Lisa's PPT —
   in Korean too ("PPT 만들어줘", "이 템플릿에 내용 채워줘").
 metadata:
   version: "1.0.0"
@@ -17,9 +17,9 @@ metadata:
   license: "MIT"
 ---
 
-# PPT Master Skill
+# Lisa's PPT Skill
 
-PPT Master is a routed presentation workflow. This entry owns global execution discipline and route selection only; each selected route owns its procedure.
+Lisa's PPT is a routed presentation workflow. This entry owns global execution discipline and route selection only; each selected route owns its procedure.
 
 ## Mandatory Load Order
 
