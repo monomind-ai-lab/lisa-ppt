@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="pixel_retro_master" data-pptx-master-name="Pixel Retro"
+  data-pptx-layout="content" data-pptx-layout-name="Content">
+  <defs>
+    <filter id="content-glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+      <feFlood flood-color="#39FF14" flood-opacity="0.45" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#0D1117"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="content-top-rule" x="0" y="0" width="1280" height="4" fill="#39FF14" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-title-rule" x="60" y="120" width="200" height="2" fill="#30363D"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="content-bottom-rule" x="0" y="716" width="1280" height="4" fill="#39FF14" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="content-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="60 34 1040 48">
+    <text id="content-title-carrier" data-pptx-carrier="true"
+      x="60" y="70" fill="#39FF14" filter="url(#content-glow-green)"
+      font-family="Consolas, Monaco, monospace" font-size="36" font-weight="700">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="content-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="60 82 1040 26">
+    <text id="content-subtitle-carrier" data-pptx-carrier="true"
+      x="60" y="100" fill="#8B949E"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{PAGE_TITLE_EN}}</text>
+  </g>
+  <g id="content-object-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="60 140 1160 500">
+    <text id="content-object-carrier" data-pptx-carrier="true"
+      x="60" y="178" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CONTENT_AREA}}</text>
+  </g>
+  <g id="content-section-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="820 674 400 22">
+    <text id="content-section-carrier" data-pptx-carrier="true"
+      x="1220" y="690" text-anchor="end" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{PAGE_SUBTITLE}}</text>
+  </g>
+  <g id="content-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="4"
+    data-pptx-bounds="60 674 300 22">
+    <text id="content-pagenum-carrier" data-pptx-carrier="true"
+      x="60" y="690" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{PAGE_NUM}} / {{TOTAL_PAGES}}</text>
+  </g>
+</svg>

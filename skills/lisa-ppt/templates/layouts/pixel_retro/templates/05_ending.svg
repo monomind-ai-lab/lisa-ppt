@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="pixel_retro_master" data-pptx-master-name="Pixel Retro"
+  data-pptx-layout="ending" data-pptx-layout-name="Closing">
+  <defs>
+    <filter id="ending-glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+      <feFlood flood-color="#39FF14" flood-opacity="0.45" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ending-glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+      <feFlood flood-color="#FFD700" flood-opacity="0.45" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#0D1117"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="ending-top-rule-main" x="0" y="0" width="1280" height="4" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-top-rule-echo" x="0" y="4" width="1280" height="2" fill="#39FF14" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-scan-one" x1="0" y1="120" x2="1280" y2="120" stroke="#39FF14" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-scan-two" x1="0" y1="240" x2="1280" y2="240" stroke="#39FF14" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-scan-three" x1="0" y1="360" x2="1280" y2="360" stroke="#39FF14" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-scan-four" x1="0" y1="480" x2="1280" y2="480" stroke="#39FF14" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-scan-five" x1="0" y1="600" x2="1280" y2="600" stroke="#39FF14" stroke-width="1" stroke-opacity="0.05"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-card-one" x="60" y="160" width="380" height="280" fill="#161B22" stroke="#39FF14" stroke-width="3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-index-block-one" x="60" y="160" width="60" height="60" fill="#39FF14"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-index-one" x="90" y="202" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="32" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">1</text>
+  <rect id="ending-card-one-rule" x="80" y="230" width="340" height="2" fill="#30363D"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-card-one-bar-track" x="90" y="380" width="320" height="25" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-card-one-bar-fill" x="92" y="382" width="288" height="21" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-card-two" x="460" y="160" width="380" height="280" fill="#161B22" stroke="#00D4FF" stroke-width="3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-index-block-two" x="460" y="160" width="60" height="60" fill="#00D4FF"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-index-two" x="490" y="202" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="32" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">2</text>
+  <rect id="ending-card-two-rule" x="480" y="230" width="340" height="2" fill="#30363D"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-feature-cell-one" x="490" y="250" width="320" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-feature-cell-two" x="490" y="292" width="320" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-feature-cell-three" x="490" y="334" width="320" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-feature-cell-four" x="490" y="376" width="320" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-card-three" x="860" y="160" width="380" height="280" fill="#161B22" stroke="#FF2E97" stroke-width="3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-index-block-three" x="860" y="160" width="60" height="60" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-index-three" x="890" y="202" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="32" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">3</text>
+  <rect id="ending-card-three-rule" x="880" y="230" width="340" height="2" fill="#30363D"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-head-a" x="890" y="250" width="155" height="35" fill="#39FF14" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-head-b" x="1055" y="250" width="155" height="35" fill="#FF2E97" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-cell-a-one" x="890" y="292" width="155" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-cell-b-one" x="1055" y="292" width="155" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-cell-a-two" x="890" y="334" width="155" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-cell-b-two" x="1055" y="334" width="155" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-cell-a-three" x="890" y="376" width="155" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-compare-cell-b-three" x="1055" y="376" width="155" height="35" fill="#0D1117" stroke="#30363D" stroke-width="1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-cta-card" x="60" y="480" width="1160" height="120" fill="#161B22" stroke="#FFD700" stroke-width="3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-cta-band" x="60" y="480" width="1160" height="50" fill="#FFD700" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-saved-button" x="460" y="570" width="180" height="25" fill="#39FF14" stroke="#39FF14" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-saved-label" x="550" y="588" text-anchor="middle" fill="#0D1117"
+    font-family="Consolas, Monaco, monospace" font-size="14" font-weight="700"
+    data-pptx-layer="layout" data-pptx-editable="false">GAME SAVED ✓</text>
+  <rect id="ending-continue-button" x="660" y="570" width="180" height="25" fill="#0D1117" stroke="#39FF14" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-continue-label" x="750" y="588" text-anchor="middle" fill="#39FF14"
+    font-family="Consolas, Monaco, monospace" font-size="14"
+    data-pptx-layer="layout" data-pptx-editable="false">CONTINUE →</text>
+  <rect id="ending-pixel-bl-one" x="40" y="640" width="12" height="12" fill="#39FF14"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-pixel-bl-two" x="56" y="640" width="12" height="12" fill="#39FF14" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-pixel-bl-three" x="72" y="640" width="12" height="12" fill="#39FF14" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-pixel-br-one" x="1196" y="640" width="12" height="12" fill="#FF2E97" fill-opacity="0.3"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-pixel-br-two" x="1212" y="640" width="12" height="12" fill="#FF2E97" fill-opacity="0.6"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-pixel-br-three" x="1228" y="640" width="12" height="12" fill="#FF2E97"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-bottom-rule-echo" x="0" y="712" width="1280" height="4" fill="#39FF14" fill-opacity="0.4"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-bottom-rule-main" x="0" y="716" width="1280" height="4" fill="#39FF14" fill-opacity="0.8"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <text id="ending-end-label" x="1220" y="690" text-anchor="end" fill="#39FF14"
+    font-family="Consolas, Monaco, monospace" font-size="14"
+    data-pptx-layer="layout" data-pptx-editable="false">THE END</text>
+  <g id="ending-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 34 1000 60">
+    <text id="ending-title-carrier" data-pptx-carrier="true"
+      x="640" y="80" text-anchor="middle" fill="#39FF14" filter="url(#ending-glow-green)"
+      font-family="Consolas, Monaco, monospace" font-size="48" font-weight="700">{{THANK_YOU}}</text>
+  </g>
+  <g id="ending-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="140 96 1000 28">
+    <text id="ending-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="115" text-anchor="middle" fill="#8B949E"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">{{END_SUBTITLE}}</text>
+  </g>
+  <g id="ending-summary-one-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="140 176 280 40">
+    <text id="ending-summary-one-carrier" data-pptx-carrier="true"
+      x="140" y="200" fill="#39FF14"
+      font-family="Consolas, Monaco, monospace" font-size="22" font-weight="700">{{SUMMARY_1_TITLE}}</text>
+  </g>
+  <g id="ending-lines-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="80 236 340 136">
+    <text id="ending-lines-carrier" data-pptx-carrier="true"
+      x="90" y="270" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{SUMMARY_1_LINE_1}}<tspan x="90" dy="35">{{SUMMARY_1_LINE_2}}</tspan><tspan x="90" dy="35">{{SUMMARY_1_LINE_3}}</tspan></text>
+  </g>
+  <g id="ending-stat-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="80 408 340 22">
+    <text id="ending-stat-carrier" data-pptx-carrier="true"
+      x="90" y="420" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="12">{{SUMMARY_1_STAT}}</text>
+  </g>
+  <g id="ending-summary-two-slot" data-pptx-placeholder="object" data-pptx-idx="5"
+    data-pptx-bounds="540 176 280 40">
+    <text id="ending-summary-two-carrier" data-pptx-carrier="true"
+      x="540" y="200" fill="#00D4FF"
+      font-family="Consolas, Monaco, monospace" font-size="22" font-weight="700">{{SUMMARY_2_TITLE}}</text>
+  </g>
+  <g id="ending-feature-slot" data-pptx-placeholder="object" data-pptx-idx="6"
+    data-pptx-bounds="490 250 320 161">
+    <text id="ending-feature-carrier" data-pptx-carrier="true"
+      x="505" y="274" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">{{FEATURE_1}}<tspan x="505" dy="42">{{FEATURE_2}}</tspan><tspan x="505" dy="42">{{FEATURE_3}}</tspan><tspan x="505" dy="42">{{FEATURE_4}}</tspan></text>
+  </g>
+  <g id="ending-summary-three-slot" data-pptx-placeholder="object" data-pptx-idx="7"
+    data-pptx-bounds="940 176 280 40">
+    <text id="ending-summary-three-carrier" data-pptx-carrier="true"
+      x="940" y="200" fill="#FF2E97"
+      font-family="Consolas, Monaco, monospace" font-size="22" font-weight="700">{{SUMMARY_3_TITLE}}</text>
+  </g>
+  <g id="ending-compare-a-slot" data-pptx-placeholder="object" data-pptx-idx="8"
+    data-pptx-bounds="890 250 155 161">
+    <text id="ending-compare-a-carrier" data-pptx-carrier="true"
+      x="967" y="274" text-anchor="middle" fill="#39FF14"
+      font-family="Consolas, Monaco, monospace" font-size="16" font-weight="700">{{COMPARE_A}}<tspan x="967" dy="42" fill="#E6EDF3" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{ROW_1_A}}</tspan><tspan x="967" dy="42" fill="#E6EDF3" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{ROW_2_A}}</tspan><tspan x="967" dy="42" fill="#E6EDF3" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{ROW_3_A}}</tspan></text>
+  </g>
+  <g id="ending-compare-b-slot" data-pptx-placeholder="object" data-pptx-idx="9"
+    data-pptx-bounds="1055 250 155 161">
+    <text id="ending-compare-b-carrier" data-pptx-carrier="true"
+      x="1132" y="274" text-anchor="middle" fill="#FF2E97"
+      font-family="Consolas, Monaco, monospace" font-size="16" font-weight="700">{{COMPARE_B}}<tspan x="1132" dy="42" fill="#E6EDF3" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{ROW_1_B}}</tspan><tspan x="1132" dy="42" fill="#E6EDF3" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{ROW_2_B}}</tspan><tspan x="1132" dy="42" fill="#E6EDF3" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400">{{ROW_3_B}}</tspan></text>
+  </g>
+  <g id="ending-cta-slot" data-pptx-placeholder="object" data-pptx-idx="10"
+    data-pptx-bounds="80 484 1120 42">
+    <text id="ending-cta-carrier" data-pptx-carrier="true"
+      x="640" y="515" text-anchor="middle" fill="#FFD700" filter="url(#ending-glow-gold)"
+      font-family="Consolas, Monaco, monospace" font-size="24">{{CTA_TEXT}}</text>
+  </g>
+  <g id="ending-contact-slot" data-pptx-placeholder="footer" data-pptx-idx="11"
+    data-pptx-bounds="80 536 1120 32">
+    <text id="ending-contact-carrier" data-pptx-carrier="true"
+      x="640" y="560" text-anchor="middle" fill="#E6EDF3"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{CONTACT_INFO}}</text>
+  </g>
+  <g id="ending-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="12"
+    data-pptx-bounds="60 674 300 22">
+    <text id="ending-pagenum-carrier" data-pptx-carrier="true"
+      x="60" y="690" fill="#8B949E"
+      font-family="Consolas, Monaco, monospace" font-size="14">{{PAGE_NUM}} / {{TOTAL_PAGES}}</text>
+  </g>
+</svg>
