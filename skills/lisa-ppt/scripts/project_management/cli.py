@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PPT Master project-management CLI implementation.
+"""Lisa's PPT project-management CLI implementation.
 
 Usage:
     python3 scripts/project_manager.py init <project_name> [--format <registered_format>]
@@ -18,7 +18,7 @@ Examples:
     python3 scripts/project_manager.py validate projects/demo
 
 Dependencies:
-    Standard library plus local PPT Master project and source-conversion modules.
+    Standard library plus local Lisa's PPT project and source-conversion modules.
 """
 
 from __future__ import annotations
@@ -1086,7 +1086,7 @@ class ProjectManager:
 def build_parser() -> argparse.ArgumentParser:
     """Build the command-line parser."""
     parser = argparse.ArgumentParser(
-        description="PPT Master project management helpers.",
+        description="Lisa's PPT project management helpers.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
   python3 scripts/project_manager.py init demo

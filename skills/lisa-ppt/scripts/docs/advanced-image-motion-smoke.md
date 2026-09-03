@@ -176,7 +176,7 @@ preset = (
 - viewBox: 0 0 1280 720
 - format: ppt169
 ## communication
-- audience: PPT Master maintainers
+- audience: Lisa's PPT maintainers
 - objective: Verify advanced image and motion contracts end to end.
 - core_message: One raster remains editable across native crops and Morph.
 ## mode

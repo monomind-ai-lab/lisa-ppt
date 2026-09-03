@@ -2,7 +2,7 @@
 name: diagram-design
 description: >
   Diagram design reference library (14 types — architecture, flowchart, sequence, state, ER,
-  timeline, swimlane, quadrant, nested, tree, org chart, layers, venn, pyramid). In ppt-master this
+  timeline, swimlane, quadrant, nested, tree, org chart, layers, venn, pyramid). In lisa-ppt this
   is consumed by the Executor when hand-authoring diagram-type SVG pages — it is NOT a standalone
   HTML generator here. Read for deep per-type layout conventions.
 ---

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Narration Sync Tool
+Lisa's PPT - Narration Sync Tool
 
 Derive click-free narration timing from the canonical animation config and
 page-local SRT cues, then merge those subtitles against timing values read

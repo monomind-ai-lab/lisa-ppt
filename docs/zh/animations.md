@@ -4,7 +4,7 @@
 
 ---
 
-PPT Master 会把**页间转场**和可选的**元素对象动画**写成真正的 PowerPoint
+Lisa's PPT 会把**页间转场**和可选的**元素对象动画**写成真正的 PowerPoint
 OOXML，而不是嵌入视频。对象动画包括进入、强调、动作路径和退出。本文只说明
 用户需要做的选择和常用命令；精确效果映射、完整 sidecar schema、锚点规则与
 封包校验统一由[动画执行规范](../../skills/lisa-ppt/references/animations.md)维护。
@@ -115,7 +115,7 @@ Wipe 方向名统一映射到 `entrance_wipe`；方向会保留为参数，而�
 
 ## 在确定动效后添加声音
 
-音效默认关闭。PPT Master 内置了全局 CC0 音效库，但不会在策略阶段或普通
+音效默认关闭。Lisa's PPT 内置了全局 CC0 音效库，但不会在策略阶段或普通
 项目初始化时把它复制进项目。先完成 SVG 页面并确定视觉转场 / 对象动画；只有
 其中一个已确定的节拍确实需要听觉提示时，才完整读取客观的
 [声音词汇表](../../skills/lisa-ppt/templates/sounds/sound-vocabulary.md)，选定一个
@@ -127,7 +127,7 @@ python3 skills/lisa-ppt/scripts/sound_sync.py \
 ```
 
 该命令只会把选中的文件复制到 `<project>/sounds/<namespace>/`。没有选中声音时，
-PPT Master 不创建项目 `sounds/` 目录，也不复制任何文件。完整阅读词汇表后，可以
+Lisa's PPT 不创建项目 `sounds/` 目录，也不复制任何文件。完整阅读词汇表后，可以
 用 CLI 缩小已经考虑过的名称、标签或语境范围，但它不负责判断适配性：
 
 ```bash
@@ -240,7 +240,7 @@ shape target 锚点，不等同于 Animation Pane 中的一行。兼容的单效
 
 ## 校验与兼容性
 
-PPT Master 会严格校验动画设置：未知效果或 Start 模式、非法计时、缺失页面/分组引用，以及尝试给结构对象加动画都会直接失败，不会静默改成另一种行为。导出还会在替换现有产物前回读候选 PPTX。
+Lisa's PPT 会严格校验动画设置：未知效果或 Start 模式、非法计时、缺失页面/分组引用，以及尝试给结构对象加动画都会直接失败，不会静默改成另一种行为。导出还会在替换现有产物前回读候选 PPTX。
 
 | 边界 | 对用户的影响 |
 |---|---|

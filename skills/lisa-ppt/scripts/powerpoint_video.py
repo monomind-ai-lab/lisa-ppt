@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - PowerPoint Video Export
+Lisa's PPT - PowerPoint Video Export
 
 Export a narrated PPTX through the installed Windows PowerPoint application and
 wait until its native video encoder finishes.
@@ -86,20 +86,20 @@ finally {
 _EXPORT_SCRIPT = r"""
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
-$inputPath = [Environment]::GetEnvironmentVariable("PPT_MASTER_VIDEO_INPUT")
-$outputPath = [Environment]::GetEnvironmentVariable("PPT_MASTER_VIDEO_OUTPUT")
+$inputPath = [Environment]::GetEnvironmentVariable("LISA_PPT_VIDEO_INPUT")
+$outputPath = [Environment]::GetEnvironmentVariable("LISA_PPT_VIDEO_OUTPUT")
 $resolution = [int][Environment]::GetEnvironmentVariable(
-    "PPT_MASTER_VIDEO_RESOLUTION"
+    "LISA_PPT_VIDEO_RESOLUTION"
 )
 $framesPerSecond = [int][Environment]::GetEnvironmentVariable(
-    "PPT_MASTER_VIDEO_FPS"
+    "LISA_PPT_VIDEO_FPS"
 )
-$quality = [int][Environment]::GetEnvironmentVariable("PPT_MASTER_VIDEO_QUALITY")
+$quality = [int][Environment]::GetEnvironmentVariable("LISA_PPT_VIDEO_QUALITY")
 $defaultSlideDuration = [int][Environment]::GetEnvironmentVariable(
-    "PPT_MASTER_VIDEO_DEFAULT_SLIDE_DURATION"
+    "LISA_PPT_VIDEO_DEFAULT_SLIDE_DURATION"
 )
 $timeoutSeconds = [int][Environment]::GetEnvironmentVariable(
-    "PPT_MASTER_VIDEO_TIMEOUT"
+    "LISA_PPT_VIDEO_TIMEOUT"
 )
 
 $powerPoint = $null
@@ -385,15 +385,15 @@ def main(argv: list[str] | None = None) -> int:
     env = os.environ.copy()
     env.update(
         {
-            "PPT_MASTER_VIDEO_INPUT": str(input_path),
-            "PPT_MASTER_VIDEO_OUTPUT": str(output_path),
-            "PPT_MASTER_VIDEO_RESOLUTION": str(args.resolution),
-            "PPT_MASTER_VIDEO_FPS": str(args.fps),
-            "PPT_MASTER_VIDEO_QUALITY": str(args.quality),
-            "PPT_MASTER_VIDEO_DEFAULT_SLIDE_DURATION": str(
+            "LISA_PPT_VIDEO_INPUT": str(input_path),
+            "LISA_PPT_VIDEO_OUTPUT": str(output_path),
+            "LISA_PPT_VIDEO_RESOLUTION": str(args.resolution),
+            "LISA_PPT_VIDEO_FPS": str(args.fps),
+            "LISA_PPT_VIDEO_QUALITY": str(args.quality),
+            "LISA_PPT_VIDEO_DEFAULT_SLIDE_DURATION": str(
                 args.default_slide_duration
             ),
-            "PPT_MASTER_VIDEO_TIMEOUT": str(args.timeout),
+            "LISA_PPT_VIDEO_TIMEOUT": str(args.timeout),
         }
     )
     return _run_powershell(

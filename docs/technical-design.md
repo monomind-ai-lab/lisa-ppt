@@ -6,13 +6,13 @@
 
 ## Design Philosophy — AI-Directed Workflow, Human-Controlled Draft
 
-PPT Master produces a **high-quality editable PowerPoint draft**, not a sealed final deck. The workflow reasons about the message, designs the pages, and authors or preserves native PowerPoint objects under an explicit route contract. The user reviews the direction and owns the final-mile judgment in PowerPoint. Ordinary Generate should leave refinement of a real deck rather than reconstruction from slide images or a thin editable skin. The **Image to PPTX** [`image-to-pptx`](../skills/lisa-ppt/workflows/profiles/image-to-pptx.md) profile is the narrow exception: it currently requires Codex, always activates Quick, normalizes one or more input images into an ordered page-frame roster, restores ordinary text natively, reconstructs low-resolution identity or decorative graphics under strict visual locks when needed, and rebuilds scene imagery as registered layers. It still rejects a whole-slide screenshot skin as editable reconstruction.
+Lisa's PPT produces a **high-quality editable PowerPoint draft**, not a sealed final deck. The workflow reasons about the message, designs the pages, and authors or preserves native PowerPoint objects under an explicit route contract. The user reviews the direction and owns the final-mile judgment in PowerPoint. Ordinary Generate should leave refinement of a real deck rather than reconstruction from slide images or a thin editable skin. The **Image to PPTX** [`image-to-pptx`](../skills/lisa-ppt/workflows/profiles/image-to-pptx.md) profile is the narrow exception: it currently requires Codex, always activates Quick, normalizes one or more input images into an ordered page-frame roster, restores ordinary text natively, reconstructs low-resolution identity or decorative graphics under strict visual locks when needed, and rebuilds scene imagery as registered layers. It still rejects a whole-slide screenshot skin as editable reconstruction.
 
 The workflow supplies presentation-specific reasoning, state, contracts, and quality gates; deterministic tools handle conversion, validation, packaging, and repeatable file operations. **The selected model still sets the quality ceiling**, while the user's taste and judgment guide review and finishing.
 
 ### SVG Is a Project-Specific Intermediate Language
 
-PPT Master does not aim to convert arbitrary SVG into PPTX. `svg_output/` uses a **project-canonical SVG intermediate language**: it borrows SVG's XML syntax and two-dimensional graphics model, while the project contract closes the allowed elements, attributes, units, metadata, structural contracts, and DrawingML mappings. The direction is intentional: **SVG adapts to PPT Master; PPT Master does not expand to follow the entire SVG standard**.
+Lisa's PPT does not aim to convert arbitrary SVG into PPTX. `svg_output/` uses a **project-canonical SVG intermediate language**: it borrows SVG's XML syntax and two-dimensional graphics model, while the project contract closes the allowed elements, attributes, units, metadata, structural contracts, and DrawingML mappings. The direction is intentional: **SVG adapts to Lisa's PPT; Lisa's PPT does not expand to follow the entire SVG standard**.
 
 The intermediate language distinguishes three input states:
 
@@ -35,7 +35,7 @@ responsibilities and cannot substitute for one another:
 | `svg_to_pptx.py` | Defensively validate compiler mappings and the package, normalize supported compatible forms, require a current matching final quality report for formal release, and link it into postflight | It does not rerun the complete `svg_quality_checker.py` or treat file creation as proof that the upstream quality gate passed |
 | `workflow_transcript.py` / `workflow_log.py` | Record project-scoped Python command envelopes plus bounded material outcomes, and explicitly append important non-Python audit events | They do not retain the full console stream, infer readiness, rerun another tool, or alter the owning tool's result |
 
-The automatic recorder resolves the project from `PPT_MASTER_PROJECT_PATH`, a
+The automatic recorder resolves the project from `LISA_PPT_PROJECT_PATH`, a
 path-bearing argument, or the current working directory, in that order. The
 environment signal is needed only for stdout-oriented helpers with no project
 path; it is placed on the same Python command and creates no wrapper process.
@@ -397,7 +397,7 @@ These invariants are stronger than ordinary implementation preferences. If a cha
 
 ## Canvas Format System
 
-PPT Master is not PPT-only — the same SVG → DrawingML pipeline produces square posters, 9:16 stories, A4 prints. Format-specific conventions (ratios, safe zones, brand areas) live in [`references/canvas-formats.md`](../skills/lisa-ppt/references/canvas-formats.md).
+Lisa's PPT is not PPT-only — the same SVG → DrawingML pipeline produces square posters, 9:16 stories, A4 prints. Format-specific conventions (ratios, safe zones, brand areas) live in [`references/canvas-formats.md`](../skills/lisa-ppt/references/canvas-formats.md).
 
 The architectural choice worth flagging: **viewBox is in pixels, not absolute units.** Pixel space makes layout reasoning unambiguous for the AI Executor (`x="100"` is unambiguously left + 100px) and inspectable in any browser. Conversion to PowerPoint's EMU happens once at export — picking pixels means the rest of the pipeline (Strategist, Executor, quality checker, post-processing) never thinks in EMU, which would be hostile both to AI generation and to human debugging.
 
@@ -488,7 +488,7 @@ When several roots are selected, each distinct root is installed once and every 
 
 ## Role System: Specialized Modes in a Single Pipeline
 
-PPT Master keeps deck-state roles—Strategist, Image_Generator, and Executor—inside one main agent rather than distributing them across parallel sub-agents. They are instruction scopes loaded on demand, not independent agents with stale copies of the deck state. A supporting stage may use a bounded sub-agent only when its authority defines a durable artifact hand-off that does not depend on shared deck state. The core choice has three connected reasons:
+Lisa's PPT keeps deck-state roles—Strategist, Image_Generator, and Executor—inside one main agent rather than distributing them across parallel sub-agents. They are instruction scopes loaded on demand, not independent agents with stale copies of the deck state. A supporting stage may use a bounded sub-agent only when its authority defines a durable artifact hand-off that does not depend on shared deck state. The core choice has three connected reasons:
 
 **Why one agent, not parallel sub-agents.** Page design depends on the full upstream context — Strategist's color choices, the image resources that actually got acquired (vs failed and substituted), prior pages' visual rhythm. Sub-agents would start with a stale partial snapshot of that context and produce visually drifting decks. The same logic forbids batched page generation (e.g., five pages per turn): batching accelerates context compression and the deck's visual consistency degrades faster than the speed gain is worth.
 
@@ -596,7 +596,7 @@ The cooking analogy is the canonical ownership model for the default Generate
 pipeline, not just explanatory prose. `quick-generate` removes the separate
 Strategist and confirmation layer; it does not remove preparation.
 
-| Restaurant | PPT Master | Authority |
+| Restaurant | Lisa's PPT | Authority |
 |---|---|---|
 | Customer and initial ingredients | User confirmation and supplied sources/assets | Defines facts, intent, exclusions, acquisition permissions, and how specific the requested outcome is |
 | Service coordinator | Generate workflow | Sequences the declared stages, gates, role switches, and handoffs without taking over any role's decisions or deterministic tool's checks |
@@ -639,7 +639,7 @@ Several architectural decisions shape this phase:
 
 **Provider-specific config keys, not a generic `IMAGE_API_KEY`.** Every backend takes its own `OPENAI_API_KEY` / `MINIMAX_API_KEY` / etc. and the active one is selected by an explicit `IMAGE_BACKEND=<name>`. A unified `IMAGE_API_KEY` field looks tidier on first glance but causes silent confusion when a user has multiple providers configured at once and isn't sure which one is active — the kind of fault that surfaces only as "image generation gives weird results" with no clear failure point. Forcing per-provider keys makes "which backend am I using" a config-readable fact, not an inference.
 
-**Permissive-by-default license filter, with strict mode for credit-incompatible layouts.** Web image search defaults to allowing CC BY / CC BY-SA images with inline attribution — most slides have visual room for a credit element. `--strict-no-attribution` is the escape hatch for full-bleed hero images and tight composition where there's no place to put a credit without breaking the design. Non-commercial (CC BY-NC*) and no-derivatives (CC BY-ND*) licenses are auto-rejected because the typical PPT Master output is shared in commercial or modified contexts; a permissive default with that floor is the failure mode users actually want.
+**Permissive-by-default license filter, with strict mode for credit-incompatible layouts.** Web image search defaults to allowing CC BY / CC BY-SA images with inline attribution — most slides have visual room for a credit element. `--strict-no-attribution` is the escape hatch for full-bleed hero images and tight composition where there's no place to put a credit without breaking the design. Non-commercial (CC BY-NC*) and no-derivatives (CC BY-ND*) licenses are auto-rejected because the typical Lisa's PPT output is shared in commercial or modified contexts; a permissive default with that floor is the failure mode users actually want.
 
 **Manifest-first acquisition.** In-pipeline AI generation always writes `images/image_prompts.json` and renders the sidecar `image_prompts.md`, even for one image. The positional `image_gen.py "prompt"` form is intentionally limited to one-off debugging because it leaves no manifest/sidecar audit trail. Web acquisition mirrors this with `images/image_queries.json` for multi-row batches and `image_sources.json` for attribution/source tracking.
 
@@ -901,7 +901,7 @@ playback remains in the audio/video workflows.
 **Why recorded narration drives auto-advance from clip duration.** Recorded-narration mode targets video export, where no presenter clicks through the deck. It probes each clip's real duration and sets slide auto-advance to `audio duration + --narration-padding`; padding defaults to 0.5 seconds so the tail is not cut off. It does not use estimated reading speed or a fixed per-slide duration.
 
 **Why recorded narration rejects on-click object animation.** PowerPoint can
-record click timings during a real rehearsal, but PPT Master does not synthesize
+record click timings during a real rehearsal, but Lisa's PPT does not synthesize
 object-level click events. The recorded narration path writes page-level audio
 and slide auto-advance timings only, so click-driven object effects would leave
 the export dependent on extra manual PowerPoint rehearsal. Decks exported with
@@ -948,7 +948,7 @@ The tempting simplifications below have explicit costs. Treat them as negative c
 
 ## Routes and Supporting Runbooks
 
-[`workflows/index.md`](../skills/lisa-ppt/workflows/index.md) is a maintainer-only inventory and does not enter the task-loading chain. Runtime route selection is authoritative in [`workflows/routing.md`](../skills/lisa-ppt/workflows/routing.md). PPT Master has exactly three top-level artifact routes: Generate PPTX, Create Template, and Edit Native PPTX. A user request enters one of those routes; no supporting runbook competes with them.
+[`workflows/index.md`](../skills/lisa-ppt/workflows/index.md) is a maintainer-only inventory and does not enter the task-loading chain. Runtime route selection is authoritative in [`workflows/routing.md`](../skills/lisa-ppt/workflows/routing.md). Lisa's PPT has exactly three top-level artifact routes: Generate PPTX, Create Template, and Edit Native PPTX. A user request enters one of those routes; no supporting runbook competes with them.
 
 Supporting files stay separate only to keep route contracts focused and load optional context on demand:
 

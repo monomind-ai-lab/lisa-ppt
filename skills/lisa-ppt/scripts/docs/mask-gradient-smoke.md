@@ -123,7 +123,7 @@ assert any(
     for code, _message, _fallback in diagnostics
 )
 
-with tempfile.TemporaryDirectory(prefix="ppt-master-gradient-smoke-") as tmp:
+with tempfile.TemporaryDirectory(prefix="lisa-ppt-gradient-smoke-") as tmp:
     source = Path(tmp) / "gradient.svg"
     source.write_text(
         ET.tostring(valid, encoding="unicode"),
@@ -175,7 +175,7 @@ for fragment in mask_cases:
     assert any("unsupported SVG mask" in error for error in errors), errors
 
 checker = SVGQualityChecker()
-with tempfile.TemporaryDirectory(prefix="ppt-master-mask-smoke-") as tmp:
+with tempfile.TemporaryDirectory(prefix="lisa-ppt-mask-smoke-") as tmp:
     for index, fragment in enumerate(mask_cases, start=1):
         source = Path(tmp) / f"mask-{index}.svg"
         source.write_text(
@@ -191,7 +191,7 @@ with tempfile.TemporaryDirectory(prefix="ppt-master-mask-smoke-") as tmp:
         else:
             raise AssertionError(f"native export accepted {source.name}")
 
-with tempfile.TemporaryDirectory(prefix="ppt-master-icon-mask-smoke-") as tmp:
+with tempfile.TemporaryDirectory(prefix="lisa-ppt-icon-mask-smoke-") as tmp:
     project = Path(tmp)
     icon_dir = project / "icons" / "imported"
     icon_dir.mkdir(parents=True)

@@ -1,4 +1,4 @@
-# Contributing to PPT Master
+# Contributing to Lisa's PPT
 
 Thank you for your interest in contributing! This guide will help you get started.
 
@@ -17,19 +17,19 @@ Thank you for your interest in contributing! This guide will help you get starte
 ### Prerequisites
 
 - **Python 3.10+** — the only required dependency
-- **Node.js 18+** and **Pandoc** are edge-case fallbacks that 99% of contributors never need; install only if you're working on the specific paths that require them. See the [README Quick Start](./README.md#1-prerequisites) for when each applies.
+- **Node.js 18+** and **Pandoc** are edge-case fallbacks that 99% of contributors never need; install only if you're working on the specific paths that require them. See the README's [Start here](./README.md#start-here) for when each applies.
 
 ### Setup
 
 ```bash
 git clone https://github.com/monomind-ai-lab/lisa-ppt.git
-cd ppt-master
+cd lisa-ppt
 pip install -r requirements.txt
 ```
 
 ## Before You Open a PR
 
-PPT Master is solo-maintained with limited review bandwidth. To keep things healthy for everyone:
+Lisa's PPT is maintained by a small team at MonoMind AI Lab with limited review bandwidth. To keep things healthy for everyone:
 
 - **Tiny fixes** (typos, one-line usage/doc corrections, obvious small inconsistencies) — please open an issue instead of a PR. A clear report is usually faster for the maintainer to apply directly
 - **Translations & wording-only edits** — please open an issue rather than a PR. Like other tiny fixes, these are faster for the maintainer to apply directly, and unrequested translation files add ongoing sync burden without a clear owner. Translated governance docs (CONTRIBUTING, Code of Conduct) are intentionally not maintained as separate `_CN` files
@@ -62,8 +62,8 @@ AI assistance is welcome — this project is itself AI-driven. But an AI-drafted
 **Not a fit (please don't open PRs for these):**
 
 - Introducing `uv`, `poetry`, or other tools as required dependencies — `pip + requirements.txt` is the only official install path
-- Adding CI, test frameworks, pre-commit hooks, or linting infrastructure — deliberately out of scope for a solo-maintained project
-- Repackaging the skill as a CLI, SaaS, desktop app, or installer — PPT Master is a chat-driven skill for AI IDEs by design
+- Adding test frameworks, pre-commit hooks, or linting infrastructure — the repository keeps its unit tests under `skills/lisa-ppt/scripts/tests/` and a small CI smoke, nothing heavier
+- Repackaging the skill as a CLI, SaaS, desktop app, or installer — Lisa's PPT is a chat-driven skill for AI IDEs by design
 - Architectural refactors or large-scale renames — incremental cleanup only
 - "Drive-by" cosmetic reformatting unrelated to a real fix
 - Pure translations or wording-only edits that were not requested or discussed first

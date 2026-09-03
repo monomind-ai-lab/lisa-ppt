@@ -93,12 +93,16 @@ SYSTEM_FONTS = {'system-ui', '-apple-system', 'BlinkMacSystemFont'}
 
 # Fonts that cover BOTH Latin and East Asian scripts natively — fill both the
 # latin and ea typeface slots so mixed-script runs stay in one family.
-# Pretendard: Korean + Latin, bundled at assets/fonts/Pretendard/ (SIL OFL) in
-# exactly these six weights; the family names are the ones the installer
-# registers (Regular/Bold fold into `Pretendard`, the rest are own families).
+# The two CJK house families bundled at assets/fonts/ (SIL OFL), in exactly
+# the weights the installer registers: Regular/Bold fold into the plain family
+# name, the other cuts are their own family names (see assets/fonts/README.md).
+# Pretendard (Korean + Latin): Light, Regular, Medium, SemiBold, Bold, ExtraBold.
+# Noto Sans TC (Traditional Chinese + Latin): Light, Regular, Medium, Bold.
+# Plus Jakarta Sans and JetBrains Mono are Latin-only and stay Latin-slot faces.
 DUAL_SCRIPT_FONTS = {
     'Pretendard', 'Pretendard Light', 'Pretendard Medium',
     'Pretendard SemiBold', 'Pretendard ExtraBold',
+    'Noto Sans TC', 'Noto Sans TC Light', 'Noto Sans TC Medium',
 }
 
 # macOS/Linux-only fonts -> Windows equivalents
@@ -121,7 +125,7 @@ FONT_FALLBACK_WIN = {
     'Songti TC': 'PMingLiU',
     'Noto Sans SC': 'Microsoft YaHei',
     'Noto Sans CJK SC': 'Microsoft YaHei',
-    'Noto Sans TC': 'Microsoft JhengHei',
+    # 'Noto Sans TC' is a bundled house family (DUAL_SCRIPT_FONTS): never mapped.
     'Noto Serif SC': 'SimSun',
     'Noto Serif CJK SC': 'SimSun',
     'Noto Serif TC': 'PMingLiU',
@@ -183,9 +187,14 @@ PPT_SAFE_FONTS = frozenset({
     'meiryo', 'meiryo ui',
     'ms gothic', 'ms mincho', 'ms pgothic', 'ms pmincho', 'ms ui gothic',
     'malgun gothic', 'gulim', 'dotum', 'batang',
-    # House family bundled at assets/fonts/Pretendard/ (see DUAL_SCRIPT_FONTS).
+    # House families bundled at assets/fonts/ (see DUAL_SCRIPT_FONTS and
+    # assets/fonts/README.md); installed by scripts/install_fonts.py.
     'pretendard', 'pretendard light', 'pretendard medium',
     'pretendard semibold', 'pretendard extrabold',
+    'noto sans tc', 'noto sans tc light', 'noto sans tc medium',
+    'plus jakarta sans', 'plus jakarta sans light', 'plus jakarta sans medium',
+    'plus jakarta sans semibold', 'plus jakarta sans extrabold',
+    'jetbrains mono', 'jetbrains mono medium', 'jetbrains mono semibold',
     'arial', 'arial black', 'calibri', 'segoe ui', 'verdana',
     'helvetica', 'helvetica neue', 'tahoma', 'trebuchet ms',
     'times new roman', 'times', 'georgia', 'cambria', 'palatino',

@@ -66,7 +66,7 @@ Configuration sources:
    - Current working directory
    - Skill directory (e.g. `~/.agents/skills/lisa-ppt/.env`)
    - Clone repo root
-   - `~/.ppt-master/.env`
+   - `~/.lisa-ppt/.env` (`~/.ppt-master/.env` is still read as a fallback)
 
 The active backend must always be selected explicitly via `IMAGE_BACKEND`.
 
@@ -229,7 +229,7 @@ Providers (Pexels / Pixabay are tried first when keyed; Openverse and Wikimedia 
 
 Default search chain (when `--provider` is unset): configured Pexels, configured Pixabay, Openverse, then Wikimedia. Missing keyed credentials are silently skipped. Keyed providers broaden stock-photo coverage but are optional; zero-config providers remain valid.
 
-`image_search.py` uses the same `.env` lookup order as `image_gen.py`, so skill installs can keep `PEXELS_API_KEY` / `PIXABAY_API_KEY` in `~/.ppt-master/.env`.
+`image_search.py` uses the same `.env` lookup order as `image_gen.py`, so skill installs can keep `PEXELS_API_KEY` / `PIXABAY_API_KEY` in `~/.lisa-ppt/.env`.
 
 Query guidance:
 
