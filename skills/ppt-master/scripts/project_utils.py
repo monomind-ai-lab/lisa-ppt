@@ -40,6 +40,12 @@ except ImportError:
             'viewbox': '0 0 1024 768',
             'aspect_ratio': '4:3'
         },
+        'instagram': {
+            'name': 'Instagram Card News',
+            'dimensions': '1080×1350',
+            'viewbox': '0 0 1080 1350',
+            'aspect_ratio': '4:5'
+        },
         'wechat': {
             'name': 'WeChat Article Header',
             'dimensions': '900×383',

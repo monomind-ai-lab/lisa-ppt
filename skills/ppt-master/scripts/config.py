@@ -191,6 +191,15 @@ CANVAS_FORMATS = {
         'aspect_ratio': '2.35:1',
         'use_case': 'WeChat article cover images'
     },
+    'instagram': {
+        'name': 'Instagram Card News',
+        'dimensions': '1080×1350',
+        'viewbox': '0 0 1080 1350',
+        'width': 1080,
+        'height': 1350,
+        'aspect_ratio': '4:5',
+        'use_case': 'Instagram feed card news, portrait social posts'
+    },
     'xiaohongshu': {
         'name': '小红书',
         'dimensions': '1242×1660',
@@ -448,6 +457,14 @@ LAYOUT_MARGINS = {
         'left': 50,
         'content_width': 924,
         'content_height': 608
+    },
+    'instagram': {
+        'top': 80,
+        'right': 60,
+        'bottom': 80,
+        'left': 60,
+        'content_width': 960,
+        'content_height': 1190
     },
     'xiaohongshu': {
         'top': 80,

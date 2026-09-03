@@ -8,6 +8,7 @@
 |----|--------|------|---------|-------|----------|
 | `ppt169` | PPT 16:9 | `1280x720` | `0 0 1280 720` | 16:9 | Business presentations, meetings, modern devices |
 | `ppt43` | PPT 4:3 | `1024x768` | `0 0 1024 768` | 4:3 | Traditional projectors, academic talks |
+| `instagram` | Instagram Card News | `1080x1350` | `0 0 1080 1350` | 4:5 | Instagram feed card news, knowledge cards |
 | `xiaohongshu` | Xiaohongshu (RED) | `1242x1660` | `0 0 1242 1660` | 3:4 | Image-text sharing, knowledge posts |
 | `moments` | WeChat Moments / IG | `1080x1080` | `0 0 1080 1080` | 1:1 | Square posters, brand showcases |
 | `story` | Story / TikTok | `1080x1920` | `0 0 1080 1920` | 9:16 | Vertical stories, short video covers |
@@ -47,6 +48,7 @@ low = round(span * 0.025); start = round(span * 0.029); high = round(span * 0.03
 |---|---:|---:|---:|
 | `wechat` | 900 | 23–30 | 26 |
 | `moments` | 1080 | 27–36 | 31 |
+| `instagram` | 1350 | 34–45 | 39 |
 | `xiaohongshu` | 1660 | 42–55 | 48 |
 | `story` / `banner` | 1920 | 48–63 | 56 |
 | `a4` | 1754 | 44–58 | 51 |
