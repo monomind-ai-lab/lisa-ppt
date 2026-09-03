@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - Template and Strategist confirmation UI Server (Steps 3-4)
+Lisa's PPT - Template and Strategist confirmation UI Server (Steps 3-4)
 
 Lightweight Flask backend for the Default template choice and interactive
 Strategist confirmation page. Stage 1 combines template selection with the
@@ -114,6 +114,16 @@ _TEMPLATES_DIR = _SKILL_DIR / 'templates'
 _CATALOGS_PATH = Path(__file__).resolve().parent / 'static' / 'catalogs.json'
 _ICON_LIBRARY_DIR = _TEMPLATES_DIR / 'icons'
 _AI_IMAGE_COMPARISON_DIR = _SKILL_DIR / 'references' / 'ai-image-comparison'
+# The skill's bundled fonts (assets/fonts, OFL texts beside them), served to
+# the page so it renders in Lisa's faces with no network at all. Exactly the
+# cuts static/style.css declares; anything else is a 404.
+_FONT_DIR = _SKILL_DIR / 'assets' / 'fonts'
+_FONT_FILE_RE = re.compile(
+    r'(?:PlusJakartaSans/PlusJakartaSans-(?:Regular|Medium|SemiBold|Bold)\.ttf'
+    r'|JetBrainsMono/JetBrainsMono-(?:Regular|Medium)\.ttf'
+    r'|NotoSansTC/NotoSansTC-(?:Regular|Medium|Bold)\.otf'
+    r'|Pretendard/Pretendard-(?:Regular|Medium|SemiBold|Bold)\.otf)\Z'
+)
 _TEMPLATE_LIBRARY_CONFIG = {
     'brand': ('brands', 'brands_index.json'),
     'style': ('styles', 'styles_index.json'),
@@ -2633,6 +2643,60 @@ def create_app(
             return jsonify({'error': 'invalid comparison filename'}), 404
         return send_from_directory(_AI_IMAGE_COMPARISON_DIR / kind, filename)
 
+    @app.route('/fonts/<family>/<filename>')
+    def get_font(family: str, filename: str):
+        """Serve the bundled font cuts the page's stylesheet declares."""
+        relative = f'{family}/{filename}'
+        if not _FONT_FILE_RE.fullmatch(relative):
+            return jsonify({'error': 'unknown font'}), 404
+        mimetype = 'font/ttf' if filename.endswith('.ttf') else 'font/otf'
+        resp = send_from_directory(_FONT_DIR / family, filename, mimetype=mimetype)
+        resp.headers['Cache-Control'] = 'public, max-age=86400'
+        return resp
+
+    @app.route('/api/template-thumbs')
+    def get_template_thumbs():
+        """List the library candidates that have a prototype SVG to show, so
+        the gallery asks only for thumbnails that exist. Presentation only."""
+        keys = []
+        for kind, (directory_name, _index_name) in _TEMPLATE_LIBRARY_CONFIG.items():
+            kind_dir = (_TEMPLATES_DIR / directory_name).resolve()
+            if not kind_dir.is_dir():
+                continue
+            for workspace_root in sorted(kind_dir.iterdir()):
+                if not workspace_root.is_dir() or not _safe_template_id(workspace_root.name):
+                    continue
+                prototypes_dir = workspace_root / 'templates'
+                if prototypes_dir.is_dir() and any(
+                    path.is_file() for path in prototypes_dir.glob('*.svg')
+                ):
+                    keys.append(f'library:{kind}:{workspace_root.name}')
+        resp = jsonify({'keys': keys})
+        resp.headers['Cache-Control'] = 'no-store'
+        return resp
+
+    @app.route('/template-thumb/<kind>/<template_id>')
+    def get_template_thumb(kind: str, template_id: str):
+        """Serve a registered library workspace's first prototype SVG as the
+        gallery-card thumbnail. Presentation only: the candidate catalog and
+        the selection receipt are unchanged, and a workspace without SVG
+        prototypes simply gets a text card in the browser."""
+        if kind not in _TEMPLATE_LIBRARY_CONFIG or not _safe_template_id(template_id):
+            return jsonify({'error': 'unknown template'}), 404
+        kind_dir = (_TEMPLATES_DIR / _TEMPLATE_LIBRARY_CONFIG[kind][0]).resolve()
+        workspace_root = (kind_dir / template_id).resolve()
+        prototypes_dir = workspace_root / 'templates'
+        if workspace_root.parent != kind_dir or not prototypes_dir.is_dir():
+            return jsonify({'error': 'unknown template'}), 404
+        prototypes = sorted(
+            path.name for path in prototypes_dir.glob('*.svg') if path.is_file()
+        )
+        if not prototypes:
+            return jsonify({'error': 'no prototype'}), 404
+        resp = send_from_directory(prototypes_dir, prototypes[0], mimetype='image/svg+xml')
+        resp.headers['Cache-Control'] = 'no-store'
+        return resp
+
     @app.route('/api/recommendations')
     def get_recommendations():
         """Serve the Strategist-authored recommendations for this project."""
@@ -2936,7 +3000,7 @@ def create_app(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description='PPT Master template and Strategist confirmation UI',
+        description="Lisa's PPT template and Strategist confirmation UI",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument('project_dir', help='Path to project directory')
