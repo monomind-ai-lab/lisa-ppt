@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PPT Master - SVG Editor Server
+Lisa's PPT - SVG Editor Server
 
 Flask backend for the SVG annotation editor.
 Serves the web UI and provides API endpoints for reading/writing SVG annotations.
@@ -47,6 +47,15 @@ LEGACY_LOCK_FILE_NAME = '.live_preview.lock'
 
 # Local — sys.path injection for sibling module (code-style.md §3)
 _SCRIPTS_DIR = Path(__file__).resolve().parent
+# The skill's bundled fonts, served so the editor chrome renders in the same
+# faces as the confirm page without a network (see static/style.css).
+_FONT_DIR = Path(__file__).resolve().parents[2] / 'assets' / 'fonts'
+_FONT_FILE_RE = re.compile(
+    r'(?:PlusJakartaSans/PlusJakartaSans-(?:Regular|Medium|SemiBold|Bold)\.ttf'
+    r'|JetBrainsMono/JetBrainsMono-(?:Regular|Medium)\.ttf'
+    r'|NotoSansTC/NotoSansTC-(?:Regular|Medium|Bold)\.otf'
+    r'|Pretendard/Pretendard-(?:Regular|Medium|SemiBold|Bold)\.otf)\Z'
+)
 if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
 
@@ -492,6 +501,17 @@ def create_app(
             _exit_with_lock_release(0)
         threading.Thread(target=_stop, daemon=True).start()
         return jsonify({'status': 'ok'})
+
+    @app.route('/fonts/<family>/<filename>')
+    def get_font(family: str, filename: str):
+        """Serve the bundled font cuts the editor stylesheet declares."""
+        relative = f'{family}/{filename}'
+        if not _FONT_FILE_RE.fullmatch(relative):
+            return jsonify({'error': 'unknown font'}), 404
+        mimetype = 'font/ttf' if filename.endswith('.ttf') else 'font/otf'
+        resp = send_from_directory(_FONT_DIR / family, filename, mimetype=mimetype)
+        resp.headers['Cache-Control'] = 'public, max-age=86400'
+        return resp
 
     @app.route('/')
     def index():
@@ -1165,7 +1185,7 @@ def _open_browser_async(url: str, delay: float = 0.4) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description='PPT Master SVG Editor',
+        description="Lisa's PPT SVG Editor",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument('project_dir', help='Path to project directory (contains svg_output/)')

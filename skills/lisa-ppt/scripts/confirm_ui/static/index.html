@@ -3,60 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page_title">PPT Master - Confirm Design</title>
+    <title data-i18n="page_title">Lisa's PPT — Confirm the deck</title>
+    <!-- No network: the faces are the skill's own bundled fonts, served at
+         /fonts/ and declared in style.css. -->
+    <link rel="icon" href="/static/brand/monomind-mark-white.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div id="app">
-        <aside id="preview-panel" aria-label="Design preview">
-            <div class="brand-block">
-                <div class="brand-mark">PM</div>
-                <div>
-                    <div class="panel-kicker">PPT Master</div>
-                    <div class="panel-title" data-i18n="page_title">PPT Master - Confirm Design</div>
-                </div>
-            </div>
-            <div id="topbar-preview"></div>
-        </aside>
+    <!-- Ted and Lisa, quietly, in the two lower corners of the ground. They
+         sit outside the shell and behind it; nothing here is interactive. -->
+    <div class="figures" aria-hidden="true">
+        <img class="fig fig-ted" src="/static/brand/ted-figure.png" alt="">
+        <img class="fig fig-lisa" src="/static/brand/lisa-figure.png" alt="">
+    </div>
 
-        <section id="control-panel">
-            <header id="topbar">
-                <div id="topbar-inner">
-                    <div class="topbar-titles">
-                        <h1 data-i18n="page_title">PPT Master - Confirm Design</h1>
-                        <p id="topbar-hint" data-i18n="topbar_hint">After confirming, return to the chat and say “done”.</p>
-                    </div>
+    <!-- The shell is Lisa's: three rows, only the middle one scrolls. -->
+    <main class="shell" id="shell">
+        <div class="topbar">
+            <div class="brandbar">
+                <a class="brandlink" href="https://html.monomind.one" target="_blank" rel="noopener noreferrer">
+                    <span class="mark" aria-hidden="true">
+                        <img src="/static/brand/monomind-mark-white.svg" alt="">
+                    </span>
+                    <span class="brandtext"><b translate="no">monomind ai lab</b><span translate="no">lisa's ppt</span></span>
+                </a>
+                <div class="chrome">
                     <div class="lang-select">
-                        <button id="btn-lang-toggle" class="lang-select-btn" type="button" title="Switch language" aria-haspopup="listbox" aria-expanded="false"><span id="lang-current"></span><span class="lang-caret" aria-hidden="true">▾</span></button>
+                        <button id="btn-lang-toggle" class="lang-select-btn" type="button" title="Switch language" aria-haspopup="listbox" aria-expanded="false"><span id="lang-current"></span><span class="lang-caret" aria-hidden="true"></span></button>
                         <ul id="lang-menu" class="lang-menu" role="listbox" hidden>
-                            <li role="option" tabindex="0" aria-selected="false" data-lang="zh">中文</li>
-                            <li role="option" tabindex="0" aria-selected="false" data-lang="zh-TW">繁體中文</li>
                             <li role="option" tabindex="0" aria-selected="false" data-lang="en">English</li>
-                            <li role="option" tabindex="0" aria-selected="false" data-lang="ja">日本語</li>
                             <li role="option" tabindex="0" aria-selected="false" data-lang="ko">한국어</li>
+                            <li role="option" tabindex="0" aria-selected="false" data-lang="zh-TW">繁體中文</li>
+                            <li role="option" tabindex="0" aria-selected="false" data-lang="zh">中文</li>
+                            <li role="option" tabindex="0" aria-selected="false" data-lang="ja">日本語</li>
                         </ul>
                     </div>
                 </div>
-            </header>
-
-            <main id="form">
-                <div id="loading" data-i18n="loading">Loading recommendations…</div>
-                <div id="error" style="display:none;"></div>
-                <div id="sections" style="display:none;"></div>
-            </main>
-            <footer id="actionbar" style="display:none;">
-                <span id="confirm-status"></span>
-                <button id="btn-confirm" data-i18n="btn_confirm">Confirm</button>
-            </footer>
-        </section>
-    </div>
-
-    <div id="confirmed-overlay" style="display:none;">
-        <div class="cf-card">
-            <div class="cf-title">✓ Confirmed</div>
-            <div class="cf-hint">Your choices are saved. You can close this page.</div>
+            </div>
+            <!-- The rail is the map and the way to move: one step per chapter
+                 of the stage on show, plus the confirm step. Every step is a
+                 button. Rebuilt by app.js whenever the stage changes. -->
+            <div class="railbar" id="railbar">
+                <div class="railtop">
+                    <span class="stepname" id="stepname"></span>
+                    <span class="count" id="count"></span>
+                </div>
+                <nav class="chaps" id="rail" aria-label="Progress"></nav>
+            </div>
         </div>
-    </div>
+
+        <div class="panelbody" id="panelbody">
+            <div id="loading" class="loading" data-i18n="loading">Loading…</div>
+            <div id="error" class="errorbox" hidden></div>
+            <!-- Chapters render here: one <section class="chapter"> each,
+                 all in the DOM at once, one shown at a time. -->
+            <div id="sections" hidden></div>
+
+            <!-- After the Stage-1 submit: the direction has gone to Lisa, the
+                 page waits for the design system. The receipt is the exact
+                 JSON that was sent — ids, never labels. -->
+            <section class="result screen" id="waiting" aria-live="polite" hidden>
+                <div class="done">
+                    <span class="done-mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+                    </span>
+                    <div class="done-copy">
+                        <h2 id="waiting-title" tabindex="-1"></h2>
+                        <p class="lead" id="waiting-lead"></p>
+                        <p class="backup" id="waiting-note"></p>
+                    </div>
+                </div>
+                <details class="fallback" id="waiting-fallback">
+                    <summary><span class="fb-title" data-i18n="fold_answers">Your answers as JSON</span><span class="fb-toggle" aria-hidden="true"></span></summary>
+                    <pre class="payload" id="waiting-payload" translate="no"></pre>
+                </details>
+            </section>
+
+            <!-- After the final confirm. The server shuts itself down; this
+                 screen stays if the tab does not close itself. -->
+            <section class="result screen" id="done" aria-live="polite" hidden>
+                <div class="done">
+                    <span class="done-mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+                    </span>
+                    <div class="done-copy">
+                        <h2 id="done-title" tabindex="-1"></h2>
+                        <p class="lead" id="done-lead"></p>
+                        <p class="backup" id="done-note"></p>
+                    </div>
+                    <figure class="done-art">
+                        <img src="/static/brand/tedandlisa-together.jpg" alt="">
+                        <figcaption id="done-caption" data-i18n="done_caption">one deck away</figcaption>
+                    </figure>
+                </div>
+                <details class="fallback" id="done-fallback">
+                    <summary><span class="fb-title" data-i18n="fold_answers">Your answers as JSON</span><span class="fb-toggle" aria-hidden="true"></span></summary>
+                    <pre class="payload" id="done-payload" translate="no"></pre>
+                </details>
+            </section>
+        </div>
+
+        <!-- One footer for the whole page; the groups swap, the bar stays. -->
+        <footer class="actions" id="actionbar">
+            <div class="actgroup" id="flowactions">
+                <button class="primary" id="btn-confirm" type="button" data-i18n="btn_next">Next ⏎</button>
+                <button class="ghost" id="btn-back" type="button" data-i18n="btn_back" hidden>Back</button>
+                <span id="confirm-status" class="status" role="status"></span>
+                <span class="kbd" id="kbdhints"><b>←</b><b>→</b> <span data-i18n="kbd_screen">screen</span> · <b>⏎</b> <span data-i18n="kbd_continue">continue</span></span>
+            </div>
+            <div class="actgroup" id="resultactions" hidden>
+                <button class="ghost" id="btn-copy" type="button" data-i18n="copy_answers">Copy answers</button>
+                <span class="colophon" translate="no">Made with Hi Ted, Meet Lisa</span>
+            </div>
+        </footer>
+    </main>
 
     <script src="/static/app.js"></script>
 </body>
