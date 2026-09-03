@@ -166,7 +166,94 @@
       ],
       "category": "sans-serif",
       "css": "sans-serif",
-      "availability": "bundled"
+      "availability": "bundled",
+      "weights": [
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ]
+    },
+    {
+      "id": "Noto Sans TC",
+      "label": "Noto Sans TC",
+      "label_zh": "Noto Sans TC",
+      "label_zh_tw": "Noto Sans TC",
+      "label_en": "Noto Sans TC",
+      "label_ja": "Noto Sans TC",
+      "label_ko": "Noto Sans TC",
+      "locales": [
+        "zh-TW",
+        "zh-HK",
+        "zh-Hant",
+        "en"
+      ],
+      "scripts": [
+        "Hant",
+        "Latn"
+      ],
+      "category": "sans-serif",
+      "css": "sans-serif",
+      "availability": "bundled",
+      "weights": [
+        300,
+        400,
+        500,
+        700
+      ]
+    },
+    {
+      "id": "Plus Jakarta Sans",
+      "label": "Plus Jakarta Sans",
+      "label_zh": "Plus Jakarta Sans",
+      "label_zh_tw": "Plus Jakarta Sans",
+      "label_en": "Plus Jakarta Sans",
+      "label_ja": "Plus Jakarta Sans",
+      "label_ko": "Plus Jakarta Sans",
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "category": "sans-serif",
+      "css": "sans-serif",
+      "availability": "bundled",
+      "weights": [
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ]
+    },
+    {
+      "id": "JetBrains Mono",
+      "label": "JetBrains Mono",
+      "label_zh": "JetBrains Mono",
+      "label_zh_tw": "JetBrains Mono",
+      "label_en": "JetBrains Mono",
+      "label_ja": "JetBrains Mono",
+      "label_ko": "JetBrains Mono",
+      "locales": [
+        "en",
+        "und-Latn"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "category": "monospace",
+      "css": "monospace",
+      "availability": "bundled",
+      "weights": [
+        400,
+        500,
+        600
+      ]
     },
     {
       "id": "Microsoft YaHei",

@@ -1,13 +1,11 @@
-/* PPT Master - Strategist confirmation UI
- * Stage 1 confirms the communication contract and the free-design/template
- * choice together. Stage 2 combines the coherent deck solution and production
- * mechanics, then writes the final result.
- * Finite fields use /static/catalogs.json; coordinated design directions seed
- * mode, visual style, color, typography, icons, and generated-image rendering,
- * while template-application prose stays conditional. Final confirm saves the
- * flattened current values to result.json.
- */
 /* Lisa's PPT — confirm page.
+   Stage 1 confirms the communication contract and the free-design/template
+   choice together; Stage 2 combines the coherent deck solution and the
+   production mechanics, then writes the final result. Finite fields come from
+   /static/catalogs.json; coordinated design directions seed mode, visual
+   style, color, typography, icons and generated-image rendering, while
+   template-application prose stays conditional. The final confirm saves the
+   flattened current values to result.json.
    The stage flow, the field set, the validators and the payload builders are
    the confirm surface's contract (scripts/docs/confirm_ui.md) and are kept
    as they were. What changed is the experience around them: Lisa's shell
@@ -1069,24 +1067,18 @@
             topbar_hint: "Lisa가 추천하고, 당신이 결정합니다. 무엇이든 바꾼 뒤 확정하세요.",
             stage_anchors: "1단계 · 방향",
             stage_final_plan: "2단계 · 디자인 시스템과 실행",
-            stage_design: "2단계 · 디자인 시스템",
-            stage_images: "3단계 · 이미지·실행 방식",
             loading: "불러오는 중…",
             load_error: "recommendations.json을 불러오지 못했습니다. 실행 전에 AI가 먼저 작성해야 합니다.",
             btn_confirm: "확인",
             btn_next: "다음 →",
             deriving: "선택 내용을 바탕으로 다음 단계 옵션을 생성하는 중…",
             connection_lost: "확인 페이지 서버 연결이 끊겨 다시 시도하는 중입니다. 계속 실패하면 채팅으로 돌아가 확인을 진행하세요.",
-            already_confirmed: "이미 한 번 확정했습니다. 다시 제출하면 이전 선택을 덮어씁니다.",
             confirmed_title: "✓ 확정됨",
             confirmed_hint: "선택이 저장됐습니다. 이 페이지를 닫고 채팅으로 돌아가세요.",
             lang_toggle_title: "언어 전환",
             sec_canvas: "캔버스 형식",
             sec_pages: "페이지 수",
             sec_audience: "대상 청중",
-            sec_style: "스타일 목표",
-            sec_template: "템플릿",
-            template_locked_note: "Step 3에서 설치됨 — 참고용 표시이며 여기서 변경할 수 없습니다",
             sec_color: "색상 구성",
             sec_icons: "아이콘 사용",
             sec_type: "타이포그래피",
@@ -1095,7 +1087,6 @@
             sec_refine: "설계 스펙 먼저 다듬기",
             sub_mode: "내러티브 모드",
             sub_visual: "비주얼 스타일",
-            sub_template_adherence: "템플릿 준수 방식",
             sub_divergence: "소스 발산도 (원문에 충실할지, 얼마나 자유롭게 재구성할지)",
             placeholder_divergence: "자신의 말로 적어주세요 — 예: \"문서에 최대한 충실하게\" / \"소스 범위 안에서 자유롭게 재구성·확장\". 비워 두면 균형형으로 처리합니다.",
             custom: "커스텀",
@@ -1104,21 +1095,14 @@
             placeholder_audience: "이 덱은 누구를 위한 것인가요?",
             placeholder_pages: "예: 12-15",
             hex_override: "커스텀 HEX로 재정의:",
-            formula_policy: "수식 렌더링 정책",
             image_ai_path: "AI 이미지 생성 방식",
             image_strategy: "생성 이미지 스타일",
             image_strategy_empty: "아직 생성 이미지 스타일 후보가 없습니다.",
             image_strategy_rendering: "렌더링",
-            image_strategy_palette: "팔레트",
             image_strategy_visual: "비주얼",
-            image_strategy_color: "색상",
             image_strategy_mood: "무드",
-            image_strategy_manual: "커스텀",
-            image_strategy_manual_desc: "렌더링과 팔레트를 직접 고르거나, 커스텀 설명을 사용할 수 있습니다.",
-            image_strategy_custom_prompt: "커스텀 프롬프트 메모",
             image_strategy_custom_placeholder: "생성 이미지의 구체적인 방향, 피사체, 구도, 스타일 키워드, 피해야 할 요소를 적어주세요.",
             image_strategy_reference_hint: "참조 이미지는 렌더링·색 사용 방식만 보여줍니다. 최종 AI 이미지 색상은 위에서 선택한 색상 구성을 따릅니다.",
-            image_strategy_color_follow: "위에서 선택한 색상 구성을 사용합니다. 팔레트는 색 사용 방식만 제어합니다.",
             image_strategy_no_reference: "이 커스텀 선택에는 참조 이미지가 없습니다.",
             image_usage_notes: "이미지 추가 요구사항",
             image_usage_notes_placeholder: "예: 실제 손 씻는 장면 우선, 만화풍 세균 일러스트 제외, 제품 사진은 원본 그대로 사용.",
@@ -1137,12 +1121,10 @@
             delivery_purpose: "전달 목적",
             delivery_purpose_hint: "가까이서 읽는 자료는 작아도 되고, 프로젝터로 발표하는 자료는 큰 글자가 필요합니다.",
             size_override: "역할별 크기 재정의:",
-            size_override_hint: "본문 기준 크기를 바꾸면 역할별 크기가 비례해 함께 조정됩니다 — 직접 수정한 값도 자기 비율을 유지한 채 조정됩니다.",
             size_role_title: "제목",
             size_role_subtitle: "부제목",
             size_role_annotation: "주석",
             custom_typography: "커스텀 타이포그래피",
-            custom_typography_placeholder: "폰트 계획을 입력하세요. 예: 제목: Pretendard SemiBold / 본문: Pretendard + Arial…",
             custom_color: "커스텀 색상",
             custom_color_placeholder: "색상을 말로 설명하세요. 예: 짙은 남색 메인, 따뜻한 오렌지 강조, 흰색 배경 — 또는 HEX 값을 붙여넣기…",
             role_background: "배경",
@@ -1200,9 +1182,9 @@
     })();
 
     function t(key) {
-        // A language whose dictionary lacks a key falls back to English
-        // (the Korean dictionary was ported from slide-master and does not
-        // yet cover every upstream string).
+        // All five dictionaries carry the same key set, so this is a guard,
+        // not a routine path: a language whose dictionary lacks a key — a new
+        // string landing in `en` first — falls back to English.
         var dict = MESSAGES[LANG] || MESSAGES.en;
         if (dict[key] != null) return dict[key];
         return MESSAGES.en[key] != null ? MESSAGES.en[key] : key;
