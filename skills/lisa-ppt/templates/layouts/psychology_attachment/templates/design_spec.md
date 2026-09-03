@@ -1,312 +1,70 @@
 ---
 layout_id: psychology_attachment
 kind: layout
-native_structure_mode: template
-summary: Psychotherapy training, academic lectures, counseling case analysis, professional sharing.
+category: scenario
+summary: Psychotherapy training, counseling case analysis, academic lectures, professional sharing — a 16:9 system pairing full-bleed soft-gradient planes (cover, chapter, closing) with a left-rail light plane (agenda, content), a quote block and tag-chip row on the cover and chapter pages, and a dual-column agenda with a learning-goals panel.
+summary_ko: 심리치료 교육, 상담 사례 분석, 학술 강의, 전문가 공유 — 전면 소프트 그라디언트 면(표지·챕터·마무리)과 왼쪽 레일의 밝은 면(목차·본문)을 짝지우고, 표지와 챕터 페이지에는 인용 블록과 태그 칩 줄을, 목차에는 학습 목표 패널을 갖춘 2열 구성을 두는 16:9 구조.
+summary_zh_tw: 心理治療培訓、諮商個案分析、學術講座、專業分享——以滿版柔和漸層底面（封面、章節、結尾）搭配左側直條的淺色頁面（目錄、內文），封面與章節頁設有引言區塊與標籤膠囊列，目錄則為附學習目標面板的雙欄結構之 16:9 版式。
+display_name: Psychology Attachment
+display_name_ko: 심리 애착
+display_name_zh_tw: 心理依附
+keywords: [psychology, counseling, gradient, quote, dual-column]
 canvas_format: ppt169
+canvas_width: 1280
+canvas_height: 720
+canvas_viewbox: "0 0 1280 720"
+source_canvas_width: 1280
+source_canvas_height: 720
+source_viewbox: "0 0 1280 720"
+replication_mode: fidelity
+native_structure_mode: structured
 page_count: 5
 page_types: [cover, toc, chapter, content, ending]
+placeholders:
+  01_cover: ["{{TITLE}}", "{{SUBTITLE}}", "{{TITLE_EN}}", "{{QUOTE}}", "{{QUOTE_AUTHOR}}", "{{TAG_1}}", "{{TAG_2}}", "{{TAG_3}}", "{{TAG_4}}", "{{PAGE_NUM}}"]
+  02_toc: ["{{PAGE_TITLE}}", "{{PAGE_TITLE_EN}}", "{{TOC_ITEM_1_TITLE}}", "{{TOC_ITEM_1_DESC}}", "{{TOC_ITEM_2_TITLE}}", "{{TOC_ITEM_2_DESC}}", "{{TOC_ITEM_3_TITLE}}", "{{TOC_ITEM_3_DESC}}", "{{TOC_ITEM_4_TITLE}}", "{{TOC_ITEM_4_DESC}}", "{{TOC_ITEM_5_TITLE}}", "{{TOC_ITEM_5_DESC}}", "{{RIGHT_TITLE}}", "{{GOAL_1}}", "{{GOAL_1_DESC}}", "{{GOAL_2}}", "{{GOAL_2_DESC}}", "{{GOAL_3}}", "{{GOAL_3_DESC}}", "{{GOAL_4}}", "{{GOAL_4_DESC}}", "{{PAGE_NUM}}"]
+  03_chapter: ["{{CHAPTER_NUM}}", "{{CHAPTER_TITLE}}", "{{CHAPTER_EN}}", "{{QUOTE}}", "{{QUOTE_AUTHOR}}", "{{TAG_1}}", "{{TAG_2}}", "{{TAG_3}}", "{{TAG_4}}", "{{PAGE_NUM}}"]
+  04_content: ["{{PAGE_TITLE}}", "{{TITLE_EN}}", "{{CONTENT_AREA}}", "{{PAGE_NUM}}"]
+  05_ending: ["{{THANK_YOU}}", "{{ENDING_SUBTITLE}}", "{{THANK_YOU_EN}}", "{{CLOSING_MESSAGE}}", "{{CONTACT_INFO}}", "{{CONTACT_LINE_2}}", "{{COPYRIGHT}}"]
 ---
 
-# Psychology Healing Template (Psychology Attachment Style) - Design Specification
-
-> Suitable for psychology, psychotherapy, counseling training, and academic sharing in professional settings.
-
----
-
-## I. Template Overview
-
-| Property         | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| **Template Name**| psychology_attachment (Psychology Healing Template)           |
-| **Use Cases**    | Psychotherapy training, academic lectures, counseling case analysis, professional sharing |
-| **Design Tone**  | Professional, warm, healing, trustworthy                     |
-| **Theme Mode**   | Light theme (cloud white background + blue-green gradient accent + multi-color semantic colors) |
-
-### Core Visual Metaphor
-
-The design adopts "**Secure Base**" as the core visual metaphor:
-
-- **Structural Stability**: Page layout resembles a secure attachment relationship with clear boundaries and predictable patterns
-- **Clear Hierarchy**: Information levels mirror the organization of the attachment system — from biological instinct to higher-order reflection
-- **Warm Professionalism**: Colors convey both professional authority and healing warmth
-
----
-
-## II. Canvas Specification
-
-| Property           | Value                           |
-| ------------------ | ------------------------------- |
-| **Format**         | Standard 16:9                   |
-| **Dimensions**     | 1280 × 720 px                  |
-| **viewBox**        | `0 0 1280 720`                 |
-| **Page Margins**   | Left/right 40px, top 60px, bottom 40px |
-| **Content Safe Area** | x: 40-1240, y: 60-680       |
-
-### Page Zones
-
-| Zone             | Y-Range   | Height | Usage                      |
-| ---------------- | --------- | ------ | -------------------------- |
-| Top Title Area   | 60-120    | 60px   | Page title, chapter labels |
-| Main Content     | 130-640   | 510px  | Core content display       |
-| Bottom Info Area | 650-680   | 30px   | Page number, chapter nav   |
-
----
-
-## III. Page Structure
-
-### General Layout
-
-| Area              | Position/Height | Description                          |
-| ----------------- | --------------- | ------------------------------------ |
-| **Left Accent**   | x=0, w=8px      | Dominant color vertical bar (content pages) |
-| **Top**           | y=60-120        | Page title + English subtitle        |
-| **Divider**       | y=125-130       | Decorative divider line              |
-| **Content Area**  | y=130-640       | Main content area (510px height)     |
-| **Footer**        | y=650-700       | Page number, chapter info            |
-
-### Decorative Design
-
-- **Left Accent Bar**: Dominant color (`#2E5C8E`), width 8px, spanning the full page height
-- **Divider Line**: Light gray (`#E5E7EB`), width 1-2px
-- **Circle Decorations**: Low-opacity circles for chapter page/cover backgrounds
-
----
-
-## IV. Page Types
-
-### 1. Cover Page (01_cover.svg)
-
-- **Background**: Blue-green gradient (`#1E3A5F` → `#2E5C8E` → `#3D8B7A`)
-- **Decoration**: Optional background image (opacity=0.25)
-- **Title Area**: Centered, main title 52px + subtitle 28px
-- **English Title**: Light gray, 24px
-- **Decorative Line**: Warm orange thin line, 200px wide
-- **Bottom**: Quote card (semi-transparent background + healing green left border)
-- **Tags**: Keyword tags (semi-transparent capsules)
-- **Page Number**: Bottom-right, 14px
-
-### 2. Table of Contents (02_toc.svg)
-
-- **Background**: Cloud white (`#F8FAFC`)
-- **Left Accent**: Dominant color 8px vertical bar
-- **Title**: "Contents Overview"
-- **Left Side**: Five-chapter list (colored number blocks + title + description)
-  - Chapter 1: Dominant blue `#2E5C8E`
-  - Chapter 2: Healing green `#3D8B7A`
-  - Chapter 3: Warm orange `#E07843`
-  - Chapter 4: Cool gray-blue `#64748B`
-  - Chapter 5: Trauma red `#B54545`
-- **Right Side**: Learning objectives card
-- **Center**: Dashed divider
-
-### 3. Chapter Page (02_chapter.svg)
-
-- **Background**: Blue-green gradient
-- **Decoration**: Multiple low-opacity concentric circles, diagonal line accents
-- **Large Number**: 120px, semi-transparent white, centered
-- **Chapter Label**: Capsule shape "CHAPTER X"
-- **Title**: 48px white bold
-- **Subtitle**: 24px light gray English
-- **Decorative Line**: Warm orange thin line, 200px
-- **Quote**: Semi-transparent quote card
-- **Keywords**: Bottom tag group
-- **Page Number**: Bottom-right
-
-### 4. Content Page (03_content.svg)
-
-- **Background**: Cloud white
-- **Left Accent**: Dominant blue 8px vertical bar
-- **Title Area**: Main title 28px + English subtitle 16px
-- **Divider**: Decorative line below title
-- **Content Area**: Flexible layout (three-column / left-right split / single column)
-- **Card Styles**:
-  - White background + light gray border
-  - Border radius 12-16px
-  - Colored top bar / colored left border
-- **Bottom Tip**: Light gray background tip bar (optional)
-- **Page Number**: Bottom-right
-
-### 5. Ending Page (04_ending.svg)
-
-- **Background**: Blue-green gradient
-- **Decoration**: Network connection graph (dots + lines)
-- **Title**: Main title 56px + subtitle 28px
-- **English**: Light gray English title
-- **Decorative Line**: Warm orange thin line, 300px
-- **Info Area**: Semi-transparent info card
-- **Bottom**: Copyright information
-
----
-
-## V. SVG Page Roster
-
-| File | Role | Description |
-|------|------|-------------|
-| `01_cover.svg` | cover | Title slide; project name, presenter, date |
-| `02_chapter.svg` | chapter | Chapter divider page (large number + chapter title) |
-| `02_toc.svg` | toc | Table of contents listing major sections |
-| `03_content.svg` | content | Main content page; body of the deck |
-| `04_ending.svg` | ending | Closing/thank-you page |
-
-## VI. Layout Patterns
-
-### 7.1 Three-Column Side-by-Side (Comparison/Findings)
-
-```
-[Card 1: 360px] [Gap: 40px] [Card 2: 360px] [Gap: 40px] [Card 3: 360px]
-```
-
-- Each card: Colored top bar + icon + number + title + content + bottom tag
-- Suitable for: Three findings, three-type comparisons
-
-### 7.2 Left-Right Split
-
-```
-[Left Column: 560px] [Gap: 60px] [Right Column: 580px]
-```
-
-- Left side: Concepts/theory
-- Right side: Application/practice
-- Suitable for: Concept explanations, therapeutic relationships
-
-### 7.3 Vertical Stack (Hierarchical Structure)
-
-```
-┌─────────────────────────────────┐
-│       Top Layer: Metacognition   │
-├─────────────────────────────────┤
-│       Representation Layer       │
-├─────────────────────────────────┤
-│       Affective Layer            │
-├─────────────────────────────────┤
-│       Somatic Layer              │
-└─────────────────────────────────┘
-```
-
-- Suitable for: Self-development hierarchy, theoretical frameworks
-
-### 7.4 Attachment Type Quadrant
-
-| Secure (Green) | Avoidant (Gray-Blue) |
-| Anxious-Ambivalent (Orange) | Disorganized (Red) |
-
-- Each card uses the corresponding attachment type color scheme
-
----
-
-## VII. Visual Element Specifications
-
-### 8.1 Card Styles
-
-```xml
-<!-- Standard info card -->
-<rect rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
-
-<!-- Emphasis card (with left border) -->
-<rect rx="12" fill="#FFFFFF"/>
-<rect x="0" width="4" fill="#2E5C8E" rx="2"/>
-
-<!-- Colored top card -->
-<rect rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
-<rect rx="16" width="100%" height="80" fill="#2E5C8E"/>  <!-- Top color block -->
-```
-
-### 8.2 Number Blocks
-
-```xml
-<path fill="#2E5C8E" d="M8,0 H42 A8,8 0 0 1 50,8 V42 A8,8 0 0 1 42,50 H8 A8,8 0 0 1 0,42 V8 A8,8 0 0 1 8,0 Z"/>
-<text x="25" y="33" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
-```
-
-### 8.3 Tag Styles
-
-```xml
-<!-- Capsule tag -->
-<path fill="#E0F2FE" d="M33,0 H107 A13,13 0 0 1 120,13 V13 A13,13 0 0 1 107,26 H33 A13,13 0 0 1 20,13 V13 A13,13 0 0 1 33,0 Z"/>
-<text x="70" y="18" font-size="13" fill="#2E5C8E" text-anchor="middle">Tag Text</text>
-```
-
-### 8.4 Quote Cards
-
-```xml
-<!-- Semi-transparent quote card -->
-<path fill="#FFFFFF" fill-opacity="0.1" d="..."/>
-<path fill="#3D8B7A" d="..." rx="2"/>  <!-- Left accent bar -->
-<text font-style="italic" fill="#E5E7EB">Quote content</text>
-```
-
-### 8.5 Divider Lines
-
-```xml
-<line x1="60" y1="Y" x2="1240" y2="Y" stroke="#E5E7EB" stroke-width="2"/>
-```
-
----
-
-## VIII. Icon Usage
-
-Use `tabler-outline` as the stylistic icon library for this template. It matches the professional, warm, low-noise psychology tone and avoids heavy filled symbols.
-
-### Placeholder Format
-
-```xml
-<use data-icon="tabler-outline/icon-name" x="X" y="Y" width="32" height="32" fill="COLOR"/>
-```
-
-### Common Icon Mappings
-
-| Concept              | Icons                     |
-| -------------------- | ------------------------- |
-| Attachment/Bonding   | `tabler-outline/heart`, `tabler-outline/link` |
-| Secure Base          | `tabler-outline/home`, `tabler-outline/shield-check` |
-| Mentalization        | `tabler-outline/brain`, `tabler-outline/bulb` |
-| Affect Regulation    | `tabler-outline/activity`, `tabler-outline/adjustments-horizontal` |
-| Awareness            | `tabler-outline/eye`, `tabler-outline/compass` |
-| Trauma               | `tabler-outline/alert-triangle`, `tabler-outline/bolt` |
-| Repair               | `tabler-outline/refresh`, `tabler-outline/tool` |
-| Development          | `tabler-outline/trending-up`, `tabler-outline/layers-linked` |
-
----
-
-## IX. Placeholder Specification
-
-| Placeholder          | Usage                |
-| -------------------- | -------------------- |
-| `{{TITLE}}`          | Main title           |
-| `{{SUBTITLE}}`       | Subtitle             |
-| `{{TITLE_EN}}`       | English title        |
-| `{{PAGE_TITLE}}`     | Content page title   |
-| `{{CONTENT_AREA}}`   | Flexible content area |
-| `{{CHAPTER_NUM}}`    | Chapter number       |
-| `{{CHAPTER_TITLE}}`  | Chapter title        |
-| `{{CHAPTER_EN}}`     | Chapter English title |
-| `{{QUOTE}}`          | Quote content        |
-| `{{QUOTE_AUTHOR}}`   | Quote author         |
-| `{{PAGE_NUM}}`       | Page number          |
-| `{{COVER_BG_IMAGE}}` | Cover background image path |
-| `{{TOC_ITEM_N_TITLE}}` | TOC item title     |
-| `{{TOC_ITEM_N_DESC}}`  | TOC item description |
-| `{{THANK_YOU}}`      | Thank-you message    |
-| `{{CONTACT_INFO}}`   | Primary contact info |
-
----
-
-## X. Usage Notes
-
-### Template Usage Steps
-
-1. **Copy Template**: Copy template files to the project `templates/` directory
-2. **Replace Placeholders**: Replace `{{}}` placeholders with actual content
-3. **Adjust Colors**: Fine-tune the color scheme based on the theme
-4. **Generate Content**: Use the Executor role to generate specific pages
-5. **Post-process**: Run `finalize_svg.py` to complete image embedding
-
-### Applicable Topics
-
-- Psychotherapy and counseling
-- Attachment theory research
-- Developmental psychology
-- Clinical case analysis
-- Academic training lectures
-- Psychology course instruction
+# Psychology Attachment — Design Specification
+
+## IV. Signature Design Elements
+
+Psychology Attachment is a two-plane system for material that is taught and
+reflected on rather than pitched: a psychotherapy training module, a
+counseling case analysis, an academic lecture. The framing pages (cover,
+chapter, closing) are full-bleed soft-gradient planes that center every role
+and frame it with a quote block; the working pages (agenda, content) are a
+light plane with a narrow left rail and a left-aligned title stack. The
+prototype paint (a blue-to-teal gradient, a warm rule, a muted-white quote
+card, translucent chips) exists only to expose hierarchy and slot geometry; it
+is not an identity segment. Color, typography, logo, voice, and icon treatment
+remain downstream decisions.
+
+| Element | Template-specific behavior |
+|---|---|
+| One Master, two page planes | `psychology_attachment_master` carries a light plane. `cover`, `chapter`, and `ending` lay a full-canvas gradient rect over it as the first Layout atom (a gradient is never a background); `toc` and `content` keep the light plane and add an 8 px rail flush left. |
+| Gradient framing pages | `cover` and `chapter` share one decorative field: three concentric rings anchored upper right (r 200 / 150 / 100 at 1100, 150), two rings lower left (r 120 / 80 at 180, 600), and two diagonal hairline pairs in the lower-right and upper-left corners. `ending` replaces the rings with a radial network — a center node, fourteen satellite nodes, fourteen spokes, six outer links — all Layout atoms behind the text. |
+| Centered title stack with a warm rule | Framing pages stack, centered on x 640: the page title (52 px on the cover, 48 px on the chapter page, 56 px on the closing page), a 28 px secondary line typed `object`, and an 18–24 px secondary-language echo line typed `subtitle`, closed by a short rounded rule (200 × 3 px on cover and chapter, 300 × 4 px on the closing page). |
+| Quote block | `cover` and `chapter` place an 800 × 100 translucent card with a 4 px accent bar on its left edge. Its interior (`264 … 752 72`) is one two-line `object` slot: an 18 px italic quote line over a 14 px attribution line, starting at x 270. |
+| Tag-chip row | Below the quote block, four rounded chips (80–120 × 28 px, rx 14) sit in one row; each chip rect is a Layout atom and each chip label is its own `object` slot with the chip rect as its bounds, so a deck can fill one to four keywords without moving chrome. |
+| Ghost chapter number and badge | `chapter` carries the chapter number twice: a 120 px ghost `object` slot at 15 % alpha centered above the title, and a 160 × 40 capsule badge whose label is a second `object` slot with the same marker. |
+| Cover picture frame | `cover` reserves one full-canvas `picture` slot painted above the gradient plane and the ring field at 25 % alpha, so a placed photograph reads as a wash beneath the centered text rather than replacing the plane. |
+| Left-rail working pages | `toc` and `content` open with a 32 / 28 px left-aligned title at x 60, a 16 px `subtitle` echo line beneath it, and a 2 px rule (340 px on the agenda, 440 px on the content page) under the stack. |
+| Dual-column agenda | `toc` splits at a dashed vertical divider at x 620. The left column lists five items on an 80 px rhythm: a 50 × 50 rounded badge (rx 8) with a Layout-owned Roman ordinal, then one two-line `object` slot (20 px title over 14 px description) starting at x 130. The right column carries an `object` heading slot at y 150 over a 520 × 420 panel (rx 12) holding four learning goals on a 70 px rhythm, each an 8 px dot with a Layout-owned index and one two-line `object` slot (17 px goal over 14 px description) starting at x 740. |
+| Open content field | `content` leaves `60 140 1180 490` as one `object` slot with no panel; the page's own composition (three columns, a left–right split, a stacked hierarchy, a quadrant) is Slide-local. The object carrier starts upper-left at 22 px. |
+| Closing contact card | `ending` places a 32 px `object` closing line under the rule and a 400 × 100 translucent card whose interior (`460 536 360 64`) is one two-line centered `object` slot; a 12 px `footer` copyright line sits centered at y 680. |
+| Page number | `cover`, `toc`, `chapter`, and `content` carry a right-aligned 14 px `slide-number` slot ending at x 1220 inside a `1100 … 124 24` frame; the closing page has none. |
+| Text entry | Working-page titles, echo lines, the content field, agenda items, and goal lines begin at the left; every framing-page role and the chip labels are centered. |
+
+## V. Page Roster
+
+| SVG | Layout key | PowerPoint picker name | Purpose |
+|---|---|---|---|
+| `01_cover.svg` | `cover` | Cover | Gradient plane with ring field and a full-canvas picture wash; centered title, secondary line, and echo line over a rule; quote block, four tag chips, and a page number |
+| `02_toc.svg` | `toc` | Table of Contents | Left-rail light plane; title and echo line over a rule; five badge-indexed agenda items left of a dashed divider, a headed learning-goals panel with four indexed goals on the right, and a page number |
+| `03_chapter.svg` | `chapter` | Chapter | Gradient plane with ring field; ghost chapter number and capsule badge above the centered title, echo line, and rule; quote block, four tag chips, and a page number |
+| `04_content.svg` | `content` | Content | Left-rail light plane; title and echo line over a rule; open content field and a page number |
+| `05_ending.svg` | `ending` | Closing | Gradient plane with a radial network; centered closing title, secondary line, echo line, and rule; a closing message, a two-line contact card, and a copyright footer |

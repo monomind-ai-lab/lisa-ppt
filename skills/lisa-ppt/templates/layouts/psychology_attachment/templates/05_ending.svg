@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="psychology_attachment_master" data-pptx-master-name="Psychology Attachment"
+  data-pptx-layout="ending" data-pptx-layout-name="Closing">
+  <defs>
+    <linearGradient id="ending-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="50%" stop-color="#2E5C8E"/>
+      <stop offset="100%" stop-color="#3D8B7A"/>
+    </linearGradient>
+  </defs>
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#F8FAFC"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="ending-gradient-plane" x="0" y="0" width="1280" height="720" fill="url(#ending-gradient)"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-one" x1="640" y1="360" x2="350" y2="200" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-two" x1="640" y1="360" x2="450" y2="150" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-three" x1="640" y1="360" x2="550" y2="180" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-four" x1="640" y1="360" x2="730" y2="160" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-five" x1="640" y1="360" x2="830" y2="200" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-six" x1="640" y1="360" x2="920" y2="250" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-seven" x1="640" y1="360" x2="280" y2="350" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-eight" x1="640" y1="360" x2="320" y2="480" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-nine" x1="640" y1="360" x2="450" y2="540" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-ten" x1="640" y1="360" x2="580" y2="580" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-eleven" x1="640" y1="360" x2="700" y2="560" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-twelve" x1="640" y1="360" x2="830" y2="520" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-thirteen" x1="640" y1="360" x2="950" y2="450" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-spoke-fourteen" x1="640" y1="360" x2="1000" y2="350" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-link-one" x1="350" y1="200" x2="450" y2="150" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-link-two" x1="450" y1="150" x2="550" y2="180" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-link-three" x1="730" y1="160" x2="830" y2="200" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-link-four" x1="320" y1="480" x2="450" y2="540" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-link-five" x1="580" y1="580" x2="700" y2="560" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="ending-link-six" x1="830" y1="520" x2="950" y2="450" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.15"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-center" cx="640" cy="360" r="8" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-one" cx="350" cy="200" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-two" cx="450" cy="150" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-three" cx="550" cy="180" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-four" cx="730" cy="160" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-five" cx="830" cy="200" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-six" cx="920" cy="250" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-seven" cx="280" cy="350" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-eight" cx="320" cy="480" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-nine" cx="450" cy="540" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-ten" cx="580" cy="580" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-eleven" cx="700" cy="560" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-twelve" cx="830" cy="520" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-thirteen" cx="950" cy="450" r="4" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <circle id="ending-node-fourteen" cx="1000" cy="350" r="5" fill="#FFFFFF" fill-opacity="0.2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-title-rule" x="490" y="400" width="300" height="4" rx="2" fill="#E07843"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <rect id="ending-contact-card" x="440" y="520" width="400" height="100" rx="12" fill="#FFFFFF" fill-opacity="0.1"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="ending-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="140 206 1000 72">
+    <text id="ending-title-carrier" data-pptx-carrier="true"
+      x="640" y="260" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700">{{THANK_YOU}}</text>
+  </g>
+  <g id="ending-subtitle-slot" data-pptx-placeholder="object" data-pptx-idx="1"
+    data-pptx-bounds="140 292 1000 38">
+    <text id="ending-subtitle-carrier" data-pptx-carrier="true"
+      x="640" y="320" text-anchor="middle" fill="#E5E7EB"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28">{{ENDING_SUBTITLE}}</text>
+  </g>
+  <g id="ending-echo-slot" data-pptx-placeholder="subtitle" data-pptx-idx="2"
+    data-pptx-bounds="140 340 1000 28">
+    <text id="ending-echo-carrier" data-pptx-carrier="true"
+      x="640" y="360" text-anchor="middle" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">{{THANK_YOU_EN}}</text>
+  </g>
+  <g id="ending-message-slot" data-pptx-placeholder="object" data-pptx-idx="3"
+    data-pptx-bounds="140 438 1000 44">
+    <text id="ending-message-carrier" data-pptx-carrier="true"
+      x="640" y="470" text-anchor="middle" fill="#FFFFFF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="32">{{CLOSING_MESSAGE}}</text>
+  </g>
+  <g id="ending-contact-slot" data-pptx-placeholder="object" data-pptx-idx="4"
+    data-pptx-bounds="460 536 360 64">
+    <text id="ending-contact-carrier" data-pptx-carrier="true"
+      x="640" y="560" text-anchor="middle" fill="#E5E7EB"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">{{CONTACT_INFO}}<tspan x="640" dy="30" fill="#94A3B8" font-size="14">{{CONTACT_LINE_2}}</tspan></text>
+  </g>
+  <g id="ending-copyright-slot" data-pptx-placeholder="footer" data-pptx-idx="5"
+    data-pptx-bounds="340 666 600 20">
+    <text id="ending-copyright-carrier" data-pptx-carrier="true"
+      x="640" y="680" text-anchor="middle" fill="#64748B"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="12">{{COPYRIGHT}}</text>
+  </g>
+</svg>

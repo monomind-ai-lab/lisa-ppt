@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+  data-pptx-master="psychology_attachment_master" data-pptx-master-name="Psychology Attachment"
+  data-pptx-layout="content" data-pptx-layout-name="Content">
+  <rect id="master-background" x="0" y="0" width="1280" height="720" fill="#F8FAFC"
+    data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="content-rail" x="0" y="0" width="8" height="720" fill="#2E5C8E"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="content-title-rule" x1="60" y1="125" x2="500" y2="125" stroke="#E5E7EB" stroke-width="2"
+    data-pptx-layer="layout" data-pptx-editable="false"/>
+  <g id="content-title-slot" data-pptx-placeholder="title"
+    data-pptx-bounds="60 46 1040 40">
+    <text id="content-title-carrier" data-pptx-carrier="true"
+      x="60" y="75" fill="#1E293B"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="content-echo-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1"
+    data-pptx-bounds="60 88 1040 24">
+    <text id="content-echo-carrier" data-pptx-carrier="true"
+      x="60" y="105" fill="#64748B"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">{{TITLE_EN}}</text>
+  </g>
+  <g id="content-object-slot" data-pptx-placeholder="object" data-pptx-idx="2"
+    data-pptx-bounds="60 140 1180 490">
+    <text id="content-object-carrier" data-pptx-carrier="true"
+      x="60" y="178" fill="#94A3B8"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">{{CONTENT_AREA}}</text>
+  </g>
+  <g id="content-pagenum-slot" data-pptx-placeholder="slide-number" data-pptx-idx="3"
+    data-pptx-bounds="1100 683 124 24">
+    <text id="content-pagenum-carrier" data-pptx-carrier="true"
+      x="1220" y="700" text-anchor="end" fill="#9CA3AF"
+      font-family="Arial, Microsoft YaHei, sans-serif" font-size="14">{{PAGE_NUM}}</text>
+  </g>
+</svg>
