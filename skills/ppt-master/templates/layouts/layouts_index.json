@@ -1,4 +1,29 @@
 {
+  "academic_defense": {
+    "summary": "Thesis defense, academic presentations, research progress reports, grant applications.",
+    "canvas_format": "ppt169",
+    "page_count": 5,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending"
+    ]
+  },
+  "ai_ops": {
+    "summary": "Telecom AI operations architecture, IT system overviews, digital transformation proposals, smart infrastructure reports.",
+    "canvas_format": "ppt169",
+    "page_count": 6,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending",
+      "reference_style"
+    ]
+  },
   "editorial_bleed": {
     "summary": "A structure-only 16:9 system with 10 authored PowerPoint Layouts whose images bleed to the canvas edge and whose text sits on the image behind a scrim.",
     "canvas_format": "ppt169",
@@ -16,6 +41,42 @@
       "closing_full"
     ]
   },
+  "government_blue": {
+    "summary": "Key project briefings, Five-Year Plan presentations, work summaries, investment promotion, policy interpretation.",
+    "canvas_format": "ppt169",
+    "page_count": 5,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending"
+    ]
+  },
+  "government_red": {
+    "summary": "Government briefings, policy interpretation, work summaries, project introductions, investment promotion.",
+    "canvas_format": "ppt169",
+    "page_count": 5,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending"
+    ]
+  },
+  "medical_university": {
+    "summary": "Medical academic reports, case discussions, research presentations, hospital work reports, medical education and training.",
+    "canvas_format": "ppt169",
+    "page_count": 5,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending"
+    ]
+  },
   "moments_square": {
     "summary": "A structure-only 1:1 system with 8 authored PowerPoint Layouts that use both horizontal and vertical division on a square canvas.",
     "canvas_format": "moments",
@@ -28,6 +89,18 @@
       "three_row",
       "image_center",
       "image_full",
+      "ending"
+    ]
+  },
+  "pixel_retro": {
+    "summary": "Tech talks, programming tutorials, game introductions, geek-style showcases.",
+    "canvas_format": "ppt169",
+    "page_count": 5,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
       "ending"
     ]
   },
@@ -79,6 +152,18 @@
       "stacked_split",
       "chart_insight",
       "table_summary"
+    ]
+  },
+  "psychology_attachment": {
+    "summary": "Psychotherapy training, academic lectures, counseling case analysis, professional sharing.",
+    "canvas_format": "ppt169",
+    "page_count": 5,
+    "page_types": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending"
     ]
   },
   "report_core": {
