@@ -9,7 +9,7 @@ animations** as real PowerPoint OOXML, not embedded video. Object animation
 includes entrance, emphasis, motion-path, and exit effects. This guide covers
 the choices and commands users need; exact effect mappings, the complete
 sidecar schema, anchor rules, and package validation live in the
-[animation execution reference](../skills/ppt-master/references/animations.md).
+[animation execution reference](../skills/lisa-ppt/references/animations.md).
 
 ## Default Behavior
 
@@ -27,15 +27,15 @@ run the final checker and resolve its blockers before rerunning `svg_to_pptx.py`
 
 | Goal | Command |
 |---|---|
-| Keep the defaults | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project>` |
-| Change the page transition | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -t push` |
-| Remove the visual transition | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -t none` |
-| Auto-advance every 5 seconds | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --auto-advance 5` |
-| Enable automatic element reveals | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto` |
-| Use one entrance effect throughout | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --animation entrance_fade` |
-| Reveal elements on click | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-trigger on-click` |
-| Animate all elements together | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-trigger with-previous` |
-| Slow the reveal sequence | `python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-duration 0.5 --animation-stagger 0.8` |
+| Keep the defaults | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project>` |
+| Change the page transition | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -t push` |
+| Remove the visual transition | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -t none` |
+| Auto-advance every 5 seconds | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> --auto-advance 5` |
+| Enable automatic element reveals | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto` |
+| Use one entrance effect throughout | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> --animation entrance_fade` |
+| Reveal elements on click | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto --animation-trigger on-click` |
+| Animate all elements together | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto --animation-trigger with-previous` |
+| Slow the reveal sequence | `python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project> -a auto --animation-duration 0.5 --animation-stagger 0.8` |
 
 ## Choose a Page Transition
 
@@ -81,7 +81,7 @@ Set effect-specific PowerPoint options in
 `transition.effect_options`. Direction, shape, pattern, Morph scope, black
 screen, page count, and bounce are validated against the selected effect.
 Run
-`python3 skills/ppt-master/scripts/pptx_animations.py --describe-transition <effect>`
+`python3 skills/lisa-ppt/scripts/pptx_animations.py --describe-transition <effect>`
 for the exact values. `-t none` removes the visual effect but does not remove
 an explicitly configured auto-advance timer.
 
@@ -120,7 +120,7 @@ Old Fly direction names all normalize to `entrance_fly`, and old Wipe
 direction names all normalize to `entrance_wipe`; their direction is preserved
 as an option rather than another canonical preset. Legacy `wheel` keeps four
 spokes. Run
-`python3 skills/ppt-master/scripts/pptx_animations.py --list` for the complete
+`python3 skills/lisa-ppt/scripts/pptx_animations.py --list` for the complete
 categorized list. The four media playback commands are handled by the
 audio/video workflows because they require media or bookmark targets.
 
@@ -130,11 +130,11 @@ Sound effects are off by default. PPT Master includes a global CC0 sound
 library, but it is not copied during strategy or ordinary project setup. First
 finish the SVG pages and choose the visual transition/object motion. Only when
 one of those resolved beats has a specific auditory job should you read the
-complete objective [sound vocabulary](../skills/ppt-master/templates/sounds/sound-vocabulary.md),
+complete objective [sound vocabulary](../skills/lisa-ppt/templates/sounds/sound-vocabulary.md),
 select one exact id, and sync the cue:
 
 ```bash
-python3 skills/ppt-master/scripts/sound_sync.py \
+python3 skills/lisa-ppt/scripts/sound_sync.py \
   <project> bigsoundbank/1797 kenney-interface/click_001
 ```
 
@@ -145,7 +145,7 @@ the CLI may narrow an already-considered label, tag, or context without deciding
 fit:
 
 ```bash
-python3 skills/ppt-master/scripts/sound_sync.py list --query whoosh
+python3 skills/lisa-ppt/scripts/sound_sync.py list --query whoosh
 ```
 
 Configuration always references the copied project-local path, never the
@@ -194,9 +194,9 @@ sets the default object effect to `none`, and untouched `{}` group entries do
 not enable animation.
 
 ```bash
-python3 skills/ppt-master/scripts/animation_config.py list-groups <project>
-python3 skills/ppt-master/scripts/animation_config.py validate <project>
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project>
+python3 skills/lisa-ppt/scripts/animation_config.py list-groups <project>
+python3 skills/lisa-ppt/scripts/animation_config.py validate <project>
+python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project>
 ```
 
 The sidecar targets stable top-level `<g id="...">` content groups. A group ID
@@ -250,7 +250,7 @@ row. The slide-level animation trigger is inheritance only. `trigger_shape`
 implies `on-click`; if the row also declares `trigger`, it must be
 `on-click`.
 
-Use `python3 skills/ppt-master/scripts/pptx_animations.py --describe
+Use `python3 skills/lisa-ppt/scripts/pptx_animations.py --describe
 <canonical_effect>` to see exactly which options that effect accepts. Speed is
 controlled by `duration`; smooth start/end are controlled by
 `accelerate`/`decelerate`. Change Font's `font_name` is one concrete
@@ -260,7 +260,7 @@ target-installed PowerPoint face, never a CSS font stack.
 only its row. Recorded narration rejects any row that resolves to `on-click`,
 including trigger-shape rows.
 
-When a user asks the AI to tune individual objects, use the [`customize-animations`](../skills/ppt-master/workflows/stages/customize-animations.md) stage. The full sidecar schema and target-validation rules remain in the [animation execution reference](../skills/ppt-master/references/animations.md).
+When a user asks the AI to tune individual objects, use the [`customize-animations`](../skills/lisa-ppt/workflows/stages/customize-animations.md) stage. The full sidecar schema and target-validation rules remain in the [animation execution reference](../skills/lisa-ppt/references/animations.md).
 
 ## Validation & Compatibility
 
@@ -276,4 +276,4 @@ PPT Master validates animation settings strictly: unknown effects or Start modes
 | PPTX-to-SVG import | Reconstructs only current-registry rows with exact native duration and unique top-level group targets; advanced/build/media timing remains diagnosed |
 | Playback compatibility | Microsoft PowerPoint desktop is the primary validation target; Keynote, WPS, LibreOffice, and older Office versions may remap or omit individual effects |
 
-For the full CLI reference, see [`svg-pipeline.md`](../skills/ppt-master/scripts/docs/svg-pipeline.md). For exact effect definitions, sidecar requirements, anchor fallback logic, and OOXML read-back rules, see the [animation execution reference](../skills/ppt-master/references/animations.md).
+For the full CLI reference, see [`svg-pipeline.md`](../skills/lisa-ppt/scripts/docs/svg-pipeline.md). For exact effect definitions, sidecar requirements, anchor fallback logic, and OOXML read-back rules, see the [animation execution reference](../skills/lisa-ppt/references/animations.md).

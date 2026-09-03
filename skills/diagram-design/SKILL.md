@@ -17,7 +17,7 @@ metadata:
 > standalone HTML. Do NOT run the URL onboarding flow (`references/onboarding.md`) or the upstream
 > style-guide gate; colors, fonts, and icons always come from the project's `spec_lock.md`, and the SVG
 > must obey ppt-master's technical constraints
-> (`skills/ppt-master/references/shared-standards.md`). The guidance below is upstream
+> (`skills/lisa-ppt/references/shared-standards.md`). The guidance below is upstream
 > context — read it for per-type layout conventions, node/edge discipline, and complexity budgets,
 > then author the page per ppt-master SKILL.md Step 6.
 >

@@ -26,12 +26,12 @@ a scheduled sync.
                   skills/diagram-design/LICENSE
   Fonts:          Pretendard v1.3.9 — Copyright (c) 2021 Kil Hyung-jin,
                   SIL Open Font License 1.1 —
-                  skills/ppt-master/assets/fonts/Pretendard/LICENSE.txt
+                  skills/lisa-ppt/assets/fonts/Pretendard/LICENSE.txt
                   (six weights bundled: Light, Regular, Medium, SemiBold,
                   Bold, ExtraBold). Noto Sans TC and Plus Jakarta Sans (both
                   SIL OFL 1.1) arrive with the rebrand, licence texts beside
                   the files.
-  Icons:          skills/ppt-master/templates/icons/ — 47 MB, 11,801 SVGs —
+  Icons:          skills/lisa-ppt/templates/icons/ — 47 MB, 11,801 SVGs —
                   kept as imported; licences in its THIRD_PARTY_NOTICES.md.
   Sounds:         the cue vocabulary, index and CC0-1.0 notices are kept; the
                   audio files are not bundled (templates/sounds/README.md

@@ -27,7 +27,7 @@ PPT Master 可以把演讲者备注转成逐页音频旁白（默认基于 [`edg
 
 字幕保持为外部 SRT 文件：PPT Master 不把字幕嵌入 PPTX，也不烧录进 MP4。自动视频导出委托给本机 Windows PowerPoint，并不是另一套渲染器。
 
-共享阶段见 [`workflows/stages/generate-audio.md`](../../skills/ppt-master/workflows/stages/generate-audio.md)。
+共享阶段见 [`workflows/stages/generate-audio.md`](../../skills/lisa-ppt/workflows/stages/generate-audio.md)。
 
 ## 两条嵌入路径
 
@@ -58,7 +58,7 @@ Generate 路线在最终 Stage 2 把 Narration Audio 的有效结果解析为开
 凡是 `edge-tts` 支持的 locale 都行——大约 90 个，覆盖中文全部主要变体（`zh-CN` 普通话 / `zh-TW` 台湾普通话 / `zh-HK` 粤语）、英文（美/英/澳/印）、日语、韩语、法语、德语、西班牙语、葡萄牙语、俄语、阿拉伯语等。任何 locale 的全量音色清单都可以这样查：
 
 ```bash
-python3 skills/ppt-master/scripts/notes_to_audio.py --list-voices --locale ja-JP
+python3 skills/lisa-ppt/scripts/notes_to_audio.py --list-voices --locale ja-JP
 ```
 
 ## 进阶：手动调用脚本
@@ -67,15 +67,15 @@ python3 skills/ppt-master/scripts/notes_to_audio.py --list-voices --locale ja-JP
 
 ```bash
 # 1. 确保备注已切分（后处理 Step 7.1）
-python3 skills/ppt-master/scripts/total_md_split.py <project_path>
+python3 skills/lisa-ppt/scripts/total_md_split.py <project_path>
 
 # 2A. 用 edge-tts 生成 MP3/SRT 对（默认，无需 API Key）
-python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
+python3 skills/lisa-ppt/scripts/notes_to_audio.py <project_path> \
   --voice zh-CN-YunjianNeural --rate +0%
 
 # 2B. 用 ElevenLabs 生成 MP3/SRT 对（需要 ELEVENLABS_API_KEY）
 export ELEVENLABS_API_KEY="your-elevenlabs-api-key"
-python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
+python3 skills/lisa-ppt/scripts/notes_to_audio.py <project_path> \
   --provider elevenlabs \
   --voice-id <elevenlabs-voice-id> \
   --elevenlabs-model eleven_multilingual_v2
@@ -83,14 +83,14 @@ python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
 # 2C. 用 MiniMax 生成 MP3/SRT 对（支持系统音色或复刻 voice_id）
 export MINIMAX_API_KEY="your-minimax-api-key"
 # 默认使用国内地址；海外访问可设置 MINIMAX_TTS_BASE_URL=https://api.minimax.io/v1/t2a_v2
-python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
+python3 skills/lisa-ppt/scripts/notes_to_audio.py <project_path> \
   --provider minimax \
   --voice-id <minimax-voice-id> \
   --minimax-model speech-2.8-hd
 
 # 2D. 用 Qwen TTS 仅生成音频（系统音色或复刻音色）
 export DASHSCOPE_API_KEY="your-dashscope-api-key"
-python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
+python3 skills/lisa-ppt/scripts/notes_to_audio.py <project_path> \
   --provider qwen \
   --voice-id <qwen-voice> \
   --qwen-model qwen3-tts-flash \
@@ -98,7 +98,7 @@ python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
 
 # 2E. 用支持时间戳的 CosyVoice 音色生成 MP3/SRT 对
 export COSYVOICE_API_KEY="your-dashscope-api-key"
-python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
+python3 skills/lisa-ppt/scripts/notes_to_audio.py <project_path> \
   --provider cosyvoice \
   --voice-id <cosyvoice-voice> \
   --cosyvoice-model cosyvoice-v3-flash
@@ -108,28 +108,28 @@ python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
 #    再对照每页当前 SVG 内容组与 SRT cue，编写
 #    <project_path>/narration_timing.json；没有对应口播的组不写 cue，
 #    后续按正常动画顺序出现。旁白无关的自定义动画或无 sidecar 时直接跳到第 5 步。
-python3 skills/ppt-master/scripts/narration_sync.py fingerprint <project_path>
+python3 skills/lisa-ppt/scripts/narration_sync.py fingerprint <project_path>
 
 # 4. 从规范 animations.json 派生无点击的 narration_animations.json
-python3 skills/ppt-master/scripts/narration_sync.py animations <project_path> \
+python3 skills/lisa-ppt/scripts/narration_sync.py animations <project_path> \
   --narration-start-floor 0.8 --narration-padding 0.5 --force
 
 # 5A. 与旁白 cue 同步的自定义动画：使用派生 sidecar
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path> \
+python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project_path> \
   -o <final_narrated_pptx> --recorded-narration audio \
   --narration-start-floor 0.8 --narration-padding 0.5 \
   --animation-config narration_animations.json \
   --inherit-motion-from "<base_postflight_report>"
 
 # 5B. 与旁白无关的自定义动画：使用规范计时
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path> \
+python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project_path> \
   -o <final_narrated_pptx> --recorded-narration audio \
   --narration-start-floor 0.8 --narration-padding 0.5 \
   --animation-config animations.json \
   --inherit-motion-from "<base_postflight_report>"
 
 # 5C. 没有动画 sidecar：继承基础导出的 motion，包括 -a auto
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path> \
+python3 skills/lisa-ppt/scripts/svg_to_pptx.py <project_path> \
   -o <final_narrated_pptx> --recorded-narration audio \
   --narration-start-floor 0.8 --narration-padding 0.5 \
   --inherit-motion-from "<base_postflight_report>"
@@ -139,17 +139,17 @@ python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path> \
 # --conversion-trace <final_narrated_trace>；实时放映录制不依赖该 trace 交付声音。
 
 # 6. 存在逐页 SRT 时，按最终 PowerPoint 计时合并
-python3 skills/ppt-master/scripts/narration_sync.py subtitles <project_path> \
+python3 skills/lisa-ppt/scripts/narration_sync.py subtitles <project_path> \
   --pptx <final_narrated_pptx> --force
 
 # 7. Windows 可选：通过 PowerPoint 导出 raw 视频并等待完成
-python3 skills/ppt-master/scripts/powerpoint_video.py --check
-python3 skills/ppt-master/scripts/powerpoint_video.py \
+python3 skills/lisa-ppt/scripts/powerpoint_video.py --check
+python3 skills/lisa-ppt/scripts/powerpoint_video.py \
   <final_narrated_pptx> -o exports/<raw_powerpoint_video>.mp4
 
 # 8. 原生导出分支的最终 motion 存在音效 cue 时，生成独立 SFX stem 与
 #    验收后的混音成片。默认：转场音约 35%，对象音约 25%，最终限幅 -1 dBFS。
-python3 skills/ppt-master/scripts/video_sound_mix.py <project_path> \
+python3 skills/lisa-ppt/scripts/video_sound_mix.py <project_path> \
   --pptx <final_narrated_pptx> \
   --trace <final_narrated_trace> \
   --video exports/<raw_powerpoint_video>.mp4 \
@@ -157,7 +157,7 @@ python3 skills/ppt-master/scripts/video_sound_mix.py <project_path> \
 
 # 9. 存在逐页 SRT 时，把冻结的旁白文本与最终视频音轨对齐；
 #    第 8 步执行过就使用 mixed，选择录屏则使用验收后的 capture，否则使用 raw。
-python3 skills/ppt-master/scripts/video_subtitles.py <project_path> \
+python3 skills/lisa-ppt/scripts/video_subtitles.py <project_path> \
   --video "<final_delivery_video>" --language <language> --force
 ```
 
@@ -222,7 +222,7 @@ ElevenLabs 模式下 `--voice-id` 是必填项，可从账户中列出音色：
 
 ```bash
 export ELEVENLABS_API_KEY="your-elevenlabs-api-key"
-python3 skills/ppt-master/scripts/notes_to_audio.py --provider elevenlabs --list-voices
+python3 skills/lisa-ppt/scripts/notes_to_audio.py --provider elevenlabs --list-voices
 ```
 
 MiniMax、Qwen 与 CosyVoice 使用 `--voice-id` 传入对应平台的系统音色或复刻音色 ID。声音复刻本身先在对应平台控制台 / API 中完成，`notes_to_audio.py` 使用得到的 voice ID 生成逐页旁白。
@@ -252,7 +252,7 @@ MiniMax、Qwen 与 CosyVoice 使用 `--voice-id` 传入对应平台的系统音�
 也可以直接跑脚本：
 
 ```bash
-python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
+python3 skills/lisa-ppt/scripts/notes_to_audio.py <project_path> \
   --provider minimax --voice-id <你的复刻 voice id> \
   --minimax-model speech-2.8-hd
 ```
@@ -272,7 +272,7 @@ python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> \
 python3 -m pip install edge-tts
 ```
 
-已写入 `skills/ppt-master/requirements.txt`。`edge-tts` 调用微软的在线 TTS 服务，**生成时**需要联网；生成后的音频是本地文件，PowerPoint 播放和视频导出都不依赖网络。云端 TTS provider 不需要额外 Python 包，直接通过 HTTPS 调用；API Key 可以设在当前 shell 环境中，也可以按 `.env.example` 写入 `.env`。
+已写入 `skills/lisa-ppt/requirements.txt`。`edge-tts` 调用微软的在线 TTS 服务，**生成时**需要联网；生成后的音频是本地文件，PowerPoint 播放和视频导出都不依赖网络。云端 TTS provider 不需要额外 Python 包，直接通过 HTTPS 调用；API Key 可以设在当前 shell 环境中，也可以按 `.env.example` 写入 `.env`。
 
 自动 MP4 导出不增加 Python 依赖，但要求 Windows PowerPoint 2016+ 与 Windows PowerShell；macOS 或没有兼容 PowerPoint 的机器保留带旁白 PPTX，改用手动导出。
 
@@ -309,7 +309,7 @@ python3 -m pip install numpy stable-ts
 带旁白的 PPTX 在 `exports/` 里就绪后，Windows PowerPoint 2016+ 可通过下面的接口自动导出：
 
 ```bash
-python3 skills/ppt-master/scripts/powerpoint_video.py \
+python3 skills/lisa-ppt/scripts/powerpoint_video.py \
   <final_narrated_pptx> -o <raw_powerpoint_video.mp4>
 ```
 
