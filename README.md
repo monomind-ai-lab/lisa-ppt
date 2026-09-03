@@ -264,6 +264,35 @@ it when you move machines.
 
 ---
 
+## How big it is
+
+Measured on `main`, 2026-09-03:
+
+| | |
+|---|---|
+| `git clone` | **210 MB** — a 94 MB checkout plus 116 MB of history |
+| `git clone --depth 1` | **131 MB** — the same checkout, 37 MB of history |
+| The checkout alone | 12,869 files, 55 MB of content, about 94 MB on disk |
+
+Two directories account for 80 of those 94 MB, and both are deliberate:
+
+- **`skills/lisa-ppt/templates/icons/`** — 12,027 SVGs. Only 13 MB of content,
+  but roughly 48 MB on disk: every file is under a kilobyte and every file
+  still takes a filesystem block. Kept as files, because a deck that has to
+  stop and fetch an icon is a deck that stops.
+- **`skills/lisa-ppt/assets/fonts/`** — 32 MB, 19 weights across four
+  families. PPTX does not embed fonts, so the family a page names has to exist
+  on the machine that opens it. `install_fonts.py` puts them there.
+
+The history is heavier than the checkout because the v6.1.0 import brought in
+upstream's `docs/assets/` (33 MB, a hero GIF) and its AI-image comparison
+gallery (43 MB of PNGs), and both were removed in the same series of commits.
+They are gone from the tree and still in the history; each is now a README
+pointing at where it went. `--depth 1` skips them, and nothing in the pipeline
+needs them.
+
+---
+
 ## Where it comes from
 
 Two imports, then independence.
