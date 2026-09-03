@@ -1,13 +1,11 @@
-/* PPT Master - Strategist confirmation UI
- * Stage 1 confirms the communication contract and the free-design/template
- * choice together. Stage 2 combines the coherent deck solution and production
- * mechanics, then writes the final result.
- * Finite fields use /static/catalogs.json; coordinated design directions seed
- * mode, visual style, color, typography, icons, and generated-image rendering,
- * while template-application prose stays conditional. Final confirm saves the
- * flattened current values to result.json.
- */
 /* Lisa's PPT — confirm page.
+   Stage 1 confirms the communication contract and the free-design/template
+   choice together; Stage 2 combines the coherent deck solution and the
+   production mechanics, then writes the final result. Finite fields come from
+   /static/catalogs.json; coordinated design directions seed mode, visual
+   style, color, typography, icons and generated-image rendering, while
+   template-application prose stays conditional. The final confirm saves the
+   flattened current values to result.json.
    The stage flow, the field set, the validators and the payload builders are
    the confirm surface's contract (scripts/docs/confirm_ui.md) and are kept
    as they were. What changed is the experience around them: Lisa's shell
